@@ -13,7 +13,7 @@
 <?rfc subcompact="no"?>
 <?rfc authorship="yes"?>
 <?rfc tocappendix="yes"?>
-<rfc  xmlns:xi="http://www.w3.org/2001/XInclude" category="info" ipr='trust200902' tocInclude="true"  obsoletes="" updates="" submissionType="IETF" xml:lang="en" version="3" docName="draft-ietf-raw-technologies-00" >
+<rfc  xmlns:xi="http://www.w3.org/2001/XInclude" category="info" ipr='trust200902' tocInclude="true"  obsoletes="" updates="" submissionType="IETF" xml:lang="en" version="3" docName="draft-ietf-raw-technologies-01" >
 
 <front>
    <title abbrev='RAW Techs'>Reliable and Available Wireless Technologies</title>
@@ -61,7 +61,7 @@
       <organization>Research Institute CODE, UniBwM</organization>
       <address>
          <postal>
-            <street>Werner-Heisenberg-Weg 28</street>
+            <street>Werner-Heisenberg-Weg 39</street>
             <city>Neubiberg</city>
             <code>85577</code>
             <country>Germany</country>
@@ -90,7 +90,7 @@
       <t>   This document presents a series of recent technologies that are
       capable of time synchronization and scheduling of transmission, making
       them suitable to carry time-sensitive flows with high reliability and
-      availbility.
+      availability.
       </t>
    </abstract>
 </front>
@@ -2142,53 +2142,360 @@ LDACS shall enable IPv6 based air-ground communication related to the safety and
 
 </t>
    <section><name>Provenance and Documents</name>
-
-<t>
-The development of LDACS has already made substantial progress in the Single European Sky ATM Research (SESAR) framework, and is currently being continued in the follow-up program, SESAR2020 <xref target='RIH18'/>. A key objective of the SESAR activities is to develop, implement and validate a modern aeronautical data link able to evolve with aviation needs over long-term. To this end, an LDACS specification has been produced <xref target='GRA19'/> and is continuously updated; transmitter demonstrators were developed to test the spectrum compatibility of LDACS with legacy systems operating in the L-band <xref target='SAJ14'/>; and the overall system performance was analyzed by computer simulations, indicating that LDACS can fulfil the identified requirements <xref target='GRA11'/>.
-</t><t>
-LDACS standardization within the framework of the International Civil Aviation Organization (ICAO) started in December 2016. The ICAO standardization group has produced an initial Standards and Recommended Practices (SARPs) document <xref target='ICAO18'/>. The SARPs document defines the general characteristics of LDACS. The ICAO standardization group plans to produce an ICAO technical manual - the ICAO equivalent to a technical standard - within the next years. Generally, the group is open to input from all sources and develops LDACS in the open.
-</t><t>
-Up to now the LDACS standardization has been focused on the development of the physical layer and the data link layer, only recently have higher layers come into the focus of the LDACS development activities. There is currently no "IPv6 over LDACS" specification; however, SESAR2020 has started the testing of IPv6-based LDACS testbeds. The IPv6 architecture for the aeronautical telecommunication network is called the Future Communications Infrastructure (FCI). FCI shall support quality of service, diversity, and mobility under the umbrella of the "multi-link concept". This work is conducted by ICAO working group WG-I.
-</t><t>
-In addition to standardization activities several industrial LDACS prototypes have been built. One set of LDACS prototypes has been evaluated in flight trials confirming the theoretical results predicting the system performance <xref target='GRA18'/><xref target='SCH19'/>.
-</t>
+       <t>
+           The development of LDACS has already made substantial progress in the Single European Sky ATM Research (SESAR) framework, and is currently being continued in the follow-up program, SESAR2020 <xref target='RIH18'/>. A key objective of the SESAR activities is to develop, implement and validate a modern aeronautical data link able to evolve with aviation needs over long-term. To this end, an LDACS specification has been produced <xref target='GRA19'/> and is continuously updated; transmitter demonstrators were developed to test the spectrum compatibility of LDACS with legacy systems operating in the L-band <xref target='SAJ14'/>; and the overall system performance was analyzed by computer simulations, indicating that LDACS can fulfill the identified requirements <xref target='GRA11'/>.
+       </t><t>
+           LDACS standardization within the framework of the International Civil Aviation Organization (ICAO) started in December 2016. The ICAO standardization group has produced an initial Standards and Recommended Practices (SARPs) document <xref target='ICAO18'/>. The SARPs document defines the general characteristics of LDACS. The ICAO standardization group plans to produce an ICAO technical manual - the ICAO equivalent to a technical standard - within the next years. Generally, the group is open to input from all sources and develops LDACS in the open.
+       </t><t>
+           Up to now the LDACS standardization has been focused on the development of the physical layer and the data link layer, only recently have higher layers come into the focus of the LDACS development activities. There is currently no "IPv6 over LDACS" specification; however, SESAR2020 has started the testing of IPv6-based LDACS testbeds. The IPv6 architecture for the aeronautical telecommunication network is called the Future Communications Infrastructure (FCI). FCI shall support quality of service, diversity, and mobility under the umbrella of the "multi-link concept". This work is conducted by ICAO working group WG-I.
+       </t><t>
+           In addition to standardization activities several industrial LDACS prototypes have been built. One set of LDACS prototypes has been evaluated in flight trials confirming the theoretical results predicting the system performance <xref target='GRA18'/><xref target='SCH19'/>.
+       </t>
    </section><!-- Provenance and Documents   -->
 
    <section><name>General Characteristics</name>
+       <t>
+           LDACS will become one of several wireless access networks connecting
+           aircraft to the Aeronautical Telecommunications Network (ATN).  The
+           LDACS access network contains several ground stations, each of them
+           providing one LDACS radio cell.  The LDACS air interface is a
+           cellular data link with a star-topology connecting aircraft to
+           ground-stations with a full duplex radio link.  Each ground-station
+           is the centralized instance controlling all air-ground communications
+           within its radio cell.
+       </t>
+       <t>
+           The user data rate of LDACS is 315 kbit/s to 1428 kbit/s on the forward link, and 294 kbit/s to 1390 kbit/s on the reverse link, depending on coding and modulation. Due to strong interference from legacy systems in the L-band, the most robust coding and modulation SHOULD be expected for initial deployment i.e. 315/294 kbit/s on the forward/reverse link, respectively.
+       </t>
+       <t>
+           In addition to the communications capability, LDACS also offers a
+           navigation capability. Ranging data, similar to DME (Distance
+           Measuring Equipment), is extracted from the LDACS communication links
+           between aircraft and LDACS ground stations. This results in LDACS
+           providing an APNT (Alternative Position, Navigation and Timing)
+           capability to supplement the existing on-board GNSS (Global Navigation
+           Satellite System) without the need for additional bandwidth.
+           Operationally, there will be no difference for pilots whether the
+           navigation data are provided by LDACS or DME. This capability was
+           flight tested and proven during the MICONAV flight trials in 2019
+           <xref target="BAT19"/>.
+       </t>
+       <t>
+           In previous works and during the MICONAV flight campaign in 2019, it
+           was also shown, that LDACS can be used for surveillance capability.
+           Filip et al. <xref target="FIL19"/>  shown passive radar capabilities of LDACS and
+           Automatic Dependence Surveillance – Contract (ADS-C) was demonstrated
+           via LDACS during the flight campaign 2019 <xref target="SCH19"/>.
+       </t>
 
-<t>
-LDACS will become one of several wireless access networks connecting aircraft to the Aeronautical Telecommunications Network (ATN). The LDACS access network contains several ground stations, each of them providing one LDACS radio cell.
-The LDACS air interface is a cellular data link with a star-topology connecting aircraft to ground-stations with a full duplex radio link. Each ground-station is the centralized instance controlling all air-ground communications within its radio cell. A ground-station supports up to 512 aircraft.
-</t><t>
-The LDACS air interface protocol stack defines two layers, the physical layer and the data link layer.
-</t><t>
-The physical layer provides the means to transfer data over the radio channel. The LDACS ground-station supports bi-directional links to multiple aircraft under its control. The forward link direction (FL; ground-to-air) and the reverse link direction (RL; air-to-ground) are separated by frequency division duplex. Forward link and reverse link use a 500 kHz channel each. The ground-station transmits a continuous stream of OFDM symbols on the forward link. In the reverse link different aircraft are separated in time and frequency using a combination of Orthogonal Frequency-Division Multiple-Access (OFDMA) and Time-Division Multiple-Access (TDMA). Aircraft thus transmit discontinuously on the reverse link with radio bursts sent in precisely defined transmission opportunities allocated by the ground-station. LDACS does not support beam-forming or Multiple Input Multiple Output (MIMO).
-</t><t>
-The data-link layer provides the necessary protocols to facilitate concurrent and reliable data transfer for multiple users. The LDACS data link layer is organized in two sub-layers: The medium access sub-layer and the logical link control sub-layer. The medium access sub-layer manages the organization of transmission opportunities in slots of time and frequency. The logical link control sub-layer provides acknowledged point-to-point logical channels between the aircraft and the ground-station using an automatic repeat request protocol. LDACS supports also unacknowledged point-to-point channels and ground-to-air broadcast.
-</t><t>
-The user data rate of LDACS is 315 kbit/s to 1428 kbit/s on the forward link, and 294 kbit/s to 1390 kbit/s on the reverse link, depending on coding and modulation. Due to strong interference from legacy systems in the L-band, the most robust coding and modulation should be expected for initial deployment i.e. 315/294 kbit/s on the forward/reverse link, respectively.
-</t><t>
-Since LDACS has been mainly designed for air traffic management communication it supports mutual entity authentication, integrity and confidentiality capabilities of user data messages and some control channel protection capabilities <xref target='MAE19'/>.
-</t>
+       <t>
+           Since LDACS has been mainly designed for air traffic management communication it supports mutual entity authentication, integrity and confidentiality capabilities of user data messages and some control channel protection capabilities  <xref target="MAE18"/>, <xref target="MAE191"/>, <xref target="MAE192"/>, <xref target="MAE20"/>. <!--<xref target='MAE19'/>.-->
+       </t>
+       <t>
+           Overall this makes LDACS the world's first truly integrated CNS system
+           and is the worldwide most mature, secure, terrestrial long-range CNS
+           technology for civil aviation.
+       </t>
+
 
    </section><!-- General Characteristics  -->
 
-   <section><name>Applicability to Deterministic Flows</name>
-<t>
-LDACS has been designed with applications related to the safety and regularity of the flight in mind. It has therefore been designed as a deterministic wireless data link (as far as possible).
-</t><t>
-LDACS medium access is always under the control of the ground-station of a radio cell. Any medium access for the transmission of user data has to be requested with a resource request message stating the requested amount of resources and class of service. The ground-station performs resource scheduling on the basis of these requests and grants resources with resource allocation messages. Resource request and allocation messages are exchanged over dedicated contention-free control channels.
-</t><t>
-LDACS has two mechanisms to request resources from the scheduler in the ground-station.
-Resources can either be requested "on demand" with a given class of service. On the forward link, this is done locally in the ground-station, on the reverse link a dedicated contention-free control channel is used (Dedicated Control Channel (DCCH); roughly 83 bit every 60 ms). A resource allocation is always announced in the control channel of the forward link (Common Control Channel (CCCH); variable sized). Due to the spacing of the reverse link control channels of every 60 ms, a medium access delay in the same order of magnitude is to be expected.
-</t><t>
-Resources can also be requested "permanently". The permanent resource request mechanism supports requesting recurring resources in given time intervals. A permanent resource request has to be canceled by the user (or by the ground-station, which is always in control).
-User data transmissions over LDACS are therefore always scheduled by the ground-station, while control data uses statically (i.e. at net entry) allocated recurring resources (DCCH and CCCH). The current specification documents specify no scheduling algorithm. However performance evaluations so far have used strict priority scheduling and round robin for equal priorities for simplicity. In the current prototype implementations LDACS classes of service are thus realized as priorities of medium access and not as flows. Note that this can starve out low priority flows. However, this is not seen as a big problem since safety related message always go first in any case.  Scheduling of reverse link resources is done in physical Protocol Data Units (PDU) of 112 bit (or larger if more aggressive coding and modulation is used). Scheduling on the forward link is done Byte-wise since the forward link is transmitted continuously by the ground-station.
-</t><t>
-In order to support diversity, LDACS supports handovers to other ground-stations on different channels. Handovers may be initiated by the aircraft (break-before-make) or by the ground-station (make-before-break) if it is connected to an alternative ground-station via the same ground-station controller. Beyond this, FCI diversity shall be implemented by the multi-link concept.
 
-</t>
+
+   <section><name>Deployment and Spectrum</name>
+       <t>
+           LDACS has its origin in merging parts of the B-VHF <xref target="BRA06"/>, B-AMC
+           <xref target="SCH08"/>, TIA-902 (P34) <xref target="HAI09"/>, and WiMAX IEEE 802.16e technologies
+           <xref target="EHA11"/>. In 2007 the spectrum for LDACS was allocated at the World
+           Radio Conference (WRC).
+       </t>
+       <t>
+           It was decided to allocate the spectrum next to Distance Measuring
+           Equipment (DME), resulting in an in-lay approach between the DME
+           channels for LDAC <xref target="SCH14"/>.
+       </t>
+       <t>
+           LDACS is currently being standardized by ICAO and several roll-out
+           strategies are discussed:
+       </t>
+       <t>
+           The LDACS data link provides enhanced capabilities to existing
+           Aeronautical communications infrastructure enabling them to better
+           support user needs and new applications. The deployment scalability of
+           LDACS allows its implementation to start in areas where most needed to
+           Improve immediately the performance of already fielded infrastructure.
+           Later the deployment is extended based on operational demand.
+           An attractive scenario for upgrading the existing VHF communication
+           systems by adding an additional LDACS data link is described below.
+       </t>
+       <t>
+           When considering the current VDL Mode 2 infrastructure and user base,
+           a very attractive win-win situation comes about, when the
+           technological advantages of LDACS are combined with the existing VDL
+           mode 2 infrastructure. LDACS provides at least 50 time more capacity
+           than VDL Mode 2 and is a natural enhancement to the existing VDL Mode
+           2 business model. The advantage of this approach is that the VDL Mode
+           2 infrastructure can be fully reused. Beyond that, it opens the way
+           for further enhancements which can increase business efficiency and
+           minimize investment risk. <xref target="ICAO19"/>
+
+       </t>
+    </section><!-- Deployment and Spectrum  -->
+
+   <section><name>Applicability to Deterministic Flows</name>
+       <t>
+           As LDACS is a ground-based digital communications system for flight
+           guidance and communications related to safety and regularity of
+           flight, time-bounded deterministic arrival times for safety critical
+           messages are a key feature for its successful deployment and roll-out.
+       </t>
+
+       <section><name>System Architecture</name>
+           <t>
+               Up to 512 Aircraft Station (AS) communicate to an LDACS Ground
+               Station (GS) in the Reverse Link (RL). GS communicate to AS in
+               the Forward Link (FL). Via an Access-Router (AC-R) GSs connect
+               the LDACS sub-network to the global Aeronautical
+               Telecommunications Network (ATN) to which the corresponding Air
+               Traffic Services (ATS) and Aeronautical Operational Control (AOC)
+               end systems are attached.
+           </t>
+       </section><!-- System Architecture  -->
+
+       <section><name>Overview of The Radio Protocol Stack</name>
+           <t>
+               The protocol stack of LDACS is implemented in the AS and GS: It
+               consists of the Physical Layer (PHY) with five major functional
+               blocks above it.  Four are placed in the Data Link Layer (DLL) of the
+               AS and GS: (1) Medium Access Layer (MAC), (2) Voice Interface (VI),
+               (3) Data Link Service (DLS), and (4) LDACS Management Entity (LME).
+               The last entity resides within the Sub-Network Layer: Sub-Network
+               Protocol (SNP).  The LDACS network is externally connected to voice
+               units, radio control units, and the ATN Network Layer.
+           </t>
+           <t>
+               <xref target="fig_LDACSprotocolstack"/> shows the protocol stack of LDACS as implemented in the AS
+               and GS.
+           </t>
+           <figure title="LDACS protocol stack in AS and GS"  anchor="fig_LDACSprotocolstack">
+               <artwork>
+                   <![CDATA[
+
+         IPv6                   Network Layer
+           |
+           |
++------------------+  +----+
+|        SNP       |--|    |   Sub-Network
+|                  |  |    |   Layer
++------------------+  |    |
+           |          | LME|
++------------------+  |    |
+|        DLS       |  |    |   Logical Link
+|                  |  |    |   Control Layer
++------------------+  +----+
+           |             |
+          DCH         DCCH/CCCH
+           |          RACH/BCCH
+           |             |
++--------------------------+
+|           MAC            |   Medium Access
+|                          |   Layer
++--------------------------+
+           |
++--------------------------+
+|           PHY            |   Physical Layer
++--------------------------+
+           |
+           |
+         ((*))
+         FL/RL              radio channels
+                            separated by
+                            Frequency Division Duplex
+
+                   ]]>
+               </artwork>
+           </figure>
+       </section><!-- Overview of The Radio Protocol Stack  -->
+
+       <section><name>Radio (PHY)</name>
+           <t>
+               The physical layer provides the means to transfer data over the radio
+               channel.  The LDACS ground-station supports bi-directional links to
+               multiple aircraft under its control.  The forward link direction (FL;
+               ground-to-air) and the reverse link direction (RL; air-to-ground) are
+               separated by frequency division duplex.  Forward link and reverse
+               link use a 500 kHz channel each.  The ground-station transmits a
+               continuous stream of OFDM symbols on the forward link.  In the
+               reverse link different aircraft are separated in time and frequency
+               using a combination of Orthogonal Frequency-Division Multiple-Access
+               (OFDMA) and Time-Division Multiple-Access (TDMA).  Aircraft thus
+               transmit discontinuously on the reverse link with radio bursts sent
+               in precisely defined transmission opportunities allocated by the
+               ground-station.  The most important service on the PHY layer of LDACS
+               is the PHY time framing service, which indicates that the PHY layer is
+               ready to transmit in a given slot and to indicate PHY layer framing
+               and timing to the MAC time framing service. LDACS does not support
+               beam-forming or Multiple Input Multiple Output (MIMO).
+           </t>
+       </section><!-- Radio (PHY)  -->
+
+       <section><name>Scheduling, Frame Structure and QoS (MAC)</name>
+           <t>
+               The data-link layer provides the necessary protocols to facilitate
+               concurrent and reliable data transfer for multiple users.  The LDACS
+               data link layer is organized in two sub-layers: The medium access
+               sub-layer and the logical link control sub-layer.  The medium access
+               sub-layer manages the organization of transmission opportunities in
+               slots of time and frequency.  The logical link control sub-layer
+               provides acknowledged point-to-point logical channels between the
+               aircraft and the ground-station using an automatic repeat request
+               protocol.  LDACS supports also unacknowledged point-to-point channels
+               and ground-to-air broadcast.
+               Before going more into depth about the LDACS medium access, the frame structure of LDACS is introduced:
+           </t>
+           <t>
+               The LDACS framing structure for FL and RL is based on Super-Frames
+               (SF) of 240 ms duration.  Each SF corresponds to 2000 OFDM symbols.
+               The FL and RL SF boundaries are aligned in time (from the view of the
+               GS).
+           </t>
+           <t>
+               In the FL, an SF contains a Broadcast Frame of duration 6.72 ms (56
+               OFDM symbols) for the Broadcast Control Channel (BCCH), and four
+               Multi-Frames (MF), each of duration 58.32 ms (486 OFDM symbols).
+           </t>
+           <t>
+               In the RL, each SF starts with a Random Access (RA) slot of length
+               6.72 ms with two opportunities for sending RL random access frames
+               for the Random Access Channel (RACH), followed by four MFs.  These
+               MFs have the same fixed duration of 58.32 ms as in the FL, but a
+               different internal structure
+           </t>
+           <t>
+               <xref target="fig_LDACSframesuper"/> and <xref target="fig_LDACSframesmulti"/> illustrate the LDACS frame structure.
+           </t>
+
+           <figure title="SF structure for LDACS"  anchor="fig_LDACSframesuper">
+               <artwork>
+                   <![CDATA[
+
+^
+|     +------+------------+------------+------------+------------+
+|  FL | BCCH |     MF     |     MF     |     MF     |     MF     |
+F     +------+------------+------------+------------+------------+
+r     <---------------- Super-Frame (SF) - 240ms ---------------->
+e
+q     +------+------------+------------+------------+------------+
+u  RL | RACH |     MF     |     MF     |     MF     |     MF     |
+e     +------+------------+------------+------------+------------+
+n     <---------------- Super-Frame (SF) - 240ms ---------------->
+c
+y
+|
+----------------------------- Time ------------------------------>
+|
+                   ]]>
+               </artwork>
+           </figure>
+
+           <figure title="MF structure for LDACS"  anchor="fig_LDACSframesmulti">
+               <artwork>
+                   <![CDATA[
+^
+|     +-------------+------+-------------+
+|  FL |     DCH     | CCCH |     DCH     |
+F     +-------------+------+-------------+
+r     <---- Multi-Frame (MF) - 58.32ms -->
+e
+q     +------+---------------------------+
+u  RL | DCCH |             DCH           |
+e     +------+---------------------------+
+n     <---- Multi-Frame (MF) - 58.32ms -->
+c
+y
+|
+-------------------- Time ------------------>
+|
+                   ]]>
+               </artwork>
+           </figure>
+
+           <t>
+           This fixed frame structure allows for a reliable and dependable
+           transmission of data. Next, the LDACS medium
+           access layer is introduced:
+           </t>
+           <t>
+           LDACS medium access is always under the control of the ground-station
+           of a radio cell.  Any medium access for the transmission of user data
+           has to be requested with a resource request message stating the
+           requested amount of resources and class of service.  The ground-
+           station performs resource scheduling on the basis of these requests
+           and grants resources with resource allocation messages.  Resource
+           request and allocation messages are exchanged over dedicated
+           contention-free control channels.
+           </t>
+           <t>
+           LDACS has two mechanisms to request resources from the scheduler in
+           the ground-station.  Resources can either be requested "on demand"
+           with a given class of service.  On the forward link, this is done
+           locally in the ground-station, on the reverse link a dedicated
+           contention-free control channel is used (Dedicated Control Channel
+           (DCCH); roughly 83 bit every 60 ms).  A resource allocation is always
+           announced in the control channel of the forward link (Common Control
+           Channel (CCCH); variable sized).  Due to the spacing of the reverse
+           link control channels of every 60 ms, a medium access delay in the
+           same order of magnitude is to be expected.
+           </t>
+           <t>
+           Resources can also be requested "permanently".  The permanent
+           resource request mechanism supports requesting recurring resources in
+           given time intervals.  A permanent resource request has to be
+           canceled by the user (or by the ground-station, which is always in
+           control).  User data transmissions over LDACS are therefore always
+           scheduled by the ground-station, while control data uses statically
+           (i.e. at net entry) allocated recurring resources (DCCH and CCCH).
+           The current specification documents specify no scheduling algorithm.
+           However performance evaluations so far have used strict priority
+           scheduling and round robin for equal priorities for simplicity.  In
+           the current prototype implementations LDACS classes of service are
+           thus realized as priorities of medium access and not as flows.  Note
+           that this can starve out low priority flows.  However, this is not
+           seen as a big problem since safety related message always go first in
+           any case.  Scheduling of reverse link resources is done in physical
+           Protocol Data Units (PDU) of 112 bit (or larger if more aggressive
+           coding and modulation is used).  Scheduling on the forward link is
+           done Byte-wise since the forward link is transmitted continuously by
+           the ground-station.
+           </t>
+           <t>
+           In order to support diversity, LDACS supports handovers to other
+           ground-stations on different channels.  Handovers may be initiated by
+           the aircraft (break-before-make) or by the ground-station (make-
+           before-break).  Beyond this, FCI diversity shall
+           be implemented by the multi-link concept.
+           </t>
+       </section><!-- Scheduling, Frame Structure and QoS (MAC)  -->
+
    </section><!-- Applicability to deterministic flows  -->
+
+   <section><name>Summary</name>
+       <t>
+           LDACS has been designed with applications related to the safety and
+           regularity of the flight in mind.  It has therefore been designed as
+           a deterministic wireless data link (as far as possible).
+       </t>
+       <t>
+           It is a secure, scalable and spectrum efficient data link with
+           embedded navigation capability and thus, is the first truly integrated
+           CNS system recognized by ICAO. During flight tests the LDACS
+           capabilities have been successfully demonstrated. A viable roll-out
+           scenario has been developed which allows gradual introduction of LDACS
+           with immediate use and revenues. Finally, ICAO is developing LDACS
+           standards to pave the way for a successful roll-out in the near
+           future.
+       </t>
+   </section><!-- Summary  -->
 
    </section><!-- title="L-band Digital Aeronautical Communications System" -->
 
@@ -2613,19 +2920,7 @@ In order to support diversity, LDACS supports handovers to other ground-stations
          </front>
       </reference>
 
-      <reference anchor='MAE19'>
-         <front>
-            <title>DLR tests digital communications technologies combined with additional navigation functions for the first time</title>
-            <author fullname='Nils Mäurer'>
-               <organization>German Aerospace Center (DLR)</organization>
-               </author>
-            <author fullname='Corinna Schmitt'>
-               <organization ascii="Research Institute CODE, UniBwM">Research Institute CODE, Universität der Bundeswehr München</organization>
-               </author>
-            <date month='April' year='2019'/>
-         </front>
-        <seriesInfo name='Proceedings of the Integrated Communications, Navigation, Surveillance Conference (ICNS)' value='Washington D.C., USA'/>
-      </reference>
+
 
 
       <reference anchor='TR37910' target='https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3190'>
@@ -2764,7 +3059,182 @@ In order to support diversity, LDACS supports handovers to other ground-stations
         </front>
       </reference>
 
+      <reference anchor="MAE18"> <!--REF9-->
+      <front>
+      <title>A Cybersecurity Architecture for the L-band Digital Aeronautical Communications System (LDACS)
+      </title>
+      <author initials="N." surname="Maeurer"/>
+      <author initials="A." surname="Bilzhause"/>
+      <date year="2017"/>
+      </front>
+      <seriesInfo name='IEEE 37th Digital Avionics Systems Conference (DASC), pp. 1-10, London, UK' value=''/>
+      </reference>
 
+      <reference anchor="MAE191"> <!--REF2-->
+      <front>
+      <title>Towards Successful Realization of the LDACS Cybersecurity Architecture: An Updated Datalink Security Threat- and Risk Analysis
+      </title>
+      <author initials="N." surname="Maeurer"/>
+      <author initials="C." surname="Schmitt"/>
+      <date year="2019"/>
+      </front>
+      <seriesInfo name='IEEE Integrated Communications, Navigation and Surveillance Conference (ICNS),  pp. 1-13, Herndon, VA, USA' value=''/>
+      </reference>
+
+      <reference anchor="ICAO19"> <!--REF2-->
+      <front>
+      <title>TLDACS White Paper–A Roll-out Scenario
+      </title>
+      <author>
+      <organization showOnFrontPage="true">International Civil Aviation Organization (ICAO)</organization>
+      </author>
+      <date year="2019" month="October"/>
+      </front>
+      <seriesInfo name='Working Paper
+      COMMUNICATIONS PANEL–DATA COMMUNICATIONS INFRASTRUCTURE
+      WORKING GROUP, Montreal, Canada
+      ' value=''/>
+      </reference>
+
+      <reference anchor="MAE192"> <!--REF1-->
+      <front>
+      <title>Evaluation of the LDACS Cybersecurity Implementation
+      </title>
+      <author initials="N." surname="Maeurer"/>
+      <author initials="T." surname="Graeupl"/>
+      <author initials="C." surname="Schmitt"/>
+      <date year="2019" month="September"/>
+      </front>
+      <seriesInfo name='IEEE 38th Digital Avionics Systems Conference (DACS), pp. 1-10, San Diego, CA, USA' value=''/>
+      </reference>
+
+      <reference anchor="MAE20"> <!--REF1-->
+      <front>
+      <title>Comparing Different Diffie-Hellman Key Exchange Flavors for LDACS
+      </title>
+      <author initials="N." surname="Maeurer"/>
+      <author initials="T." surname="Graeupl"/>
+      <author initials="C." surname="Schmitt"/>
+      <date year="2019" month="October"/>
+      </front>
+      <seriesInfo name='IEEE 39th Digital Avionics Systems Conference (DACS), pp. 1-10, San Diego, CA, USA' value=''/>
+      </reference>
+
+
+      <reference anchor="FIL19"> <!--REF1-->
+      <front>
+      <title>LDACS-
+      Based Non-Cooperative Surveillance Multistatic Radar Design
+      and Detection Coverage Assessment
+      </title>
+      <author initials="A." surname="Filip-Dhaubhadel"/>
+      <author initials="D." surname="Shutin"/>
+      <date year="2019" month="September"/>
+      </front>
+      <seriesInfo name='IEEE 38th Digital Avionics Systems Conference (DACS), pp. 1-10, San Diego, CA, USA' value=''/>
+      </reference>
+
+      <reference anchor="BAT19"> <!--REF2-->
+      <front>
+      <title>Real-Time Demonstration of
+      Integrated Communication and Navigation Services Using
+      LDACS
+      </title>
+      <author initials="G." surname="Battista"/>
+      <author initials="O." surname="Osechas"/>
+      <author initials="S." surname="Narayanan"/>
+      <author initials="O.G." surname="Crespillo"/>
+      <author initials="D." surname="Gerbeth"/>
+      <author initials="N." surname="Maeurer"/>
+      <author initials="D." surname="Mielke"/>
+      <author initials="T." surname="Graeupl"/>
+      <date year="2019"/>
+      </front>
+      <seriesInfo name='IEEE Integrated Communications, Navigation and Surveillance Conference (ICNS),  pp. 1-12, Herndon, VA, USA' value=''/>
+      </reference>
+
+      <reference anchor="BRA06"> <!--REF1-->
+      <front>
+      <title>B-VHF -Selected Simulation Results and Final Assessment
+      </title>
+      <author initials="S." surname="Brandes"/>
+      <author initials="M." surname="Schnell"/>
+      <author initials="C.H." surname="Rokitansky"/>
+      <author initials="M." surname="Ehammer"/>
+      <author initials="T." surname="Graeupl"/>
+      <author initials="H." surname="Steendam"/>
+      <author initials="M." surname="Guenach"/>
+      <author initials="C." surname="Rihacek"/>
+      <author initials="B." surname="Haindl"/>
+      <date year="2019" month="September"/>
+      </front>
+      <seriesInfo name='IEEE 25th Digital Avionics Systems Conference (DACS), pp. 1-12, New York, NY, USA' value=''/>
+      </reference>
+
+      <reference anchor="SCH08"> <!--REF2-->
+      <front>
+      <title>B-AMC -
+      Broadband Aeronautical Multi-carrier Communications
+      </title>
+      <author initials="M." surname="Schnell"/>
+      <author initials="S." surname="Brandes"/>
+      <author initials="S." surname="Gligorevic"/>
+      <author initials="C.H." surname="Rokitansky"/>
+      <author initials="M." surname="Ehammer"/>
+      <author initials="T." surname="Graeupl"/>
+      <author initials="C." surname="Rihacek"/>
+      <author initials="M." surname="Sajatovic"/>
+      <date year="2008" month="April"/>
+      </front>
+      <seriesInfo name='IEEE 8th Integrated Communications, Navigation and Surveillance Conference (ICNS),  pp. 1-13, New York, NY, USA' value=''/>
+      </reference>
+
+      <reference anchor="HAI09"> <!--REF2-->
+      <front>
+      <title>Improvement of L-DACS1 Design by Combining B-AMC with P34
+      and WiMAX Technologies
+      </title>
+      <author initials="B." surname="Haindl"/>
+      <author initials="C." surname="Rihacek"/>
+      <author initials="M." surname="Sajatovic"/>
+      <author initials="B." surname="Phillips"/>
+      <author initials="J." surname="Budinger"/>
+      <author initials="M." surname="Schnell"/>
+      <author initials="D." surname="Kamiano"/>
+      <author initials="W." surname="Wilson"/>
+      <date year="2009" month="May"/>
+      </front>
+      <seriesInfo name='IEEE 9th Integrated Communications, Navigation and Surveillance Conference (ICNS),  pp. 1-8, New York, NY, USA' value=''/>
+      </reference>
+
+      <reference anchor="EHA11"> <!--REF1-->
+      <front>
+      <title>AeroMACS - An Airport
+      Communications System
+      </title>
+      <author initials="M." surname="Ehammer"/>
+      <author initials="T." surname="Graeupl"/>
+      <date year="2011" month="September"/>
+      </front>
+      <seriesInfo name='IEEE 30th Digital Avionics Systems Conference (DACS), pp. 1-16, New York, NY, USA' value=''/>
+      </reference>
+
+      <reference anchor="SCH14"> <!--BELL19-->
+      <front>
+      <title>LDACS: Future Aeronautical Communications for Air-
+      Traffic Management
+
+      </title>
+      <author initials="M." surname="Schnell"/>
+      <author initials="U." surname="Epple"/>
+      <author initials="D." surname="Shutin"/>
+      <author initials="N." surname="Schneckenburger"/>
+      <date year="2017"  />
+      </front>
+      <seriesInfo name='IEEE Communications Magazine, 52(5),
+      104-110
+      ' value=''/>
+      </reference>
 
    </references>
 </back>
