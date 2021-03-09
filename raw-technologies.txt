@@ -5,18 +5,18 @@
 RAW                                                      P. Thubert, Ed.
 Internet-Draft                                             Cisco Systems
 Intended status: Informational                             D. Cavalcanti
-Expires: 23 August 2021                                            Intel
+Expires: 9 September 2021                                          Intel
                                                            X. Vilajosana
                                          Universitat Oberta de Catalunya
                                                               C. Schmitt
                                          Research Institute CODE, UniBwM
                                                                J. Farkas
                                                                 Ericsson
-                                                        19 February 2021
+                                                            8 March 2021
 
 
               Reliable and Available Wireless Technologies
-                     draft-ietf-raw-technologies-01
+                     draft-ietf-raw-technologies-02
 
 Abstract
 
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 August 2021.
+   This Internet-Draft will expire on 9 September 2021.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Thubert, et al.          Expires 23 August 2021                 [Page 1]
+Thubert, et al.         Expires 9 September 2021                [Page 1]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    Please review these documents carefully, as they describe your rights
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Thubert, et al.          Expires 23 August 2021                 [Page 2]
+Thubert, et al.         Expires 9 September 2021                [Page 2]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
        7.4.4.  Scheduling, Frame Structure and QoS (MAC) . . . . . .  52
@@ -165,9 +165,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                 [Page 3]
+Thubert, et al.         Expires 9 September 2021                [Page 3]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
 2.  Terminology
@@ -221,9 +221,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                 [Page 4]
+Thubert, et al.         Expires 9 September 2021                [Page 4]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
 3.1.  Benefits of Scheduling on Wires
@@ -277,9 +277,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                 [Page 5]
+Thubert, et al.         Expires 9 September 2021                [Page 5]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    needed to comply with the local regulations such as ETSI 300-328, but
@@ -333,9 +333,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                 [Page 6]
+Thubert, et al.         Expires 9 September 2021                [Page 6]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    availability.  The IEEE 802.11 working group has been working in
@@ -389,9 +389,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                 [Page 7]
+Thubert, et al.         Expires 9 September 2021                [Page 7]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    IEEE 802.11be Extreme High Throughput (EHT).  [IEEE 802.11be WIP]
@@ -445,9 +445,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                 [Page 8]
+Thubert, et al.         Expires 9 September 2021                [Page 8]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
 4.2.1.2.  Improved PHY Robustness
@@ -501,9 +501,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                 [Page 9]
+Thubert, et al.         Expires 9 September 2021                [Page 9]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
 4.2.2.1.  802.11 Managed network operation and admission control
@@ -557,9 +557,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 10]
+Thubert, et al.         Expires 9 September 2021               [Page 10]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
 4.3.  802.11be Extreme High Throughput (EHT)
@@ -613,9 +613,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 11]
+Thubert, et al.         Expires 9 September 2021               [Page 11]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    802.11be is expected to build on and enhance 802.11ax capabilities to
@@ -669,9 +669,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 12]
+Thubert, et al.         Expires 9 September 2021               [Page 12]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
 4.4.1.  General Characteristics
@@ -725,9 +725,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 13]
+Thubert, et al.         Expires 9 September 2021               [Page 13]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    range with limited transmission power.  The PHY layer supports frames
@@ -781,9 +781,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 14]
+Thubert, et al.         Expires 9 September 2021               [Page 14]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    Useful References include:
@@ -837,9 +837,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 15]
+Thubert, et al.         Expires 9 September 2021               [Page 15]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
                           timeslot offset
@@ -893,10 +893,20 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 16]
+Thubert, et al.         Expires 9 September 2021               [Page 16]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
+
+   TSCH networks operate in ISM bands in which the spectrum is shared by
+   different coexisting technologies.  Regulations such as FCC, ETSI and
+   ARIB impose duty cycle regulations to limit the use of the bands but
+   yet interference may constraint the probability to deliver a packet.
+   Part of these reliability challenges are addressed at the MAC
+   introducing redundancy and diversity, thanks to channel hopping,
+   scheduling and ARQ policies.  Yet, the MAC layer operates with a
+   1-hop vision, being limited to local actions to mitigate
+   underperforming links.
 
    In the RAW context, low power reliable networks should address non-
    critical control scenarios such as Class 2 and monitoring scenarios
@@ -936,6 +946,14 @@ Internet-Draft                  RAW Techs                  February 2021
    in particular in terms of latency and reliability, and the end nodes,
    to a Path Computation element (PCE).  With this, the PCE computes a
    Track between the end nodes and provisions every hop in the Track
+
+
+
+Thubert, et al.         Expires 9 September 2021               [Page 17]
+
+Internet-Draft                  RAW Techs                     March 2021
+
+
    with per-flow state that describes the per-hop operation for a given
    packet, the corresponding timeSlots, and the flow identification to
    recognize which packet is placed in which Track, sort out duplicates,
@@ -946,14 +964,6 @@ Internet-Draft                  RAW Techs                  February 2021
    period of time, it is expected that a node will be provisioned in one
    shot with a full schedule, which incorporates the aggregation of its
    behavior for multiple Tracks.  The 6TiSCH Architecture expects that
-
-
-
-Thubert, et al.          Expires 23 August 2021                [Page 17]
-
-Internet-Draft                  RAW Techs                  February 2021
-
-
    the programing of the schedule is done over CoAP as discussed in
    "6TiSCH Resource Management and Interaction using CoAP"
    [I-D.ietf-6tisch-coap].
@@ -988,6 +998,18 @@ Internet-Draft                  RAW Techs                  February 2021
 
                                   Figure 2
 
+
+
+
+
+
+
+
+Thubert, et al.         Expires 9 September 2021               [Page 18]
+
+Internet-Draft                  RAW Techs                     March 2021
+
+
 5.2.2.1.1.  Packet Marking and Handling
 
    Section "Packet Marking and Handling" of
@@ -1000,15 +1022,6 @@ Internet-Draft                  RAW Techs                  February 2021
    by the IPv6 source address and a local RPLInstanceID is tagged in the
    packets to identify uniquely the Track and associated transmit bundle
    of timeSlots.
-
-
-
-
-
-Thubert, et al.          Expires 23 August 2021                [Page 18]
-
-Internet-Draft                  RAW Techs                  February 2021
-
 
    It results that the tagging that is used for a DetNet flow outside
    the 6TiSCH LLN MUST be swapped into 6TiSCH formats and back as the
@@ -1042,6 +1055,17 @@ Internet-Draft                  RAW Techs                  February 2021
    Figure 4, the source node S transmits the data packet to nodes A and
    B, in two different timeslots within the same TSCH slotframe.
 
+
+
+
+
+
+
+Thubert, et al.         Expires 9 September 2021               [Page 19]
+
+Internet-Draft                  RAW Techs                     March 2021
+
+
                       ===> (A) => (C) => (E) ===
                     //        \\//   \\//       \\
           source (S)          //\\   //\\         (R) (destination)
@@ -1056,15 +1080,6 @@ Internet-Draft                  RAW Techs                  February 2021
    first copy of a data packet, it discards the subsequent copies.
    Because the first copy that reaches a node is the one that matters,
    it is the only copy that will be forwarded upward.
-
-
-
-
-
-Thubert, et al.          Expires 23 August 2021                [Page 19]
-
-Internet-Draft                  RAW Techs                  February 2021
-
 
    Considering that the wireless medium is broadcast by nature, any
    neighbor of a transmitter may overhear a transmission.  By employing
@@ -1099,6 +1114,14 @@ Internet-Draft                  RAW Techs                  February 2021
    purpose of replication, each group corresponding to one branch of the
    Track.  The'AND'relation between the groups indicates that
    transmission over any of branches MUST be attempted regardless of
+
+
+
+Thubert, et al.         Expires 9 September 2021               [Page 20]
+
+Internet-Draft                  RAW Techs                     March 2021
+
+
    whether a transmission succeeded in another branch.  It is also
    possible to place cells to different next-hop routers in a
    same'OR'group.  This allows to route along multi-path Tracks, trying
@@ -1108,19 +1131,6 @@ Internet-Draft                  RAW Techs                  February 2021
    Retries of a same copy as well as converging branches for elimination
    are converged, meaning that the first successful reception is enough
    and that all the other timeSlots can be ignored.
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 23 August 2021                [Page 20]
-
-Internet-Draft                  RAW Techs                  February 2021
-
 
 5.2.2.1.1.3.  Differentiated Services Per-Hop-Behavior
 
@@ -1161,6 +1171,13 @@ Internet-Draft                  RAW Techs                  February 2021
    such as a PCE [PCE].  Distributed routes are computed by RPL
    [RFC6550].
 
+
+
+Thubert, et al.         Expires 9 September 2021               [Page 21]
+
+Internet-Draft                  RAW Techs                     March 2021
+
+
    Both methods may inject routes in the Routing Tables of the 6TiSCH
    routers.  In either case, each route is associated with a 6TiSCH
    topology that can be a RPL Instance topology or a Track.  The 6TiSCH
@@ -1170,14 +1187,6 @@ Internet-Draft                  RAW Techs                  February 2021
    Both RPL and PCE rely on shared sources such as policies to define
    Global and Local RPLInstanceIDs that can be used by either method.
    It is possible for centralized and distributed routing to share a
-
-
-
-Thubert, et al.          Expires 23 August 2021                [Page 21]
-
-Internet-Draft                  RAW Techs                  February 2021
-
-
    same topology.  Generally they will operate in different slotFrames,
    and centralized routes will be used for scheduled traffic and will
    have precedence over distributed routes in case of conflict between
@@ -1217,22 +1226,18 @@ Internet-Draft                  RAW Techs                  February 2021
    with different width, so they have different durations and represent
    different periodic operations.  It is recommended that all CDU
    matrices in a 6TiSCH domain operate with the same cell duration and
+
+
+
+Thubert, et al.         Expires 9 September 2021               [Page 22]
+
+Internet-Draft                  RAW Techs                     March 2021
+
+
    are aligned, so as to reduce the chances of interferences from
    slotted-aloha operations.  The PCE MUST compute the CDU matrices and
    shared that knowledge with all the nodes.  The matrices are used in
    particular to define slotFrames.
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 23 August 2021                [Page 22]
-
-Internet-Draft                  RAW Techs                  February 2021
-
 
    A slotFrame is a MAC-level abstraction that is common to all nodes
    and contains a series of timeSlots of equal length and precedence.
@@ -1280,14 +1285,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-
-
-
-
-
-Thubert, et al.          Expires 23 August 2021                [Page 23]
+Thubert, et al.         Expires 9 September 2021               [Page 23]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
 5.2.2.2.  6TiSCH Tracks
@@ -1341,9 +1341,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 24]
+Thubert, et al.         Expires 9 September 2021               [Page 24]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
                      +-----+
@@ -1397,9 +1397,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 25]
+Thubert, et al.         Expires 9 September 2021               [Page 25]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    Methods to implement complex Tracks are described in
@@ -1453,9 +1453,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 26]
+Thubert, et al.         Expires 9 September 2021               [Page 26]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
 5.2.2.2.2.  Track Forwarding
@@ -1509,9 +1509,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 27]
+Thubert, et al.         Expires 9 September 2021               [Page 27]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    computed so as to accommodate both variable rates and
@@ -1565,9 +1565,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 28]
+Thubert, et al.         Expires 9 September 2021               [Page 28]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
 5.2.2.2.2.1.  Transport Mode
@@ -1621,9 +1621,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 29]
+Thubert, et al.         Expires 9 September 2021               [Page 29]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
       +--------------+
@@ -1677,9 +1677,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 30]
+Thubert, et al.         Expires 9 September 2021               [Page 30]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    that injects a packet on a Track checks that the destination is
@@ -1733,9 +1733,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 31]
+Thubert, et al.         Expires 9 September 2021               [Page 31]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    In 2016, the 3GPP started to design New Radio (NR) technology
@@ -1789,9 +1789,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 32]
+Thubert, et al.         Expires 9 September 2021               [Page 32]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    As an evolution of NR, multiple studies have been conducted in scope
@@ -1845,9 +1845,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 33]
+Thubert, et al.         Expires 9 September 2021               [Page 33]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    requirements.  An operator can configure and manage the mobile
@@ -1901,9 +1901,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 34]
+Thubert, et al.         Expires 9 September 2021               [Page 34]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    A prerequisite for critical communication is performance
@@ -1957,9 +1957,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 35]
+Thubert, et al.         Expires 9 September 2021               [Page 35]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    The SMF can instantiate various Packet Data Unit (PDU) sessions for
@@ -2013,9 +2013,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 36]
+Thubert, et al.         Expires 9 September 2021               [Page 36]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    Therein a conditional handover command, defining a triggering point,
@@ -2069,9 +2069,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 37]
+Thubert, et al.         Expires 9 September 2021               [Page 37]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
 6.4.3.  Radio (PHY)
@@ -2125,9 +2125,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 38]
+Thubert, et al.         Expires 9 September 2021               [Page 38]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    Since transmission of data packets require usage of control and data
@@ -2181,9 +2181,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 39]
+Thubert, et al.         Expires 9 September 2021               [Page 39]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
 6.4.4.  Scheduling and QoS (MAC)
@@ -2237,9 +2237,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 40]
+Thubert, et al.         Expires 9 September 2021               [Page 40]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    In dynamic DL scheduling, transmission can be initiated immediately
@@ -2293,9 +2293,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 41]
+Thubert, et al.         Expires 9 September 2021               [Page 41]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
 6.4.5.  Time-Sensitive Networking (TSN) Integration
@@ -2349,9 +2349,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 42]
+Thubert, et al.         Expires 9 September 2021               [Page 42]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    Figure 10 shows an illustration of 5G-TSN integration where an
@@ -2405,9 +2405,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 43]
+Thubert, et al.         Expires 9 September 2021               [Page 43]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    NR supports accurate reference time synchronization in 1us accuracy
@@ -2461,9 +2461,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 44]
+Thubert, et al.         Expires 9 September 2021               [Page 44]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    An alternative solution is that multiple UEs per device are used for
@@ -2517,9 +2517,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 45]
+Thubert, et al.         Expires 9 September 2021               [Page 45]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    can be leveraged when 5G is used as subnet technology for DetNet, in
@@ -2573,9 +2573,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 46]
+Thubert, et al.         Expires 9 September 2021               [Page 46]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
 7.1.  Provenance and Documents
@@ -2629,9 +2629,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 47]
+Thubert, et al.         Expires 9 September 2021               [Page 47]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
 7.2.  General Characteristics
@@ -2685,9 +2685,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 48]
+Thubert, et al.         Expires 9 September 2021               [Page 48]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
 7.3.  Deployment and Spectrum
@@ -2741,9 +2741,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 49]
+Thubert, et al.         Expires 9 September 2021               [Page 49]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
 7.4.1.  System Architecture
@@ -2797,9 +2797,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 50]
+Thubert, et al.         Expires 9 September 2021               [Page 50]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
             IPv6                   Network Layer
@@ -2853,9 +2853,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 51]
+Thubert, et al.         Expires 9 September 2021               [Page 51]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    in precisely defined transmission opportunities allocated by the
@@ -2909,9 +2909,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 52]
+Thubert, et al.         Expires 9 September 2021               [Page 52]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    ^
@@ -2965,9 +2965,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 53]
+Thubert, et al.         Expires 9 September 2021               [Page 53]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    and grants resources with resource allocation messages.  Resource
@@ -3021,9 +3021,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 54]
+Thubert, et al.         Expires 9 September 2021               [Page 54]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    It is a secure, scalable and spectrum efficient data link with
@@ -3077,9 +3077,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 55]
+Thubert, et al.         Expires 9 September 2021               [Page 55]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    [RFC5673]  Pister, K., Ed., Thubert, P., Ed., Dwars, S., and T.
@@ -3133,9 +3133,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 56]
+Thubert, et al.         Expires 9 September 2021               [Page 56]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    [RFC8279]  Wijnands, IJ., Ed., Rosen, E., Ed., Dolganow, A.,
@@ -3189,9 +3189,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 57]
+Thubert, et al.         Expires 9 September 2021               [Page 57]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
               draft-thubert-6lo-bier-dispatch-06, 28 January 2019,
@@ -3245,9 +3245,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 58]
+Thubert, et al.         Expires 9 September 2021               [Page 58]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    [IEEE Std. 802.11ad]
@@ -3301,9 +3301,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 59]
+Thubert, et al.         Expires 9 September 2021               [Page 59]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    [vilajosana19]
@@ -3357,9 +3357,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 60]
+Thubert, et al.         Expires 9 September 2021               [Page 60]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    [ICAO18]   International Civil Aviation Organization (ICAO), "L-Band
@@ -3413,9 +3413,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 61]
+Thubert, et al.         Expires 9 September 2021               [Page 61]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    [TS38300]  "3GPP TS 38.300, NR Overall description",
@@ -3469,9 +3469,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 62]
+Thubert, et al.         Expires 9 September 2021               [Page 62]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
               Stream Reservation Protocol (SRP) Enhancements and
@@ -3525,9 +3525,9 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 63]
+Thubert, et al.         Expires 9 September 2021               [Page 63]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    [BAT19]    Battista, G., Osechas, O., Narayanan, S., Crespillo, O.G.,
@@ -3581,9 +3581,9 @@ Authors' Addresses
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 64]
+Thubert, et al.         Expires 9 September 2021               [Page 64]
 
-Internet-Draft                  RAW Techs                  February 2021
+Internet-Draft                  RAW Techs                     March 2021
 
 
    Dave Cavalcanti
@@ -3637,4 +3637,4 @@ Internet-Draft                  RAW Techs                  February 2021
 
 
 
-Thubert, et al.          Expires 23 August 2021                [Page 65]
+Thubert, et al.         Expires 9 September 2021               [Page 65]

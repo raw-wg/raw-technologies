@@ -574,6 +574,15 @@ offset
     since the 2015 version.
  </t>
    <t>
+   <!-- spectrum -->
+    TSCH networks operate in ISM bands in which the spectrum is shared by different coexisting technologies. 
+    Regulations such as FCC, ETSI and ARIB impose duty cycle regulations to limit the use of the bands but yet interference may constraint the probability to deliver a packet.
+    Part of these reliability challenges are addressed at the MAC introducing redundancy and diversity, thanks to channel hopping, scheduling and ARQ policies.
+    Yet, the MAC layer operates with a 1-hop vision, being limited to local actions to mitigate underperforming links. 
+    <!-- Pascal-> not sure if you want to mention here about the capability provided by RAW to determine the best path regardless of the performance of a particular link -->
+   </t>
+ 
+   <t>
   <!-- expected capabilities for safety and automation, e.g., loops per second -->
     In the RAW context, low power reliable networks should address non-critical
     control scenarios such as Class 2 and monitoring scenarios such as Class 4
