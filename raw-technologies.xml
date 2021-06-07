@@ -16,7 +16,7 @@
 <rfc  xmlns:xi="http://www.w3.org/2001/XInclude" category="info" ipr='trust200902' tocInclude="true"  obsoletes="" updates="" submissionType="IETF" xml:lang="en" version="3" docName="draft-ietf-raw-technologies-02" >
 
 <front>
-   <title abbrev='RAW Techs'>Reliable and Available Wireless Technologies</title>
+   <title abbrev='RAW Technologies'>Reliable and Available Wireless Technologies</title>
    <author initials='P' surname='Thubert' fullname='Pascal Thubert' role='editor'>
       <organization abbrev='Cisco Systems'>Cisco Systems, Inc</organization>
       <address>
@@ -150,6 +150,8 @@
        <dt>Available:</dt><dd> That is exempt of unscheduled outage, the
        expectation for a network being that the flow is maintained in the face
        of any single breakage. </dd>
+       <dt>Deterministic Networking</dt> <dd>We refer to section 2 of
+       <xref target="RFC8557"/> for this term.</dd>
        <dt>FEC:</dt><dd> Forward error correction, sending redundant coded
        data to help the receiver recover transmission errors without the delays
        incurred with ARQ. </dd>
@@ -465,7 +467,7 @@
    distributed scheduling.
    6P goes hand-in-hand with a Scheduling Function (SF), the policy that decides
    how to maintain cells and trigger 6P transactions. The Minimal Scheduling
-   Function (MSF) <xref target='I-D.ietf-6tisch-msf'/> is the default SF defined
+   Function (MSF) <xref target='RFC9033'/> is the default SF defined
    by the 6TiSCH WG; other standardized SFs can be defined in the future.
    MSF extends the minimal schedule configuration, and is used to add
    child-parent links according to the traffic load.
@@ -491,7 +493,7 @@
 
      <!--  DetNet-like arching art (introduce the likes of ISA100.11a or WiHART) -->
    <t>
-   The 6TiSCH architecture <xref target='I-D.ietf-6tisch-architecture'/>
+   The 6TiSCH architecture <xref target='RFC9030'/>
    identifies different models to schedule resources along so-called Tracks
    (see <xref target='Tracks'/>) exploiting the
    TSCH schedule structure however the focus at 6TiSCH is on best effort traffic
@@ -549,7 +551,7 @@ offset
    <t>
    This schedule represents the possible communications of a node with its
    neighbors, and is managed by a Scheduling Function such as the Minimal
-   Scheduling Function (MSF)  <xref target='I-D.ietf-6tisch-msf'/>. Each cell in
+   Scheduling Function (MSF)  <xref target='RFC9033'/>. Each cell in
    the schedule is identified by its slotoffset and channeloffset coordinates. A
    cell's timeslot offset indicates its position in time, relative to the
    beginning of the slotframe. A cell's channel offset is an index which maps to
@@ -575,13 +577,13 @@ offset
  </t>
    <t>
    <!-- spectrum -->
-    TSCH networks operate in ISM bands in which the spectrum is shared by different coexisting technologies. 
+    TSCH networks operate in ISM bands in which the spectrum is shared by different coexisting technologies.
     Regulations such as FCC, ETSI and ARIB impose duty cycle regulations to limit the use of the bands but yet interference may constraint the probability to deliver a packet.
     Part of these reliability challenges are addressed at the MAC introducing redundancy and diversity, thanks to channel hopping, scheduling and ARQ policies.
-    Yet, the MAC layer operates with a 1-hop vision, being limited to local actions to mitigate underperforming links. 
+    Yet, the MAC layer operates with a 1-hop vision, being limited to local actions to mitigate underperforming links.
     <!-- Pascal-> not sure if you want to mention here about the capability provided by RAW to determine the best path regardless of the performance of a particular link -->
    </t>
- 
+
    <t>
   <!-- expected capabilities for safety and automation, e.g., loops per second -->
     In the RAW context, low power reliable networks should address non-critical
@@ -684,7 +686,7 @@ offset
    <section anchor='pmh'><name>Packet Marking and Handling</name>
    <t>
    Section "Packet Marking and Handling" of
-   <xref target='I-D.ietf-6tisch-architecture'/> describes the packet tagging and
+   <xref target='RFC9030'/> describes the packet tagging and
    marking that is expected in 6TiSCH networks.
    </t>
    <section anchor='pmhft'><name>Tagging Packets for Flow Identification</name>
@@ -879,7 +881,7 @@ offset
          <t>A slotFrame is the base object that a PCE needs to manipulate
          to program a schedule into an LLN node. Elaboration on that concept
          can be fond in section "SlotFrames and Priorities" of
-         <xref target='I-D.ietf-6tisch-architecture'/>
+         <xref target='RFC9030'/>
          </t>
          <t>
          IEEE802.15.4 TSCH avoids contention on the medium by formatting time
@@ -935,7 +937,7 @@ offset
           </t>
          <t>
          The 6TiSCH architecture introduces the concept of chunks
-         (<xref target='I-D.ietf-6tisch-architecture'/>) to operate
+         (<xref target='RFC9030'/>) to operate
          such spectrum distribution for a whole group of cells at a time.
          The CDU matrix is formatted into a set of chunks, each of them
          identified uniquely by a chunk-ID, see <xref target='fig3'/>.
@@ -973,7 +975,7 @@ chan.Off. 15 |chnkO|chnk6|chnkN|chnk1|chnkJ|chnkZ|chnkI| ... |chnkG|
 
    <t>
    A Track at 6TiSCH is the application to wireless of the concept of a path in
-   the Detnet architecture <xref target='I-D.ietf-detnet-architecture'/>.
+   the <xref target='RFC8655'>"Detnet architecture"</xref>.
    A Track can follow a simple sequence of relay nodes or can be structured as a
    more complex Destination Oriented Directed Acyclic Graph (DODAG) to a unicast
    destination. Along a Track, 6TiSCH nodes reserve the resources to enable the
@@ -1126,7 +1128,7 @@ chan.Off. 15 |chnkO|chnk6|chnkN|chnk1|chnkJ|chnkZ|chnkI| ... |chnkG|
          The 6TiSCH architecture supports three different forwarding model,
          G-MPLS Track Forwarding (TF), 6LoWPAN Fragment Forwarding (FF) and
          IPv6 Forwarding (6F) which is the classical IP operation
-         <xref target='I-D.ietf-6tisch-architecture'/>.
+         <xref target='RFC9030'/>.
          The DetNet case relates to the Track Forwarding operation under the
          control of a PCE.
       </t>
@@ -2563,8 +2565,10 @@ y
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8480.xml'/> <!-- 6P Protocol Specification -->
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8200.xml'/> <!-- Internet Protocol, Version 6 (IPv6) Specification -->
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.5673.xml'/> <!-- Industrial Routing Requirements in Low-Power and Lossy Networks -->
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-detnet-architecture.xml'/>
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-6tisch-architecture.xml'/>
+      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8557.xml'/> <!-- DetNet PS -->
+      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8655.xml'/> <!-- detnet-architecture -->
+      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9030.xml'/> <!-- 6Tisch Archi -->
+      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9033.xml'/> <!-- 6Tisch MSF -->
 
    </references>
    <references><name>Informative References</name>
@@ -2574,7 +2578,6 @@ y
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.6291.xml'/> <!-- OAM guidelines -->
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.7276.xml'/> <!-- OAM -->
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8279.xml'/> <!-- Mcast BIER -->
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-6tisch-msf.xml'/>
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.pthubert-raw-architecture.xml'/>
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-roll-nsa-extension.xml'/>
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.papadopoulos-paw-pre-reqs.xml'/>
@@ -2988,7 +2991,6 @@ y
         </front>
       </reference>
 
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8655.xml'/> <!-- DetNet Architecture -->
 	  <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-detnet-ip-over-tsn.xml'/>
 
       <reference anchor="IEEE802.1TSN" target="http://www.ieee802.org/1/pages/tsn.html" quoteTitle="true" derivedAnchor="IEEE802.1TSN">
