@@ -263,10 +263,12 @@
    The IEEE 802 LAN/MAN Standards Committee (SC) develops and maintains networking standards and recommended practices for local, metropolitan, and other area networks, using an open and accredited process, and advocates them on a global basis. The most widely used standards are for Ethernet, Bridging and Virtual Bridged LANs Wireless LAN, Wireless PAN, Wireless MAN, Wireless Coexistence, Media Independent Handover Services, and Wireless RAN. An individual Working Group provides the focus for each area. Standards produced by the IEEE 802 SC are freely available from the IEEE GET Program after they have been published in PDF for six months.
    </t>
         <t>
-        	The IEEE 802.11 LAN standards define the underlying MAC and PHY layers for the Wi-Fi technology. Wi-Fi/802.11 is one of the most successful wireless technologies, supporting many application domains. While previous 802.11 generations, such as 802.11n and 802.11ac, have focused mainly on improving peak throughput, more recent generations are also considering other performance vectors, such as efficiency enhancements for dense environments in 802.11ax, and latency and support for Time-Sensitive Networking (TSN) capabilities in 802.11be.
+        	The IEEE 802.11 Wireless LAN (WLAN) standards define the underlying MAC and PHY layers for the Wi-Fi technology. Wi-Fi/802.11 is one of the most successful wireless technologies, supporting many application domains. While previous 802.11 generations, such as 802.11n and 802.11ac, have focused mainly on improving peak throughput, more recent generations are also considering other performance vectors, such as efficiency enhancements for dense  environments in 802.11ax, latency, reliability and enhancements supporting Time-Sensitive Networking (TSN) capabilities in P802.11be.
         	</t>
         	<t>
-        	IEEE 802.11 already supports some 802.1 TSN standards  and it is undergoing efforts to support for other 802.1 TSN capabilities required to address the use cases that require time synchronization and timeliness (bounded latency) guarantees with high reliability and availability. The IEEE 802.11 working group has been working in collaboration with the IEEE 802.1 group for several years extending 802.1 features over 802.11. As with any wireless media, 802.11 imposes new constraints and restrictions to TSN-grade QoS, and tradeoffs between latency and reliability guarantees must be considered as well as managed deployment requirements. An overview of 802.1 TSN capabilities and their extensions to 802.11 are discussed in <xref target='Cavalcanti_2019'/>.
+        	IEEE std 802.11-2012 introduced support for TSN time synchronization based on IEEE 802.1AS over 802.11 Timing Measurement protocol. IEEE 802.11-2016 extended the 802.1AS operation over 802.11 Fine Timing Measurement (FTM), as well as the Stream Reservation Protocol (IEEE 802.1Qat). 802.11 WLANs can also be part of a 802.1Q bridged networks with enhancements enabled by the 802.11ak amendment. Traffic classification based on 802.1Q VLAN tags is also supported in 802.11. Other 802.1 TSN capabilities such as 802.1Qbv and 802.1CB, which are media agnostic, can already operate over 802.11. The IEEE Std. 802.11ax-2021 adds new scheduling capabilities that can enhance the timeliness performance in the 802.11 MAC and achieve lower bounded latency. The IEEE 802.11be is undergoing efforts to enhance the support for 802.1 TSN capabilities especially related to worst-case latency, reliability and availability.
+
+            The IEEE 802.11 working group has been working in collaboration with the IEEE 802.1 working group for several years extending some 802.1 features over 802.11. As with any wireless media, 802.11 imposes new constraints and restrictions to TSN-grade QoS, and tradeoffs between latency and reliability guarantees must be considered as well as managed deployment requirements. An overview of 802.1 TSN capabilities and challenges for their extensions to 802.11 are discussed in <xref target='Cavalcanti_2019'/>.
      		</t>
      		<t>
             Wi-Fi Alliance (WFA) is the worldwide network of companies that drives global Wi-Fi adoption and evolution through thought leadership, spectrum advocacy, and industry-wide collaboration. The WFA work helps ensure that Wi-Fi devices and networks provide users the interoperability, security, and reliability they have come to expect.
@@ -299,11 +301,11 @@
         <section><name>802.11ax High Efficiency (HE)</name>
         	<section><name>General Characteristics</name>
         		<t>
-        			The next generation Wi-Fi (Wi-Fi 6) is based on the IEEE802.11ax amendment <xref target='IEEE80211ax'/>, which includes new capabilities to increase efficiency, control and reduce latency. Some of the new features include higher order 1024-QAM modulation, support for uplink multi-user MIMO, OFDMA, trigger-based access and Target Wake time (TWT) for enhanced power savings. The OFDMA mode and trigger-based access enable scheduled operation, which is a key capability required to support deterministic latency and reliability for time-sensitive flows. 802.11ax can operate in up to 160 MHz channels and it includes support for operation in the new 6 GHz band, which is expected to be open to unlicensed use by the FCC and other regulatory agencies worldwide.
+        			The next generation Wi-Fi (Wi-Fi 6) is based on the IEEE802.11ax amendment <xref target='IEEE80211ax'/>, which includes new capabilities to increase efficiency, control and reduce latency. Some of the new features include higher order 1024-QAM modulation, support for uplink multi-user MIMO, OFDMA, trigger-based access and Target Wake time (TWT) for enhanced power savings. The OFDMA mode and trigger-based access enable the AP, after acquiring the channel for a given duration, to schedule multi-user transmissions, which is a key capability required to increase latency predictability and and reliability for time-sensitive flows. 802.11ax can operate in up to 160 MHz channels and it includes support for operation in the new 6 GHz band, which is expected to be open to unlicensed use by the FCC and other regulatory agencies worldwide.
         			</t>
         		<section><name>Multi-User OFDMA and Trigger-based Scheduled Access</name>
         			<t>
-        				802.11ax introduced a new orthogonal frequency-division multiple access (OFDMA) mode in which multiple users can be scheduled across the frequency domain. In this mode, the Access Point (AP) can initiate multi-user (MU) Uplink (UL) transmissions in the same PHY Protocol Data Unit (PPDU) by sending a trigger frame. This centralized scheduling capability gives the AP much more control of the channel, and it can remove contention between devices for uplink transmissions, therefore reducing the randomness caused by CSMA-based access between stations. The AP can also transmit simultaneously to multiple users in the downlink direction by using a Downlink (DL) MU OFDMA PPDU. In order to initiate a contention free Transmission Opportunity (TXOP) using the OFDMA mode, the AP still follows the typical listen before talk procedure to acquire the medium, which ensures interoperability and compliance with unlicensed band access rules. However, 802.11ax also includes a multi-user Enhanced Distributed Channel Access (MU-EDCA) capability, which allows the AP to get higher channel access priority.
+        				802.11ax introduced a new orthogonal frequency-division multiple access (OFDMA) mode in which multiple users can be scheduled across the frequency domain. In this mode, the Access Point (AP) can initiate multi-user (MU) Uplink (UL) transmissions in the same PHY Protocol Data Unit (PPDU) by sending a trigger frame. This centralized scheduling capability gives the AP much more control of the channel in its Basic Service Set (BSS) and it can remove contention between associated stations for uplink transmissions, therefore reducing the randomness caused by CSMA-based access between stations within the same BSS. The AP can also transmit simultaneously to multiple users in the downlink direction by using a Downlink (DL) MU OFDMA PPDU. In order to initiate a contention free Transmission Opportunity (TXOP) using the OFDMA mode, the AP still follows the typical listen before talk procedure to acquire the medium, which ensures interoperability and compliance with unlicensed band access rules. However, 802.11ax also includes a multi-user Enhanced Distributed Channel Access (MU-EDCA) capability, which allows the AP to get higher channel access priority than other devices in its BSS.
         			</t>
         		</section> <!--Multi-User OFDMA and Trigger-based Scheduled Access -->
         		<section><name>Improved PHY Robustness</name>
@@ -323,22 +325,24 @@
 
         <section><name>Applicability to deterministic flows</name>
         	<t>
-        		TSN capabilities, as defined by the IEEE 802.1 TSN standards, provide the underlying mechanism for supporting deterministic flows in a Local Area Network (LAN). The 802.11 working group has already incorporated support for several TSN capabilities, so that time-sensitive flow can experience precise time synchronization and timeliness when operating over 802.11 links. TSN capabilities supported over 802.11 (which also extends to 802.11ax), include:
+        		TSN capabilities, as defined by the IEEE 802.1 TSN standards, provide the underlying mechanism for supporting deterministic flows in a Local Area Network (LAN). The 802.11 working group has incorporated support for absolute time synchronization to extend the TSN 802.1AS protocol so that time-sensitive flow can experience precise time synchronization when operating over 802.11 links. As IEEE 802.11 and IEEE 802.1 TSN are both based on the IEEE 802 architecture, 802.11 devices can directly implement TSN capabilities without the need for a gateway/translation protocol. Basic features required for operation in a 802.1Q LAN are already enabled for 802.11. Some TSN capabilities, such as 802.1Qbv, can already operate over the existing 802.11 MAC SAP <xref target='SUR2021'/>. Nevertheless, the IEEE 802.11 MAC/PHY requires further extensions to improve the operation of IEEE 802.1 TSN features and achieve better performance metrics <xref target='CAL1287'/>.
+                </t><t>
+                TSN capabilities supported over 802.11 (which also extends to 802.11ax), include:
         		</t>
                 <ol type='%d.'>
         		<li> 802.1AS based Time Synchronization (other time synchronization techniques may also be used) </li>
-        		<li> Interoperating with IEEE802.1Q bridges</li>
-        		<li> Time-sensitive Traffic Stream identification</li>
+        		<li> Interoperating with IEEE802.1Q bridges as per IEEE 802.11ak</li>
+        		<li> Time-sensitive Traffic Stream Identification and Classification</li>
         		</ol>
         	<t>
-        			The exiting 802.11 TSN capabilities listed above, and the 802.11ax OFDMA and scheduled access provide a new set of tools to better server time-sensitive flows. However, it is important to understand the tradeoffs and constraints associated with such capabilities, as well as redundancy and diversity mechanisms that can be used to provide more predictable and reliable performance.
+        			The exiting 802.11 TSN capabilities listed above, and the 802.11ax OFDMA and AP-controlled access within a BSS provide a new set of tools to better serve time-sensitive flows. However, it is important to understand the tradeoffs and constraints associated with such capabilities, as well as redundancy and diversity mechanisms that can be used to provide more predictable and reliable performance.
         	</t>
         	<section><name> 802.11 Managed network operation and admission control</name>
         	<t>
         		Time-sensitive applications and TSN standards are expected to operate under a managed network (e.g. industrial/enterprise network). Thus, the Wi-Fi operation must also be carefully managed and integrated with the overall TSN management framework, as defined in the <xref target='IEEE8021Qcc'/> specification.
         	</t>
          	<t>
-        		Some of the random-access latency and interference from legacy/unmanaged devices can be minimized under a centralized management mode as defined in <xref target='IEEE8021Qcc'/>, in which admission control procedures are enforced.
+        		Some of the random-access latency and interference from legacy/unmanaged devices can be minimized under a centralized management mode as defined in <xref target='IEEE8021Qcc'/>.
         	</t>
         	<t>
         		Existing traffic stream identification, configuration and admission control procedures defined in <xref target='IEEE80211'/> QoS mechanism can be re-used. However, given the high degree of determinism required by many time-sensitive applications, additional capabilities to manage interference and legacy devices within tight time-constraints need to be explored.
@@ -346,10 +350,10 @@
         	</section> <!-- 802.11 Managed network operation and admission control -->
         	<section><name>Scheduling for bounded latency and diversity</name>
         	<t>
-        		As discussed earlier, the <xref target='IEEE80211ax'/> OFDMA mode introduces the possibility of assigning different RUs (frequency resources) to users within a PPDU. Several RU sizes are defined in the specification (26, 52, 106, 242, 484, 996 subcarriers). In addition, the AP can also decide on MCS and grouping of users within a given OFMDA PPDU. Such flexibility can be leveraged to support time-sensitive applications with bounded latency, especially in a managed network where stations can be configured to operate under the control of the AP.
+        		As discussed earlier, the <xref target='IEEE80211ax'/> OFDMA mode introduces the possibility of assigning different RUs (frequency resources) to users within a PPDU. Several RU sizes are defined in the specification (26, 52, 106, 242, 484, 996 subcarriers). In addition, the AP can also decide on MCS and grouping of users within a given OFMDA PPDU. Such flexibility can be leveraged to support time-sensitive applications with bounded latency, especially in a managed network where stations can be configured to operate under the control of the AP, in a controlled environment (which contains only devices operating on the unlicensed band installed by the facility owner and where unexpected interference from other systems and/or radio access technologies only sporadically happens), or in a deployment where channel/link redundancy is used to minimize the impact of unmanaged devices/interference.
         	</t>
         	<t>
-        		As shown in <xref target='Cavalcanti_2019'/>, it is possible to achieve latencies in the order of 1msec with high reliability in an interference free environment. Obviously, there are latency, reliability and capacity tradeoffs to be considered. For instance, smaller Resource Units (RU)s result in longer transmission durations, which may impact the minimal latency that can be achieved, but the contention latency and randomness elimination due to multi-user transmission is a major benefit of the OFDMA mode.
+        		When the network in lightly loaded, it is possible to achieve latencies under 1 msec when Wi-Fi is operated in contention-based (i.e., without OFDMA) mode. It is also has been shown that it is possible to achieve 1 msec latencies in controlled environment with higher efficiency when multi-user transmissions are used (enabled by OFDMA operation)  <xref target='Cavalcanti_2019'/>. Obviously, there are latency, reliability and capacity tradeoffs to be considered. For instance, smaller Resource Units (RU)s result in longer transmission durations, which may impact the minimal latency that can be achieved, but the contention latency and randomness elimination in an interference-free environment due to multi-user transmission is a major benefit of the OFDMA mode.
         	</t>
         	<t>
         		The flexibility to dynamically assign RUs to each transmission also enables the AP to provide frequency diversity, which can help increase reliability.
@@ -362,7 +366,7 @@
 
         	<section><name>General Characteristics</name>
         		<t>
-        			The <xref target='IEEE80211be'/>is the next major 802.11 amendment (after <xref target='IEEE80211ax'/>) for operation in the 2.4, 5 and 6 GHz bands. 802.11be is expected to include new PHY and MAC features and it is targeting extremely high throughput (at least 30 Gbps), as well as enhancements to worst case latency and jitter. It is also expected to improve the integration with 802.1 TSN to support time-sensitive applications over Ethernet and Wireless LANs.
+        			The ongoing <xref target='IEEE80211be'/>  project is the next major 802.11 amendment (after [IEEE Std. 802.11ax-2021]) for operation in the 2.4, 5 and 6 GHz bands. 802.11be is expected to include new PHY and MAC features and it is targeting extremely high throughput (at least 30 Gbps), as well as enhancements to worst case latency and jitter. It is also expected to improve the integration with 802.1 TSN to support time-sensitive applications over Ethernet and Wireless LANs.
         			</t>
         		<t>
         			The 802.11be Task Group started its operation in May 2019, therefore, detailed information about specific features is not yet available. Only high level candidate features have been discussed so far, including:
@@ -422,7 +426,7 @@
         			The high data rates achievable with 802.11ad and 802.11ay can significantly reduce latency down to microsecond levels. Limited interference from legacy and other unlicensed devices in 60 GHz is also a benefit. However, directionality and short range typical in mmWave operation impose new challenges such as the overhead required for beam training and blockage issues, which impact both latency and reliability. Therefore, it is important to understand the use case and deployment conditions in order to properly apply and configure 802.11ad/ay networks for time sensitive applications.
         		</t>
         		<t>
-        			The 802.11ad standard include a scheduled access mode in which stations can be allocated contention-free service periods by a central controller. This scheduling capability is also available in 802.11ay, and it is one of the mechanisms that can be used to provide bounded latency to time-sensitive data flows. An analysis of the theoretical latency bounds that can be achieved with 802.11ad service periods is provided in <xref target='Cavalcanti_2019'/>.
+        			The 802.11ad standard includes a scheduled access mode in which the central controller, after contending and reserving the channel for a dedicated period, can allocate to stations contention-free service periods. This scheduling capability is also available in 802.11ay, and it is one of the mechanisms that can be used to provide bounded latency to time-sensitive data flows in interference-free scenarios. An analysis of the theoretical latency bounds that can be achieved with 802.11ad service periods is provided in <xref target='Cavalcanti_2019'/>.
         		</t>
         	</section> <!-- Applicability to deterministic flows-->
         </section><!-- 802.11ad and 802.11ay (mmWave operation)  -->
@@ -2530,12 +2534,16 @@ y
 
 
 	<section><name>Contributors</name>
-		<t>
+   <t> This document aggregates articles from authors specialized in each
+   technologies. Beyond the main authors listed in the front page, the following
+   contributors proposed additional text and refinement that improved the
+   documertn greatly!
    			</t><dl  spacing='normal'>
    				<dt>Georgios Z. Papadopoulos:</dt><dd> Contributed to the TSCH section. </dd>
    				<dt>Nils Mäurer:</dt><dd> Contributed to the LDACS section. </dd>
    				<dt>Thomas Gräupl:</dt><dd> Contributed to the LDACS section. </dd>
 				<dt>Janos Farkas, Torsten Dudda, Alexey Shapin, and Sara Sandberg:</dt><dd> Contributed to the 5G section. </dd>
+                <dt>Rocco Di Taranto:</dt><dd> Contributed to the Wi-Fi section</dd>
    			</dl><t>
 
    		</t>
@@ -2543,9 +2551,9 @@ y
 
 
 	<section><name>Acknowledgments</name>
-		<t>
+    <t>
     		Many thanks to the participants of the RAW WG where a lot of the work discussed here happened.
-   		</t>
+    </t>
 	</section><!-- ack -->
 </middle>
 
@@ -3246,6 +3254,38 @@ y
       104-110
       ' value=''/>
       </reference>
+
+
+      <reference anchor="CAL1287" target='https://mentor.ieee.org/802.11/dcn/19/11-19-1287'> <!--CAL1287-->
+      <front>
+      <title>TSN support in 802.11 and potential extensions for TGbe
+
+      </title>
+      <author initials="D." surname="Cavalcanti"/>
+      <author initials="G." surname="Venkatesan"/>
+      <author initials="L." surname="Cariou"/>
+      <author initials="C." surname="Vordeiro"/>
+      <date year="2019"  />
+      </front>
+      </reference>
+
+
+      <reference anchor="SUR2021" target='https://ieeexplore.ieee.org/abstract/document/9483447'> <!--SURUTH -->
+      <front>
+      <title>
+         Wireless Time Sensitive Networking for Industrial Collaborative Robotic Workcells
+      </title>
+      <author initials="S." surname="Sudhakaran"/>
+      <author initials="K." surname="Montgomery"/>
+      <author initials="M." surname="Kashef"/>
+      <author initials="D." surname="Cavalcanti"/>
+      <author initials="R." surname="Candell"/>
+      <date year="2021"  />
+      </front>
+      <seriesInfo name='17th IEEE International Conference on Factory Communication Systems (WFCS)' value=''/>
+      </reference>
+
+
 
    </references>
 </back>
