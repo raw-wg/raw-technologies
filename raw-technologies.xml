@@ -335,7 +335,7 @@
         		<li> Time-sensitive Traffic Stream Identification and Classification</li>
         		</ol>
         	<t>
-        			The exiting 802.11 TSN capabilities listed above, and the 802.11ax OFDMA and AP-controlled access within a BSS provide a new set of tools to better serve time-sensitive flows. However, it is important to understand the tradeoffs and constraints associated with such capabilities, as well as redundancy and diversity mechanisms that can be used to provide more predictable and reliable performance.
+        			The existing 802.11 TSN capabilities listed above, and the 802.11ax OFDMA and AP-controlled access within a BSS provide a new set of tools to better serve time-sensitive flows. However, it is important to understand the tradeoffs and constraints associated with such capabilities, as well as redundancy and diversity mechanisms that can be used to provide more predictable and reliable performance.
         	</t>
         	<section><name> 802.11 Managed network operation and admission control</name>
         	<t>
