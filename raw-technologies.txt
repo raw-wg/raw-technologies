@@ -199,20 +199,20 @@ Internet-Draft              RAW Technologies                   July 2021
 
    PCE:  Path Computation Element.
 
-   PREOF (functions):  DetNet Packet Replication, Elimination and
-      Ordering Functions.
+   PREOF :  DetNet Packet Replication, Elimination and Ordering
+      Functions.
 
    PAREO (functions):  Packet (hybrid) ARQ, Replication, Elimination and
-      Ordering.  PAREO are the wireless extension of DetNet PREOF.
-      PAREO functions include scheduled ARQ at selected hops, and expect
-      the use of new operations like overhearing where available.
+      Ordering functions.  PAREO are the wireless extension of DetNet
+      PREOF.  PAREO functions include scheduled ARQ at selected hops,
+      and expect the use of new operations like overhearing where
+      available.
 
    Reliable:  That consistently performs as expected, the expectation
       for a network being to always deliver a packet in due time.
 
    Track:  A DODAG oriented to a destination, and that enables Packet
       ARQ, Replication, Elimination, and Ordering Functions.
-
 
 
 

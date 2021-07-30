@@ -159,15 +159,16 @@
        incurred with ARQ. </dd>
        <dt>HARQ:</dt><dd> Hybrid ARQ, a combination of FEC and ARQ. </dd>
        <dt>PCE:</dt><dd> Path Computation Element. </dd>
-       <dt>PREOF (functions):</dt><dd>
+       <dt>PREOF :</dt><dd>
        DetNet Packet Replication, Elimination and Ordering Functions. </dd>
        <dt>PAREO (functions):</dt><dd>
-       Packet (hybrid) ARQ, Replication, Elimination and Ordering. PAREO are
-       the wireless extension of DetNet PREOF.
+       Packet (hybrid) ARQ, Replication, Elimination and Ordering functions.
+       PAREO are the wireless extension of DetNet PREOF.
        PAREO functions include scheduled ARQ at selected hops, and expect the
        use of new operations like overhearing where available. </dd>
        <dt>Reliable:</dt><dd> That consistently performs as expected, the
-       expectation for a network being to always deliver a packet in due time. </dd>
+       expectation for a network being to always deliver a packet in due time.
+       </dd>
        <dt>Track:</dt><dd> A DODAG oriented to a destination, and that enables
        Packet ARQ, Replication, Elimination, and Ordering Functions. </dd>
        </dl><t>
