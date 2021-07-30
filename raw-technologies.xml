@@ -149,6 +149,10 @@
        of retries within a bounded time may be used over a wireless link and yet
        respect end-to-end constraints.
        </dd>
+    <dt>Availability:</dt><dd>Availability is a measure of the relative
+    amount of time where a path operates in stated condition, in other words
+    (uptime)/(uptime+downtime).
+    </dd>
        <dt>Available:</dt><dd> That is exempt of unscheduled outage, the
        expectation for a network being that the flow is maintained in the face
        of any single breakage. </dd>
@@ -161,18 +165,25 @@
        <dt>PCE:</dt><dd> Path Computation Element. </dd>
        <dt>PREOF :</dt><dd>
        DetNet Packet Replication, Elimination and Ordering Functions. </dd>
-       <dt>PAREO (functions):</dt><dd>
-       Packet (hybrid) ARQ, Replication, Elimination and Ordering functions.
-       PAREO are the wireless extension of DetNet PREOF.
-       PAREO functions include scheduled ARQ at selected hops, and expect the
-       use of new operations like overhearing where available. </dd>
-       <dt>Reliable:</dt><dd> That consistently performs as expected, the
-       expectation for a network being to always deliver a packet in due time.
-       </dd>
-       <dt>Track:</dt><dd> A DODAG oriented to a destination, and that enables
-       Packet ARQ, Replication, Elimination, and Ordering Functions. </dd>
-       </dl><t>
-   </t>
+       <dt>PAREO:</dt><dd>Packet (hybrid) ARQ, Replication, Elimination and
+       Ordering. PAREO is a superset Of DetNet's PREOF that includes
+       radio-specific techniques such as short range broadcast, MUMIMO,
+       constructive interference and overhearing, which can be
+      leveraged separately or combined to increase the reliability.
+    </dd>
+    <dt>Reliability:</dt><dd>Reliability is a measure of the probability
+    that an item will perform its intended function for a specified
+    interval under stated conditions. For RAW, the service that is expected
+    is delivery within a bounded latency and a failure is when the packet
+    is either lost or delivered too late.
+    </dd>
+    <dt>Track:</dt><dd>
+    A networking graph that can be used as a "path" to transport RAW packets
+    with equivalent treatment; a Track may fork and rejoin to enable the PAREO
+    operations.
+    </dd>
+    </dl>
+
    </section><!-- Terminology -->
 
    <section><name>On Scheduling</name>

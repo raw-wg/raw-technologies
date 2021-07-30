@@ -184,6 +184,10 @@ Internet-Draft              RAW Technologies                   July 2021
       limited number of retries within a bounded time may be used over a
       wireless link and yet respect end-to-end constraints.
 
+   Availability:  Availability is a measure of the relative amount of
+      time where a path operates in stated condition, in other words
+      (uptime)/(uptime+downtime).
+
    Available:  That is exempt of unscheduled outage, the expectation for
       a network being that the flow is maintained in the face of any
       single breakage.
@@ -202,21 +206,17 @@ Internet-Draft              RAW Technologies                   July 2021
    PREOF :  DetNet Packet Replication, Elimination and Ordering
       Functions.
 
-   PAREO (functions):  Packet (hybrid) ARQ, Replication, Elimination and
-      Ordering functions.  PAREO are the wireless extension of DetNet
-      PREOF.  PAREO functions include scheduled ARQ at selected hops,
-      and expect the use of new operations like overhearing where
-      available.
+   PAREO:  Packet (hybrid) ARQ, Replication, Elimination and Ordering.
+      PAREO is a superset Of DetNet's PREOF that includes radio-specific
+      techniques such as short range broadcast, MUMIMO, constructive
+      interference and overhearing, which can be leveraged separately or
+      combined to increase the reliability.
 
-   Reliable:  That consistently performs as expected, the expectation
-      for a network being to always deliver a packet in due time.
-
-   Track:  A DODAG oriented to a destination, and that enables Packet
-      ARQ, Replication, Elimination, and Ordering Functions.
-
-
-
-
+   Reliability:  Reliability is a measure of the probability that an
+      item will perform its intended function for a specified interval
+      under stated conditions.  For RAW, the service that is expected is
+      delivery within a bounded latency and a failure is when the packet
+      is either lost or delivered too late.
 
 
 
@@ -225,6 +225,10 @@ Thubert, et al.          Expires 31 January 2022                [Page 4]
 
 Internet-Draft              RAW Technologies                   July 2021
 
+
+   Track:  A networking graph that can be used as a "path" to transport
+      RAW packets with equivalent treatment; a Track may fork and rejoin
+      to enable the PAREO operations.
 
 3.  On Scheduling
 
@@ -269,11 +273,7 @@ Internet-Draft              RAW Technologies                   July 2021
    In addition to the benefits listed in Section 3.1, scheduling
    transmissions provides specific value to the wireless medium.
 
-   On the one hand, scheduling avoids collisions between scheduled
-   transmissions and can ensure both time and frequency diversity
-   between retries in order to defeat co-channel interference from un-
-   controlled transmitters as well as multipath fading.  Transmissions
-   can be scheduled on multiple channels in parallel, which enables to
+
 
 
 
@@ -282,6 +282,11 @@ Thubert, et al.          Expires 31 January 2022                [Page 5]
 Internet-Draft              RAW Technologies                   July 2021
 
 
+   On the one hand, scheduling avoids collisions between scheduled
+   transmissions and can ensure both time and frequency diversity
+   between retries in order to defeat co-channel interference from un-
+   controlled transmitters as well as multipath fading.  Transmissions
+   can be scheduled on multiple channels in parallel, which enables to
    use the full available spectrum while avoiding the hidden terminal
    problem, e.g., when the next packet in a same flow interferes on a
    same channel with the previous one that progressed a few hops
@@ -325,11 +330,6 @@ Internet-Draft              RAW Technologies                   July 2021
    by the IEEE 802 SC are freely available from the IEEE GET Program
    after they have been published in PDF for six months.
 
-   The IEEE 802.11 Wireless LAN (WLAN) standards define the underlying
-   MAC and PHY layers for the Wi-Fi technology.  Wi-Fi/802.11 is one of
-   the most successful wireless technologies, supporting many
-   application domains.  While previous 802.11 generations, such as
-   802.11n and 802.11ac, have focused mainly on improving peak
 
 
 
@@ -338,6 +338,11 @@ Thubert, et al.          Expires 31 January 2022                [Page 6]
 Internet-Draft              RAW Technologies                   July 2021
 
 
+   The IEEE 802.11 Wireless LAN (WLAN) standards define the underlying
+   MAC and PHY layers for the Wi-Fi technology.  Wi-Fi/802.11 is one of
+   the most successful wireless technologies, supporting many
+   application domains.  While previous 802.11 generations, such as
+   802.11n and 802.11ac, have focused mainly on improving peak
    throughput, more recent generations are also considering other
    performance vectors, such as efficiency enhancements for dense
    environments in 802.11ax, latency, reliability and enhancements
@@ -381,11 +386,6 @@ Internet-Draft              RAW Technologies                   July 2021
    Time Synchronization:  IEEE802.11-2016 with IEEE802.1AS; WFA TimeSync
       Certification.
 
-   Congestion Control:  IEEE802.11-2016 Admission Control; WFA Admission
-      Control.
-
-   Security:  WFA Wi-Fi Protected Access, WPA2 and WPA3.
-
 
 
 
@@ -393,6 +393,11 @@ Thubert, et al.          Expires 31 January 2022                [Page 7]
 
 Internet-Draft              RAW Technologies                   July 2021
 
+
+   Congestion Control:  IEEE802.11-2016 Admission Control; WFA Admission
+      Control.
+
+   Security:  WFA Wi-Fi Protected Access, WPA2 and WPA3.
 
    Interoperating with IEEE802.1Q bridges:  [IEEE Std 802.11ak].
 
@@ -437,11 +442,6 @@ Internet-Draft              RAW Technologies                   July 2021
    duration, to schedule multi-user transmissions, which is a key
    capability required to increase latency predictability and and
    reliability for time-sensitive flows. 802.11ax can operate in up to
-   160 MHz channels and it includes support for operation in the new 6
-   GHz band, which is expected to be open to unlicensed use by the FCC
-   and other regulatory agencies worldwide.
-
-
 
 
 
@@ -449,6 +449,10 @@ Thubert, et al.          Expires 31 January 2022                [Page 8]
 
 Internet-Draft              RAW Technologies                   July 2021
 
+
+   160 MHz channels and it includes support for operation in the new 6
+   GHz band, which is expected to be open to unlicensed use by the FCC
+   and other regulatory agencies worldwide.
 
 4.2.1.1.  Multi-User OFDMA and Trigger-based Scheduled Access
 
@@ -492,10 +496,6 @@ Internet-Draft              RAW Technologies                   July 2021
    available as well as the fact that no legacy 802.11 device (prior
    802.11ax) will be able to operate in this new band, 802.11ax
    operation in this new band can be even more efficient.
-
-
-
-
 
 
 
