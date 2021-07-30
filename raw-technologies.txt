@@ -341,29 +341,31 @@ Internet-Draft              RAW Technologies                   July 2021
    throughput, more recent generations are also considering other
    performance vectors, such as efficiency enhancements for dense
    environments in 802.11ax, latency, reliability and enhancements
-   supporting Time-Sensitive Networking (TSN) capabilities in P802.11be.
+   supporting Time-Sensitive Networking (TSN) [IEEE802.1TSN]
+   capabilities in P802.11be.
 
    IEEE Std 802.11-2012 introduced support for TSN time synchronization
    based on IEEE 802.1AS over 802.11 Timing Measurement protocol.  IEEE
-   802.11-2016 extended the 802.1AS operation over 802.11 Fine Timing
-   Measurement (FTM), as well as the Stream Reservation Protocol (IEEE
-   802.1Qat). 802.11 WLANs can also be part of a 802.1Q bridged networks
-   with enhancements enabled by the 802.11ak amendment.  Traffic
-   classification based on 802.1Q VLAN tags is also supported in 802.11.
-   Other 802.1 TSN capabilities such as 802.1Qbv and 802.1CB, which are
-   media agnostic, can already operate over 802.11.  The IEEE Std
-   802.11ax-2021 adds new scheduling capabilities that can enhance the
-   timeliness performance in the 802.11 MAC and achieve lower bounded
-   latency.  The IEEE 802.11be is undergoing efforts to enhance the
-   support for 802.1 TSN capabilities especially related to worst-case
-   latency, reliability and availability.  The IEEE 802.11 working group
-   has been working in collaboration with the IEEE 802.1 working group
-   for several years extending some 802.1 features over 802.11.  As with
-   any wireless media, 802.11 imposes new constraints and restrictions
-   to TSN-grade QoS, and tradeoffs between latency and reliability
-   guarantees must be considered as well as managed deployment
-   requirements.  An overview of 802.1 TSN capabilities and challenges
-   for their extensions to 802.11 are discussed in [Cavalcanti_2019].
+   Std 802.11-2016 extended the 802.1AS operation over 802.11 Fine
+   Timing Measurement (FTM), as well as the Stream Reservation Protocol
+   (IEEE 802.1Qat). 802.11 WLANs can also be part of a 802.1Q bridged
+   networks with enhancements enabled by the 802.11ak amendment.
+   Traffic classification based on 802.1Q VLAN tags is also supported in
+   802.11.  Other 802.1 TSN capabilities such as 802.1Qbv and 802.1CB,
+   which are media agnostic, can already operate over 802.11.  The IEEE
+   Std 802.11ax-2021 adds new scheduling capabilities that can enhance
+   the timeliness performance in the 802.11 MAC and achieve lower
+   bounded latency.  The IEEE 802.11be is undergoing efforts to enhance
+   the support for 802.1 TSN capabilities especially related to worst-
+   case latency, reliability and availability.  The IEEE 802.11 working
+   group has been working in collaboration with the IEEE 802.1 working
+   group for several years extending some 802.1 features over 802.11.
+   As with any wireless media, 802.11 imposes new constraints and
+   restrictions to TSN-grade QoS, and tradeoffs between latency and
+   reliability guarantees must be considered as well as managed
+   deployment requirements.  An overview of 802.1 TSN capabilities and
+   challenges for their extensions to 802.11 are discussed in
+   [Cavalcanti_2019].
 
    Wi-Fi Alliance (WFA) is the worldwide network of companies that
    drives global Wi-Fi adoption and evolution through thought
@@ -384,8 +386,6 @@ Internet-Draft              RAW Technologies                   July 2021
 
    Security:  WFA Wi-Fi Protected Access, WPA2 and WPA3.
 
-   Interoperating with IEEE802.1Q bridges:  [IEEE Std 802.11ak].
-
 
 
 
@@ -393,6 +393,8 @@ Thubert, et al.          Expires 31 January 2022                [Page 7]
 
 Internet-Draft              RAW Technologies                   July 2021
 
+
+   Interoperating with IEEE802.1Q bridges:  [IEEE Std 802.11ak].
 
    Stream Reservation Protocol (part of [IEEE Std 802.1Qat]):  AIEEE802.
       11-2016
@@ -438,8 +440,6 @@ Internet-Draft              RAW Technologies                   July 2021
    160 MHz channels and it includes support for operation in the new 6
    GHz band, which is expected to be open to unlicensed use by the FCC
    and other regulatory agencies worldwide.
-
-
 
 
 
@@ -573,18 +573,18 @@ Internet-Draft              RAW Technologies                   July 2021
 
    As discussed earlier, the [IEEE Std 802.11ax] OFDMA mode introduces
    the possibility of assigning different RUs (frequency resources) to
-   users within a PPDU.  Several RU sizes are defined in the
-   specification (26, 52, 106, 242, 484, 996 subcarriers).  In addition,
-   the AP can also decide on MCS and grouping of users within a given
-   OFMDA PPDU.  Such flexibility can be leveraged to support time-
-   sensitive applications with bounded latency, especially in a managed
-   network where stations can be configured to operate under the control
-   of the AP, in a controlled environment (which contains only devices
-   operating on the unlicensed band installed by the facility owner and
-   where unexpected interference from other systems and/or radio access
-   technologies only sporadically happens), or in a deployment where
-   channel/link redundancy is used to minimize the impact of unmanaged
-   devices/interference.
+   users within a PPDU.  Several Resource Unit (RU) sizes are defined in
+   the specification (26, 52, 106, 242, 484, 996 subcarriers).  In
+   addition, the AP can also decide on MCS and grouping of users within
+   a given OFMDA PPDU.  Such flexibility can be leveraged to support
+   time-sensitive applications with bounded latency, especially in a
+   managed network where stations can be configured to operate under the
+   control of the AP, in a controlled environment (which contains only
+   devices operating on the unlicensed band installed by the facility
+   owner and where unexpected interference from other systems and/or
+   radio access technologies only sporadically happens), or in a
+   deployment where channel/link redundancy is used to minimize the
+   impact of unmanaged devices/interference.
 
    When the network in lightly loaded, it is possible to achieve
    latencies under 1 msec when Wi-Fi is operated in contention-based
@@ -593,17 +593,17 @@ Internet-Draft              RAW Technologies                   July 2021
    higher efficiency when multi-user transmissions are used (enabled by
    OFDMA operation) [Cavalcanti_2019].  Obviously, there are latency,
    reliability and capacity tradeoffs to be considered.  For instance,
-   smaller Resource Units (RU)s result in longer transmission durations,
-   which may impact the minimal latency that can be achieved, but the
-   contention latency and randomness elimination in an interference-free
-   environment due to multi-user transmission is a major benefit of the
-   OFDMA mode.
+   smaller RUs result in longer transmission durations, which may impact
+   the minimal latency that can be achieved, but the contention latency
+   and randomness elimination in an interference-free environment due to
+   multi-user transmission is a major benefit of the OFDMA mode.
 
    The flexibility to dynamically assign RUs to each transmission also
    enables the AP to provide frequency diversity, which can help
    increase reliability.
 
 4.3.  802.11be Extreme High Throughput (EHT)
+
 
 
 
