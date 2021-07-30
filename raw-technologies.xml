@@ -130,7 +130,9 @@
    P2MP overhearing whereby multiple receivers are scheduled to receive the same
    transmission, which balances the adverse effects of the transmission losses
    that are experienced when a radio is used as pure P2P. Those methods are
-   collectively referred to as PAREO functions in the <xref target='I-D.pthubert-raw-architecture'>"Reliable and Available Wireless Architecture/Framework"</xref>.
+   collectively referred to as Packet (hybrid) ARQ, Replication, Elimination and
+   Ordering (PAREO) functions in the <xref target='I-D.ietf-raw-architecture'>
+   "Reliable and Available Wireless Architecture/Framework"</xref>.
    </t>
    </section><!-- title="Introduction"-->
 
@@ -157,7 +159,11 @@
        incurred with ARQ. </dd>
        <dt>HARQ:</dt><dd> Hybrid ARQ, a combination of FEC and ARQ. </dd>
        <dt>PCE:</dt><dd> Path Computation Element. </dd>
-       <dt>PAREO (functions):</dt><dd> the wireless extension of DetNet PREOF.
+       <dt>PREOF (functions):</dt><dd>
+       DetNet Packet Replication, Elimination and Ordering Functions. </dd>
+       <dt>PAREO (functions):</dt><dd>
+       Packet (hybrid) ARQ, Replication, Elimination and Ordering. PAREO are
+       the wireless extension of DetNet PREOF.
        PAREO functions include scheduled ARQ at selected hops, and expect the
        use of new operations like overhearing where available. </dd>
        <dt>Reliable:</dt><dd> That consistently performs as expected, the
@@ -266,7 +272,7 @@
         	The IEEE 802.11 Wireless LAN (WLAN) standards define the underlying MAC and PHY layers for the Wi-Fi technology. Wi-Fi/802.11 is one of the most successful wireless technologies, supporting many application domains. While previous 802.11 generations, such as 802.11n and 802.11ac, have focused mainly on improving peak throughput, more recent generations are also considering other performance vectors, such as efficiency enhancements for dense  environments in 802.11ax, latency, reliability and enhancements supporting Time-Sensitive Networking (TSN) capabilities in P802.11be.
         	</t>
         	<t>
-        	IEEE std 802.11-2012 introduced support for TSN time synchronization based on IEEE 802.1AS over 802.11 Timing Measurement protocol. IEEE 802.11-2016 extended the 802.1AS operation over 802.11 Fine Timing Measurement (FTM), as well as the Stream Reservation Protocol (IEEE 802.1Qat). 802.11 WLANs can also be part of a 802.1Q bridged networks with enhancements enabled by the 802.11ak amendment. Traffic classification based on 802.1Q VLAN tags is also supported in 802.11. Other 802.1 TSN capabilities such as 802.1Qbv and 802.1CB, which are media agnostic, can already operate over 802.11. The IEEE Std. 802.11ax-2021 adds new scheduling capabilities that can enhance the timeliness performance in the 802.11 MAC and achieve lower bounded latency. The IEEE 802.11be is undergoing efforts to enhance the support for 802.1 TSN capabilities especially related to worst-case latency, reliability and availability.
+        	IEEE Std 802.11-2012 introduced support for TSN time synchronization based on IEEE 802.1AS over 802.11 Timing Measurement protocol. IEEE 802.11-2016 extended the 802.1AS operation over 802.11 Fine Timing Measurement (FTM), as well as the Stream Reservation Protocol (IEEE 802.1Qat). 802.11 WLANs can also be part of a 802.1Q bridged networks with enhancements enabled by the 802.11ak amendment. Traffic classification based on 802.1Q VLAN tags is also supported in 802.11. Other 802.1 TSN capabilities such as 802.1Qbv and 802.1CB, which are media agnostic, can already operate over 802.11. The IEEE Std 802.11ax-2021 adds new scheduling capabilities that can enhance the timeliness performance in the 802.11 MAC and achieve lower bounded latency. The IEEE 802.11be is undergoing efforts to enhance the support for 802.1 TSN capabilities especially related to worst-case latency, reliability and availability.
 
             The IEEE 802.11 working group has been working in collaboration with the IEEE 802.1 working group for several years extending some 802.1 features over 802.11. As with any wireless media, 802.11 imposes new constraints and restrictions to TSN-grade QoS, and tradeoffs between latency and reliability guarantees must be considered as well as managed deployment requirements. An overview of 802.1 TSN capabilities and challenges for their extensions to 802.11 are discussed in <xref target='Cavalcanti_2019'/>.
      		</t>
@@ -325,7 +331,7 @@
 
         <section><name>Applicability to deterministic flows</name>
         	<t>
-        		TSN capabilities, as defined by the IEEE 802.1 TSN standards, provide the underlying mechanism for supporting deterministic flows in a Local Area Network (LAN). The 802.11 working group has incorporated support for absolute time synchronization to extend the TSN 802.1AS protocol so that time-sensitive flow can experience precise time synchronization when operating over 802.11 links. As IEEE 802.11 and IEEE 802.1 TSN are both based on the IEEE 802 architecture, 802.11 devices can directly implement TSN capabilities without the need for a gateway/translation protocol. Basic features required for operation in a 802.1Q LAN are already enabled for 802.11. Some TSN capabilities, such as 802.1Qbv, can already operate over the existing 802.11 MAC SAP <xref target='SUR2021'/>. Nevertheless, the IEEE 802.11 MAC/PHY requires further extensions to improve the operation of IEEE 802.1 TSN features and achieve better performance metrics <xref target='CAL1287'/>.
+        		TSN capabilities, as defined by the IEEE 802.1 TSN standards, provide the underlying mechanism for supporting deterministic flows in a Local Area Network (LAN). The 802.11 working group has incorporated support for absolute time synchronization to extend the TSN 802.1AS protocol so that time-sensitive flow can experience precise time synchronization when operating over 802.11 links. As IEEE 802.11 and IEEE 802.1 TSN are both based on the IEEE 802 architecture, 802.11 devices can directly implement TSN capabilities without the need for a gateway/translation protocol. Basic features required for operation in a 802.1Q LAN are already enabled for 802.11. Some TSN capabilities, such as 802.1Qbv, can already operate over the existing 802.11 MAC SAP <xref target='Sudhakaran2021'/>. Nevertheless, the IEEE 802.11 MAC/PHY requires further extensions to improve the operation of IEEE 802.1 TSN features and achieve better performance metrics <xref target='Cavalcanti1287'/>.
                 </t><t>
                 TSN capabilities supported over 802.11 (which also extends to 802.11ax), include:
         		</t>
@@ -366,7 +372,7 @@
 
         	<section><name>General Characteristics</name>
         		<t>
-        			The ongoing <xref target='IEEE80211be'/>  project is the next major 802.11 amendment (after [IEEE Std. 802.11ax-2021]) for operation in the 2.4, 5 and 6 GHz bands. 802.11be is expected to include new PHY and MAC features and it is targeting extremely high throughput (at least 30 Gbps), as well as enhancements to worst case latency and jitter. It is also expected to improve the integration with 802.1 TSN to support time-sensitive applications over Ethernet and Wireless LANs.
+        			The ongoing <xref target='IEEE80211be'/>  project is the next major 802.11 amendment (after IEEE Std 802.11ax-2021) for operation in the 2.4, 5 and 6 GHz bands. 802.11be is expected to include new PHY and MAC features and it is targeting extremely high throughput (at least 30 Gbps), as well as enhancements to worst case latency and jitter. It is also expected to improve the integration with 802.1 TSN to support time-sensitive applications over Ethernet and Wireless LANs.
         			</t>
         		<t>
         			The 802.11be Task Group started its operation in May 2019, therefore, detailed information about specific features is not yet available. Only high level candidate features have been discussed so far, including:
@@ -506,7 +512,7 @@
    </t>
    <t>Useful References include:
        	</t><ol type='%d.'>
-        	<li> IEEE Std 802.15.4: "IEEE Std. 802.15.4, Part. 15.4: Wireless Medium Access Control (MAC) and Physical Layer (PHY) Specifications for Low-Rate Wireless Personal Area Networks" <xref target='IEEE802154'/>. The latest version at the time of this writing is dated year 2015.</li>
+        	<li> IEEE Std 802.15.4: "IEEE Std 802.15.4, Part. 15.4: Wireless Medium Access Control (MAC) and Physical Layer (PHY) Specifications for Low-Rate Wireless Personal Area Networks" <xref target='IEEE802154'/>. The latest version at the time of this writing is dated year 2015.</li>
         	<li> Morell, A. , Vilajosana, X. , Vicario, J. L. and Watteyne, T. (2013), Label switching over IEEE802.15.4e networks. Trans. Emerging Tel. Tech., 24: 458-475. doi:10.1002/ett.2650" <xref target='morell13'/>.</li>
         	<li> De Armas, J., Tuset, P., Chang, T., Adelantado, F., Watteyne, T., Vilajosana, X. (2016, September). Determinism through path diversity: Why packet replication makes sense. In 2016 International Conference on Intelligent Networking and Collaborative Systems (INCoS) (pp. 150-154). IEEE. <xref target='dearmas16'/>.</li>
             <li> X. Vilajosana, T. Watteyne, M. Vucinic, T. Chang and K. S. J. Pister, "6TiSCH: Industrial Performance for IPv6 Internet-of-Things Networks," in Proceedings of the IEEE, vol. 107, no. 6, pp. 1153-1165, June 2019. <xref target='vilajosana19'/>.</li>
@@ -712,15 +718,17 @@ offset
 
    <section anchor='pmhrre'><name>Replication, Retries and Elimination</name>
     <t>
-        PRE establishes several paths in a network to provide redundancy and parallel
-        transmissions to bound the end-to-end delay.
-        <!--Optionally, promiscuous listening between paths is possible, such that the nodes
-        on one path may overhear transmissions along the other path. -->
-        Considering the scenario shown in <xref target='fig_ladder'/>,
-        many different paths are possible for S to reach R.
-        A simple way to benefit from this topology could be to use the
-        two independent paths via nodes A, C, E and via B, D, F.
-        But more complex paths are possible as well.
+       The 6TiSCH Architecture <xref target='RFC9030'/> leverages the Packet
+       Replication, Retries and Elimination (PRE) functions (PREF), the
+       precursor to what the RAW Architecture
+       <xref target='I-D.ietf-raw-architecture'/> calls PAREO functions.
+       PREF establishes several paths in a network to provide
+       redundancy and parallel transmissions to bound the end-to-end delay.
+       Considering the scenario shown in <xref target='fig_ladder'/>,
+       many different paths are possible for S to reach R.
+       A simple way to benefit from this topology could be to use the
+       two independent paths via nodes A, C, E and via B, D, F.
+       But more complex paths are possible as well.
     </t>
 
       <figure anchor='fig_ladder' align='center'><name>A Typical Ladder Shape with Two Parallel Paths Toward the Destination</name>
@@ -811,14 +819,6 @@ offset
    Retries of a same copy as well as converging branches for elimination
    are converged, meaning that the first successful reception is enough and that
    all the other timeSlots can be ignored.
-   </t>
-   </section>
-   <section anchor='pmhds'><name>Differentiated Services Per-Hop-Behavior</name>
-   <t>
-   Additionally, an IP packet that is sent along a Track uses the
-   Differentiated Services Per-Hop-Behavior Group called
-   Deterministic Forwarding, as described in
-   <xref target='I-D.svshah-tsvwg-deterministic-forwarding'/>.
    </t>
    </section>
    </section>
@@ -1013,6 +1013,11 @@ chan.Off. 15 |chnkO|chnk6|chnkN|chnk1|chnkJ|chnkZ|chnkI| ... |chnkG|
    Track that includes wireless links, even when the Track extends beyond the
    6TiSCH network.
       </t>
+   <t>The RAW Track described in the RAW Architecture
+   <xref target='I-D.ietf-raw-architecture'/> inherits directly from that model.
+   RAW extends the graph beyond a DODAG as long as a given packet cannot loop
+   within the Track.
+   </t>
          <figure anchor='fig4'><name>End-to-End deterministic Track</name>
 <artwork><![CDATA[
 
@@ -2559,13 +2564,13 @@ y
 
 
 <back>
-<displayreference   target="IEEE802154"            to="IEEE Std. 802.15.4"/>
-<displayreference   target="IEEE80211"             to="IEEE Std. 802.11"/>
-<displayreference   target="IEEE8021Qat"           to="IEEE Std. 802.1Qat"/>
-<displayreference   target="IEEE80211ak"           to="IEEE Std. 802.11ak"/>
-<displayreference   target="IEEE80211ad"           to="IEEE Std. 802.11ad"/>
-<displayreference   target="IEEE80211ax"           to="IEEE Std. 802.11ax"/>
-<displayreference   target="IEEE80211ay"           to="IEEE Std. 802.11ay"/>
+<displayreference   target="IEEE802154"            to="IEEE Std 802.15.4"/>
+<displayreference   target="IEEE80211"             to="IEEE Std 802.11"/>
+<displayreference   target="IEEE8021Qat"           to="IEEE Std 802.1Qat"/>
+<displayreference   target="IEEE80211ak"           to="IEEE Std 802.11ak"/>
+<displayreference   target="IEEE80211ad"           to="IEEE Std 802.11ad"/>
+<displayreference   target="IEEE80211ax"           to="IEEE Std 802.11ax"/>
+<displayreference   target="IEEE80211ay"           to="IEEE Std 802.11ay"/>
 <displayreference   target="IEEE80211be"           to="IEEE 802.11be WIP"/>
 
 
@@ -2586,18 +2591,17 @@ y
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.6291.xml'/> <!-- OAM guidelines -->
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.7276.xml'/> <!-- OAM -->
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8279.xml'/> <!-- Mcast BIER -->
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.pthubert-raw-architecture.xml'/>
+      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-raw-architecture.xml'/>
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-roll-nsa-extension.xml'/>
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.papadopoulos-paw-pre-reqs.xml'/>
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.thubert-bier-replication-elimination.xml'/>
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.thubert-6lo-bier-dispatch.xml'/>
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-bier-te-arch.xml'/>
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-6tisch-coap.xml'/>
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.svshah-tsvwg-deterministic-forwarding.xml'/>
 
       <reference anchor='IEEE802154'>
          <front>
-            <title>IEEE Std. 802.15.4, Part. 15.4: Wireless Medium Access
+            <title>IEEE Std 802.15.4, Part. 15.4: Wireless Medium Access
             Control (MAC) and Physical Layer (PHY) Specifications for Low-Rate
             Wireless Personal Area Networks
             </title>
@@ -2636,7 +2640,7 @@ y
       <reference anchor='IEEE80211ax'>
         <front>
           <title>
-            802.11ax D4.0: Enhancements for High Efficiency WLAN
+            802.11ax: Enhancements for High Efficiency WLAN
           </title>
           <author></author>
           <date/>
@@ -3021,7 +3025,7 @@ y
       <reference anchor="IEEE802.1CB" target="https://ieeexplore.ieee.org/document/8091139" quoteTitle="true" derivedAnchor="IEEE802.1CB">
         <front>
           <title>IEEE Standard for Local and metropolitan area networks -- Frame Replication and Elimination for Reliability</title>
-          <seriesInfo name="DOI" value="10.1109/IEEESTD.2017.8091139"/>
+          <seriesInfo name="DOI" value="10.1109/IEEEStd2017.8091139"/>
           <seriesInfo name="IEEE" value="802.1CB-2017"/>
           <author>
             <organization showOnFrontPage="true">IEEE</organization>
@@ -3256,7 +3260,7 @@ y
       </reference>
 
 
-      <reference anchor="CAL1287" target='https://mentor.ieee.org/802.11/dcn/19/11-19-1287'> <!--CAL1287-->
+      <reference anchor="Cavalcanti1287" target='https://mentor.ieee.org/802.11/dcn/19/11-19-1287'> <!--Cavalcanti1287-->
       <front>
       <title>TSN support in 802.11 and potential extensions for TGbe
 
@@ -3270,7 +3274,7 @@ y
       </reference>
 
 
-      <reference anchor="SUR2021" target='https://ieeexplore.ieee.org/abstract/document/9483447'> <!--SURUTH -->
+      <reference anchor="Sudhakaran2021" target='https://ieeexplore.ieee.org/abstract/document/9483447'> <!--SURUTH -->
       <front>
       <title>
          Wireless Time Sensitive Networking for Industrial Collaborative Robotic Workcells
