@@ -16,7 +16,7 @@ Expires: 31 January 2022                                           Intel
 
 
               Reliable and Available Wireless Technologies
-                     draft-ietf-raw-technologies-04
+                     draft-ietf-raw-technologies-05
 
 Abstract
 
@@ -3500,7 +3500,7 @@ Internet-Draft              RAW Technologies                   July 2021
    [IEEE802.1CB]
               IEEE, "IEEE Standard for Local and metropolitan area
               networks -- Frame Replication and Elimination for
-              Reliability", DOI 10.1109/IEEEStd2017.8091139, IEEE 
+              Reliability", DOI 10.1109/IEEEStd2017.8091139, IEEE
               802.1CB-2017,
               <https://ieeexplore.ieee.org/document/8091139>.
 
