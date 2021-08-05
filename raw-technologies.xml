@@ -403,8 +403,7 @@
  algorithms provide a way to achieve traffic isolation per station which
  while per se does not support time-aware scheduling, is a key aspect to
  assist reliability, as it provides traffic isolation in a shared medium.
- Rf. to IEEE802.11be for further and more flexible approaches concerning RU
- allocation.
+ IEEE 802.11be (see <xref target="EHT"/>) is currently considering further and more flexible approaches concerning RU allocation.
 
 </t>
                   		</section><!-- Traffic Isolation via OFDMA Resource Management and Resource Unit -->

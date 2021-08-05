@@ -573,8 +573,9 @@ Internet-Draft              RAW Technologies                 August 2021
    current RU allocation algorithms provide a way to achieve traffic
    isolation per station which while per se does not support time-aware
    scheduling, is a key aspect to assist reliability, as it provides
-   traffic isolation in a shared medium.  Rf. to IEEE802.11be for
-   further and more flexible approaches concerning RU allocation.
+   traffic isolation in a shared medium.  IEEE 802.11be (see
+   Section 5.3) is currently considering further and more flexible
+   approaches concerning RU allocation.
 
 5.2.1.3.  Improved PHY Robustness
 
@@ -609,7 +610,6 @@ Internet-Draft              RAW Technologies                 August 2021
    devices can directly implement TSN capabilities without the need for
    a gateway/translation protocol.  Basic features required for
    operation in a 802.1Q LAN are already enabled for 802.11.  Some TSN
-   capabilities, such as 802.1Qbv, can already operate over the existing
 
 
 
@@ -618,6 +618,7 @@ Thubert, et al.          Expires 6 February 2022               [Page 11]
 Internet-Draft              RAW Technologies                 August 2021
 
 
+   capabilities, such as 802.1Qbv, can already operate over the existing
    802.11 MAC SAP [Sudhakaran2021].  Nevertheless, the IEEE 802.11 MAC/
    PHY requires further extensions to improve the operation of IEEE
    802.1 TSN features and achieve better performance metrics
@@ -658,7 +659,6 @@ Internet-Draft              RAW Technologies                 August 2021
    many time-sensitive applications, additional capabilities to manage
    interference and legacy devices within tight time-constraints need to
    be explored.
-
 
 
 
