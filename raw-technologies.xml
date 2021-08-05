@@ -13,7 +13,7 @@
 <?rfc subcompact="no"?>
 <?rfc authorship="yes"?>
 <?rfc tocappendix="yes"?>
-<rfc  xmlns:xi="http://www.w3.org/2001/XInclude" category="info" ipr='trust200902' tocInclude="true"  obsoletes="" updates="" submissionType="IETF" xml:lang="en" version="3" docName="draft-ietf-raw-technologies-04" >
+<rfc  xmlns:xi="http://www.w3.org/2001/XInclude" category="info" ipr='trust200902' tocInclude="true"  obsoletes="" updates="" submissionType="IETF" xml:lang="en" version="3" docName="draft-ietf-raw-technologies-05" >
 
 <front>
    <title abbrev='RAW Technologies'>Reliable and Available Wireless Technologies</title>
@@ -100,24 +100,36 @@
    <t>
    When used in math or philosophy, the term "deterministic" generally refers to
    a perfection where all aspect are understood and predictable. A perfectly
-   Deterministic Network would ensure that every packet reach its destination
+   deterministic network would ensure that every packet reach its destination
    following a predetermined path along a predefined schedule to be delivered at
-   the exact due time. In a real and imperfect world, a Deterministic Network
+   the exact due time. In a real and imperfect world, a deterministic network
    must highly predictable, which is a combination of reliability and
-   availability. On the one hand the network must be reliable, meaning that it
-   will perform as expected for all packets and in particular that it will
-   always deliver the packet at the destination in due time. On the other hand,
-   the network must be available, meaning that it is resilient to any single
-   outage, whether the cause is a software, a hardware or a transmission issue.
+   availability.
 
    </t>
+   <ul>
+   <li>
+   On the one hand the network must be reliable, meaning that it
+   will perform as expected for all but very few packets and in particular
+   that it will deliver the packets at the destination within a pre-defined
+   time interval.
+.  </li><li>
+   On the other hand, the network must be available, meaning that it has to be
+   resilient to any single outage, independently of the cause of the failure,
+   be it software, hardware, or a external, e.g., a physical event impacting
+   the transmission channel.
+   </li>
+   </ul>
    <t>
 
    RAW (Reliable and Available Wireless) is an effort to provide Deterministic
-   Networking on across a path that include a wireless physical layer.
+   Networking <xref target="RFC8557"/> in networking environments where
+   at least some segments of a path are wireless.
+
    Making Wireless Reliable and Available is even more challenging than it is
    with wires, due to the numerous causes of loss in transmission that add up
    to the congestion losses and the delays caused by overbooked shared resources.
+
    In order to maintain a similar quality of service along a multihop path that
    is composed of wired and wireless hops, additional methods that are specific
    to wireless must be leveraged to combat the sources of loss that are also
@@ -137,12 +149,14 @@
    </section><!-- title="Introduction"-->
 
    <section><name>Terminology</name>
+   <t>
+    The terms Reliable and Available in the context of RAW require some discussion; that discussion takes place are in the RAW architecture <xref target='I-D.ietf-raw-architecture'/>. Summarized definitions are provided below.
+   </t>
    <t>This specification uses several terms that are uncommon on protocols
-   that ensure bets effort transmissions for stochastics flows, such as found in
-   the traditional Internet and other statistically multiplexed packet networks.
+   that ensure best effort transmissions for stochastics flows, such as found in the traditional Internet and other statistically multiplexed packet networks.</t>
 
-       </t><dl  spacing='normal'>
-       <dt>ARQ:</dt><dd> Automatic Repeat Request, enabling an acknowledged
+    <dl  spacing='normal'>
+    <dt>ARQ:</dt><dd> Automatic Repeat Request, enabling an acknowledged
        transmission and retries. ARQ is a typical model at Layer-2 on a wireless
        medium. It is typically avoided end-to-end on deterministic flows because
        it introduces excessive indetermination in latency, but a limited number
@@ -156,8 +170,30 @@
        <dt>Available:</dt><dd> That is exempt of unscheduled outage, the
        expectation for a network being that the flow is maintained in the face
        of any single breakage. </dd>
-       <dt>Deterministic Networking</dt> <dd>We refer to section 2 of
-       <xref target="RFC8557"/> for this term.</dd>
+       <dt>Deterministic Networking</dt> <dd>See section 2 of
+       <xref target="RFC8557"/>.</dd>
+       <dt>Deterministic Network</dt> <dd>See section 4.1.2 of
+       <xref target="RFC8655"/>.</dd>
+       <dt>Deterministic Flow Identifier (L2) :</dt> <dd> A tuple identified
+       by a stream_handle, and provided by a bridge, in accordance with IEEE
+       802.1CB. The tuple comprises at least src MAC, dst MAC, VLAN ID, and L2
+       priority. Continuous streams are characterized by bandwidth and max
+       packet size; scheduled streams are characterized by a repeating pattern
+       of timed transmissions.</dd>
+       <dt>Deterministic Flow Identifier (L3):</dt> <dd> See section 3.3 of
+       <xref target="RFC8938"/>. The classical IP 5-tuple that identifies a
+       flow comprises the src IP, dst IP, src port, dest port, and the upper layer protocol (ULP).
+       DetNet uses a 6-tuple where the extra field is the DSCP field in the
+       packet. The IPv6 flow label is not used. for that purpose. </dd>
+
+
+      <dt>Uplink: </dt> <dd>Connection from end-devices to a data communication equipment. In the context of wireless, uplink refers to the connection between a station (STA) and a controller (AP) or a User Equipment (UE) to a Base Station (BS).</dd>
+
+      <dt>Downlink: </dt> <dd>The reverse direction.</dd>
+
+      <dt>Traffic type profile (IEEE): </dt> <dd>Corresponds to the traffic classification identifier provided to a deterministic flow. Traffic classes receive an identifier numbered from 0 to 8 (N-1), where N is the number of outbound queues associated with a given Bridge port. Each traffic class as a one-to-one correspondence with a specific egress/outbound queue for a port.</dd>
+
+
        <dt>FEC:</dt><dd> Forward error correction, sending redundant coded
        data to help the receiver recover transmission errors without the delays
        incurred with ARQ. </dd>
@@ -186,60 +222,85 @@
 
    </section><!-- Terminology -->
 
-   <section><name>On Scheduling</name>
+
+
+   <section anchor='detpak'><name>Towards Reliable and Available Networks</name>
+
+
+   <section anchor='schre'><name>Scheduling for Reliability</name>
+
+
    <t>
-
-   The operations of a Deterministic Network often rely on precisely
-   applying a tight schedule, in order to avoid collision loss and guarantee
-   the worst-case time of delivery. To achieve this, there must be a shared
-   sense of time throughout the network. The sense of time is
-   usually provided by the lower layer and is not in scope for RAW.
-   </t>
-
-
-   <section anchor='wbenef'><name>Benefits of Scheduling on Wires</name>
-   <t>
-
-   A network is reliable when the statistical effects that affect the packet
-   transmission are eliminated. This involves maintaining at all time the amount
-   of critical packets within the physical capabilities of the hardware and that
-   of the radio medium. This is achieved by controlling the use of time-shared
-   resources such as CPUs and buffers, by shaping the flows and by scheduling
-   the time of transmission of the packets that compose the flow at every hop.
-
+   A packet network is reliable for critical (e.g., time-sensitive) packets
+   when the undesirable statistical effects that affect the transmission of
+   those packets, e.g., delay or loss, are eliminated.
    </t>
    <t>
-
-   Equipment failure, such as an access point rebooting, a broken radio adapter,
-   or a permanent obstacle to the transmission, is a secondary source of packet
-   loss. When a breakage occurs, multiple packets are lost in a row before the
-   flows are rerouted or the system may recover. This is not acceptable for
-   critical applications such as related to safety. A typical process control
-   loop will tolerate an occasional packet loss, but a loss of several packets
-   in a row will cause an emergency stop (e.g., after 4 packets lost, within a
-   period of 1 second).
-
+   The reliability of a Deterministic Network <xref target='RFC8655'/>
+   often relies on precisely applying a tight schedule that controls the use
+   of time-shared resources such as CPUs and buffers, and maintains at all
+   time the amount of the critical packets within the physical capabilities of
+   the hardware and that of the transmission medium.
+   The schedule can also be used to shape the flows by controlling the time of transmission of the packets that compose the flow at every hop.
    </t>
    <t>
-
+   To achieve this, there must be a shared sense of time throughout the network.
+   The sense of time is usually provided by the lower layer and is not in
+   scope for RAW. As an example, the Precision Time Protocol, standardized as
+   IEEE 1588 and IEC 61588, has mapping to Ethernet but also to a number of
+   industrial and Smartrid protocols through profiles. Wi-Fi relies on
+   IEEE Std 802.1AS, which incorporates a PTP profile, for Fine Timing
+   Measurement.
+   </t>
+   </section><!-- Towards Reliable and Available Networks -->
+   <section anchor='divav'><name>Diversity for Availability</name>
+   <t>
+   Equipment failure, such as a switch or an access point rebooting, a broken
+   wire or radio adapter, or a fixed obstacle to the transmission, can
+   be the cause of multiple packets lost in a row before the
+   flows are rerouted or the system may recover.
+   </t>
+   <t>
+   This is not acceptable for critical applications such as related to safety.
+   A typical process control loop will tolerate an occasional packet loss, but
+   a loss of several packets in a row will cause an emergency stop (e.g.,
+   after 4 packets lost, within a period of 1 second). In an amusement park,
+   a continuous loss of packet for a few 100ms may trigger an automatic
+   interruption of the ride and cause the evacuation and the reboot of the game.
+   </t>
+   <t>
    Network Availability is obtained by making the transmission resilient against
    hardware failures and radio transmission losses due to uncontrolled events
    such as co-channel interferers, multipath fading or moving obstacles. The
-   best results are typically achieved by pseudo randomly cumulating all forms
+   best results are typically achieved by pseudo-randomly cumulating all forms
    of diversity, in the spatial domain with replication and elimination, in the
    time domain with ARQ and diverse scheduled transmissions, and in the
    frequency domain with frequency hopping or channel hopping between frames.
 
    </t>
-   </section><!-- Benefits of Scheduling on Wires -->
+   </section><!-- Diversity for Availability -->
+   </section><!-- Towards Reliable and Available Networks -->
 
-   <section anchor='wessbenef'><name>Benefits of Scheduling on Wireless</name>
+
+
+   <section anchor='wessbenef'><name>Benefits of Scheduling</name>
 
    <t>
-   In addition to the benefits listed in <xref target='wbenef'/>, scheduling
-   transmissions provides specific value to the wireless medium.
+   Scheduling redundant transmissions of the critical packets of diverse paths
+   improves the resiliency against breakages and statistical transmission
+   loss, such as due to cosmic particles on wires, and interferences on
+   wireless.
    </t>
    <t>
+   When required, the worst case time of delivery can be guaranteed as part of
+   the end-to-end schedule, and the sense of time that must be shared
+   throughout the network can be exposed to and leveraged by other applications.
+   </t>
+   <t>
+   In addition, scheduling provides specific value over the wireless medium:
+   </t>
+   <ul>
+   <li>
    On the one hand, scheduling avoids collisions between scheduled transmissions
    and can ensure both time and frequency diversity between retries in order
    to defeat co-channel interference from un-controlled transmitters as well as
@@ -247,28 +308,31 @@
    parallel, which enables to use the full available spectrum while avoiding the
    hidden terminal problem, e.g., when the next packet in a same flow interferes
    on a same channel with the previous one that progressed a few hops farther.
-   </t>
-   <t>
+   </li>
+   <li>
    On the other hand, scheduling optimizes the bandwidth usage: compared to
    classical Collision Avoidance techniques, there is no blank time related to
    inter-frame space (IFS) and exponential back-off in scheduled operations.
    A minimal Clear Channel Assessment may be needed to comply with the local
    regulations such as ETSI 300-328, but that will not detect a collision when
    the senders are synchronized.
-   And because scheduling allows a time-sharing operation, there is no limit to
-   the ratio of isolated critical traffic.
-   </t>
-   <t>
-   Finally, scheduling plays a critical role to save energy. In IOT, energy is
-   the foremost concern, and synchronizing sender and listener enables to
+   </li>
+   <li>
+   Because scheduling allows a time-sharing operation, where every
+   transmission is assigned its own time/frequency resource, the ratio of
+   critical traffic can be very high compared to traditional QoS-based priority.
+   </li>
+   <li>
+   Finally, scheduling plays a critical role to save energy. In IoT, energy is
+   the foremost concern, and synchronizing sender a nd listener enables to
    always maintain them in deep sleep when there is no scheduled
    transmission. This avoids idle listening and long preambles and enables long
    sleep periods between traffic and resynchronization, allowing
    battery-operated nodes to operate in a mesh topology for multiple years.
-   </t>
+   </li>
+   </ul>
    </section><!-- Benefits of Scheduling on Wireless -->
 
-   </section><!-- Scheduling -->
 
    <section><name>IEEE 802.11</name>
         <section><name>Provenance and Documents</name>
@@ -281,7 +345,7 @@
    The IEEE 802 LAN/MAN Standards Committee (SC) develops and maintains networking standards and recommended practices for local, metropolitan, and other area networks, using an open and accredited process, and advocates them on a global basis. The most widely used standards are for Ethernet, Bridging and Virtual Bridged LANs Wireless LAN, Wireless PAN, Wireless MAN, Wireless Coexistence, Media Independent Handover Services, and Wireless RAN. An individual Working Group provides the focus for each area. Standards produced by the IEEE 802 SC are freely available from the IEEE GET Program after they have been published in PDF for six months.
    </t>
         <t>
-        	The IEEE 802.11 Wireless LAN (WLAN) standards define the underlying MAC and PHY layers for the Wi-Fi technology. Wi-Fi/802.11 is one of the most successful wireless technologies, supporting many application domains. While previous 802.11 generations, such as 802.11n and 802.11ac, have focused mainly on improving peak throughput, more recent generations are also considering other performance vectors, such as efficiency enhancements for dense  environments in 802.11ax, latency, reliability and enhancements supporting Time-Sensitive Networking (TSN) <xref target="IEEE802.1TSN"/> capabilities in P802.11be.
+        	The IEEE 802.11 Wireless LAN (WLAN) standards define the underlying MAC and PHY layers for the Wi-Fi technology. Wi-Fi/802.11 is one of the most successful wireless technologies, supporting many application domains. While previous 802.11 generations, such as 802.11n and 802.11ac, have focused mainly on improving peak throughput, more recent generations are also considering other performance vectors, such as efficiency enhancements for dense environments in 802.11ax, latency, reliability and enhancements supporting Time-Sensitive Networking (TSN) <xref target="IEEE802.1TSN"/> capabilities in P802.11be.
         	</t>
         	<t>
         	IEEE Std 802.11-2012 introduced support for TSN time synchronization based on IEEE 802.1AS over 802.11 Timing Measurement protocol. IEEE Std 802.11-2016 extended the 802.1AS operation over 802.11 Fine Timing Measurement (FTM), as well as the Stream Reservation Protocol (IEEE 802.1Qat). 802.11 WLANs can also be part of a 802.1Q bridged networks with enhancements enabled by the 802.11ak amendment now retroffitted in IEEE Std 802.11-2020. Traffic classification based on 802.1Q VLAN tags is also supported in 802.11. Other 802.1 TSN capabilities such as 802.1Qbv and 802.1CB, which are media agnostic, can already operate over 802.11. The IEEE Std 802.11ax-2021 adds new scheduling capabilities that can enhance the timeliness performance in the 802.11 MAC and achieve lower bounded latency. The IEEE 802.11be is undergoing efforts to enhance the support for 802.1 TSN capabilities especially related to worst-case latency, reliability and availability.
@@ -316,16 +380,34 @@
      		The main 802.11ax and 802.11be capabilities and their relevance to RAW are discussed in the remainder of this document.
             </t>
         </section> <!-- Provenance and Documents-->
-        <section><name>802.11ax High Efficiency (HE)</name>
+        <section anchor="HE"><name>802.11ax High Efficiency (HE)</name>
         	<section><name>General Characteristics</name>
         		<t>
-        			The next generation Wi-Fi (Wi-Fi 6) is based on the IEEE802.11ax amendment <xref target='IEEE80211ax'/>, which includes new capabilities to increase efficiency, control and reduce latency. Some of the new features include higher order 1024-QAM modulation, support for uplink multi-user MIMO, OFDMA, trigger-based access and Target Wake time (TWT) for enhanced power savings. The OFDMA mode and trigger-based access enable the AP, after reserving the channel using the clear channel assessment procedure for a given duration, to schedule multi-user transmissions, which is a key capability required to increase latency predictability and reliability for time-sensitive flows. 802.11ax can operate in up to 160 MHz channels and it includes support for operation in the new 6 GHz band, which is expected to be open to unlicensed use by the FCC and other regulatory agencies worldwide.
+        			The next generation Wi-Fi (Wi-Fi 6) is based on the IEEE802.11ax amendment <xref target='IEEE80211ax'/>, which includes new capabilities to increase efficiency, control and reduce latency. Some of the new features include higher order 1024-QAM modulation, support for uplink  multiple user (MU) multiple input multiple output (MIMO), orthogonal frequency-division multiple access (OFDMA), trigger-based access and Target Wake time (TWT) for enhanced power savings. The OFDMA mode and trigger-based access enable the AP, after reserving the channel using the clear channel assessment procedure for a given duration, to schedule multi-user transmissions, which is a key capability required to increase latency predictability and reliability for time-sensitive flows. 802.11ax can operate in up to 160 MHz channels and it includes support for operation in the new 6 GHz band, which is expected to be open to unlicensed use by the FCC and other regulatory agencies worldwide.
         			</t>
         		<section><name>Multi-User OFDMA and Trigger-based Scheduled Access</name>
         			<t>
-        				802.11ax introduced a new orthogonal frequency-division multiple access (OFDMA) mode in which multiple users can be scheduled across the frequency domain. In this mode, the Access Point (AP) can initiate multi-user (MU) Uplink (UL) transmissions in the same PHY Protocol Data Unit (PPDU) by sending a trigger frame. This centralized scheduling capability gives the AP much more control of the channel in its Basic Service Set (BSS) and it can remove contention between associated stations for uplink transmissions, therefore reducing the randomness caused by CSMA-based access between stations within the same BSS. The AP can also transmit simultaneously to multiple users in the downlink direction by using a Downlink (DL) MU OFDMA PPDU. In order to initiate a contention free Transmission Opportunity (TXOP) using the OFDMA mode, the AP still follows the typical listen before talk procedure to acquire the medium, which ensures interoperability and compliance with unlicensed band access rules. However, 802.11ax also includes a multi-user Enhanced Distributed Channel Access (MU-EDCA) capability, which allows the AP to get higher channel access priority than other devices in its BSS.
+        				802.11ax introduced a new OFDMA mode in which multiple users can be scheduled across the frequency domain. In this mode, the Access Point (AP) can initiate multi-user (MU) Uplink (UL) transmissions in the same PHY Protocol Data Unit (PPDU) by sending a trigger frame. This centralized scheduling capability gives the AP much more control of the channel in its Basic Service Set (BSS) and it can remove contention between associated stations for uplink transmissions, therefore reducing the randomness caused by CSMA-based access between stations within the same BSS. The AP can also transmit simultaneously to multiple users in the downlink direction by using a Downlink (DL) MU OFDMA PPDU. In order to initiate a contention free Transmission Opportunity (TXOP) using the OFDMA mode, the AP still follows the typical listen before talk procedure to acquire the medium, which ensures interoperability and compliance with unlicensed band access rules. However, 802.11ax also includes a multi-user Enhanced Distributed Channel Access (MU-EDCA) capability, which allows the AP to get higher channel access priority than other devices in its BSS.
         			</t>
         		</section> <!--Multi-User OFDMA and Trigger-based Scheduled Access -->
+
+
+                  		<section><name>Traffic Isolation via OFDMA Resource Management and Resource Unit Allocation</name>
+<t>
+
+ 802.11ax relies on the notion of OFDMA Resource Unit (RU) to allocate
+ frequency chunks to different STAs over time. RUs provide a way to allow
+ for multiple stations to transmit simultaneously, starting and ending at
+ the same time. The way this is achieved is via padding, where extra bits
+ are transmitted with the same power level. The current RU allocation
+ algorithms provide a way to achieve traffic isolation per station which
+ while per se does not support time-aware scheduling, is a key aspect to
+ assist reliability, as it provides traffic isolation in a shared medium.
+ Rf. to IEEE802.11be for further and more flexible approaches concerning RU
+ allocation.
+
+</t>
+                  		</section><!-- Traffic Isolation via OFDMA Resource Management and Resource Unit -->
         		<section><name>Improved PHY Robustness</name>
         			<t>
         				The 802.11ax PHY can operate with 0.8, 1.6 or 3.2 microsecond guard interval (GI). The larger GI options provide better protection against multipath, which is expected to be a challenge in industrial environments. The possibility to operate with smaller resource units (e.g. 2 MHz) enabled by OFDMA also helps reduce noise power and improve SNR, leading to better packet error rate (PER) performance.
@@ -368,7 +450,7 @@
         	</section> <!-- 802.11 Managed network operation and admission control -->
         	<section><name>Scheduling for bounded latency and diversity</name>
         	<t>
-        		As discussed earlier, the <xref target='IEEE80211ax'/> OFDMA mode introduces the possibility of assigning different RUs (frequency resources) to users within a PPDU. Several Resource Unit (RU) sizes are defined in the specification (26, 52, 106, 242, 484, 996 subcarriers). In addition, the AP can also decide on MCS and grouping of users within a given OFMDA PPDU. Such flexibility can be leveraged to support time-sensitive applications with bounded latency, especially in a managed network where stations can be configured to operate under the control of the AP, in a controlled environment (which contains only devices operating on the unlicensed band installed by the facility owner and where unexpected interference from other systems and/or radio access technologies only sporadically happens), or in a deployment where channel/link redundancy is used to reduce the impact of unmanaged devices/interference.
+        		As discussed earlier, the <xref target='IEEE80211ax'/> OFDMA mode introduces the possibility of assigning different RUs (time/frequency resources) to users within a PPDU. Several RU sizes are defined in the specification (26, 52, 106, 242, 484, 996 subcarriers). In addition, the AP can also decide on MCS and grouping of users within a given OFMDA PPDU. Such flexibility can be leveraged to support time-sensitive applications with bounded latency, especially in a managed network where stations can be configured to operate under the control of the AP, in a controlled environment (which contains only devices operating on the unlicensed band installed by the facility owner and where unexpected interference from other systems and/or radio access technologies only sporadically happens), or in a deployment where channel/link redundancy is used to reduce the impact of unmanaged devices/interference.
         	</t>
         	<t>
         		When the network in lightly loaded, it is possible to achieve latencies under 1 msec when Wi-Fi is operated in contention-based (i.e., without OFDMA) mode. It is also has been shown that it is possible to achieve 1 msec latencies in controlled environment with higher efficiency when multi-user transmissions are used (enabled by OFDMA operation)  <xref target='Cavalcanti_2019'/>. Obviously, there are latency, reliability and capacity tradeoffs to be considered. For instance, smaller RUs result in longer transmission durations, which may impact the minimal latency that can be achieved, but the contention latency and randomness elimination in an interference-free environment due to multi-user transmission is a major benefit of the OFDMA mode.
@@ -380,7 +462,7 @@
         </section> <!-- Applicability to deterministic flows -->
         </section><!-- 802.11ax High Efficiency (HE)   -->
 
-        <section><name>802.11be Extreme High Throughput (EHT)</name>
+        <section anchor="EHT"><name>802.11be Extreme High Throughput (EHT)</name>
 
         	<section><name>General Characteristics</name>
         		<t>
@@ -418,8 +500,23 @@
         				Multi-AP coordination is one of the main new candidate features in 802.11be. It can provide benefits in throughput and capacity and has the potential to address some of the issues that impact worst case latency and reliability.
         				Multi-AP coordination is expected to address the contention due to overlapping Basic Service Sets (OBSS), which is one of the main sources of random latency variations. 802.11be can define methods to enable better coordination between APs, for instance, in a managed network scenario, in order to reduce latency due to unmanaged contention.
 	       			</t>
+
+<t> Overall, multi-AP coordination algorithms consider three different phases:
+ setup (where APs handling overlapping BSSs are assigned roles in a manual
+ or automated way, e.g., coordinator and coordinated APs); coordination
+ (where APs establish links among themselves, e.g., from a coordinating AP
+ to coordinated APs; and then assign resources to served stations);
+ transmission (where the coordinating APs optimize the distribution of the
+ transmission opportunities).
+	       			</t>
+
+
 	       			<t>
-	       				Several multi-AP coordination approaches have been discussed with different levels of complexities and benefits, but specific coordination methods have not yet been defined.
+	       				Several multi-AP coordination approaches have been discussed with different levels of complexities and benefits, but specific coordination methods have not yet been defined. Out of the different
+ categories, MAC-driven examples include: coordinated OFDMA (Co-OFDMA);
+ Coordinated TDMA (Co-TDMA); HARQ; whereas PHY-driven examples include:
+ Coordinated Spatial Reuse (Co-SR) and Coordinated Beamforming (Co-BF).
+
 	       			</t>
         		</section> <!-- Multi-AP coordination -->
         		<section><name>Multi-band operation</name>
@@ -2561,6 +2658,7 @@ y
    				<dt>Thomas Gräupl:</dt><dd> Contributed to the LDACS section. </dd>
 				<dt>Janos Farkas, Torsten Dudda, Alexey Shapin, and Sara Sandberg:</dt><dd> Contributed to the 5G section. </dd>
                 <dt>Rocco Di Taranto:</dt><dd> Contributed to the Wi-Fi section</dd>
+                <dt>Rute Sofia:</dt><dd> Contributed to the Introduction and Terminology sections</dd>
    			</dl><t>
 
    		</t>
@@ -2591,6 +2689,7 @@ y
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.5673.xml'/> <!-- Industrial Routing Requirements in Low-Power and Lossy Networks -->
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8557.xml'/> <!-- DetNet PS -->
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8655.xml'/> <!-- detnet-architecture -->
+      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8938.xml'/> <!-- detnet-dataplane -->
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9030.xml'/> <!-- 6Tisch Archi -->
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9033.xml'/> <!-- 6Tisch MSF -->
 
