@@ -72,22 +72,22 @@ Table of Contents
      3.1.  Scheduling for Reliability  . . . . . . . . . . . . . . .   6
      3.2.  Diversity for Availability  . . . . . . . . . . . . . . .   6
      3.3.  Benefits of Scheduling  . . . . . . . . . . . . . . . . .   7
-   4.  IEEE 802.11 . . . . . . . . . . . . . . . . . . . . . . . . .   7
+   4.  IEEE 802.11 . . . . . . . . . . . . . . . . . . . . . . . . .   8
      4.1.  Provenance and Documents  . . . . . . . . . . . . . . . .   8
      4.2.  802.11ax High Efficiency (HE) . . . . . . . . . . . . . .  10
        4.2.1.  General Characteristics . . . . . . . . . . . . . . .  10
-       4.2.2.  Applicability to deterministic flows  . . . . . . . .  11
+       4.2.2.  Applicability to deterministic flows  . . . . . . . .  12
      4.3.  802.11be Extreme High Throughput (EHT)  . . . . . . . . .  13
-       4.3.1.  General Characteristics . . . . . . . . . . . . . . .  13
+       4.3.1.  General Characteristics . . . . . . . . . . . . . . .  14
        4.3.2.  Applicability to deterministic flows  . . . . . . . .  14
-     4.4.  802.11ad and 802.11ay (mmWave operation)  . . . . . . . .  15
+     4.4.  802.11ad and 802.11ay (mmWave operation)  . . . . . . . .  16
        4.4.1.  General Characteristics . . . . . . . . . . . . . . .  16
        4.4.2.  Applicability to deterministic flows  . . . . . . . .  16
-   5.  IEEE 802.15.4 . . . . . . . . . . . . . . . . . . . . . . . .  16
-     5.1.  Provenance and Documents  . . . . . . . . . . . . . . . .  16
+   5.  IEEE 802.15.4 . . . . . . . . . . . . . . . . . . . . . . . .  17
+     5.1.  Provenance and Documents  . . . . . . . . . . . . . . . .  17
      5.2.  TimeSlotted Channel Hopping . . . . . . . . . . . . . . .  18
-       5.2.1.  General Characteristics . . . . . . . . . . . . . . .  18
-       5.2.2.  Applicability to Deterministic Flows  . . . . . . . .  20
+       5.2.1.  General Characteristics . . . . . . . . . . . . . . .  19
+       5.2.2.  Applicability to Deterministic Flows  . . . . . . . .  21
    6.  5G  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  34
      6.1.  Provenance and Documents  . . . . . . . . . . . . . . . .  34
      6.2.  General Characteristics . . . . . . . . . . . . . . . . .  36
@@ -353,15 +353,25 @@ Internet-Draft              RAW Technologies                 August 2021
    In addition, scheduling provides specific value over the wireless
    medium:
 
-   *  On the one hand, scheduling avoids collisions between scheduled
-      transmissions and can ensure both time and frequency diversity
-      between retries in order to defeat co-channel interference from
-      un-controlled transmitters as well as multipath fading.
-      Transmissions can be scheduled on multiple channels in parallel,
-      which enables to use the full available spectrum while avoiding
-      the hidden terminal problem, e.g., when the next packet in a same
-      flow interferes on a same channel with the previous one that
-      progressed a few hops farther.
+   *  Scheduling allows a time-sharing operation, where every
+      transmission is assigned its own time/frequency resource.  IOW,
+      sender and receiver are synchronized and scheduled to talk on a
+      given frequency resource at a given time and for a given duration.
+      This way, scheduling can avoid collisions between scheduled
+      transmissions and enable a high ratio of critical traffic compared
+      to QoS-based priority.
+
+   *  Scheduling can be used as a technoque for both time and frequency
+      diversity (e.g., between retries), allowing the next transmission
+      to happen on a different frequency as programmed in both sender
+      and receiver.  This is useful to defeat co-channel interference
+      from un-controlled transmitters as well as multipath fading.
+
+   *  Transmissions can be also scheduled on multiple channels in
+      parallel, which enables to use the full available spectrum while
+      avoiding the hidden terminal problem, e.g., when the next packet
+      in a same flow interferes on a same channel with the previous one
+      that progressed a few hops farther.
 
    *  On the other hand, scheduling optimizes the bandwidth usage:
       compared to classical Collision Avoidance techniques, there is no
@@ -371,10 +381,18 @@ Internet-Draft              RAW Technologies                 August 2021
       as ETSI 300-328, but that will not detect a collision when the
       senders are synchronized.
 
-   *  Because scheduling allows a time-sharing operation, where every
-      transmission is assigned its own time/frequency resource, the
-      ratio of critical traffic can be very high compared to traditional
-      QoS-based priority.
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 6 February 2022                [Page 7]
+
+Internet-Draft              RAW Technologies                 August 2021
+
 
    *  Finally, scheduling plays a critical role to save energy.  In IoT,
       energy is the foremost concern, and synchronizing sender a nd
@@ -385,14 +403,6 @@ Internet-Draft              RAW Technologies                 August 2021
       mesh topology for multiple years.
 
 4.  IEEE 802.11
-
-
-
-
-Thubert, et al.          Expires 6 February 2022                [Page 7]
-
-Internet-Draft              RAW Technologies                 August 2021
-
 
 4.1.  Provenance and Documents
 
@@ -432,6 +442,14 @@ Internet-Draft              RAW Technologies                 August 2021
    networks with enhancements enabled by the 802.11ak amendment now
    retroffitted in IEEE Std 802.11-2020.  Traffic classification based
    on 802.1Q VLAN tags is also supported in 802.11.  Other 802.1 TSN
+
+
+
+Thubert, et al.          Expires 6 February 2022                [Page 8]
+
+Internet-Draft              RAW Technologies                 August 2021
+
+
    capabilities such as 802.1Qbv and 802.1CB, which are media agnostic,
    can already operate over 802.11.  The IEEE Std 802.11ax-2021 adds new
    scheduling capabilities that can enhance the timeliness performance
@@ -442,14 +460,6 @@ Internet-Draft              RAW Technologies                 August 2021
    collaboration with the IEEE 802.1 working group for several years
    extending some 802.1 features over 802.11.  As with any wireless
    media, 802.11 imposes new constraints and restrictions to TSN-grade
-
-
-
-Thubert, et al.          Expires 6 February 2022                [Page 8]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
    QoS, and tradeoffs between latency and reliability guarantees must be
    considered as well as managed deployment requirements.  An overview
    of 802.1 TSN capabilities and challenges for their extensions to
@@ -487,6 +497,15 @@ Internet-Draft              RAW Technologies                 August 2021
       [IEEE_doc_11-18-2009-06].
 
 
+
+
+
+
+Thubert, et al.          Expires 6 February 2022                [Page 9]
+
+Internet-Draft              RAW Technologies                 August 2021
+
+
    In addition, major amendments being developed by the IEEE802.11
    Working Group include capabilities that can be used as the basis for
    providing more reliable and predictable wireless connectivity and
@@ -496,15 +515,6 @@ Internet-Draft              RAW Technologies                 August 2021
       802.11ax]
 
    IEEE 802.11be Extreme High Throughput (EHT).  [IEEE 802.11be WIP]
-
-
-
-
-
-Thubert, et al.          Expires 6 February 2022                [Page 9]
-
-Internet-Draft              RAW Technologies                 August 2021
-
 
    IEE 802.11ay Enhanced throughput for operation in license-exempt
    bands above 45 GHz.  [IEEE Std 802.11ay]
@@ -544,6 +554,14 @@ Internet-Draft              RAW Technologies                 August 2021
    contention between associated stations for uplink transmissions,
    therefore reducing the randomness caused by CSMA-based access between
    stations within the same BSS.  The AP can also transmit
+
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 10]
+
+Internet-Draft              RAW Technologies                 August 2021
+
+
    simultaneously to multiple users in the downlink direction by using a
    Downlink (DL) MU OFDMA PPDU.  In order to initiate a contention free
    Transmission Opportunity (TXOP) using the OFDMA mode, the AP still
@@ -553,14 +571,6 @@ Internet-Draft              RAW Technologies                 August 2021
    Enhanced Distributed Channel Access (MU-EDCA) capability, which
    allows the AP to get higher channel access priority than other
    devices in its BSS.
-
-
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 10]
-
-Internet-Draft              RAW Technologies                 August 2021
-
 
 4.2.1.2.  Traffic Isolation via OFDMA Resource Management and Resource
           Unit Allocation
@@ -598,6 +608,16 @@ Internet-Draft              RAW Technologies                 August 2021
    802.11ax) will be able to operate in this new band, 802.11ax
    operation in this new band can be even more efficient.
 
+
+
+
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 11]
+
+Internet-Draft              RAW Technologies                 August 2021
+
+
 4.2.2.  Applicability to deterministic flows
 
    TSN capabilities, as defined by the IEEE 802.1 TSN standards, provide
@@ -610,14 +630,6 @@ Internet-Draft              RAW Technologies                 August 2021
    devices can directly implement TSN capabilities without the need for
    a gateway/translation protocol.  Basic features required for
    operation in a 802.1Q LAN are already enabled for 802.11.  Some TSN
-
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 11]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
    capabilities, such as 802.1Qbv, can already operate over the existing
    802.11 MAC SAP [Sudhakaran2021].  Nevertheless, the IEEE 802.11 MAC/
    PHY requires further extensions to improve the operation of IEEE
@@ -653,18 +665,6 @@ Internet-Draft              RAW Technologies                 August 2021
    unmanaged devices can be reduced under a centralized management mode
    as defined in [IEEE8021Qcc].
 
-   Existing traffic stream identification, configuration and admission
-   control procedures defined in [IEEE Std 802.11] QoS mechanism can be
-   re-used.  However, given the high degree of determinism required by
-   many time-sensitive applications, additional capabilities to manage
-   interference and legacy devices within tight time-constraints need to
-   be explored.
-
-
-
-
-
-
 
 
 
@@ -673,6 +673,13 @@ Thubert, et al.          Expires 6 February 2022               [Page 12]
 
 Internet-Draft              RAW Technologies                 August 2021
 
+
+   Existing traffic stream identification, configuration and admission
+   control procedures defined in [IEEE Std 802.11] QoS mechanism can be
+   re-used.  However, given the high degree of determinism required by
+   many time-sensitive applications, additional capabilities to manage
+   interference and legacy devices within tight time-constraints need to
+   be explored.
 
 4.2.2.2.  Scheduling for bounded latency and diversity
 
@@ -709,15 +716,8 @@ Internet-Draft              RAW Technologies                 August 2021
 
 4.3.  802.11be Extreme High Throughput (EHT)
 
-4.3.1.  General Characteristics
 
-   The ongoing [IEEE 802.11be WIP] project is the next major 802.11
-   amendment (after IEEE Std 802.11ax-2021) for operation in the 2.4, 5
-   and 6 GHz bands. 802.11be is expected to include new PHY and MAC
-   features and it is targeting extremely high throughput (at least 30
-   Gbps), as well as enhancements to worst case latency and jitter.  It
-   is also expected to improve the integration with 802.1 TSN to support
-   time-sensitive applications over Ethernet and Wireless LANs.
+
 
 
 
@@ -729,6 +729,16 @@ Thubert, et al.          Expires 6 February 2022               [Page 13]
 
 Internet-Draft              RAW Technologies                 August 2021
 
+
+4.3.1.  General Characteristics
+
+   The ongoing [IEEE 802.11be WIP] project is the next major 802.11
+   amendment (after IEEE Std 802.11ax-2021) for operation in the 2.4, 5
+   and 6 GHz bands. 802.11be is expected to include new PHY and MAC
+   features and it is targeting extremely high throughput (at least 30
+   Gbps), as well as enhancements to worst case latency and jitter.  It
+   is also expected to improve the integration with 802.1 TSN to support
+   time-sensitive applications over Ethernet and Wireless LANs.
 
    The 802.11be Task Group started its operation in May 2019, therefore,
    detailed information about specific features is not yet available.
@@ -766,6 +776,16 @@ Internet-Draft              RAW Technologies                 August 2021
    capabilities, such as time-aware (802.1Qbv) shaping and packet
    replication and elimination as defined in 802.1CB.
 
+
+
+
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 14]
+
+Internet-Draft              RAW Technologies                 August 2021
+
+
    802.11be is expected to build on and enhance 802.11ax capabilities to
    improve worst case latency and jitter.  Some of the enhancement areas
    are discussed next.
@@ -777,14 +797,6 @@ Internet-Draft              RAW Technologies                 August 2021
    efficient and more predictable medium access. 802.11be is expected to
    include enhancements to reduce overhead and enable more efficient
    operation in managed network deployments [IEEE_doc_11-19-0373-00].
-
-
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 14]
-
-Internet-Draft              RAW Technologies                 August 2021
-
 
 4.3.2.2.  Multi-AP coordination
 
@@ -814,18 +826,6 @@ Internet-Draft              RAW Technologies                 August 2021
    include: Coordinated Spatial Reuse (Co-SR) and Coordinated
    Beamforming (Co-BF).
 
-4.3.2.3.  Multi-band operation
-
-   802.11be will introduce new features to improve operation over
-   multiple bands and channels.  By leveraging multiple bands/channels,
-   802.11be can isolate time-sensitive traffic from network congestion,
-   one of the main causes of large latency variations.  In a managed
-   802.11be network, it should be possible to steer traffic to certain
-   bands/channels to isolate time-sensitive traffic from other traffic
-   and help achieve bounded latency.
-
-4.4.  802.11ad and 802.11ay (mmWave operation)
-
 
 
 
@@ -841,6 +841,18 @@ Thubert, et al.          Expires 6 February 2022               [Page 15]
 
 Internet-Draft              RAW Technologies                 August 2021
 
+
+4.3.2.3.  Multi-band operation
+
+   802.11be will introduce new features to improve operation over
+   multiple bands and channels.  By leveraging multiple bands/channels,
+   802.11be can isolate time-sensitive traffic from network congestion,
+   one of the main causes of large latency variations.  In a managed
+   802.11be network, it should be possible to steer traffic to certain
+   bands/channels to isolate time-sensitive traffic from other traffic
+   and help achieve bounded latency.
+
+4.4.  802.11ad and 802.11ay (mmWave operation)
 
 4.4.1.  General Characteristics
 
@@ -871,6 +883,21 @@ Internet-Draft              RAW Technologies                 August 2021
    and deployment conditions in order to properly apply and configure
    802.11ad/ay networks for time sensitive applications.
 
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 16]
+
+Internet-Draft              RAW Technologies                 August 2021
+
+
    The 802.11ad standard includes a scheduled access mode in which the
    central controller, after contending and reserving the channel for a
    dedicated period, can allocate to stations contention-free service
@@ -890,14 +917,6 @@ Internet-Draft              RAW Technologies                 August 2021
    use of unlicensed bands, both the 2.4 GHz and sub GHz Industrial,
    Scientific and Medical (ISM) bands.  This has imposed requirements in
    terms of frame size, data rate and bandwidth to achieve reduced
-
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 16]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
    collision probability, reduced packet error rate, and acceptable
    range with limited transmission power.  The PHY layer supports frames
    of up to 127 bytes.  The Medium Access Control (MAC) sublayer
@@ -928,6 +947,13 @@ Internet-Draft              RAW Technologies                 August 2021
    extends the minimal schedule configuration, and is used to add child-
    parent links according to the traffic load.
 
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 17]
+
+Internet-Draft              RAW Technologies                 August 2021
+
+
    Time sensitive networking on low power constrained wireless networks
    have been partially addressed by ISA100.11a [ISA100.11a] and
    WirelessHART [WirelessHART].  Both technologies involve a central
@@ -946,13 +972,6 @@ Internet-Draft              RAW Technologies                 August 2021
    exploiting the TSCH schedule structure however the focus at 6TiSCH is
    on best effort traffic and the group was never chartered to produce
    standard work related to Tracks.
-
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 17]
-
-Internet-Draft              RAW Technologies                 August 2021
-
 
    Useful References include:
 
@@ -980,25 +999,6 @@ Internet-Draft              RAW Technologies                 August 2021
 
 5.2.  TimeSlotted Channel Hopping
 
-5.2.1.  General Characteristics
-
-   As a core technique in IEEE802.15.4, TSCH splits time in multiple
-   time slots that repeat over time.  A set of timeslots constructs a
-   Slotframe (see Section 5.2.2.1.4).  For each timeslot, a set of
-   available frequencies can be used, resulting in a matrix-like
-   schedule (see Figure 1).
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1009,6 +1009,14 @@ Thubert, et al.          Expires 6 February 2022               [Page 18]
 
 Internet-Draft              RAW Technologies                 August 2021
 
+
+5.2.1.  General Characteristics
+
+   As a core technique in IEEE802.15.4, TSCH splits time in multiple
+   time slots that repeat over time.  A set of timeslots constructs a
+   Slotframe (see Section 5.2.2.1.4).  For each timeslot, a set of
+   available frequencies can be used, resulting in a matrix-like
+   schedule (see Figure 1).
 
                           timeslot offset
         | 0    1    2    3    4  | 0    1    2    3    4  |    Nodes
@@ -1033,6 +1041,30 @@ Internet-Draft              RAW Technologies                 August 2021
 
      Figure 1: Slotframe example with scheduled cells between nodes A,
                                   B and C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 19]
+
+Internet-Draft              RAW Technologies                 August 2021
+
 
    This schedule represents the possible communications of a node with
    its neighbors, and is managed by a Scheduling Function such as the
@@ -1059,13 +1091,6 @@ Internet-Draft              RAW Technologies                 August 2021
    combined to OFDM modulations also supported by the IEEE802.15.4
    standard [IEEE Std 802.15.4] since the 2015 version.
 
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 19]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
    TSCH networks operate in ISM bands in which the spectrum is shared by
    different coexisting technologies.  Regulations such as FCC, ETSI and
    ARIB impose duty cycle regulations to limit the use of the bands but
@@ -1087,6 +1112,15 @@ Internet-Draft              RAW Technologies                 August 2021
    aspects such as interference.  ARQ methods and redundancy techniques
    such as replication and elimination should be studied to provide the
    needed performance to address deterministic scenarios.
+
+
+
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 20]
+
+Internet-Draft              RAW Technologies                 August 2021
+
 
 5.2.2.  Applicability to Deterministic Flows
 
@@ -1114,14 +1148,6 @@ Internet-Draft              RAW Technologies                 August 2021
    in particular in terms of latency and reliability, and the end nodes,
    to a Path Computation element (PCE).  With this, the PCE computes a
    Track between the end nodes and provisions every hop in the Track
-
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 20]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
    with per-flow state that describes the per-hop operation for a given
    packet, the corresponding timeSlots, and the flow identification to
    recognize which packet is placed in which Track, sort out duplicates,
@@ -1135,6 +1161,22 @@ Internet-Draft              RAW Technologies                 August 2021
    the programing of the schedule is done over CoAP as discussed in
    "6TiSCH Resource Management and Interaction using CoAP"
    [I-D.ietf-6tisch-coap].
+
+
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 21]
+
+Internet-Draft              RAW Technologies                 August 2021
+
 
    But an Hybrid mode may be required as well whereby a single Track is
    added, modified, or removed, for instance if it appears that a Track
@@ -1171,13 +1213,6 @@ Internet-Draft              RAW Technologies                 August 2021
    Section "Packet Marking and Handling" of [RFC9030] describes the
    packet tagging and marking that is expected in 6TiSCH networks.
 
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 21]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
 5.2.2.1.1.1.  Tagging Packets for Flow Identification
 
    For packets that are routed by a PCE along a Track, the tuple formed
@@ -1188,6 +1223,16 @@ Internet-Draft              RAW Technologies                 August 2021
    It results that the tagging that is used for a DetNet flow outside
    the 6TiSCH LLN MUST be swapped into 6TiSCH formats and back as the
    packet enters and then leaves the 6TiSCH network.
+
+
+
+
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 22]
+
+Internet-Draft              RAW Technologies                 August 2021
+
 
    Note: The method and format used for encoding the RPLInstanceID at
    6lo is generalized to all 6TiSCH topological Instances, which
@@ -1227,13 +1272,6 @@ Internet-Draft              RAW Technologies                 August 2021
                       ===> (B) => (D) => (F) ===
 
 
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 22]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
        Figure 4: Packet Replication: S transmits twice the same data
                   packet, to its DP (A) and to its AP (B).
 
@@ -1241,6 +1279,16 @@ Internet-Draft              RAW Technologies                 August 2021
    first copy of a data packet, it discards the subsequent copies.
    Because the first copy that reaches a node is the one that matters,
    it is the only copy that will be forwarded upward.
+
+
+
+
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 23]
+
+Internet-Draft              RAW Technologies                 August 2021
+
 
    Considering that the wireless medium is broadcast by nature, any
    neighbor of a transmitter may overhear a transmission.  By employing
@@ -1280,20 +1328,23 @@ Internet-Draft              RAW Technologies                 August 2021
    same'OR'group.  This allows to route along multi-path Tracks, trying
    one next-hop and then another only if sending to the first fails.
 
-
-
-
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 23]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
    On the receive side, all timeSlots are programmed in a same'OR'group.
    Retries of a same copy as well as converging branches for elimination
    are converged, meaning that the first successful reception is enough
    and that all the other timeSlots can be ignored.
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 24]
+
+Internet-Draft              RAW Technologies                 August 2021
+
 
 5.2.2.1.2.  Topology and capabilities
 
@@ -1333,19 +1384,6 @@ Internet-Draft              RAW Technologies                 August 2021
    topology is indexed by a Instance ID, in a format that reuses the
    RPLInstanceID as defined in RPL.
 
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 24]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
    Both RPL and PCE rely on shared sources such as policies to define
    Global and Local RPLInstanceIDs that can be used by either method.
    It is possible for centralized and distributed routing to share a
@@ -1353,6 +1391,16 @@ Internet-Draft              RAW Technologies                 August 2021
    and centralized routes will be used for scheduled traffic and will
    have precedence over distributed routes in case of conflict between
    the slotFrames.
+
+
+
+
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 25]
+
+Internet-Draft              RAW Technologies                 August 2021
+
 
 5.2.2.1.4.  SlotFrames and Priorities
 
@@ -1392,16 +1440,6 @@ Internet-Draft              RAW Technologies                 August 2021
    shared that knowledge with all the nodes.  The matrices are used in
    particular to define slotFrames.
 
-
-
-
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 25]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
    A slotFrame is a MAC-level abstraction that is common to all nodes
    and contains a series of timeSlots of equal length and precedence.
    It is characterized by a slotFrame_ID, and a slotFrame_size.  A
@@ -1412,6 +1450,14 @@ Internet-Draft              RAW Technologies                 August 2021
    have multiple activities scheduled in different slotFrames, based on
    the precedence of the 6TiSCH topologies.  The slotFrames may be
    aligned to different CDU matrices and thus have different width.
+
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 26]
+
+Internet-Draft              RAW Technologies                 August 2021
+
+
    There is typically one slotFrame for scheduled traffic that has the
    highest precedence and one or more slotFrame(s) for RPL traffic.  The
    timeSlots in the slotFrame are indexed by the SlotOffset; the first
@@ -1443,21 +1489,6 @@ Internet-Draft              RAW Technologies                 August 2021
    Then again, 6TiSCH did not propose a method for chunk definition and
    a protocol for appropriation.  This is to be done at RAW.
 
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 26]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
 5.2.2.2.  6TiSCH Tracks
 
    A Track at 6TiSCH is the application to wireless of the concept of a
@@ -1470,6 +1501,18 @@ Internet-Draft              RAW Technologies                 August 2021
    bounded latency.  The Track structure enables Layer-2 forwarding
    schemes, reducing the overhead of taking routing decisions at the
    Layer-3.
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 27]
+
+Internet-Draft              RAW Technologies                 August 2021
+
 
    Serial Tracks can be understood as the concatenation of cells or
    bundles along a routing path from a source towards a destination.
@@ -1498,22 +1541,6 @@ Internet-Draft              RAW Technologies                 August 2021
    extends the graph beyond a DODAG as long as a given packet cannot
    loop within the Track.
 
-
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 27]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
                      +-----+
                      | IoT |
                      | G/W |
@@ -1534,6 +1561,14 @@ Internet-Draft              RAW Technologies                 August 2021
              o
 
                   Figure 6: End-to-End deterministic Track
+
+
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 28]
+
+Internet-Draft              RAW Technologies                 August 2021
+
 
    In the example above (see Figure 6), a Track is laid out from a field
    device in a 6TiSCH network to an IoT gateway that is located on a
@@ -1559,17 +1594,6 @@ Internet-Draft              RAW Technologies                 August 2021
    and use the other in case of Layer-2 transmission failure as detected
    by ARQ.
 
-
-
-
-
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 28]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
    Methods to implement complex Tracks are described in
    [I-D.papadopoulos-paw-pre-reqs] and complemented by extensions to the
    RPL routing protocol in [I-D.ietf-roll-nsa-extension] for best effort
@@ -1588,6 +1612,19 @@ Internet-Draft              RAW Technologies                 August 2021
    Early work at 6TiSCH on a data model and a protocol to program the
    schedule in the 6TiSCH device was never concluded as the group
    focussed on best effort traffic.  This work would be revived by RAW:
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 29]
+
+Internet-Draft              RAW Technologies                 August 2021
+
 
       The 6top interface document [RFC8480] (to be reopened at RAW) was
       intended to specify the generic data model that can be used to
@@ -1611,20 +1648,6 @@ Internet-Draft              RAW Technologies                 August 2021
       it is possible that a mapping entity on the backbone transforms a
       non-CoAP protocol such as PCEP into the RESTful interfaces that
       the 6TiSCH devices support.
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 29]
-
-Internet-Draft              RAW Technologies                 August 2021
-
 
 5.2.2.2.2.  Track Forwarding
 
@@ -1651,6 +1674,14 @@ Internet-Draft              RAW Technologies                 August 2021
    This model can effectively be seen as a Generalized Multi-protocol
    Label Switching (G-MPLS) operation in that the information used to
    switch a frame is not an explicit label, but rather related to other
+
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 30]
+
+Internet-Draft              RAW Technologies                 August 2021
+
+
    properties of the way the packet was received, a particular cell in
    the case of 6TiSCH.  As a result, as long as the TSCH MAC (and
    Layer-2 security) accepts a frame, that frame can be switched
@@ -1674,14 +1705,6 @@ Internet-Draft              RAW Technologies                 August 2021
    effective channel of the cell is obtained by adding a pseudo-random
    number to the channelOffset of the cell, which results in a rotation
    of the frequency that used for transmission.  The bundles may be
-
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 30]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
    computed so as to accommodate both variable rates and
    retransmissions, so they might not be fully used at a given iteration
    of the schedule.  The 6TiSCH architecture provides additional means
@@ -1707,6 +1730,14 @@ Internet-Draft              RAW Technologies                 August 2021
    if more retransmissions are needed than provisioned.  In that case,
    the frame can be placed for transmission in the bundle that is used
    for layer-3 traffic towards the next hop along the Track as long as
+
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 31]
+
+Internet-Draft              RAW Technologies                 August 2021
+
+
    it can be routed by the upper layer, that is, typically, if the frame
    transports an IPv6 packet.  The MAC address should be set to the
    next-hop MAC address to avoid confusion.  It results that a frame
@@ -1725,18 +1756,6 @@ Internet-Draft              RAW Technologies                 August 2021
    to broadcast.
 
    There are 2 modes for a Track, transport mode and tunnel mode.
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 31]
-
-Internet-Draft              RAW Technologies                 August 2021
-
 
 5.2.2.2.2.1.  Transport Mode
 
@@ -1765,6 +1784,16 @@ Internet-Draft              RAW Technologies                 August 2021
 
                  Figure 7: Track Forwarding, Transport Mode
 
+
+
+
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 32]
+
+Internet-Draft              RAW Technologies                 August 2021
+
+
 5.2.2.2.2.2.  Tunnel Mode
 
    In tunnel mode, the frames originate from an arbitrary protocol over
@@ -1778,21 +1807,6 @@ Internet-Draft              RAW Technologies                 August 2021
    WirelessHART Network Manager or an ISA100.11a System Manager to
    specify the flows that are to be transported transparently over the
    Track.
-
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 32]
-
-Internet-Draft              RAW Technologies                 August 2021
-
 
       +--------------+
       |     IPv6     |
@@ -1827,6 +1841,15 @@ Internet-Draft              RAW Technologies                 August 2021
    metadata associated to the Track, the frame is passed to the
    appropriate link layer with the destination MAC restored.
 
+
+
+
+
+Thubert, et al.          Expires 6 February 2022               [Page 33]
+
+Internet-Draft              RAW Technologies                 August 2021
+
+
 5.2.2.2.2.3.  Tunnel Metadata
 
    Metadata coming with the Track configuration is expected to provide
@@ -1842,14 +1865,6 @@ Internet-Draft              RAW Technologies                 August 2021
    address.  It is thus mandatory at the ingress point to validate that
    the MAC address that was used at the 6LoWPAN sublayer for compression
    matches that of the tunnel egress point.  For that reason, the node
-
-
-
-Thubert, et al.          Expires 6 February 2022               [Page 33]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
    that injects a packet on a Track checks that the destination is
    effectively that of the tunnel egress point before it overwrites it
    to broadcast.  The 6top sublayer at the tunnel egress point reverts
@@ -1883,21 +1898,6 @@ Internet-Draft              RAW Technologies                 August 2021
    of 3GPP technologies provide scheduled wireless segments, primarily
    in licensed spectrum which is beneficial for reliability and
    availability.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

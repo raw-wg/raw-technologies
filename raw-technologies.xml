@@ -300,11 +300,17 @@
    </t>
    <ul>
    <li>
-   On the one hand, scheduling avoids collisions between scheduled transmissions
-   and can ensure both time and frequency diversity between retries in order
-   to defeat co-channel interference from un-controlled transmitters as well as
-   multipath fading. Transmissions can be scheduled on multiple channels in
-   parallel, which enables to use the full available spectrum while avoiding the
+   Scheduling allows a time-sharing operation, where every transmission is assigned its own time/frequency resource. IOW, sender and receiver are synchronized and scheduled to talk on a given frequency resource at a given time and for a given duration. This way, scheduling can avoid collisions between scheduled transmissions and enable a high ratio of critical traffic
+   compared to QoS-based priority.
+   </li>
+   <li>
+   Scheduling can be used as a technoque for both time and frequency diversity (e.g., between retries), allowing the next transmission to happen on a different frequency as programmed in both sender and receiver.
+   This is useful to defeat co-channel interference from un-controlled
+   transmitters as well as multipath fading.
+   </li>
+   <li>
+   Transmissions can be also scheduled on multiple channels in parallel,
+   which enables to use the full available spectrum while avoiding the
    hidden terminal problem, e.g., when the next packet in a same flow interferes
    on a same channel with the previous one that progressed a few hops farther.
    </li>
@@ -315,11 +321,6 @@
    A minimal Clear Channel Assessment may be needed to comply with the local
    regulations such as ETSI 300-328, but that will not detect a collision when
    the senders are synchronized.
-   </li>
-   <li>
-   Because scheduling allows a time-sharing operation, where every
-   transmission is assigned its own time/frequency resource, the ratio of
-   critical traffic can be very high compared to traditional QoS-based priority.
    </li>
    <li>
    Finally, scheduling plays a critical role to save energy. In IoT, energy is
