@@ -463,7 +463,7 @@ Internet-Draft              RAW Technologies                 August 2021
    QoS, and tradeoffs between latency and reliability guarantees must be
    considered as well as managed deployment requirements.  An overview
    of 802.1 TSN capabilities and challenges for their extensions to
-   802.11 are discussed in [Cavalcanti_2019].
+   802.11 are discussed in [Cavalcanti_2019]. 
 
    Wi-Fi Alliance (WFA) is the worldwide network of companies that
    drives global Wi-Fi adoption and evolution through thought
@@ -471,6 +471,10 @@ Internet-Draft              RAW Technologies                 August 2021
    WFA work helps ensure that Wi-Fi devices and networks provide users
    the interoperability, security, and reliability they have come to
    expect.
+   
+   Avnu Alliance is also a global industry forum developing interoperability 
+   testing for TSN capable devices across multiple media including Ethernet,
+   Wi-Fi, and 5G.
 
    The following [IEEE Std 802.11] specifications/certifications are
    relevant in the context of reliable and available wireless services
@@ -631,10 +635,12 @@ Internet-Draft              RAW Technologies                 August 2021
    a gateway/translation protocol.  Basic features required for
    operation in a 802.1Q LAN are already enabled for 802.11.  Some TSN
    capabilities, such as 802.1Qbv, can already operate over the existing
-   802.11 MAC SAP [Sudhakaran2021].  Nevertheless, the IEEE 802.11 MAC/
-   PHY requires further extensions to improve the operation of IEEE
-   802.1 TSN features and achieve better performance metrics
-   [Cavalcanti1287].
+   802.11 MAC SAP [Sudhakaran2021]. Implementation and experimental
+   results of TSN capabilities (802.1AS, 802.1Qbv, and 802.1CB) extended 
+   over standard-based Ethernet and Wi-Fi devices have also been described
+   in [Fang_19]. Nevertheless, the IEEE 802.11 MAC/PHY requires further
+   extensions to improve the operation of IEEE 802.1 TSN features and achieve 
+   better performance metrics [Cavalcanti1287].
 
    TSN capabilities supported over 802.11 (which also extends to
    802.11ax), include:
@@ -772,7 +778,7 @@ Internet-Draft              RAW Technologies                 August 2021
    Improvements for worst-case latency, jitter and reliability were the
    main topics identified in the RTA report, which were motivated by
    applications in gaming, industrial automation, robotics, etc.  The
-   RTA report also highlighted the need to support additional TSN
+   RTA report also highlighted the need to improve support for TSN
    capabilities, such as time-aware (802.1Qbv) shaping and packet
    replication and elimination as defined in 802.1CB.
 
@@ -797,6 +803,11 @@ Internet-Draft              RAW Technologies                 August 2021
    efficient and more predictable medium access. 802.11be is expected to
    include enhancements to reduce overhead and enable more efficient
    operation in managed network deployments [IEEE_doc_11-19-0373-00].
+   The restricted TWT (Target Wake Time) feature has been introduced
+   in the 802.1be Draft to enable protection and priority for time-sensitive
+   flows during scheduled service periods. This feature will faciliate
+   coexistence with legacy stations and provide protection to 802.1Qbv 
+   schedules operating over the 802.11 media.
 
 4.3.2.2.  Multi-AP coordination
 
@@ -842,15 +853,17 @@ Thubert, et al.         Expires 25 February 2022               [Page 15]
 Internet-Draft              RAW Technologies                 August 2021
 
 
-4.3.2.3.  Multi-band operation
+4.3.2.3.  Multi-Link Operation (MLO)
 
    802.11be will introduce new features to improve operation over
-   multiple bands and channels.  By leveraging multiple bands/channels,
+   multiple bands and channels.  By leveraging multiple links/channels,
    802.11be can isolate time-sensitive traffic from network congestion,
    one of the main causes of large latency variations.  In a managed
    802.11be network, it should be possible to steer traffic to certain
-   bands/channels to isolate time-sensitive traffic from other traffic
-   and help achieve bounded latency.
+   links/channels to isolate time-sensitive traffic from other traffic
+   and help achieve bounded latency. The multi-link operation (MLO) has been
+   already introduced in the 802.11be Draft and it can also enhance
+   latency and reliability by enabling data frames to be duplicated across links.
 
 4.4.  802.11ad and 802.11ay (mmWave operation)
 
@@ -3767,6 +3780,11 @@ Internet-Draft              RAW Technologies                 August 2021
               International Conference on Factory Communication Systems
               (WFCS) , 2021,
               <https://ieeexplore.ieee.org/abstract/document/9483447>.
+              
+    [Fang_21] Fang, J., Cavalcanti, D., Cordeiro, C., and Cheng, C.,
+             "Wireless TSN with Multi-Radio Wi-Fi,"IEEE Conference on 
+             Standards for Communications and Networking," 15-17 December
+             2021.         
 
 Authors' Addresses
 
