@@ -2660,7 +2660,7 @@ y
    				<dt>Georgios Z. Papadopoulos:</dt><dd> Contributed to the TSCH section. </dd>
    				<dt>Nils Mäurer:</dt><dd> Contributed to the LDACS section. </dd>
    				<dt>Thomas Gräupl:</dt><dd> Contributed to the LDACS section. </dd>
-				<dt>Janos Farkas, Torsten Dudda, Alexey Shapin, and Sara Sandberg:</dt><dd> Contributed to the 5G section. </dd>
+				<dt>Torsten Dudda, Alexey Shapin, and Sara Sandberg:</dt><dd> Contributed to the 5G section. </dd>
                 <dt>Rocco Di Taranto:</dt><dd> Contributed to the Wi-Fi section</dd>
                 <dt>Rute Sofia:</dt><dd> Contributed to the Introduction and Terminology sections</dd>
    			</dl><t>
@@ -2671,7 +2671,7 @@ y
 
 	<section><name>Acknowledgments</name>
     <t>
-    		Many thanks to the participants of the RAW WG where a lot of the work discussed here happened.
+    		Many thanks to the participants of the RAW WG where a lot of the work discussed here happened, and Malcolm Smith for his review of the 802.11 section.
     </t>
 	</section><!-- ack -->
 </middle>

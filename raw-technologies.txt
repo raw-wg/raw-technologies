@@ -3225,8 +3225,8 @@ Internet-Draft              RAW Technologies               February 2022
 
    Thomas Gr&#228;upl:  Contributed to the LDACS section.
 
-   Janos Farkas, Torsten Dudda, Alexey Shapin, and Sara Sandberg:  Contr
-      ibuted to the 5G section.
+   Torsten Dudda, Alexey Shapin, and Sara Sandberg:  Contributed to the
+      5G section.
 
    Rocco Di Taranto:  Contributed to the Wi-Fi section
 
@@ -3236,10 +3236,10 @@ Internet-Draft              RAW Technologies               February 2022
 11.  Acknowledgments
 
    Many thanks to the participants of the RAW WG where a lot of the work
-   discussed here happened.
+   discussed here happened, and Malcolm Smith for his review of the
+   802.11 section.
 
 12.  Normative References
-
 
 
 
