@@ -429,7 +429,7 @@
 
         <section><name>Applicability to deterministic flows</name>
         	<t>
-        		TSN capabilities, as defined by the IEEE 802.1 TSN standards, provide the underlying mechanism for supporting deterministic flows in a Local Area Network (LAN). The 802.11 working group has incorporated support for absolute time synchronization to extend the TSN 802.1AS protocol so that time-sensitive flow can experience precise time synchronization when operating over 802.11 links. As IEEE 802.11 and IEEE 802.1 TSN are both based on the IEEE 802 architecture, 802.11 devices can directly implement TSN capabilities without the need for a gateway/translation protocol. Basic features required for operation in a 802.1Q LAN are already enabled for 802.11. Some TSN capabilities, such as 802.1Qbv, can already operate over the existing 802.11 MAC SAP <xref target='Sudhakaran2021'/>. Implementation and experimental results of TSN capabilities (802.1AS, 802.1Qbv, and 802.1CB) extended over standard Ethernet and Wi-Fi devices have also been described in <xref target='Fang_21'/>.Nevertheless, the IEEE 802.11 MAC/PHY requires further extensions to improve the operation of IEEE 802.1 TSN features and achieve better performance metrics <xref target='Cavalcanti1287'/>.
+        		TSN capabilities, as defined by the IEEE 802.1 TSN standards, provide the underlying mechanism for supporting deterministic flows in a Local Area Network (LAN). The 802.11 working group has incorporated support for absolute time synchronization to extend the TSN 802.1AS protocol so that time-sensitive flow can experience precise time synchronization when operating over 802.11 links. As IEEE 802.11 and IEEE 802.1 TSN are both based on the IEEE 802 architecture, 802.11 devices can directly implement some TSN capabilities without the need for a gateway/translation protocol. Basic features required for operation in a 802.1Q LAN are already enabled for 802.11. Some TSN capabilities, such as 802.1Qbv, can already operate over the existing 802.11 MAC SAP <xref target='Sudhakaran2021'/>. Implementation and experimental results of TSN capabilities (802.1AS, 802.1Qbv, and 802.1CB) extended over standard Ethernet and Wi-Fi devices have also been described in <xref target='Fang_2021'/>.Nevertheless, the IEEE 802.11 MAC/PHY could be extended to improve the operation of IEEE 802.1 TSN features and achieve better performance metrics <xref target='Cavalcanti1287'/>.
                 </t><t>
                 TSN capabilities supported over 802.11 (which also extends to 802.11ax), include:
         		</t>
@@ -2688,17 +2688,22 @@ y
 
 
    <references><name>Normative References</name>
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8480.xml'/> <!-- 6P Protocol Specification -->
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8200.xml'/> <!-- Internet Protocol, Version 6 (IPv6) Specification -->
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.5673.xml'/> <!-- Industrial Routing Requirements in Low-Power and Lossy Networks -->
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8557.xml'/> <!-- DetNet PS -->
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8655.xml'/> <!-- detnet-architecture -->
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8938.xml'/> <!-- detnet-dataplane -->
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9030.xml'/> <!-- 6Tisch Archi -->
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9033.xml'/> <!-- 6Tisch MSF -->
-
+   <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.5673.xml'/> <!-- Industrial Routing Requirements in Low-Power and Lossy Networks -->
+   <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8200.xml'/> <!-- Internet Protocol, Version 6 (IPv6) Specification -->
+   <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8557.xml'/>
+   <!-- DetNet PS -->
+   <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8655.xml'/>
+   <!-- detnet-architecture -->
+   <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9030.xml'/> <!-- 6Tisch Archi -->
    </references>
    <references><name>Informative References</name>
+      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8480.xml'/> <!-- 6P Protocol Specification -->
+
+
+      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8938.xml'/> <!-- detnet-dataplane -->
+
+      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9033.xml'/> <!-- 6Tisch MSF -->
+
 
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.6550.xml'/> <!-- RPL -->
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.6551.xml'/> <!-- RPL metrics -->

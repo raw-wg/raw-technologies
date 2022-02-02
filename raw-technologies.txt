@@ -5,14 +5,14 @@
 RAW                                                      P. Thubert, Ed.
 Internet-Draft                                             Cisco Systems
 Intended status: Informational                             D. Cavalcanti
-Expires: 25 February 2022                                          Intel
+Expires: 6 August 2022                                             Intel
                                                            X. Vilajosana
                                          Universitat Oberta de Catalunya
                                                               C. Schmitt
                                          Research Institute CODE, UniBwM
                                                                J. Farkas
                                                                 Ericsson
-                                                          24 August 2021
+                                                         2 February 2022
 
 
               Reliable and Available Wireless Technologies
@@ -40,11 +40,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 February 2022.
+   This Internet-Draft will expire on 6 August 2022.
 
 Copyright Notice
 
-   Copyright (c) 2021 IETF Trust and the persons identified as the
+   Copyright (c) 2022 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Thubert, et al.         Expires 25 February 2022                [Page 1]
+Thubert, et al.           Expires 6 August 2022                 [Page 1]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    Please review these documents carefully, as they describe your rights
@@ -86,8 +86,8 @@ Table of Contents
    5.  IEEE 802.15.4 . . . . . . . . . . . . . . . . . . . . . . . .  17
      5.1.  Provenance and Documents  . . . . . . . . . . . . . . . .  17
      5.2.  TimeSlotted Channel Hopping . . . . . . . . . . . . . . .  18
-       5.2.1.  General Characteristics . . . . . . . . . . . . . . .  19
-       5.2.2.  Applicability to Deterministic Flows  . . . . . . . .  21
+       5.2.1.  General Characteristics . . . . . . . . . . . . . . .  18
+       5.2.2.  Applicability to Deterministic Flows  . . . . . . . .  20
    6.  5G  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  34
      6.1.  Provenance and Documents  . . . . . . . . . . . . . . . .  34
      6.2.  General Characteristics . . . . . . . . . . . . . . . . .  36
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Thubert, et al.         Expires 25 February 2022                [Page 2]
+Thubert, et al.           Expires 6 August 2022                 [Page 2]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
        7.4.3.  Radio (PHY) . . . . . . . . . . . . . . . . . . . . .  54
@@ -165,9 +165,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022                [Page 3]
+Thubert, et al.           Expires 6 August 2022                 [Page 3]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    Such wireless-specific methods include per-hop retransmissions (HARQ)
@@ -221,9 +221,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022                [Page 4]
+Thubert, et al.           Expires 6 August 2022                 [Page 4]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
       The classical IP 5-tuple that identifies a flow comprises the src
@@ -277,9 +277,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022                [Page 5]
+Thubert, et al.           Expires 6 August 2022                 [Page 5]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
 3.  Towards Reliable and Available Networks
@@ -333,9 +333,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022                [Page 6]
+Thubert, et al.           Expires 6 August 2022                 [Page 6]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
 3.3.  Benefits of Scheduling
@@ -389,9 +389,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022                [Page 7]
+Thubert, et al.           Expires 6 August 2022                 [Page 7]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    *  Finally, scheduling plays a critical role to save energy.  In IoT,
@@ -445,9 +445,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022                [Page 8]
+Thubert, et al.           Expires 6 August 2022                 [Page 8]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    capabilities such as 802.1Qbv and 802.1CB, which are media agnostic,
@@ -463,7 +463,7 @@ Internet-Draft              RAW Technologies                 August 2021
    QoS, and tradeoffs between latency and reliability guarantees must be
    considered as well as managed deployment requirements.  An overview
    of 802.1 TSN capabilities and challenges for their extensions to
-   802.11 are discussed in [Cavalcanti_2019]. 
+   802.11 are discussed in [Cavalcanti_2019].
 
    Wi-Fi Alliance (WFA) is the worldwide network of companies that
    drives global Wi-Fi adoption and evolution through thought
@@ -471,10 +471,10 @@ Internet-Draft              RAW Technologies                 August 2021
    WFA work helps ensure that Wi-Fi devices and networks provide users
    the interoperability, security, and reliability they have come to
    expect.
-   
-   Avnu Alliance is also a global industry forum developing interoperability 
-   testing for TSN capable devices across multiple media including Ethernet,
-   Wi-Fi, and 5G.
+
+   Avnu Alliance is also a global industry forum developing
+   interoperability testing for TSN capable devices across multiple
+   media including Ethernet, Wi-Fi, and 5G.
 
    The following [IEEE Std 802.11] specifications/certifications are
    relevant in the context of reliable and available wireless services
@@ -498,16 +498,15 @@ Internet-Draft              RAW Technologies                 August 2021
       throughput in the 60 GHz band [IEEE Std 802.11ad].
 
    802.11 Real-Time Applications:  Topic Interest Group (TIG) ReportDoc
-      [IEEE_doc_11-18-2009-06].
 
 
 
-
-
-
-Thubert, et al.         Expires 25 February 2022                [Page 9]
+Thubert, et al.           Expires 6 August 2022                 [Page 9]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
+
+
+      [IEEE_doc_11-18-2009-06].
 
 
    In addition, major amendments being developed by the IEEE802.11
@@ -555,17 +554,17 @@ Internet-Draft              RAW Technologies                 August 2021
    the same PHY Protocol Data Unit (PPDU) by sending a trigger frame.
    This centralized scheduling capability gives the AP much more control
    of the channel in its Basic Service Set (BSS) and it can remove
+
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 10]
+
+Internet-Draft              RAW Technologies               February 2022
+
+
    contention between associated stations for uplink transmissions,
    therefore reducing the randomness caused by CSMA-based access between
    stations within the same BSS.  The AP can also transmit
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 10]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
    simultaneously to multiple users in the downlink direction by using a
    Downlink (DL) MU OFDMA PPDU.  In order to initiate a contention free
    Transmission Opportunity (TXOP) using the OFDMA mode, the AP still
@@ -614,12 +613,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 11]
+Thubert, et al.           Expires 6 August 2022                [Page 11]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
 4.2.2.  Applicability to deterministic flows
@@ -631,15 +627,15 @@ Internet-Draft              RAW Technologies                 August 2021
    protocol so that time-sensitive flow can experience precise time
    synchronization when operating over 802.11 links.  As IEEE 802.11 and
    IEEE 802.1 TSN are both based on the IEEE 802 architecture, 802.11
-   devices can directly implement TSN capabilities without the need for
-   a gateway/translation protocol.  Basic features required for
+   devices can directly implement some TSN capabilities without the need
+   for a gateway/translation protocol.  Basic features required for
    operation in a 802.1Q LAN are already enabled for 802.11.  Some TSN
    capabilities, such as 802.1Qbv, can already operate over the existing
-   802.11 MAC SAP [Sudhakaran2021]. Implementation and experimental
-   results of TSN capabilities (802.1AS, 802.1Qbv, and 802.1CB) extended 
-   over standard-based Ethernet and Wi-Fi devices have also been described
-   in [Fang_19]. Nevertheless, the IEEE 802.11 MAC/PHY requires further
-   extensions to improve the operation of IEEE 802.1 TSN features and achieve 
+   802.11 MAC SAP [Sudhakaran2021].  Implementation and experimental
+   results of TSN capabilities (802.1AS, 802.1Qbv, and 802.1CB) extended
+   over standard Ethernet and Wi-Fi devices have also been described in
+   [Fang_2021].Nevertheless, the IEEE 802.11 MAC/PHY could be extended
+   to improve the operation of IEEE 802.1 TSN features and achieve
    better performance metrics [Cavalcanti1287].
 
    TSN capabilities supported over 802.11 (which also extends to
@@ -673,11 +669,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 12]
+Thubert, et al.           Expires 6 August 2022                [Page 12]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    Existing traffic stream identification, configuration and admission
@@ -731,9 +725,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 13]
+Thubert, et al.           Expires 6 August 2022                [Page 13]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
 4.3.1.  General Characteristics
@@ -754,7 +748,7 @@ Internet-Draft              RAW Technologies                 August 2021
    1.  320MHz bandwidth and more efficient utilization of non-contiguous
        spectrum.
 
-   2.  Multi-band/multi-channel aggregation and operation.
+   2.  Multi-link operation.
 
    3.  16 spatial streams and related MIMO enhancements.
 
@@ -778,7 +772,7 @@ Internet-Draft              RAW Technologies                 August 2021
    Improvements for worst-case latency, jitter and reliability were the
    main topics identified in the RTA report, which were motivated by
    applications in gaming, industrial automation, robotics, etc.  The
-   RTA report also highlighted the need to improve support for TSN
+   RTA report also highlighted the need to support additional TSN
    capabilities, such as time-aware (802.1Qbv) shaping and packet
    replication and elimination as defined in 802.1CB.
 
@@ -787,9 +781,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 14]
+Thubert, et al.           Expires 6 August 2022                [Page 14]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    802.11be is expected to build on and enhance 802.11ax capabilities to
@@ -803,11 +797,6 @@ Internet-Draft              RAW Technologies                 August 2021
    efficient and more predictable medium access. 802.11be is expected to
    include enhancements to reduce overhead and enable more efficient
    operation in managed network deployments [IEEE_doc_11-19-0373-00].
-   The restricted TWT (Target Wake Time) feature has been introduced
-   in the 802.1be Draft to enable protection and priority for time-sensitive
-   flows during scheduled service periods. This feature will faciliate
-   coexistence with legacy stations and provide protection to 802.1Qbv 
-   schedules operating over the 802.11 media.
 
 4.3.2.2.  Multi-AP coordination
 
@@ -837,33 +826,26 @@ Internet-Draft              RAW Technologies                 August 2021
    include: Coordinated Spatial Reuse (Co-SR) and Coordinated
    Beamforming (Co-BF).
 
-
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 15]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
-4.3.2.3.  Multi-Link Operation (MLO)
+4.3.2.3.  Multi-link operation
 
    802.11be will introduce new features to improve operation over
-   multiple bands and channels.  By leveraging multiple links/channels,
+   multiple links and channels.  By leveraging multiple links/channels,
    802.11be can isolate time-sensitive traffic from network congestion,
    one of the main causes of large latency variations.  In a managed
    802.11be network, it should be possible to steer traffic to certain
    links/channels to isolate time-sensitive traffic from other traffic
-   and help achieve bounded latency. The multi-link operation (MLO) has been
-   already introduced in the 802.11be Draft and it can also enhance
-   latency and reliability by enabling data frames to be duplicated across links.
+
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 15]
+
+Internet-Draft              RAW Technologies               February 2022
+
+
+   and help achieve bounded latency.  The multi-link operation (MLO) has
+   been already introduced in the 802.be Draft and it can also enhance
+   latency and reliability by enabling data frames to be duplicated
+   across links.
 
 4.4.  802.11ad and 802.11ay (mmWave operation)
 
@@ -896,21 +878,6 @@ Internet-Draft              RAW Technologies                 August 2021
    and deployment conditions in order to properly apply and configure
    802.11ad/ay networks for time sensitive applications.
 
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 16]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
    The 802.11ad standard includes a scheduled access mode in which the
    central controller, after contending and reserving the channel for a
    dedicated period, can allocate to stations contention-free service
@@ -919,6 +886,17 @@ Internet-Draft              RAW Technologies                 August 2021
    latency to time-sensitive data flows in interference-free scenarios.
    An analysis of the theoretical latency bounds that can be achieved
    with 802.11ad service periods is provided in [Cavalcanti_2019].
+
+
+
+
+
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 16]
+
+Internet-Draft              RAW Technologies               February 2022
+
 
 5.  IEEE 802.15.4
 
@@ -960,13 +938,6 @@ Internet-Draft              RAW Technologies                 August 2021
    extends the minimal schedule configuration, and is used to add child-
    parent links according to the traffic load.
 
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 17]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
    Time sensitive networking on low power constrained wireless networks
    have been partially addressed by ISA100.11a [ISA100.11a] and
    WirelessHART [WirelessHART].  Both technologies involve a central
@@ -975,6 +946,14 @@ Internet-Draft              RAW Technologies                 August 2021
    IPv6 capabilities with a Link-Local Address for the join process and
    a global unicast addres for later exchanges, but the IPv6 traffic
    typically ends at a local application gateway and the full power of
+
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 17]
+
+Internet-Draft              RAW Technologies               February 2022
+
+
    IPv6 for end-to-end communication is not enabled.  Compared to that
    state of the art, work at the IETF and in particular at RAW could
    provide additional techniques such as optimized P2P routing, PAREO
@@ -1012,17 +991,6 @@ Internet-Draft              RAW Technologies                 August 2021
 
 5.2.  TimeSlotted Channel Hopping
 
-
-
-
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 18]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
 5.2.1.  General Characteristics
 
    As a core technique in IEEE802.15.4, TSCH splits time in multiple
@@ -1030,6 +998,17 @@ Internet-Draft              RAW Technologies                 August 2021
    Slotframe (see Section 5.2.2.1.4).  For each timeslot, a set of
    available frequencies can be used, resulting in a matrix-like
    schedule (see Figure 1).
+
+
+
+
+
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 18]
+
+Internet-Draft              RAW Technologies               February 2022
+
 
                           timeslot offset
         | 0    1    2    3    4  | 0    1    2    3    4  |    Nodes
@@ -1054,30 +1033,6 @@ Internet-Draft              RAW Technologies                 August 2021
 
      Figure 1: Slotframe example with scheduled cells between nodes A,
                                   B and C
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 19]
-
-Internet-Draft              RAW Technologies                 August 2021
-
 
    This schedule represents the possible communications of a node with
    its neighbors, and is managed by a Scheduling Function such as the
@@ -1104,6 +1059,13 @@ Internet-Draft              RAW Technologies                 August 2021
    combined to OFDM modulations also supported by the IEEE802.15.4
    standard [IEEE Std 802.15.4] since the 2015 version.
 
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 19]
+
+Internet-Draft              RAW Technologies               February 2022
+
+
    TSCH networks operate in ISM bands in which the spectrum is shared by
    different coexisting technologies.  Regulations such as FCC, ETSI and
    ARIB impose duty cycle regulations to limit the use of the bands but
@@ -1125,15 +1087,6 @@ Internet-Draft              RAW Technologies                 August 2021
    aspects such as interference.  ARQ methods and redundancy techniques
    such as replication and elimination should be studied to provide the
    needed performance to address deterministic scenarios.
-
-
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 20]
-
-Internet-Draft              RAW Technologies                 August 2021
-
 
 5.2.2.  Applicability to Deterministic Flows
 
@@ -1161,6 +1114,14 @@ Internet-Draft              RAW Technologies                 August 2021
    in particular in terms of latency and reliability, and the end nodes,
    to a Path Computation element (PCE).  With this, the PCE computes a
    Track between the end nodes and provisions every hop in the Track
+
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 20]
+
+Internet-Draft              RAW Technologies               February 2022
+
+
    with per-flow state that describes the per-hop operation for a given
    packet, the corresponding timeSlots, and the flow identification to
    recognize which packet is placed in which Track, sort out duplicates,
@@ -1174,22 +1135,6 @@ Internet-Draft              RAW Technologies                 August 2021
    the programing of the schedule is done over CoAP as discussed in
    "6TiSCH Resource Management and Interaction using CoAP"
    [I-D.ietf-6tisch-coap].
-
-
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 21]
-
-Internet-Draft              RAW Technologies                 August 2021
-
 
    But an Hybrid mode may be required as well whereby a single Track is
    added, modified, or removed, for instance if it appears that a Track
@@ -1226,6 +1171,13 @@ Internet-Draft              RAW Technologies                 August 2021
    Section "Packet Marking and Handling" of [RFC9030] describes the
    packet tagging and marking that is expected in 6TiSCH networks.
 
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 21]
+
+Internet-Draft              RAW Technologies               February 2022
+
+
 5.2.2.1.1.1.  Tagging Packets for Flow Identification
 
    For packets that are routed by a PCE along a Track, the tuple formed
@@ -1236,16 +1188,6 @@ Internet-Draft              RAW Technologies                 August 2021
    It results that the tagging that is used for a DetNet flow outside
    the 6TiSCH LLN MUST be swapped into 6TiSCH formats and back as the
    packet enters and then leaves the 6TiSCH network.
-
-
-
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 22]
-
-Internet-Draft              RAW Technologies                 August 2021
-
 
    Note: The method and format used for encoding the RPLInstanceID at
    6lo is generalized to all 6TiSCH topological Instances, which
@@ -1285,6 +1227,13 @@ Internet-Draft              RAW Technologies                 August 2021
                       ===> (B) => (D) => (F) ===
 
 
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 22]
+
+Internet-Draft              RAW Technologies               February 2022
+
+
        Figure 4: Packet Replication: S transmits twice the same data
                   packet, to its DP (A) and to its AP (B).
 
@@ -1292,16 +1241,6 @@ Internet-Draft              RAW Technologies                 August 2021
    first copy of a data packet, it discards the subsequent copies.
    Because the first copy that reaches a node is the one that matters,
    it is the only copy that will be forwarded upward.
-
-
-
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 23]
-
-Internet-Draft              RAW Technologies                 August 2021
-
 
    Considering that the wireless medium is broadcast by nature, any
    neighbor of a transmitter may overhear a transmission.  By employing
@@ -1341,23 +1280,20 @@ Internet-Draft              RAW Technologies                 August 2021
    same'OR'group.  This allows to route along multi-path Tracks, trying
    one next-hop and then another only if sending to the first fails.
 
+
+
+
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 23]
+
+Internet-Draft              RAW Technologies               February 2022
+
+
    On the receive side, all timeSlots are programmed in a same'OR'group.
    Retries of a same copy as well as converging branches for elimination
    are converged, meaning that the first successful reception is enough
    and that all the other timeSlots can be ignored.
-
-
-
-
-
-
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 24]
-
-Internet-Draft              RAW Technologies                 August 2021
-
 
 5.2.2.1.2.  Topology and capabilities
 
@@ -1397,6 +1333,19 @@ Internet-Draft              RAW Technologies                 August 2021
    topology is indexed by a Instance ID, in a format that reuses the
    RPLInstanceID as defined in RPL.
 
+
+
+
+
+
+
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 24]
+
+Internet-Draft              RAW Technologies               February 2022
+
+
    Both RPL and PCE rely on shared sources such as policies to define
    Global and Local RPLInstanceIDs that can be used by either method.
    It is possible for centralized and distributed routing to share a
@@ -1404,16 +1353,6 @@ Internet-Draft              RAW Technologies                 August 2021
    and centralized routes will be used for scheduled traffic and will
    have precedence over distributed routes in case of conflict between
    the slotFrames.
-
-
-
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 25]
-
-Internet-Draft              RAW Technologies                 August 2021
-
 
 5.2.2.1.4.  SlotFrames and Priorities
 
@@ -1453,6 +1392,16 @@ Internet-Draft              RAW Technologies                 August 2021
    shared that knowledge with all the nodes.  The matrices are used in
    particular to define slotFrames.
 
+
+
+
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 25]
+
+Internet-Draft              RAW Technologies               February 2022
+
+
    A slotFrame is a MAC-level abstraction that is common to all nodes
    and contains a series of timeSlots of equal length and precedence.
    It is characterized by a slotFrame_ID, and a slotFrame_size.  A
@@ -1463,14 +1412,6 @@ Internet-Draft              RAW Technologies                 August 2021
    have multiple activities scheduled in different slotFrames, based on
    the precedence of the 6TiSCH topologies.  The slotFrames may be
    aligned to different CDU matrices and thus have different width.
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 26]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
    There is typically one slotFrame for scheduled traffic that has the
    highest precedence and one or more slotFrame(s) for RPL traffic.  The
    timeSlots in the slotFrame are indexed by the SlotOffset; the first
@@ -1502,6 +1443,21 @@ Internet-Draft              RAW Technologies                 August 2021
    Then again, 6TiSCH did not propose a method for chunk definition and
    a protocol for appropriation.  This is to be done at RAW.
 
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 26]
+
+Internet-Draft              RAW Technologies               February 2022
+
+
 5.2.2.2.  6TiSCH Tracks
 
    A Track at 6TiSCH is the application to wireless of the concept of a
@@ -1514,18 +1470,6 @@ Internet-Draft              RAW Technologies                 August 2021
    bounded latency.  The Track structure enables Layer-2 forwarding
    schemes, reducing the overhead of taking routing decisions at the
    Layer-3.
-
-
-
-
-
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 27]
-
-Internet-Draft              RAW Technologies                 August 2021
-
 
    Serial Tracks can be understood as the concatenation of cells or
    bundles along a routing path from a source towards a destination.
@@ -1554,6 +1498,22 @@ Internet-Draft              RAW Technologies                 August 2021
    extends the graph beyond a DODAG as long as a given packet cannot
    loop within the Track.
 
+
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 27]
+
+Internet-Draft              RAW Technologies               February 2022
+
+
                      +-----+
                      | IoT |
                      | G/W |
@@ -1574,14 +1534,6 @@ Internet-Draft              RAW Technologies                 August 2021
              o
 
                   Figure 6: End-to-End deterministic Track
-
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 28]
-
-Internet-Draft              RAW Technologies                 August 2021
-
 
    In the example above (see Figure 6), a Track is laid out from a field
    device in a 6TiSCH network to an IoT gateway that is located on a
@@ -1607,6 +1559,17 @@ Internet-Draft              RAW Technologies                 August 2021
    and use the other in case of Layer-2 transmission failure as detected
    by ARQ.
 
+
+
+
+
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 28]
+
+Internet-Draft              RAW Technologies               February 2022
+
+
    Methods to implement complex Tracks are described in
    [I-D.papadopoulos-paw-pre-reqs] and complemented by extensions to the
    RPL routing protocol in [I-D.ietf-roll-nsa-extension] for best effort
@@ -1625,19 +1588,6 @@ Internet-Draft              RAW Technologies                 August 2021
    Early work at 6TiSCH on a data model and a protocol to program the
    schedule in the 6TiSCH device was never concluded as the group
    focussed on best effort traffic.  This work would be revived by RAW:
-
-
-
-
-
-
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 29]
-
-Internet-Draft              RAW Technologies                 August 2021
-
 
       The 6top interface document [RFC8480] (to be reopened at RAW) was
       intended to specify the generic data model that can be used to
@@ -1661,6 +1611,20 @@ Internet-Draft              RAW Technologies                 August 2021
       it is possible that a mapping entity on the backbone transforms a
       non-CoAP protocol such as PCEP into the RESTful interfaces that
       the 6TiSCH devices support.
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 29]
+
+Internet-Draft              RAW Technologies               February 2022
+
 
 5.2.2.2.2.  Track Forwarding
 
@@ -1687,14 +1651,6 @@ Internet-Draft              RAW Technologies                 August 2021
    This model can effectively be seen as a Generalized Multi-protocol
    Label Switching (G-MPLS) operation in that the information used to
    switch a frame is not an explicit label, but rather related to other
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 30]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
    properties of the way the packet was received, a particular cell in
    the case of 6TiSCH.  As a result, as long as the TSCH MAC (and
    Layer-2 security) accepts a frame, that frame can be switched
@@ -1718,6 +1674,14 @@ Internet-Draft              RAW Technologies                 August 2021
    effective channel of the cell is obtained by adding a pseudo-random
    number to the channelOffset of the cell, which results in a rotation
    of the frequency that used for transmission.  The bundles may be
+
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 30]
+
+Internet-Draft              RAW Technologies               February 2022
+
+
    computed so as to accommodate both variable rates and
    retransmissions, so they might not be fully used at a given iteration
    of the schedule.  The 6TiSCH architecture provides additional means
@@ -1743,14 +1707,6 @@ Internet-Draft              RAW Technologies                 August 2021
    if more retransmissions are needed than provisioned.  In that case,
    the frame can be placed for transmission in the bundle that is used
    for layer-3 traffic towards the next hop along the Track as long as
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 31]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
    it can be routed by the upper layer, that is, typically, if the frame
    transports an IPv6 packet.  The MAC address should be set to the
    next-hop MAC address to avoid confusion.  It results that a frame
@@ -1769,6 +1725,18 @@ Internet-Draft              RAW Technologies                 August 2021
    to broadcast.
 
    There are 2 modes for a Track, transport mode and tunnel mode.
+
+
+
+
+
+
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 31]
+
+Internet-Draft              RAW Technologies               February 2022
+
 
 5.2.2.2.2.1.  Transport Mode
 
@@ -1797,16 +1765,6 @@ Internet-Draft              RAW Technologies                 August 2021
 
                  Figure 7: Track Forwarding, Transport Mode
 
-
-
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 32]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
 5.2.2.2.2.2.  Tunnel Mode
 
    In tunnel mode, the frames originate from an arbitrary protocol over
@@ -1820,6 +1778,21 @@ Internet-Draft              RAW Technologies                 August 2021
    WirelessHART Network Manager or an ISA100.11a System Manager to
    specify the flows that are to be transported transparently over the
    Track.
+
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 32]
+
+Internet-Draft              RAW Technologies               February 2022
+
 
       +--------------+
       |     IPv6     |
@@ -1854,15 +1827,6 @@ Internet-Draft              RAW Technologies                 August 2021
    metadata associated to the Track, the frame is passed to the
    appropriate link layer with the destination MAC restored.
 
-
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 33]
-
-Internet-Draft              RAW Technologies                 August 2021
-
-
 5.2.2.2.2.3.  Tunnel Metadata
 
    Metadata coming with the Track configuration is expected to provide
@@ -1878,6 +1842,14 @@ Internet-Draft              RAW Technologies                 August 2021
    address.  It is thus mandatory at the ingress point to validate that
    the MAC address that was used at the 6LoWPAN sublayer for compression
    matches that of the tunnel egress point.  For that reason, the node
+
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 33]
+
+Internet-Draft              RAW Technologies               February 2022
+
+
    that injects a packet on a Track checks that the destination is
    effectively that of the tunnel egress point before it overwrites it
    to broadcast.  The 6top sublayer at the tunnel egress point reverts
@@ -1914,9 +1886,24 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 34]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 34]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    In 2016, the 3GPP started to design New Radio (NR) technology
@@ -1970,9 +1957,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 35]
+Thubert, et al.           Expires 6 August 2022                [Page 35]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    As an evolution of NR, multiple studies have been conducted in scope
@@ -2026,9 +2013,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 36]
+Thubert, et al.           Expires 6 August 2022                [Page 36]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    requirements.  An operator can configure and manage the mobile
@@ -2082,9 +2069,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 37]
+Thubert, et al.           Expires 6 August 2022                [Page 37]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    A prerequisite for critical communication is performance
@@ -2138,9 +2125,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 38]
+Thubert, et al.           Expires 6 August 2022                [Page 38]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    The SMF can instantiate various Packet Data Unit (PDU) sessions for
@@ -2194,9 +2181,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 39]
+Thubert, et al.           Expires 6 August 2022                [Page 39]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    Therein a conditional handover command, defining a triggering point,
@@ -2250,9 +2237,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 40]
+Thubert, et al.           Expires 6 August 2022                [Page 40]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
 6.4.3.  Radio (PHY)
@@ -2306,9 +2293,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 41]
+Thubert, et al.           Expires 6 August 2022                [Page 41]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    Since transmission of data packets require usage of control and data
@@ -2362,9 +2349,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 42]
+Thubert, et al.           Expires 6 August 2022                [Page 42]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
 6.4.4.  Scheduling and QoS (MAC)
@@ -2418,9 +2405,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 43]
+Thubert, et al.           Expires 6 August 2022                [Page 43]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    In dynamic DL scheduling, transmission can be initiated immediately
@@ -2474,9 +2461,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 44]
+Thubert, et al.           Expires 6 August 2022                [Page 44]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
 6.4.5.  Time-Sensitive Networking (TSN) Integration
@@ -2530,9 +2517,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 45]
+Thubert, et al.           Expires 6 August 2022                [Page 45]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    Figure 10 shows an illustration of 5G-TSN integration where an
@@ -2586,9 +2573,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 46]
+Thubert, et al.           Expires 6 August 2022                [Page 46]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    NR supports accurate reference time synchronization in 1us accuracy
@@ -2642,9 +2629,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 47]
+Thubert, et al.           Expires 6 August 2022                [Page 47]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    An alternative solution is that multiple UEs per device are used for
@@ -2698,9 +2685,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 48]
+Thubert, et al.           Expires 6 August 2022                [Page 48]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    can be leveraged when 5G is used as subnet technology for DetNet, in
@@ -2754,9 +2741,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 49]
+Thubert, et al.           Expires 6 August 2022                [Page 49]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
 7.1.  Provenance and Documents
@@ -2810,9 +2797,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 50]
+Thubert, et al.           Expires 6 August 2022                [Page 50]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
 7.2.  General Characteristics
@@ -2866,9 +2853,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 51]
+Thubert, et al.           Expires 6 August 2022                [Page 51]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
 7.3.  Deployment and Spectrum
@@ -2922,9 +2909,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 52]
+Thubert, et al.           Expires 6 August 2022                [Page 52]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
 7.4.1.  System Architecture
@@ -2978,9 +2965,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 53]
+Thubert, et al.           Expires 6 August 2022                [Page 53]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
             IPv6                   Network Layer
@@ -3034,9 +3021,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 54]
+Thubert, et al.           Expires 6 August 2022                [Page 54]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    in precisely defined transmission opportunities allocated by the
@@ -3090,9 +3077,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 55]
+Thubert, et al.           Expires 6 August 2022                [Page 55]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    ^
@@ -3146,9 +3133,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 56]
+Thubert, et al.           Expires 6 August 2022                [Page 56]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    and grants resources with resource allocation messages.  Resource
@@ -3202,9 +3189,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 57]
+Thubert, et al.           Expires 6 August 2022                [Page 57]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    It is a secure, scalable and spectrum efficient data link with
@@ -3258,25 +3245,20 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 58]
+Thubert, et al.           Expires 6 August 2022                [Page 58]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
-
-   [RFC8480]  Wang, Q., Ed., Vilajosana, X., and T. Watteyne, "6TiSCH
-              Operation Sublayer (6top) Protocol (6P)", RFC 8480,
-              DOI 10.17487/RFC8480, November 2018,
-              <https://www.rfc-editor.org/info/rfc8480>.
-
-   [RFC8200]  Deering, S. and R. Hinden, "Internet Protocol, Version 6
-              (IPv6) Specification", STD 86, RFC 8200,
-              DOI 10.17487/RFC8200, July 2017,
-              <https://www.rfc-editor.org/info/rfc8200>.
 
    [RFC5673]  Pister, K., Ed., Thubert, P., Ed., Dwars, S., and T.
               Phinney, "Industrial Routing Requirements in Low-Power and
               Lossy Networks", RFC 5673, DOI 10.17487/RFC5673, October
               2009, <https://www.rfc-editor.org/info/rfc5673>.
+
+   [RFC8200]  Deering, S. and R. Hinden, "Internet Protocol, Version 6
+              (IPv6) Specification", STD 86, RFC 8200,
+              DOI 10.17487/RFC8200, July 2017,
+              <https://www.rfc-editor.org/info/rfc8200>.
 
    [RFC8557]  Finn, N. and P. Thubert, "Deterministic Networking Problem
               Statement", RFC 8557, DOI 10.17487/RFC8557, May 2019,
@@ -3287,22 +3269,27 @@ Internet-Draft              RAW Technologies                 August 2021
               DOI 10.17487/RFC8655, October 2019,
               <https://www.rfc-editor.org/info/rfc8655>.
 
-   [RFC8938]  Varga, B., Ed., Farkas, J., Berger, L., Malis, A., and S.
-              Bryant, "Deterministic Networking (DetNet) Data Plane
-              Framework", RFC 8938, DOI 10.17487/RFC8938, November 2020,
-              <https://www.rfc-editor.org/info/rfc8938>.
-
    [RFC9030]  Thubert, P., Ed., "An Architecture for IPv6 over the Time-
               Slotted Channel Hopping Mode of IEEE 802.15.4 (6TiSCH)",
               RFC 9030, DOI 10.17487/RFC9030, May 2021,
               <https://www.rfc-editor.org/info/rfc9030>.
 
+13.  Informative References
+
+   [RFC8480]  Wang, Q., Ed., Vilajosana, X., and T. Watteyne, "6TiSCH
+              Operation Sublayer (6top) Protocol (6P)", RFC 8480,
+              DOI 10.17487/RFC8480, November 2018,
+              <https://www.rfc-editor.org/info/rfc8480>.
+
+   [RFC8938]  Varga, B., Ed., Farkas, J., Berger, L., Malis, A., and S.
+              Bryant, "Deterministic Networking (DetNet) Data Plane
+              Framework", RFC 8938, DOI 10.17487/RFC8938, November 2020,
+              <https://www.rfc-editor.org/info/rfc8938>.
+
    [RFC9033]  Chang, T., Ed., Vučinić, M., Vilajosana, X., Duquennoy,
               S., and D. Dujovne, "6TiSCH Minimal Scheduling Function
               (MSF)", RFC 9033, DOI 10.17487/RFC9033, May 2021,
               <https://www.rfc-editor.org/info/rfc9033>.
-
-13.  Informative References
 
    [RFC6550]  Winter, T., Ed., Thubert, P., Ed., Brandt, A., Hui, J.,
               Kelsey, R., Levis, P., Pister, K., Struik, R., Vasseur,
@@ -3314,9 +3301,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 59]
+Thubert, et al.           Expires 6 August 2022                [Page 59]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    [RFC6551]  Vasseur, JP., Ed., Kim, M., Ed., Pister, K., Dejean, N.,
@@ -3344,11 +3331,11 @@ Internet-Draft              RAW Technologies                 August 2021
               <https://www.rfc-editor.org/info/rfc8279>.
 
    [I-D.ietf-raw-architecture]
-              Thubert, P., Papadopoulos, G. Z., and L. Berger, "Reliable
-              and Available Wireless Architecture/Framework", Work in
-              Progress, Internet-Draft, draft-ietf-raw-architecture-01,
-              28 July 2021, <https://tools.ietf.org/html/draft-ietf-raw-
-              architecture-01>.
+              Thubert, P. and G. Z. Papadopoulos, "Reliable and
+              Available Wireless Architecture", Work in Progress,
+              Internet-Draft, draft-ietf-raw-architecture-03, 14 January
+              2022, <https://tools.ietf.org/html/draft-ietf-raw-
+              architecture-03>.
 
    [I-D.ietf-roll-nsa-extension]
               Koutsiamanis, R., Papadopoulos, G., Montavont, N., and P.
@@ -3370,9 +3357,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 60]
+Thubert, et al.           Expires 6 August 2022                [Page 60]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    [I-D.thubert-bier-replication-elimination]
@@ -3391,11 +3378,11 @@ Internet-Draft              RAW Technologies                 August 2021
               dispatch-06>.
 
    [I-D.ietf-bier-te-arch]
-              Eckert, T., Cauchie, G., and M. Menth, "Tree Engineering
+              Eckert, T., Menth, M., and G. Cauchie, "Tree Engineering
               for Bit Index Explicit Replication (BIER-TE)", Work in
-              Progress, Internet-Draft, draft-ietf-bier-te-arch-10, 9
-              July 2021,
-              <https://tools.ietf.org/html/draft-ietf-bier-te-arch-10>.
+              Progress, Internet-Draft, draft-ietf-bier-te-arch-12, 28
+              January 2022,
+              <https://tools.ietf.org/html/draft-ietf-bier-te-arch-12>.
 
    [I-D.ietf-6tisch-coap]
               Sudhaakar, R. S. and P. Zand, "6TiSCH Resource Management
@@ -3426,9 +3413,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 61]
+Thubert, et al.           Expires 6 August 2022                [Page 61]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    [IEEE Std 802.11ay]
@@ -3482,9 +3469,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 62]
+Thubert, et al.           Expires 6 August 2022                [Page 62]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    [IEEE_doc_11-19-0373-00]
@@ -3538,9 +3525,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 63]
+Thubert, et al.           Expires 6 August 2022                [Page 63]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    [SAJ14]    Sajatovic, M., Günzel, H., and S. Müller, "WA04 D22 Test
@@ -3594,9 +3581,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 64]
+Thubert, et al.           Expires 6 August 2022                [Page 64]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    [TR22804]  "3GPP TR 22.804, Study on Communication for Automation in
@@ -3650,9 +3637,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 65]
+Thubert, et al.           Expires 6 August 2022                [Page 65]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    [IEEE802.1Qbv]
@@ -3706,9 +3693,9 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 66]
+Thubert, et al.           Expires 6 August 2022                [Page 66]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    [MAE20]    Maeurer, N., Graeupl, T., and C. Schmitt, "Comparing
@@ -3762,14 +3749,14 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-Thubert, et al.         Expires 25 February 2022               [Page 67]
+Thubert, et al.           Expires 6 August 2022                [Page 67]
 
-Internet-Draft              RAW Technologies                 August 2021
+Internet-Draft              RAW Technologies               February 2022
 
 
    [Cavalcanti1287]
               Cavalcanti, D., Venkatesan, G., Cariou, L., and C.
-              Vordeiro, "TSN support in 802.11 and potential extensions
+              Cordeiro, "TSN support in 802.11 and potential extensions
               for TGbe", 2019,
               <https://mentor.ieee.org/802.11/dcn/19/11-19-1287>.
 
@@ -3780,11 +3767,12 @@ Internet-Draft              RAW Technologies                 August 2021
               International Conference on Factory Communication Systems
               (WFCS) , 2021,
               <https://ieeexplore.ieee.org/abstract/document/9483447>.
-              
-    [Fang_21] Fang, J., Cavalcanti, D., Cordeiro, C., and Cheng, C.,
-             "Wireless TSN with Multi-Radio Wi-Fi,"IEEE Conference on 
-             Standards for Communications and Networking," 15-17 December
-             2021.         
+
+   [Fang_2021]
+              Fang, J., Cavalcanti, D., Cordeiro, C., and C. Cheng,
+              "Wireless TSN with Multi-Radio Wi-Fi", IEEE International
+              Conference on Standards for Communications and Networking,
+              December 2021. , 2021.
 
 Authors' Addresses
 
@@ -3809,6 +3797,19 @@ Authors' Addresses
    Email: dave.cavalcanti@intel.com
 
 
+
+
+
+
+
+
+
+
+Thubert, et al.           Expires 6 August 2022                [Page 68]
+
+Internet-Draft              RAW Technologies               February 2022
+
+
    Xavier Vilajosana
    Universitat Oberta de Catalunya
    156 Rambla Poblenou
@@ -3816,16 +3817,6 @@ Authors' Addresses
    Spain
 
    Email: xvilajosana@uoc.edu
-
-
-
-
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 68]
-
-Internet-Draft              RAW Technologies                 August 2021
 
 
    Corinna Schmitt
@@ -3870,13 +3861,4 @@ Internet-Draft              RAW Technologies                 August 2021
 
 
 
-
-
-
-
-
-
-
-
-
-Thubert, et al.         Expires 25 February 2022               [Page 69]
+Thubert, et al.           Expires 6 August 2022                [Page 69]
