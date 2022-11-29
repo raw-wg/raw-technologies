@@ -5,14 +5,14 @@
 RAW                                                      P. Thubert, Ed.
 Internet-Draft                                             Cisco Systems
 Intended status: Informational                             D. Cavalcanti
-Expires: 6 August 2022                                             Intel
+Expires: 2 June 2023                                               Intel
                                                            X. Vilajosana
                                          Universitat Oberta de Catalunya
                                                               C. Schmitt
                                         Research Institute CODE, UniBw M
                                                                J. Farkas
                                                                 Ericsson
-                                                         2 February 2022
+                                                        29 November 2022
 
 
               Reliable and Available Wireless Technologies
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 August 2022.
+   This Internet-Draft will expire on 2 June 2023.
 
 Copyright Notice
 
@@ -53,16 +53,16 @@ Copyright Notice
 
 
 
-Thubert, et al.           Expires 6 August 2022                 [Page 1]
+Thubert, et al.            Expires 2 June 2023                  [Page 1]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    Please review these documents carefully, as they describe your rights
    and restrictions with respect to this document.  Code Components
-   extracted from this document must include Revised BSD License text as
-   described in Section 4.e of the Trust Legal Provisions and are
-   provided without warranty as described in the Revised BSD License.
+   extracted from this document must include Simplified BSD License text
+   as described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Simplified BSD License.
 
 Table of Contents
 
@@ -99,19 +99,19 @@ Table of Contents
        6.4.4.  Scheduling and QoS (MAC)  . . . . . . . . . . . . . .  44
        6.4.5.  Time-Sensitive Communications (TSC) . . . . . . . . .  46
      6.5.  Summary . . . . . . . . . . . . . . . . . . . . . . . . .  51
-   7.  L-band Digital Aeronautical Communications System . . . . . .  52
+   7.  L-band Digital Aeronautical Communications System . . . . . .  51
      7.1.  Provenance and Documents  . . . . . . . . . . . . . . . .  52
      7.2.  General Characteristics . . . . . . . . . . . . . . . . .  53
      7.3.  Deployment and Spectrum . . . . . . . . . . . . . . . . .  54
-     7.4.  Applicability to Deterministic Flows  . . . . . . . . . .  55
+     7.4.  Applicability to Deterministic Flows  . . . . . . . . . .  54
        7.4.1.  System Architecture . . . . . . . . . . . . . . . . .  55
        7.4.2.  Overview of The Radio Protocol Stack  . . . . . . . .  55
 
 
 
-Thubert, et al.           Expires 6 August 2022                 [Page 2]
+Thubert, et al.            Expires 2 June 2023                  [Page 2]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
        7.4.3.  Radio (PHY) . . . . . . . . . . . . . . . . . . . . .  56
@@ -165,9 +165,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                 [Page 3]
+Thubert, et al.            Expires 2 June 2023                  [Page 3]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    Such wireless-specific methods include per-hop retransmissions (HARQ)
@@ -221,9 +221,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                 [Page 4]
+Thubert, et al.            Expires 2 June 2023                  [Page 4]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
       The classical IP 5-tuple that identifies a flow comprises the src
@@ -277,9 +277,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                 [Page 5]
+Thubert, et al.            Expires 2 June 2023                  [Page 5]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
 3.  Towards Reliable and Available Networks
@@ -333,9 +333,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                 [Page 6]
+Thubert, et al.            Expires 2 June 2023                  [Page 6]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
 3.3.  Benefits of Scheduling
@@ -389,9 +389,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                 [Page 7]
+Thubert, et al.            Expires 2 June 2023                  [Page 7]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    *  Finally, scheduling plays a critical role to save energy.  In IoT,
@@ -445,9 +445,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                 [Page 8]
+Thubert, et al.            Expires 2 June 2023                  [Page 8]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    capabilities such as 802.1Qbv and 802.1CB, which are media agnostic,
@@ -501,9 +501,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                 [Page 9]
+Thubert, et al.            Expires 2 June 2023                  [Page 9]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
       [IEEE_doc_11-18-2009-06].
@@ -557,9 +557,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 10]
+Thubert, et al.            Expires 2 June 2023                 [Page 10]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    contention between associated stations for uplink transmissions,
@@ -613,9 +613,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 11]
+Thubert, et al.            Expires 2 June 2023                 [Page 11]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
 4.2.2.  Applicability to deterministic flows
@@ -669,9 +669,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 12]
+Thubert, et al.            Expires 2 June 2023                 [Page 12]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    Existing traffic stream identification, configuration and admission
@@ -725,9 +725,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 13]
+Thubert, et al.            Expires 2 June 2023                 [Page 13]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
 4.3.1.  General Characteristics
@@ -781,9 +781,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 14]
+Thubert, et al.            Expires 2 June 2023                 [Page 14]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    802.11be is expected to build on and enhance 802.11ax capabilities to
@@ -837,9 +837,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 15]
+Thubert, et al.            Expires 2 June 2023                 [Page 15]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    and help achieve bounded latency.  The multi-link operation (MLO) has
@@ -893,9 +893,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 16]
+Thubert, et al.            Expires 2 June 2023                 [Page 16]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
 5.  IEEE 802.15.4
@@ -949,9 +949,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 17]
+Thubert, et al.            Expires 2 June 2023                 [Page 17]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    IPv6 for end-to-end communication is not enabled.  Compared to that
@@ -1005,9 +1005,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 18]
+Thubert, et al.            Expires 2 June 2023                 [Page 18]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
                           timeslot offset
@@ -1061,9 +1061,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 19]
+Thubert, et al.            Expires 2 June 2023                 [Page 19]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    TSCH networks operate in ISM bands in which the spectrum is shared by
@@ -1117,9 +1117,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 20]
+Thubert, et al.            Expires 2 June 2023                 [Page 20]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    with per-flow state that describes the per-hop operation for a given
@@ -1173,9 +1173,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 21]
+Thubert, et al.            Expires 2 June 2023                 [Page 21]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
 5.2.2.1.1.1.  Tagging Packets for Flow Identification
@@ -1229,9 +1229,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 22]
+Thubert, et al.            Expires 2 June 2023                 [Page 22]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
        Figure 4: Packet Replication: S transmits twice the same data
@@ -1285,9 +1285,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 23]
+Thubert, et al.            Expires 2 June 2023                 [Page 23]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    On the receive side, all timeSlots are programmed in a same'OR'group.
@@ -1341,9 +1341,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 24]
+Thubert, et al.            Expires 2 June 2023                 [Page 24]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    Both RPL and PCE rely on shared sources such as policies to define
@@ -1397,9 +1397,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 25]
+Thubert, et al.            Expires 2 June 2023                 [Page 25]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    A slotFrame is a MAC-level abstraction that is common to all nodes
@@ -1453,9 +1453,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 26]
+Thubert, et al.            Expires 2 June 2023                 [Page 26]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
 5.2.2.2.  6TiSCH Tracks
@@ -1509,9 +1509,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 27]
+Thubert, et al.            Expires 2 June 2023                 [Page 27]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
                      +-----+
@@ -1565,9 +1565,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 28]
+Thubert, et al.            Expires 2 June 2023                 [Page 28]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    Methods to implement complex Tracks are described in
@@ -1621,9 +1621,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 29]
+Thubert, et al.            Expires 2 June 2023                 [Page 29]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
 5.2.2.2.2.  Track Forwarding
@@ -1677,9 +1677,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 30]
+Thubert, et al.            Expires 2 June 2023                 [Page 30]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    computed so as to accommodate both variable rates and
@@ -1733,9 +1733,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 31]
+Thubert, et al.            Expires 2 June 2023                 [Page 31]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
 5.2.2.2.2.1.  Transport Mode
@@ -1789,9 +1789,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 32]
+Thubert, et al.            Expires 2 June 2023                 [Page 32]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
       +--------------+
@@ -1845,9 +1845,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 33]
+Thubert, et al.            Expires 2 June 2023                 [Page 33]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    that injects a packet on a Track checks that the destination is
@@ -1901,9 +1901,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 34]
+Thubert, et al.            Expires 2 June 2023                 [Page 34]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    In 2016, the 3GPP started to design New Radio (NR) technology
@@ -1957,9 +1957,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 35]
+Thubert, et al.            Expires 2 June 2023                 [Page 35]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    As an evolution of NR, multiple studies have been conducted in scope
@@ -1982,7 +1982,7 @@ Internet-Draft              RAW Technologies               February 2022
    5G System (5GS) [TS23501].  These enhancements include multiple
    features in support of Time-Sensitive Communications (TSC) by Release
    16 and Release 17.  Further improvements will be considered in the
-   3GPP Release 18 time frame, e.g., support for DetNet [SP211633].
+   3GPP Release 18 time frame, e.g., support for DetNet [TR2370046].
 
    The adoption and the use of 5G is facilitated by multiple
    organizations.  For instance, the 5G Alliance for Connected
@@ -2013,9 +2013,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 36]
+Thubert, et al.            Expires 2 June 2023                 [Page 36]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    NR enables short transmission slots in a radio subframe, which
@@ -2069,9 +2069,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 37]
+Thubert, et al.            Expires 2 June 2023                 [Page 37]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    solutions for storage and distribution of keys fulfilling regulatory
@@ -2125,9 +2125,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 38]
+Thubert, et al.            Expires 2 June 2023                 [Page 38]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    In an alternative model, some countries are now in the process of
@@ -2181,9 +2181,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 39]
+Thubert, et al.            Expires 2 June 2023                 [Page 39]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
              +----+  +---+   +---+    +---+    +---+   +---+
@@ -2237,9 +2237,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 40]
+Thubert, et al.            Expires 2 June 2023                 [Page 40]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    To allow UE mobility across cells/gNBs, handover mechanisms are
@@ -2293,9 +2293,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 41]
+Thubert, et al.            Expires 2 June 2023                 [Page 41]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    The SDAP sublayer provides services to map QoS flows, as established
@@ -2349,9 +2349,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 42]
+Thubert, et al.            Expires 2 June 2023                 [Page 42]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    An uplink transmission normally starts from a Scheduling Request (SR)
@@ -2405,9 +2405,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 43]
+Thubert, et al.            Expires 2 June 2023                 [Page 43]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    Dynamic multiplexing of data associated with different services is
@@ -2461,9 +2461,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 44]
+Thubert, et al.            Expires 2 June 2023                 [Page 44]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    loop introduces delays, but there are methods to minimize it by using
@@ -2517,9 +2517,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 45]
+Thubert, et al.            Expires 2 June 2023                 [Page 45]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    In addition to licensed spectrum, a 5G system can also utilize
@@ -2573,9 +2573,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 46]
+Thubert, et al.            Expires 2 June 2023                 [Page 46]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    1.  interface to TSN controller, as per [IEEE802.1Qcc] for the fully
@@ -2629,9 +2629,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 47]
+Thubert, et al.            Expires 2 June 2023                 [Page 47]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
                     +------------------------------+
@@ -2685,9 +2685,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 48]
+Thubert, et al.            Expires 2 June 2023                 [Page 48]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    used within the 5GS, but also to the rest of the devices in the
@@ -2712,39 +2712,21 @@ Internet-Draft              RAW Technologies               February 2022
 
    IETF Deterministic Networking (DetNet) is the technology to support
    time-sensitive communications at the IP layer. 3GPP Release 18
-   includes a study [SP211633] on whether and how to enable 3GPP support
-   for DetNet such that a mapping is provided between DetNet and 5G.
-   The support for DetNet is considered to be added via the TSC
-   framework introduced for Release 17.  The study includes what
-   information needs to be exposed by the 5G System and the translation
-   of DetNet flow specification to 5G QoS parameters.  Note that TSN is
-   the primary subnetwork technology for DetNet.  Thus, the DetNet over
-   TSN work, e.g., [RFC9023], can be leveraged via the TSN support built
-   in 5G.  As the standards are ready for such an approach, it is out of
-   scope for the 3GPP Release 18 study item [SP211633].
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.           Expires 6 August 2022                [Page 49]
-
-Internet-Draft              RAW Technologies               February 2022
-
+   includes a study [TR2370046] on interworking between 5G and DetNet.
+   Along the TSC framework introduced for Release 17, the 5GS acts as a
+   DetNet node for the support of DetNet, see Figure 7.1-1 in
+   [TR2370046].  The study provides details on how the 5GS is exposed by
+   the Time Sensitive Communication and Time Synchronization Function
+   (TSCTSF) to the DetNet controller as a router on a per UPF
+   granularity (similarly to the per UPF Virtual TSN Bridge granularity
+   shown in Figure 11).  In particular, it is listed what parameters are
+   provided by the TSCTSF to the DetNet controller.  The study also
+   includes how the TSCTSF maps DetNet flow parameters to 5G QoS
+   parameters.  Note that TSN is the primary subnetwork technology for
+   DetNet.  Thus, the DetNet over TSN work, e.g., [RFC9023], can be
+   leveraged via the TSN support built in 5G.  As the standards are
+   ready for such an approach, it is out of scope for the 3GPP Release
+   18 study item [TR2370046].
 
    Redundancy architectures were specified in order to provide
    reliability against any kind of failure on the radio link or nodes in
@@ -2756,6 +2738,14 @@ Internet-Draft              RAW Technologies               February 2022
    solution: the first spans from the UE via gNB1 to UPF1, acting as the
    first PDU session anchor, while the second spans from the UE via gNB2
    to UPF2, acting as second the PDU session anchor.  The independent
+
+
+
+Thubert, et al.            Expires 2 June 2023                 [Page 49]
+
+Internet-Draft              RAW Technologies               November 2022
+
+
    paths may continue beyond the 3GPP network.  Redundancy Handling
    Functions (RHFs) are deployed outside of the 5GS, i.e., in Host A
    (the device) and in Host B (the network).  RHF can implement
@@ -2786,22 +2776,6 @@ Internet-Draft              RAW Technologies               February 2022
    RHF outside of the 5G system, e.g., as per FRER or as PREOF
    specifications.
 
-
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.           Expires 6 August 2022                [Page 50]
-
-Internet-Draft              RAW Technologies               February 2022
-
-
              +.........+
              .  Device .
              .         .
@@ -2816,6 +2790,17 @@ Internet-Draft              RAW Technologies               February 2022
              +.........+
 
                     Figure 13: Reliability with Dual UE
+
+
+
+
+
+
+
+Thubert, et al.            Expires 2 June 2023                 [Page 50]
+
+Internet-Draft              RAW Technologies               November 2022
+
 
    Note that the abstraction provided by the RHF and the location of the
    RHF being outside of the 5G system make 5G equally supporting
@@ -2850,14 +2835,6 @@ Internet-Draft              RAW Technologies               February 2022
    reliability and availability.  In addition, 5G includes capabilities
    for integration to IP networks.
 
-
-
-
-Thubert, et al.           Expires 6 August 2022                [Page 51]
-
-Internet-Draft              RAW Technologies               February 2022
-
-
 7.  L-band Digital Aeronautical Communications System
 
    One of the main pillars of the modern Air Traffic Management (ATM)
@@ -2873,6 +2850,14 @@ Internet-Draft              RAW Technologies               February 2022
    In the long-term, ATM communication shall transition from analogue
    VHF voice and VDL2 communication to more spectrum efficient digital
    data communication.  The European ATM Master Plan foresees this
+
+
+
+Thubert, et al.            Expires 2 June 2023                 [Page 51]
+
+Internet-Draft              RAW Technologies               November 2022
+
+
    transition to be realized for terrestrial communications by the
    development and implementation of the L-band Digital Aeronautical
    Communications System (LDACS).  LDACS shall enable IPv6 based air-
@@ -2907,13 +2892,6 @@ Internet-Draft              RAW Technologies               February 2022
    Generally, the group is open to input from all sources and develops
    LDACS in the open.
 
-
-
-Thubert, et al.           Expires 6 August 2022                [Page 52]
-
-Internet-Draft              RAW Technologies               February 2022
-
-
    Up to now the LDACS standardization has been focused on the
    development of the physical layer and the data link layer, only
    recently have higher layers come into the focus of the LDACS
@@ -2924,6 +2902,17 @@ Internet-Draft              RAW Technologies               February 2022
    Communications Infrastructure (FCI).  FCI shall support quality of
    service, diversity, and mobility under the umbrella of the "multi-
    link concept".  This work is conducted by ICAO working group WG-I.
+
+
+
+
+
+
+
+Thubert, et al.            Expires 2 June 2023                 [Page 52]
+
+Internet-Draft              RAW Technologies               November 2022
+
 
    In addition to standardization activities several industrial LDACS
    prototypes have been built.  One set of LDACS prototypes has been
@@ -2960,16 +2949,6 @@ Internet-Draft              RAW Technologies               February 2022
    capability was flight tested and proven during the MICONAV flight
    trials in 2019 [BAT19].
 
-
-
-
-
-
-Thubert, et al.           Expires 6 August 2022                [Page 53]
-
-Internet-Draft              RAW Technologies               February 2022
-
-
    In previous works and during the MICONAV flight campaign in 2019, it
    was also shown, that LDACS can be used for surveillance capability.
    Filip et al.  [FIL19] shown passive radar capabilities of LDACS and
@@ -2980,6 +2959,16 @@ Internet-Draft              RAW Technologies               February 2022
    communication it supports mutual entity authentication, integrity and
    confidentiality capabilities of user data messages and some control
    channel protection capabilities [MAE18], [MAE191], [MAE192], [MAE20].
+
+
+
+
+
+
+Thubert, et al.            Expires 2 June 2023                 [Page 53]
+
+Internet-Draft              RAW Technologies               November 2022
+
 
    Overall this makes LDACS the world's first truly integrated CNS
    system and is the worldwide most mature, secure, terrestrial long-
@@ -3019,13 +3008,6 @@ Internet-Draft              RAW Technologies               February 2022
    way for further enhancements which can increase business efficiency
    and minimize investment risk.  [ICAO19]
 
-
-
-Thubert, et al.           Expires 6 August 2022                [Page 54]
-
-Internet-Draft              RAW Technologies               February 2022
-
-
 7.4.  Applicability to Deterministic Flows
 
    As LDACS is a ground-based digital communications system for flight
@@ -3033,6 +3015,16 @@ Internet-Draft              RAW Technologies               February 2022
    flight, time-bounded deterministic arrival times for safety critical
    messages are a key feature for its successful deployment and roll-
    out.
+
+
+
+
+
+
+Thubert, et al.            Expires 2 June 2023                 [Page 54]
+
+Internet-Draft              RAW Technologies               November 2022
+
 
 7.4.1.  System Architecture
 
@@ -3077,9 +3069,17 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 55]
+
+
+
+
+
+
+
+
+Thubert, et al.            Expires 2 June 2023                 [Page 55]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
             IPv6                   Network Layer
@@ -3133,9 +3133,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 56]
+Thubert, et al.            Expires 2 June 2023                 [Page 56]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    in precisely defined transmission opportunities allocated by the
@@ -3189,9 +3189,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 57]
+Thubert, et al.            Expires 2 June 2023                 [Page 57]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    ^
@@ -3245,9 +3245,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 58]
+Thubert, et al.            Expires 2 June 2023                 [Page 58]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    and grants resources with resource allocation messages.  Resource
@@ -3301,9 +3301,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 59]
+Thubert, et al.            Expires 2 June 2023                 [Page 59]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    It is a secure, scalable and spectrum efficient data link with
@@ -3357,9 +3357,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 60]
+Thubert, et al.            Expires 2 June 2023                 [Page 60]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    [RFC5673]  Pister, K., Ed., Thubert, P., Ed., Dwars, S., and T.
@@ -3413,9 +3413,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 61]
+Thubert, et al.            Expires 2 June 2023                 [Page 61]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    [RFC6551]  Vasseur, JP., Ed., Kim, M., Ed., Pister, K., Dejean, N.,
@@ -3449,64 +3449,64 @@ Internet-Draft              RAW Technologies               February 2022
               <https://www.rfc-editor.org/info/rfc9023>.
 
    [I-D.ietf-raw-architecture]
-              Thubert, P. and G. Z. Papadopoulos, "Reliable and
-              Available Wireless Architecture", Work in Progress,
-              Internet-Draft, draft-ietf-raw-architecture-03, 14 January
-              2022, <https://datatracker.ietf.org/doc/html/draft-ietf-
-              raw-architecture-03>.
+              Thubert, P., "Reliable and Available Wireless
+              Architecture", Work in Progress, Internet-Draft, draft-
+              ietf-raw-architecture-10, 14 November 2022,
+              <https://www.ietf.org/archive/id/draft-ietf-raw-
+              architecture-10.txt>.
 
    [I-D.ietf-roll-nsa-extension]
-              Koutsiamanis, R., Papadopoulos, G., Montavont, N., and P.
-              Thubert, "Common Ancestor Objective Function and Parent
+              Koutsiamanis, R., Papadopoulos, G. Z., Montavont, N., and
+              P. Thubert, "Common Ancestor Objective Function and Parent
               Set DAG Metric Container Extension", Work in Progress,
               Internet-Draft, draft-ietf-roll-nsa-extension-10, 29
-              October 2020, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-roll-nsa-extension-10>.
+              October 2020, <https://www.ietf.org/archive/id/draft-ietf-
+              roll-nsa-extension-10.txt>.
 
    [I-D.papadopoulos-paw-pre-reqs]
-              Papadopoulos, G., Koutsiamanis, R., Montavont, N., and P.
-              Thubert, "Exploiting Packet Replication and Elimination in
+              Papadopoulos, G. Z., Koutsiamanis, R., Montavont, N., and
+              P. Thubert, "Exploiting Packet Replication and Elimination
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 62]
+Thubert, et al.            Expires 2 June 2023                 [Page 62]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
-              Complex Tracks in LLNs", Work in Progress, Internet-Draft,
-              draft-papadopoulos-paw-pre-reqs-01, 25 March 2019,
-              <https://datatracker.ietf.org/doc/html/draft-papadopoulos-
-              paw-pre-reqs-01>.
+              in Complex Tracks in LLNs", Work in Progress, Internet-
+              Draft, draft-papadopoulos-paw-pre-reqs-01, 25 March 2019,
+              <https://www.ietf.org/archive/id/draft-papadopoulos-paw-
+              pre-reqs-01.txt>.
 
    [I-D.thubert-bier-replication-elimination]
-              Thubert, P., Eckert, T., Brodard, Z., and H. Jiang, "BIER-
-              TE extensions for Packet Replication and Elimination
+              Thubert, P., Eckert, T. T., Brodard, Z., and H. Jiang,
+              "BIER-TE extensions for Packet Replication and Elimination
               Function (PREF) and OAM", Work in Progress, Internet-
               Draft, draft-thubert-bier-replication-elimination-03, 3
-              March 2018, <https://datatracker.ietf.org/doc/html/draft-
-              thubert-bier-replication-elimination-03>.
+              March 2018, <https://www.ietf.org/archive/id/draft-
+              thubert-bier-replication-elimination-03.txt>.
 
    [I-D.thubert-6lo-bier-dispatch]
               Thubert, P., Brodard, Z., Jiang, H., and G. Texier, "A
               6loRH for BitStrings", Work in Progress, Internet-Draft,
               draft-thubert-6lo-bier-dispatch-06, 28 January 2019,
-              <https://datatracker.ietf.org/doc/html/draft-thubert-6lo-
-              bier-dispatch-06>.
+              <https://www.ietf.org/archive/id/draft-thubert-6lo-bier-
+              dispatch-06.txt>.
 
    [I-D.ietf-bier-te-arch]
-              Eckert, T., Menth, M., and G. Cauchie, "Tree Engineering
-              for Bit Index Explicit Replication (BIER-TE)", Work in
-              Progress, Internet-Draft, draft-ietf-bier-te-arch-12, 28
-              January 2022, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-bier-te-arch-12>.
+              Eckert, T. T., Menth, M., and G. Cauchie, "Tree
+              Engineering for Bit Index Explicit Replication (BIER-TE)",
+              Work in Progress, Internet-Draft, draft-ietf-bier-te-arch-
+              13, 25 April 2022, <https://www.ietf.org/archive/id/draft-
+              ietf-bier-te-arch-13.txt>.
 
    [I-D.ietf-6tisch-coap]
               Sudhaakar, R. S. and P. Zand, "6TiSCH Resource Management
               and Interaction using CoAP", Work in Progress, Internet-
               Draft, draft-ietf-6tisch-coap-03, 9 March 2015,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-6tisch-
-              coap-03>.
+              <https://www.ietf.org/archive/id/draft-ietf-6tisch-coap-
+              03.txt>.
 
    [IEEE Std 802.15.4]
               IEEE standard for Information Technology, "IEEE Std
@@ -3525,9 +3525,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 63]
+Thubert, et al.            Expires 2 June 2023                 [Page 63]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    [IEEE Std 802.11ax]
@@ -3581,9 +3581,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 64]
+Thubert, et al.            Expires 2 June 2023                 [Page 64]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    [morell13] Antoni Morell et al., "Label switching over IEEE802.15.4e
@@ -3637,9 +3637,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 65]
+Thubert, et al.            Expires 2 June 2023                 [Page 65]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    [GRA11]    Gräupl, T. and M. Ehammer, "L-DACS1 Data Link Layer
@@ -3693,9 +3693,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 66]
+Thubert, et al.            Expires 2 June 2023                 [Page 66]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    [TS23501]  3GPP, "System architecture for the 5G System (5GS)",
@@ -3713,10 +3713,11 @@ Internet-Draft              RAW Technologies               February 2022
               <https://www.3gpp.org/ftp/tsg_ran/TSG_RAN/TSGR_91e/Docs/
               RP-210854.zip>.
 
-   [SP211633] 3GPP, "New SID: Extensions to the TSC Framework to support
-              DetNet", 3GPP SP-211633, December 2021,
-              <https://www.3gpp.org/ftp/tsg_sa/TSG_SA/
-              TSGS_94E_Electronic_2021_12/Docs/SP-211633.zip>.
+   [TR2370046]
+              3GPP, "Study on 5GS DetNet interworking",
+              3GPP TR23.700-46, August 2022,
+              <https://portal.3gpp.org/desktopmodules/Specifications/
+              SpecificationDetails.aspx?specificationId=3994>.
 
    [SP211634] 3GPP, "Study on 5G Timing Resiliency, TSC, and URLLC
               enhancements", 3GPP SP-211634, December 2021,
@@ -3748,10 +3749,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-
-Thubert, et al.           Expires 6 August 2022                [Page 67]
+Thubert, et al.            Expires 2 June 2023                 [Page 67]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    [IEEE802.1Qbv]
@@ -3805,9 +3805,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 68]
+Thubert, et al.            Expires 2 June 2023                 [Page 68]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    [FIL19]    Filip-Dhaubhadel, A. and D. Shutin, "LDACS- Based Non-
@@ -3861,9 +3861,9 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 69]
+Thubert, et al.            Expires 2 June 2023                 [Page 69]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    [Sudhakaran2021]
@@ -3917,9 +3917,9 @@ Authors' Addresses
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 70]
+Thubert, et al.            Expires 2 June 2023                 [Page 70]
 
-Internet-Draft              RAW Technologies               February 2022
+Internet-Draft              RAW Technologies               November 2022
 
 
    Corinna Schmitt
@@ -3973,4 +3973,4 @@ Internet-Draft              RAW Technologies               February 2022
 
 
 
-Thubert, et al.           Expires 6 August 2022                [Page 71]
+Thubert, et al.            Expires 2 June 2023                 [Page 71]

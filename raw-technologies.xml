@@ -1560,27 +1560,27 @@ Communication       Communication
    </t>
 
    <t>
-   Resulting of these studies, further enhancements to NR have been standardized 
-   in 3GPP Release 16, hence, available in <xref target='TS38300'/>, and 
+   Resulting of these studies, further enhancements to NR have been standardized
+   in 3GPP Release 16, hence, available in <xref target='TS38300'/>, and
    continued in 3GPP Release 17 standardization (according to <xref target='RP210854'/>).
    </t>
 
    <t>
    In addition, several enhancements have been done on system architecture level
    which are reflected in System architecture for the 5G System (5GS)
-   <xref target='TS23501'/>. These enhancements include multiple features in 
-   support of Time-Sensitive Communications (TSC) by Release 16 and Release 17. 
-   Further improvements will be considered in the 3GPP Release 18 time frame, 
-   e.g., support for DetNet <xref target='SP211633'/>.
+   <xref target='TS23501'/>. These enhancements include multiple features in
+   support of Time-Sensitive Communications (TSC) by Release 16 and Release 17.
+   Further improvements will be considered in the 3GPP Release 18 time frame,
+   e.g., support for DetNet <xref target='TR2370046'/>.
    </t>
 
    <t>
    The adoption and the use of 5G is facilitated by multiple organizations. For
    instance, the 5G Alliance for Connected Industries and Automation (5G-ACIA)
-   brings together widely varying 5G stakeholders including Information and 
-   Communication Technology (ICT) players and Operational Technology (OT) 
+   brings together widely varying 5G stakeholders including Information and
+   Communication Technology (ICT) players and Operational Technology (OT)
    companies, e.g.: industrial automation enterprises, machine builders, and
-   end users. Another example is the 5G Automotive Association (5GAA), which 
+   end users. Another example is the 5G Automotive Association (5GAA), which
    bridges ICT and automotive technology companies to develop end-to-end
    solutions for future mobility and transportation services.
    </t>
@@ -1693,7 +1693,7 @@ Communication       Communication
    However, unlicensed spectrum can provide an additional resource for scaling
    non-critical communications. While NR is initially developed for usage of
    licensed spectrum, the functionality to access also unlicensed spectrum was
-   introduced in 3GPP Release 16. Moreover, URLLC features are enhanced in 
+   introduced in 3GPP Release 16. Moreover, URLLC features are enhanced in
    Release 17 <xref target='RP210854'/> to be better applicable to unlicensed
    spectrum.
    </t>
@@ -1794,9 +1794,9 @@ Nnssf|  Nnef|   Nnrf|    Npcf|    Nudm|    Naf|
    e.g., due to too-late handovers, the mechanism of conditional handover is
    introduced in Release 16 specifications. Therein a conditional handover
    command, defining a triggering point, can be sent to the UE before UE enters
-   a handover situation. A further improvement that has been introduced in 
-   Release 16 is the Dual Active Protocol Stack (DAPS), where the UE maintains 
-   the connection to the source cell while connecting to the target cell. This 
+   a handover situation. A further improvement that has been introduced in
+   Release 16 is the Dual Active Protocol Stack (DAPS), where the UE maintains
+   the connection to the source cell while connecting to the target cell. This
    way, potential interruptions in packet delivery can be avoided entirely.
    </t>
 
@@ -1992,10 +1992,10 @@ Nnssf|  Nnef|   Nnrf|    Npcf|    Nudm|    Naf|
    transmission format (e.g., robustness of modulation and coding scheme,
    controlled UL power) is selected for the radio channel condition of the UE.
    Retransmissions, based on HARQ feedback, are also controlled by the
-   scheduler. The feedback transmission in HARQ loop introduces delays, but 
-   there are methods to minimize it by using short transmission formats, 
-   sub-slot feedback reporting and PUCCH carrier switching. If needed to 
-   avoid HARQ round-trip time delays, repeated transmissions can be also 
+   scheduler. The feedback transmission in HARQ loop introduces delays, but
+   there are methods to minimize it by using short transmission formats,
+   sub-slot feedback reporting and PUCCH carrier switching. If needed to
+   avoid HARQ round-trip time delays, repeated transmissions can be also
    scheduled beforehand, to the cost of reduced spectral efficiency.
    </t>
 
@@ -2028,9 +2028,9 @@ Nnssf|  Nnef|   Nnrf|    Npcf|    Nudm|    Naf|
    (partly Release 16) are: 1) UL logical channel transmission restrictions
    allowing to map logical channels of certain QoS only to intended UL
    resources of a certain frequency carrier, slot-length, or CG configuration,
-   and 2) intra-UE pre-emption and multiplexing, allowing critical UL 
-   transmissions to either pre-empt non-critical transmissions or being 
-   multiplexed with non-critical transmissions keeping different reliability 
+   and 2) intra-UE pre-emption and multiplexing, allowing critical UL
+   transmissions to either pre-empt non-critical transmissions or being
+   multiplexed with non-critical transmissions keeping different reliability
    targets.
    </t>
 
@@ -2114,15 +2114,15 @@ Nnssf|  Nnef|   Nnrf|    Npcf|    Nudm|    Naf|
    </t>
 
    <t>
-   3GPP Release 17 <xref target='TS23501'/> introduced enhancements to 
-   generalize support for Time-Sensitive Communications (TSC) beyond TSN. 
+   3GPP Release 17 <xref target='TS23501'/> introduced enhancements to
+   generalize support for Time-Sensitive Communications (TSC) beyond TSN.
    This includes IP communications to provide time-sensitive service to, e.g.,
    Video, Imaging and Audio for Professional Applications (VIAPA). The system
    model of 5G acting as a “TSN bridge” in Release 16 has been reused to enable
-   the 5GS acting as a “TSC node” in a more generic sense (which includes TSN 
-   bridge and IP node). In the case of TSC that does not involve TSN, 
+   the 5GS acting as a “TSC node” in a more generic sense (which includes TSN
+   bridge and IP node). In the case of TSC that does not involve TSN,
    requirements are given via exposure interface and the control plane provides
-   the service based on QoS and time synchronization requests from an 
+   the service based on QoS and time synchronization requests from an
    Application Function (AF).
    </t>
 
@@ -2184,45 +2184,67 @@ Nnssf|  Nnef|   Nnrf|    Npcf|    Nudm|    Naf|
    to their OFDM symbol structures. A 5G internal reference time can be
    provided to the UE via broadcast or unicast signaling, associating a known
    OFDM symbol to this reference clock. The 5G internal reference time can be
-   shared within the 5G network, i.e., radio and core network components. 
+   shared within the 5G network, i.e., radio and core network components.
    Release 16 has introduced interworking with gPTP for multiple time domains,
-   where the 5GS acts as a virtual gPTP time-aware system and supports the 
+   where the 5GS acts as a virtual gPTP time-aware system and supports the
    forwarding of gPTP time synchronization information between end stations and
    bridges through the 5G user plane TTs. These account for the residence time
    of the 5GS in the time synchronization procedure. One special option is when
    the 5GS internal reference time in not only used within the 5GS, but also to
-   the rest of the devices in the deployment, including connected TSN bridges 
+   the rest of the devices in the deployment, including connected TSN bridges
    and end stations. Release 17 includes further improvements, i.e., methods
-   for propagation delay compensation in RAN, further improving the accuracy 
-   for time synchronization over-the-air, as well as the possibility for the 
-   TSN grandmaster clock to reside on the UE side. More extensions and 
+   for propagation delay compensation in RAN, further improving the accuracy
+   for time synchronization over-the-air, as well as the possibility for the
+   TSN grandmaster clock to reside on the UE side. More extensions and
    flexibility were added to the time synchronization service making it general
    for TSC with additional support of other types of clocks and time
-   distribution such as boundary clock, transparent clock peer-to-peer, 
+   distribution such as boundary clock, transparent clock peer-to-peer,
    transparent clock end-to-end, aside from the time-aware system used for TSN.
-   Additionally, it is possible to use internal access stratum signaling to 
+   Additionally, it is possible to use internal access stratum signaling to
    distribute timing (and not the usual (g)PTP messages), for which the required
-   accuracy can be provided by the AF <xref target='TS23501'/>. The same time 
-   synchronization service is expected to be further extended and enhanced in 
-   Release 18 to support Timing Resiliency (according to study item 
-   <xref target='SP211634'/>), where the 5G system can provide a back-up or 
-   alternative timing source for the failure of the local GNSS source (or other 
+   accuracy can be provided by the AF <xref target='TS23501'/>. The same time
+   synchronization service is expected to be further extended and enhanced in
+   Release 18 to support Timing Resiliency (according to study item
+   <xref target='SP211634'/>), where the 5G system can provide a back-up or
+   alternative timing source for the failure of the local GNSS source (or other
    primary timing source) used by the vertical.
    </t>
-   
+
    <t>
-   IETF Deterministic Networking (DetNet) is the technology to support 
-   time-sensitive communications at the IP layer. 3GPP Release 18 includes a 
-   study <xref target='SP211633'/> on whether and how to enable 3GPP support 
+   <!--
+   IETF Deterministic Networking (DetNet) is the technology to support
+   time-sensitive communications at the IP layer. 3GPP Release 18 includes a
+   study <xref target='TR2370046'/> on whether and how to enable 3GPP support
    for DetNet such that a mapping is provided between DetNet and 5G. The support
    for DetNet is considered to be added via the TSC framework introduced for
    Release 17. The study includes what information needs to be exposed by the
-   5G System and the translation of DetNet flow specification to 5G QoS 
-   parameters. Note that TSN is the primary subnetwork technology for DetNet. 
-   Thus, the DetNet over TSN work, e.g., <xref target='RFC9023'/>, can be 
-   leveraged via the TSN support built in 5G. As the standards are ready for 
-   such an approach, it is out of scope for the 3GPP Release 18 study item 
-   <xref target='SP211633'/>.
+   5G System and the translation of DetNet flow specification to 5G QoS
+   parameters. Note that TSN is the primary subnetwork technology for DetNet.
+   Thus, the DetNet over TSN work, e.g., <xref target='RFC9023'/>, can be
+   leveraged via the TSN support built in 5G. As the standards are ready for
+   such an approach, it is out of scope for the 3GPP Release 18 study item
+   <xref target='TR2370046'/>.
+   -->
+   IETF Deterministic Networking (DetNet) is the technology to support
+   time-sensitive communications at the IP layer. 3GPP Release 18 includes a
+   study <xref target='TR2370046'/> on interworking between 5G and DetNet.
+   Along the TSC framework introduced for Release 17, the 5GS acts as
+   a DetNet node for the support of DetNet, see Figure 7.1-1 in
+   <xref target='TR2370046'/>.
+   The study provides details on how the 5GS is exposed by the Time Sensitive
+   Communication and Time Synchronization Function (TSCTSF) to the DetNet
+   controller as a router on a per UPF
+   granularity (similarly to the per UPF Virtual TSN Bridge granularity
+   shown in Figure 11). In particular, it is listed what parameters are
+   provided by the TSCTSF to the DetNet controller. The study also
+   includes how the TSCTSF maps DetNet flow parameters to 5G QoS
+   parameters. Note that TSN is the primary subnetwork technology for DetNet.
+   Thus, the DetNet over TSN work, e.g., <xref target='RFC9023'/>, can be
+   leveraged via the TSN support built in 5G. As the standards are ready
+   for such an approach, it is out of scope for the 3GPP Release 18
+   study item <xref target='TR2370046'/>.
+
+
    </t>
 
    <t>
@@ -2334,7 +2356,7 @@ Nnssf|  Nnef|   Nnrf|    Npcf|    Nudm|    Naf|
    </section><!-- Summary   -->
 
    </section> <!-- 5G -->
-   
+
 
  <section><name>L-band Digital Aeronautical Communications System</name>
    <t>
@@ -3204,7 +3226,7 @@ y
           </author>
         </front>
       </reference>
-	  
+
 	  <reference anchor='RP210854' target='https://www.3gpp.org/ftp/tsg_ran/TSG_RAN/TSGR_91e/Docs/RP-210854.zip'>
         <front>
           <title>Revised WID: Enhanced Industrial Internet of Things (IoT) and ultra-reliable and low latency communication (URLLC) support for NR</title>
@@ -3215,8 +3237,22 @@ y
 		  <date month='March' year='2021'/>
         </front>
       </reference>
-	  
-	  <reference anchor='SP211633' target='https://www.3gpp.org/ftp/tsg_sa/TSG_SA/TSGS_94E_Electronic_2021_12/Docs/SP-211633.zip'>
+
+
+
+	  <reference anchor='TR2370046' target='https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3994'>
+        <front>
+          <title>Study on 5GS DetNet interworking</title>
+          <seriesInfo name="3GPP" value="TR23.700-46"/>
+          <author>
+            <organization showOnFrontPage="true">3GPP</organization>
+          </author>
+		  <date month='August' year='2022'/>
+        </front>
+      </reference>
+
+
+	  <!--reference anchor='SP211633' target='https://www.3gpp.org/ftp/tsg_sa/TSG_SA/TSGS_94E_Electronic_2021_12/Docs/SP-211633.zip'>
         <front>
           <title>New SID: Extensions to the TSC Framework to support DetNet</title>
           <seriesInfo name="3GPP" value="SP-211633"/>
@@ -3225,8 +3261,8 @@ y
           </author>
 		  <date month='December' year='2021'/>
         </front>
-      </reference>
-	  
+      </reference-->
+
 	  <reference anchor='SP211634' target='https://www.3gpp.org/ftp/tsg_sa/TSG_SA/TSGS_94E_Electronic_2021_12/Docs/SP-211634.zip '>
         <front>
           <title>Study on 5G Timing Resiliency, TSC, and URLLC enhancements</title>
@@ -3244,7 +3280,7 @@ y
           <author></author>
         </front>
       </reference>
-	  
+
       <reference anchor="IEEE802.1TSN" target="http://www.ieee802.org/1/pages/tsn.html" quoteTitle="true" derivedAnchor="IEEE802.1TSN">
         <front>
           <title>Time-Sensitive Networking (TSN) Task Group</title>
