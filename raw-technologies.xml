@@ -1566,12 +1566,14 @@ Communication       Communication
    </t>
 
    <t>
+
    In addition, several enhancements have been done on system architecture level
    which are reflected in System architecture for the 5G System (5GS)
-   <xref target='TS23501'/>. These enhancements include multiple features in
-   support of Time-Sensitive Communications (TSC) by Release 16 and Release 17.
-   Further improvements will be considered in the 3GPP Release 18 time frame,
-   e.g., support for DetNet <xref target='TR2370046'/>.
+   <xref target='TS23501'/>.
+   These enhancements include multiple features in  support of Time-Sensitive
+   Communications (TSC) by Release 16 and Release 17. Further improvements are
+   provided in Release 18,  e.g., support for DetNet <xref target='TR2370046'/>.
+
    </t>
 
    <t>
