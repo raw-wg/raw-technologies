@@ -156,12 +156,12 @@ Internet-Draft              RAW Technologies                   June 2023
    DetNet flow packets over time and/or space to ensure delivery of each
    packet's data in spite of the loss of a path.  DetNet operates at the
    IP layer and typically delivers service over wired lower-layer
-   technologies such as MPLS and Time- Sensitive Networking (TSN) as
-   defined by IEEE 802.1.
+   technologies such as Time-Sensitive Networking (TSN) as defined by
+   IEEE 802.1 and IEEE 802.3.
 
-   Making Wireless Reliable and Available is even more challenging than
-   it is with wires, due to the numerous causes of loss in transmission
-   that add up to the congestion losses and the delays caused by
+   Making wireless reliable and available is even more challenging than
+   it is with wires, due to the numerous causes of radio transmission
+   losses that add up to the congestion losses and the delays caused by
 
 
 
@@ -179,15 +179,15 @@ Internet-Draft              RAW Technologies                   June 2023
 
    RAW, like DetNet, needs and leverages lower-layer capabilities such
    as time synchronization and traffic shapers.  To balance the adverse
-   effects of the radio transmission losses, RAW also leverages
-   capabilities that may be more specific to wireless.  Packet (hybrid)
-   ARQ, Replication, Elimination and Ordering (PAREO) can be seen as a
-   superset Of DetNet's PREOF, adding techniques such as such as per-hop
-   retransmissions (aka Automatic Repeat request or ARQ), variating the
-   modulation and coding scheme (MCS), short range broadcast, MUMIMO,
-   constructive interference and overhearing.  PAREO techniques are
-   offered by the lower layer and may be controlled separately or
-   combined to increase the reliability.
+   effects of the radio transmission losses, RAW leverages additional
+   capabilities, some of which maybe more specific to wireless.  RAW's
+   Packet (hybrid) ARQ, Replication, Elimination and Ordering (PAREO)
+   can be seen as a superset Of DetNet's PREOF, adding techniques such
+   as per-hop retransmissions (aka Automatic Repeat request or ARQ),
+   variating the modulation and coding scheme (MCS), short range
+   broadcast, MUMIMO, constructive interference and overhearing.  PAREO
+   techniques are offered by the lower layer and may be controlled by
+   RAW separately or in combination.
 
    RAW defines a network-layer control loop that optimizes the use of
    links with constrained spectrum and energy while maintaining the

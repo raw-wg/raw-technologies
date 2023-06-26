@@ -130,18 +130,18 @@
    network topology, and 3) distributing data from DetNet flow packets
    over time and/or space to ensure delivery of each packet's data in
    spite of the loss of a path.  DetNet operates at the IP layer and typically
-   delivers service over wired lower-layer technologies such as MPLS and Time-
-   Sensitive Networking (TSN) as defined by IEEE 802.1.
+   delivers service over wired lower-layer technologies such as Time-Sensitive
+   Networking (TSN) as defined by IEEE 802.1 and IEEE 802.3.
    </t>
    <t>
-   Making Wireless Reliable and Available is even more challenging than it is
-   with wires, due to the numerous causes of loss in transmission that add up
+   Making wireless reliable and available is even more challenging than it is
+   with wires, due to the numerous causes of radio transmission losses that add up
    to the congestion losses and the delays caused by overbooked shared resources.
    The Reliable and Available Wireless (RAW) Architecture <xref target='I-D.ietf-raw-architecture'/> extends the DetNet Architecture <xref target="RFC8655"/>  and other standard IETF concepts and mechanisms to adapt to the specific challenges of the wireless medium, in particular intermittently lossy connectivity, by extending and optimizing the use of diversity and multipathing.
   </t>
    <t>
-   RAW, like DetNet, needs and leverages lower-layer capabilities such as time synchronization and traffic shapers. To balance the adverse effects of the radio transmission losses, RAW also leverages capabilities that may be more specific to wireless. Packet (hybrid) ARQ, Replication, Elimination and Ordering (PAREO) can be seen as a superset Of DetNet's PREOF,
-   adding techniques such as such as per-hop retransmissions (aka Automatic Repeat request or ARQ), variating the modulation and coding scheme (MCS), short range broadcast, MUMIMO, constructive interference and overhearing. PAREO techniques are offered by the lower layer and may be controlled separately or combined to increase the reliability.
+   RAW, like DetNet, needs and leverages lower-layer capabilities such as time synchronization and traffic shapers. To balance the adverse effects of the radio transmission losses, RAW leverages additional capabilities, some of which maybe more specific to wireless. RAW's Packet (hybrid) ARQ, Replication, Elimination and Ordering (PAREO) can be seen as a superset Of DetNet's PREOF,
+   adding techniques such as per-hop retransmissions (aka Automatic Repeat request or ARQ), variating the modulation and coding scheme (MCS), short range broadcast, MUMIMO, constructive interference and overhearing. PAREO techniques are offered by the lower layer and may be controlled by RAW separately or in combination.
    </t>
   <t>
    RAW defines a network-layer control loop that optimizes the use of links with constrained spectrum and energy while maintaining the expected connectivity properties, typically reliability and latency. The control loop involves Operations, Administration and Maintenance (OAM), a Path computation Element (PCE), A runtime distributed Path Selection Engine (PSE) and the PAREO functions.

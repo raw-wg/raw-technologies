@@ -476,7 +476,7 @@ rest of the paragraph.
 
  <Nils>
 
-Expanded the following sentence: “Resources can either be requested "on demand" with a given class of service.”:
+Expanded the following sentence: “Resources can either be requested "on demand" with a given class of service.” as
 “Resources can either be requested "on demand", or permanently allocated by a LDACS ground station, with a given class of service.”
 
  </Nils>
