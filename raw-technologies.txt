@@ -2914,9 +2914,10 @@ Thubert, et al.         Expires 28 December 2023               [Page 52]
 Internet-Draft              RAW Technologies                   June 2023
 
 
-   Overall this makes LDACS the world's first truly integrated CNS
-   system and is the worldwide most mature, secure, terrestrial long-
-   range CNS technology for civil aviation.
+   Overall this makes LDACS the world's first truly integrated
+   Communications, Navigation,done and Surveillance (CNS) system and is
+   the worldwide most mature, secure, terrestrial long-range CNS
+   technology for civil aviation.
 
 7.3.  Deployment and Spectrum
 
@@ -2964,7 +2965,6 @@ Internet-Draft              RAW Technologies                   June 2023
 
 
 
-
 Thubert, et al.         Expires 28 December 2023               [Page 53]
 
 Internet-Draft              RAW Technologies                   June 2023
@@ -2990,21 +2990,21 @@ Internet-Draft              RAW Technologies                   June 2023
    Protocol (SNP).  The LDACS network is externally connected to voice
    units, radio control units, and the ATN Network Layer.
 
+   Communications between MAC and LME layer is split into four distinct
+   control channels: The Broadcast Control Channel (BCCH) where LDACS
+   ground stations announce their specific LDACS cell, including
+   physical parameters and cell identification; the Random Access
+   Channel (RACH) where LDACS airborne radios can request access to an
+   LDACS cell; the Common Control Channel (CCCH) where LDACS ground
+   stations allocate resources to aircraft radios, enabling the airborne
+   side to transmit user payload; the Dedicated Control Channel (DCCH)
+   where LDACS airborne radios can request user data resources from the
+   LDACS ground station so the airborne side can transmit user payload.
+   Communications between MAC and DLS layer is handled by the Data
+   Channel (DCH) where user payload is handled.
+
    Figure 14 shows the protocol stack of LDACS as implemented in the AS
    and GS.
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3199,15 +3199,16 @@ Internet-Draft              RAW Technologies                   June 2023
    contention-free control channels.
 
    LDACS has two mechanisms to request resources from the scheduler in
-   the ground-station.  Resources can either be requested "on demand"
-   with a given class of service.  On the forward link, this is done
-   locally in the ground-station, on the reverse link a dedicated
-   contention-free control channel is used (Dedicated Control Channel
-   (DCCH); roughly 83 bit every 60 ms).  A resource allocation is always
-   announced in the control channel of the forward link (Common Control
-   Channel (CCCH); variable sized).  Due to the spacing of the reverse
-   link control channels of every 60 ms, a medium access delay in the
-   same order of magnitude is to be expected.
+   the ground-station.  Resources can either be requested "on demand",
+   or permanently allocated by a LDACS ground station, with a given
+   class of service.  On the forward link, this is done locally in the
+   ground-station, on the reverse link a dedicated contention-free
+   control channel is used (Dedicated Control Channel (DCCH); roughly 83
+   bit every 60 ms).  A resource allocation is always announced in the
+   control channel of the forward link (Common Control Channel (CCCH);
+   variable sized).  Due to the spacing of the reverse link control
+   channels of every 60 ms, a medium access delay in the same order of
+   magnitude is to be expected.
 
    Resources can also be requested "permanently".  The permanent
    resource request mechanism supports requesting recurring resources in
@@ -3240,7 +3241,6 @@ Internet-Draft              RAW Technologies                   June 2023
    LDACS has been designed with applications related to the safety and
    regularity of the flight in mind.  It has therefore been designed as
    a deterministic wireless data link (as far as possible).
-
 
 
 

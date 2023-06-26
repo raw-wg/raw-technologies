@@ -2351,7 +2351,7 @@ LDACS shall enable IPv6 based air-ground communication related to the safety and
            Since LDACS has been mainly designed for air traffic management communication it supports mutual entity authentication, integrity and confidentiality capabilities of user data messages and some control channel protection capabilities  <xref target="MAE18"/>, <xref target="MAE191"/>, <xref target="MAE192"/>, <xref target="MAE20"/>. <!--<xref target='MAE19'/>.-->
        </t>
        <t>
-           Overall this makes LDACS the world's first truly integrated CNS system
+           Overall this makes LDACS the world's first truly integrated Communications, Navigation,done and Surveillance (CNS) system
            and is the worldwide most mature, secure, terrestrial long-range CNS
            technology for civil aviation.
        </t>
@@ -2431,6 +2431,12 @@ LDACS shall enable IPv6 based air-ground communication related to the safety and
                The last entity resides within the Sub-Network Layer: Sub-Network
                Protocol (SNP).  The LDACS network is externally connected to voice
                units, radio control units, and the ATN Network Layer.
+           </t>
+           <t>
+           Communications between MAC and LME layer is split into four distinct control channels:
+            The Broadcast Control Channel (BCCH) where LDACS ground stations announce their specific LDACS cell, including physical parameters and cell identification; the Random Access Channel (RACH) where LDACS airborne radios can request access to an LDACS cell; the Common Control Channel (CCCH) where LDACS ground stations allocate resources to aircraft radios, enabling the airborne side to transmit user payload; the Dedicated Control Channel (DCCH) where LDACS airborne radios can request user data resources from the LDACS ground station so the airborne side can transmit user payload.
+            Communications between MAC and DLS layer is handled by the Data Channel (DCH) where user payload is handled.
+
            </t>
            <t>
                <xref target="fig_LDACSprotocolstack"/> shows the protocol stack of LDACS as implemented in the AS
@@ -2596,8 +2602,10 @@ y
            </t>
            <t>
            LDACS has two mechanisms to request resources from the scheduler in
-           the ground-station.  Resources can either be requested "on demand"
-           with a given class of service.  On the forward link, this is done
+           the ground-station.
+
+           Resources can either be requested "on demand", or permanently allocated by a LDACS ground station, with a given class of service.
+            On the forward link, this is done
            locally in the ground-station, on the reverse link a dedicated
            contention-free control channel is used (Dedicated Control Channel
            (DCCH); roughly 83 bit every 60 ms).  A resource allocation is always

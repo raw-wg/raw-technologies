@@ -430,7 +430,14 @@ could be used as subnet technology for DetNet...? Then it also says adding
 direct support for DetNet is in scope for release 18... what does "direct
 support" mean?
 
+
+
 7.2 - CNS not expanded.
+
+ <Nils>
+done
+
+ </Nils>
 
 7.4.2 Figure 14 - most of the acronyms are explained in the paragraph above
 but DCH, DCCH, CCCH, RACH, BCCH are not. It might be too critical of me but
@@ -441,11 +448,51 @@ the Logical Link Control Layer and the Medium Access Layer is categorised
 into channels." Or simplify the diagram by taking them out and having clean
 lines between the blocks.
 
+
+ <Nils>
+
+Added a paragraph above the sentence “Figure 14 shows the protocol stack of LDACS as implemented in the AS and GS.” as follows:
+“Communications between MAC and LME layer is split into four distinct control channels:
+The Broadcast Control Channel (BCCH) where LDACS ground stations announce their specific LDACS cell, including physical parameters and cell identification;
+the Random Access Channel (RACH) where LDACS airborne radios can request access to an LDACS cell;
+the Common Control Channel (CCCH) where LDACS ground stations allocate resources to aircraft radios, enabling the airborne side to transmit user payload;
+the Dedicated Control Channel (DCCH) where LDACS airborne radios can request user data resources from the LDACS ground station so the airborne side can transmit user payload.
+
+Communications between MAC and DLS layer is handled by the Data Channel (DCH) where user payload is handled.”
+
+
+ </Nils>
+
+
 7.4.4 page 59
+
 "Resources can either be requested" - there's no matching 'or', you could
+
 remove the "either" since the description of this first option fills the
+
 rest of the paragraph.
 
+
+
+ <Nils>
+
+Expanded the following sentence: “Resources can either be requested "on demand" with a given class of service.”:
+“Resources can either be requested "on demand", or permanently allocated by a LDACS ground station, with a given class of service.”
+
+ </Nils>
+
 I wonder how much of this detail is needed - 7.4 is about applicability to
+
 deterministic flows, so maybe this detail could be reduced to highlight
+
 that, with a reference to the detail?
+
+
+
+ <Nils>
+
+We as authors of the LDACS draft believe that the given detail is just sufficient to enable the reader to understand LDACS capabilities which further enables deterministic flows.
+A link to a 200 page specification or the LDACS RFC 9372 would require the reader to read significantly more to understand the same LDACS concepts.
+Thus we believe the reduced details given here strike a good balance.
+
+ </Nils>
