@@ -92,6 +92,12 @@ IOW - does this mean "in other words"?
 technoque -> technique
 "a nd" -> and
 
+<Pascal>
+
+done
+
+</Pascal>
+
 4.1
 This section might benefit from a brief description of 802.1 TSN after
 introducing 802.11, before explaining where 802.11 has brought in support

@@ -237,10 +237,9 @@ Internet-Draft              RAW Technologies                   June 2023
    To achieve this, there must be a shared sense of time throughout the
    network.  The sense of time is usually provided by the lower layer
    and is not in scope for RAW.  As an example, the Precision Time
-   Protocol, standardized as IEEE 1588 and IEC 61588, has mapping to
-   Ethernet but also to a number of industrial and Smartrid protocols
-   through profiles.  Wi-Fi relies on IEEE Std 802.1AS, which
-   incorporates a PTP profile, for Fine Timing Measurement.
+   Protocol, standardized as IEEE 1588 and IEC 61588, has mapping
+   through profiles to Ethernet, industrial and SmartGrid protocols, and
+   Wi-Fi with IEEE Std 802.1AS.
 
 3.2.  Diversity for Availability
 
@@ -252,10 +251,9 @@ Internet-Draft              RAW Technologies                   June 2023
    This is not acceptable for critical applications such as related to
    safety.  A typical process control loop will tolerate an occasional
    packet loss, but a loss of several packets in a row will cause an
-   emergency stop (e.g., after 4 packets lost, within a period of 1
-   second).  In an amusement park, a continuous loss of packet for a few
-   100ms may trigger an automatic interruption of the ride and cause the
-   evacuation and the reboot of the game.
+   emergency stop.  In an amusement park, a continuous loss of packet
+   for a few 100ms may trigger an automatic interruption of the ride and
+   cause the evacuation and the reboot of the game.
 
    Network Availability is obtained by making the transmission resilient
    against hardware failures and radio transmission losses due to
@@ -268,10 +266,12 @@ Internet-Draft              RAW Technologies                   June 2023
 
 3.3.  Benefits of Scheduling
 
-   Scheduling redundant transmissions of the critical packets of diverse
+   Scheduling redundant transmissions of the critical packets on diverse
    paths improves the resiliency against breakages and statistical
    transmission loss, such as due to cosmic particles on wires, and
    interferences on wireless.
+
+
 
 
 
