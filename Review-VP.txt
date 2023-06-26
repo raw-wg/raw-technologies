@@ -1,0 +1,445 @@
+Document: draft-ietf-raw-technologies-06.txt
+Reviewer: Victoria Pritchard
+Review Date: 20/03/2023-31/3/2023
+Intended Status: Informational
+
+Summary:
+I have significant concerns about this document. It needs more work before
+being submitted to the IESG.
+
+Comments:
+
+First I'll admit I've not been following the discussion in the RAW working
+group, and maybe that's why I found this tough to read. Parts of it were
+really clear about the applicability of the different technologies
+highlighted, but I found a lot of it did not flow well, and contained a lot
+of information that either seemed too detailed or the relevance to
+deterministic flows wasn't made clear. I found myself doing extra research
+into the technologies and standards mentioned, especially for 802.11 and
+TSCH, and trying to work out why each detail was important, what it was
+aiming to highlight, and to fill in gaps where the explanation had assumed
+prior knowledge.
+
+What follows is a list of notes I made while reviewing, with some nits
+included, but also some suggestions and questions. I apologise in advance
+and understand if you disagree with any of my comments, as you may expect
+readers to be more familiar with the technologies presented.
+
+Kind regards,
+Victoria.
+
+----
+
+1. Introduction
+I think a bit more about DetNet should be included here. DetNet gets
+mentioned a few times throughout the doc, might be good to describe very
+briefly what DetNet have covered, as well as the existing words about how
+additional methods are needed for wireless.
+The intro describes PAREO as a group of methods to do this, but the
+document is arranged by existing technologies rather than these types of
+methods - should probably list the technologies about to be discussed, and
+that the document will show how they use these methods to achieve
+reliability and availability.
+
+
+<Pascal>
+
+
+Nits:
+
+covered
+
+</Pascal>
+
+2. Terminology
+
+Some items in this Terminology section are not really/clearly used within
+the doc:
+- Deterministic flow identifier (both L2 and L3)
+- Traffic type profile
+Nits:
+"that discussion takes place are in" - probalby dont need "are"
+"uncommon on protocols" - not sure this makes sense
+stochastics -> stochastic
+Deterministic Flow Identifier (L3) - extra "." in last sentence.
+Downlink only makes sense if you already read Uplink.
+Should these be in alphabetical order for easy reference?
+Under "traffic type profile" - should it say "has a one-to-one" instead of
+"as a one-to-one"?
+
+
+
+<Pascal>
+
+The RAW architecture ahs progressed including for its terminology. The best is to refer to it. Which I did, and then emptied that section.
+
+</Pascal>
+
+
+3.1 Smartrid  -> SmartGrid?
+Since timing is out of scope for RAW, could possibly condense some of this?
+e.g.
+"As an example, the Precision Time
+   Protocol [IEEE 1588 and IEC 61588] is used by a number of protocols
+including
+   Ethernet, industrial and Smartgrid protocols and Wi-Fi."
+3.2 I would say that " (e.g., after 4 packets lost, within a period of 1
+   second)." isn't necessary.
+
+3.3 Nits:
+"critical packets of diverse paths" - "critical packets on diverse paths" ?
+IOW - does this mean "in other words"?
+technoque -> technique
+"a nd" -> and
+
+4.1
+This section might benefit from a brief description of 802.1 TSN after
+introducing 802.11, before explaining where 802.11 has brought in support
+for TSN and referencing TSN standards.
+
+Naming Timing Measurement Protocol and Fine Timing Measurement doesnt seem
+necessary - it's not referred to later, and we were already told timing was
+out of scope for RAW. Could be simplified like this:
+"Support for TSN time synchronization was introduced in IEEE Std
+802.11-2012 and enhanced in IEEE Std 802.11-2016. It uses 802.1AS. The IEEE
+Std 802.11-2016 also included the Stream Reservation Protocol (IEEE
+802.1Qat)."
+
+I found the 4th paragraph to be an overwhelming list of different standards
+and protocols, I felt I needed to look these up individually to see how
+this was all relevant, but actually the way the different capabilities were
+linked to specifications/certifications later in this section was really
+useful and a nicer way to present the standards. If the history and
+evolution is important to highlight, I would keep this chronological -
+including skipping the first reference to 802.11ax and 802.11be in the 3rd
+paragraph.
+
+The bit that starts "As with any wireless media" should be in its own
+paragraph - I like how it highlights important considerations.
+
+Nits:
+retroffitted -> retrofitted
+Last sentence should say "remainder of this section" and mention 802.11ad
+and 802.11ay as section 4.4 discusses these too.
+
+Section 4.2.2 and 4.3.2 do a great job of focusing on relevant developments
+of 802.11.
+
+4.2.2 need a space before "Nevertheless"
+
+4.2.2.1 IEEE802.1Qcc first mentioned here - 802.1Qat was previously
+mentioned as Stream Reservation Protocol, and 802.1Qcc is an enhancement to
+this, it's worth clarifying.
+
+4.2.2.2 first use of MCS but it is not expanded.
+"When the network in lightly loaded" -> "When the network is lightly loaded"
+
+4.3.2.2 - the 3rd and 4th sentences in the first paragraph say the same
+thing.
+
+4.3.2.3 "802.be Draft" - is this 802.11be?
+
+4.4.1 - extra space at end of first paragraph, missing "." at end of second
+paragraph.
+
+
+Section 5 I found the hardest to read. I think some definitions could be
+presented earlier, and some detail could be removed.
+These are my notes from my first reading, tidied up after my second.
+
+5.1
+This section introduces term "Tracks" which is used a lot, before finally
+being explained in 5.2.2.2. Could probably leave out this sentence in the
+middle of the 3rd paragraph in 5.1 ("Yet the charter...")? But, considering
+Tracks are mentioned so much, would consider moving the definition from the
+start of 5.2.2.2 to somewhere around here.
+
+I also noticed 6top was mentioned later in the document, though only 6P is
+mentioned here. It may be useful for a brief overview, e.g. like the
+Terminology section of RFC9030 where it says 6TiSCH defines the 6top layer
+etc... and then says 6P operates at that layer enabling neighbour
+agreement. Then you could state how 6TiSCH focused on best effort traffic
+not quality of service requirements (currently mentioned in 3rd and 6th
+paragraphs). Maybe even mention how RPL fits in as RPL is mentioned a few
+times later without much introduction.
+
+I got lost in the detail of the 3rd paragraph. I'm not sure the info on
+scheduling functions is needed here as it's also mentioned in 5.2.1, could
+the detail be moved there?
+
+The 4th paragraph seems misplaced because the 5th paragraph then goes back
+to 6TiSCH. Could the paragraph about ISA100.11a and WirelessHART be placed
+before the 6TiSCH information?
+
+"Useful References" in this section - I think these would be better as
+paragraphs in the text rather than a list - the detail of the references
+should just be in the references section later. It would be good to include
+a sentence about why each is considered useful.
+1. 802.15.4 is already referenced in the text so doesnt need repeating.
+2. It is not explained why this is relevant.
+3. Again doesn't explain why this is a useful reference. It's also not
+clear from the reference title itself that it is about 802.15.4, so I
+initially wondered if it's a more general reference about the benefits of
+packet replication, or particularly about packet replication in TSCH, i.e.
+whether it should be in this TSCH section or not. Could you add a statement
+like: " A study by ... looked at the benefits of packet replication in TSCH
+networks." I think it links with your sentence about what RAW can add,
+after the ISA100.11a and WirelessHART text.
+
+CoAP is not expanded.
+
+Overall thoughts on 5.1.
+I think 5.1 is trying to say "802.15.4 is for low-power low-cost radio. The
+2015 update covers TSCH. Interesting standards addressing time sensitive
+networking over TSCH include ISA100.11a and WirelessHART, which both define
+a central controller computing redundant paths. ISA100.11a has limited IPv6
+capabilities, and RAW could help with optimised P2P routing, PAREO
+functions and end to end IPv6/CoAP. Also the 6TiSCH group already looked at
+IPv6 over TSCH, and defined an architecture which includes a distributed
+scheduling mechanism. But 6TiSCH focused on best effort traffic not time
+sensitive networking. RAW needs to build on this."
+I dont think it flows very well as-is.
+
+5.2.1
+Figure 1 - a quick note to expand EB would be nice.
+
+For the statement "managed by a scheduling function such as" MSF - That
+scheduling function was defined by 6TiSCH, so it made me wonder how
+802.15.4 TSCH defines scheduling functions, since this section is TSCH
+general characteristics, not 6TiSCH specifically?
+
+Not sure all the detail is needed here, especially:
+"A cell's timeslot offset indicates its position in
+   time, relative to the beginning of the slotframe.  A cell's channel
+   offset is an index which maps to a frequency at each iteration of the
+   slotframe. "
+" An Absolute Slot Number (ASN) indicates the number
+   of slots elapsed since the network started.  It increments at every
+   slot.  This is a 5 byte counter that can support networks running for
+   more than 300 years without wrapping (assuming a 10 ms timeslot)."
+
+Is the channel hopping (mentioned at the end of the paragraph below Figure
+1) different to the scheduling function (eg MSF) mentioned earlier?
+
+Parts of the final paragraph of 5.2.1 would fit better in 5.2.2 as its more
+about the RAW context and further work, rather than the general
+characteristics of TSCH.
+
+5.2.2
+Nits:
+"This enables to build" -> "This enables building"
+ensure -> ensures
+"scheduling is a key" -> "scheduling is key"
+Again mentions Tracks but they havent really been explained yet.
+overprovisionned, overprovisionning -> single n
+measu reth excursion -> measure the excursion ? not sure what this means.
+
+5.2.2.1
+Nits:
+iprovides -> provides
+I didnt understand the sentence with "(to be)" in brackets:
+For that case, the expectation is that a protocol that flows along a
+   Track (to be), in a fashion similar to classical Traffic Engineering
+   (TE) [CCAMP], may be used to update the state in the devices.
+
+I feel 5.2.2.1 is lacking a bit of intro... Maybe something like: "When
+looking at end-to-end communication over TSCH....." or "The nodes can be
+provided with their schedules ..." then discuss the Operational Control
+System, the PCE computing the tracks and provisioning every hop. I also
+feel like this bit of the architecture could have been clearer earlier in
+5.1 when introducing 6TiSCH.
+
+So in a hybrid mode, to update Tracks, it wouldnt be driven from the same
+control system involving the PCE? I understood from this paragraph that a
+potential need has been identified, but there is no design for this flow
+yet, and in any case, DetNet is expected to cover this, and the 6TiSCH
+neighbour negotiation might be useful in the solution. The bit "for, say,
+Packet Delivery Ratio (PDR)" is an extra detail that could be removed to
+help keep this concise, maybe the neighbour negotiation part too.
+
+Should Figure 2 have a caption?
+
+5.2.2.1.1 - Does the information in the following sections cover the most
+relevant parts of that section of RFC9030 then?
+5.2.2.1.1.1
+RPLInstanceID - not explained until 5.2.2.1.3. Trying to work out if this
+is just extra detail or has relevance to RAW. Would it be enough to
+simplify to:
+"Packets that are routed by a PCE along a Track, are tagged to uniquely
+identify the Track and associated transmit bundle of timeSlots."...?
+
+LLN also not expanded. Should 6lo be also?
+
+Figure 4 - what are DP and AP in the caption?
+
+p23.
+"a'OR'relations" -> "an 'OR' relation" ... or "'OR' relations" ?
+a'AND'relation -> "an 'AND' relation"
+In general put spaces around 'OR' and 'AND'.
+I found it hard to understand this part with 'OR' and 'AND'. Looks like
+some of this has come directly from RFC9030 - can it be summarised a
+little, or an example given? Can it be related back to Figure 4? The second
+paragraph is very similar in content but a bit clearer to read. Thoughts on
+simplifying this explanation - maybe something like:
+"6TiSCH architecture defines packet replication where timeslots can be
+grouped such that if any one of those timeslots results in successful
+transmission, the other timeslots (which may be on the same path, or on
+other paths) are not needed (the 'OR' relation), or where multiple
+transmissions on different paths are required (the 'AND' relation between
+groups)."
+
+5.2.2.1.3
+Some of this might fit well in the first paragraphs about 6TiSCH in 5.1,
+especially mention of RPL as RPLInstanceID is used in a few places without
+being explained.
+If the route is associated with a track, where is the Instance ID from?
+
+5.2.2.1.4
+Nits:
+fond  -> found
+No "." at end of 1st paragraph.
+
+This starts with 'elaboration can be found' but then elaborates here too,
+with sentences duplicated from RFC9030. Can it be condensed a bit to pull
+out the most relevant parts?
+
+"SlotFrames and Priorities" isn't the name of the heading in 9030 anymore,
+it's "Slotframes and CDU Matrix".
+
+Things that weren't clear from this explanation:
+- Does the matrix show scheduled transmissions, i.e. the cells which are
+allocated? What's the difference between a CDU and a slotframe? Figure 1
+earlier showed a slotframe, which was a matrix of channels and timeslots
+too.
+- Why/how are multiple CDU matrices used?
+- When the text moves on to talk about slotframes, it mentions precedence.
+Multiple slotframes of multiple precedence...relating to precedence of
+6TiSCH topologies. I suppose this means the slotframe with highest
+precedence is honoured first, then perhaps if there are free timeslots, the
+slotframe with the next precedence is considered?
+
+At the end of this section, it tries to highlight where the gap is from the
+work done in 6TiSCH and what RAW needs to do, but I didnt really understand
+the explanation before it. It also uses the phrase "then again" which
+suggests the text before it may not be certain? I didnt understand: The PCE
+assigns cells to chunks, then appropriation is requested "by the PCE to any
+node", but then the PCE owns the chunk? Does it mean the node owns the
+chunk, and is this a reference to the part earlier about a hybrid mode?
+
+5.2.2.2 6TiSCH tracks
+PDR - does it mean "packet delivery ratio" here?
+I found this section pretty clear but think it might have been useful
+earlier.
+
+5.2.2.2.2 I found these very detailed, not sure if it's all needed. I kept
+trying to relate it back to what was relevant for RAW and struggled to keep
+focused. I tried to summarise my understanding.
+- Track forwarding - Because receive cells are paired to transmit cells, it
+doesnt need changes in MAC header, and the protocol contained in the frame
+doesnt matter. All cells that were reserved may not be needed, so can be
+reused for opportunistic traffic. On the other hand, unscheduled but
+necessary retransmissions can use cells which weren't reserved (subject to
+some details) and this would be referred to as off-Track. A frame may then
+be re-Tracked (ie forwarded in a cell intended for that track).
+- Transport and tunnel mode - for transport mode, the metadata already
+exists (added by higher layer) so its obvious which track is to be used.
+For transport mode, the data would come from a device without the metadata,
+but the PCE would specify how to identify that it should be transported
+over the track, and where to egress, and metadata would be added on ingress
+at the first 6TiSCH router. This bit seems like a lot of detail duplicated
+from RFC9030, and I can't really see why it's included.
+Note: transport mode seems to be called native mode in RFC9030.
+
+5.2.2.2.2.3 Again seems like too much detail.
+
+5.2.2.2.2.4 This bit on OAM seems relevant, to mention that more work is
+necessary and it highlights useful work in this area.
+
+
+6.1 - 6.3
+There's a lot of detail here about the timeline of different studies and
+releases. Would it be clearer to state the aims, its current release, and
+mention the existing features/enhancements, and maybe future plans where
+relevant?
+6.1 says that Release 18 will support DetNet, but 6.5 and 6.4.5 mention
+DetNet with earlier releases.
+
+6.4.1
+Figure 10 - expanding some acronyms below the picture may be helpful.
+
+There's a lot of detail on handovers - I guess this is trying to highlight
+the elements that make handovers reliable, but could be more concise.
+
+6.4.3 The first paragraph is clear but there's a lot of detail in the rest
+of this section, I think the point is to highlight use of retransmissions,
+scheduling, coding and modulation for reliability, reporting of link
+quality, efficiency, but I found it hard to follow.
+
+6.4.5
+Nits:
+((TSC) -> (TSC)
+Time- Sensitive -> Time-Sensitive
+"the meet their QoS requirements" -> "they meet their QoS requirements"
+"reference time in not only" -> "reference time is not only"
+Figure 10 is mentioned but I think it means Figure 11, which is closer and
+shows 5G-TSN integration as described.
+Figure 10, 12, 13 - not sure what DN means.
+Figure 11 - DSTT, NWTT not defined (probably device side TSN translator and
+network side)
+Page 49 final paragraph mentions Figure 13 but describes Figure 12 at the
+top of page 50.
+"and the core network," -> "and the core network."
+
+Page 49 middle paragraph.
+"3GPP release 18 includes a study" ... then at the end of the paragraph
+"the standards are ready for such an approach, it is out of scope for the
+3GPP Release 18 study item" - This confused me. What bit is out of scope?
+Could this change to:
+IETF Deterministic Networking (DetNet) is the technology to support
+   time-sensitive communications at the IP layer. Note that TSN is the
+primary subnetwork technology for
+   DetNet.  Thus, the DetNet over TSN work, e.g., [RFC9023], can be
+   leveraged via the TSN support built in 5G.  Along the TSC framework
+introduced for Release 17, the 5GS acts as a
+   DetNet node for the support of DetNet. 3GPP Release 18 includes a study
+item [TR2370046] on interworking between 5G and DetNet, showing the
+existing approach in Figure 7.1-1 of [TR2370046]. The study item provides
+details on how the 5GS is exposed by the Time Sensitive Communication and
+Time Synchronization Function
+   (TSCTSF) to the DetNet controller as a router on a per UPF
+   granularity (similarly to the per UPF Virtual TSN Bridge granularity
+   shown in Figure 11).  In particular, it is listed what parameters are
+   provided by the TSCTSF to the DetNet controller.  The study also
+   includes how the TSCTSF maps DetNet flow parameters to 5G QoS
+   parameters.
+
+6.5 Summary
+I didn't find this very clear regarding DetNet. Perhaps because I'm not
+familiar enough in general with these technologies so I apologise if that's
+the case. This section says 5G can be used as subnet technology for DetNet.
+Then says "support for integration with TSN reliability was added to 5G by
+making DetNet reliability also applicable, thus making 5G DetNet ready".
+Was 5G "DetNet ready" before this, because the previous statement says 5G
+could be used as subnet technology for DetNet...? Then it also says adding
+direct support for DetNet is in scope for release 18... what does "direct
+support" mean?
+
+7.2 - CNS not expanded.
+
+7.4.2 Figure 14 - most of the acronyms are explained in the paragraph above
+but DCH, DCCH, CCCH, RACH, BCCH are not. It might be too critical of me but
+I'd like to see a small mention of them before they are covered in later
+paragraphs. Maybe expand them at the bottom of the diagram, or add
+something in the sentence introducing Figure 14 e.g. "Data passing between
+the Logical Link Control Layer and the Medium Access Layer is categorised
+into channels." Or simplify the diagram by taking them out and having clean
+lines between the blocks.
+
+7.4.4 page 59
+"Resources can either be requested" - there's no matching 'or', you could
+remove the "either" since the description of this first option fills the
+rest of the paragraph.
+
+I wonder how much of this detail is needed - 7.4 is about applicability to
+deterministic flows, so maybe this detail could be reduced to highlight
+that, with a reference to the detail?

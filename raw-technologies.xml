@@ -13,7 +13,7 @@
 <?rfc subcompact="no"?>
 <?rfc authorship="yes"?>
 <?rfc tocappendix="yes"?>
-<rfc  xmlns:xi="http://www.w3.org/2001/XInclude" category="info" ipr='trust200902' tocInclude="true"  obsoletes="" updates="" submissionType="IETF" xml:lang="en" version="3" docName="draft-ietf-raw-technologies-05" >
+<rfc  xmlns:xi="http://www.w3.org/2001/XInclude" category="info" ipr='trust200902' tocInclude="true"  obsoletes="" updates="" submissionType="IETF" xml:lang="en" version="3" docName="draft-ietf-raw-technologies-08" >
 
 <front>
    <title abbrev='RAW Technologies'>Reliable and Available Wireless Technologies</title>
@@ -99,11 +99,11 @@
    <section><name>Introduction</name>
    <t>
    When used in math or philosophy, the term "deterministic" generally refers to
-   a perfection where all aspect are understood and predictable. A perfectly
-   deterministic network would ensure that every packet reach its destination
+   a perfection where all aspects are understood and predictable. A perfectly
+   deterministic network would ensure that every packet reaches its destination
    following a predetermined path along a predefined schedule to be delivered at
    the exact due time. In a real and imperfect world, a deterministic network
-   must highly predictable, which is a combination of reliability and
+   must be highly predictable, which is a combination of reliability and
    availability.
 
    </t>
@@ -113,113 +113,49 @@
    will perform as expected for all but very few packets and in particular
    that it will deliver the packets at the destination within a pre-defined
    time interval.
-.  </li><li>
+    </li><li>
    On the other hand, the network must be available, meaning that it has to be
    resilient to any single outage, independently of the cause of the failure,
-   be it software, hardware, or a external, e.g., a physical event impacting
+   be it software, hardware, or external, e.g., a physical event impacting
    the transmission channel.
    </li>
    </ul>
    <t>
-
-   RAW (Reliable and Available Wireless) is an effort to provide Deterministic
-   Networking <xref target="RFC8557"/> in networking environments where
-   at least some segments of a path are wireless.
-
+   Deterministic Networking (DetNet) <xref target="RFC8557"/> provides a capability to carry specified
+   unicast or multicast data flows for real-time applications with extremely low data loss rates and bounded latency within a network
+   domain.  Techniques used include 1) reserving data-plane resources
+   for individual (or aggregated) DetNet flows in some or all of the
+   intermediate nodes along the path of the flow, 2) providing explicit
+   routes for DetNet flows that do not immediately change with the
+   network topology, and 3) distributing data from DetNet flow packets
+   over time and/or space to ensure delivery of each packet's data in
+   spite of the loss of a path.  DetNet operates at the IP layer and typically
+   delivers service over wired lower-layer technologies such as MPLS and Time-
+   Sensitive Networking (TSN) as defined by IEEE 802.1.
+   </t>
+   <t>
    Making Wireless Reliable and Available is even more challenging than it is
    with wires, due to the numerous causes of loss in transmission that add up
    to the congestion losses and the delays caused by overbooked shared resources.
-
-   In order to maintain a similar quality of service along a multihop path that
-   is composed of wired and wireless hops, additional methods that are specific
-   to wireless must be leveraged to combat the sources of loss that are also
-   specific to wireless.
-
+   The Reliable and Available Wireless (RAW) Architecture <xref target='I-D.ietf-raw-architecture'/> extends the DetNet Architecture <xref target="RFC8655"/>  and other standard IETF concepts and mechanisms to adapt to the specific challenges of the wireless medium, in particular intermittently lossy connectivity, by extending and optimizing the use of diversity and multipathing.
+  </t>
+   <t>
+   RAW, like DetNet, needs and leverages lower-layer capabilities such as time synchronization and traffic shapers. To balance the adverse effects of the radio transmission losses, RAW also leverages capabilities that may be more specific to wireless. Packet (hybrid) ARQ, Replication, Elimination and Ordering (PAREO) can be seen as a superset Of DetNet's PREOF,
+   adding techniques such as such as per-hop retransmissions (aka Automatic Repeat request or ARQ), variating the modulation and coding scheme (MCS), short range broadcast, MUMIMO, constructive interference and overhearing. PAREO techniques are offered by the lower layer and may be controlled separately or combined to increase the reliability.
+   </t>
+  <t>
+   RAW defines a network-layer control loop that optimizes the use of links with constrained spectrum and energy while maintaining the expected connectivity properties, typically reliability and latency. The control loop involves Operations, Administration and Maintenance (OAM), a Path computation Element (PCE), A runtime distributed Path Selection Engine (PSE) and the PAREO functions.
    </t>
    <t>
-
-   Such wireless-specific methods include per-hop retransmissions (HARQ) and
-   P2MP overhearing whereby multiple receivers are scheduled to receive the same
-   transmission, which balances the adverse effects of the transmission losses
-   that are experienced when a radio is used as pure P2P. Those methods are
-   collectively referred to as Packet (hybrid) ARQ, Replication, Elimination and
-   Ordering (PAREO) functions in the <xref target='I-D.ietf-raw-architecture'>
-   "Reliable and Available Wireless Architecture/Framework"</xref>.
+   This document browses the short and middle range radio technologies that are suitable to provide a DetNet/RAW service over,
+   presents the characteristics that RAW may leverage, and explores the applicability of the technologies to carry deterministic flows. The studied technologies are Wi-Fi 6/7, TimeSlotted Channel Hopping (TSCH), 3GPP 5G, and L-band Digital Aeronautical Communications System (LDACS).
    </t>
    </section><!-- title="Introduction"-->
 
    <section><name>Terminology</name>
    <t>
-    The terms Reliable and Available in the context of RAW require some discussion; that discussion takes place are in the RAW architecture <xref target='I-D.ietf-raw-architecture'/>. Summarized definitions are provided below.
+   This document uses the terminology and acronyms defined in section 2 of <xref target="RFC8655"/> and section 2 of <xref target='I-D.ietf-raw-architecture'/>.
    </t>
-   <t>This specification uses several terms that are uncommon on protocols
-   that ensure best effort transmissions for stochastics flows, such as found in the traditional Internet and other statistically multiplexed packet networks.</t>
-
-    <dl  spacing='normal'>
-    <dt>ARQ:</dt><dd> Automatic Repeat Request, enabling an acknowledged
-       transmission and retries. ARQ is a typical model at Layer-2 on a wireless
-       medium. It is typically avoided end-to-end on deterministic flows because
-       it introduces excessive indetermination in latency, but a limited number
-       of retries within a bounded time may be used over a wireless link and yet
-       respect end-to-end constraints.
-       </dd>
-    <dt>Availability:</dt><dd>Availability is a measure of the relative
-    amount of time where a path operates in stated condition, in other words
-    (uptime)/(uptime+downtime).
-    </dd>
-       <dt>Available:</dt><dd> That is exempt of unscheduled outage, the
-       expectation for a network being that the flow is maintained in the face
-       of any single breakage. </dd>
-       <dt>Deterministic Networking</dt> <dd>See section 2 of
-       <xref target="RFC8557"/>.</dd>
-       <dt>Deterministic Network</dt> <dd>See section 4.1.2 of
-       <xref target="RFC8655"/>.</dd>
-       <dt>Deterministic Flow Identifier (L2) :</dt> <dd> A tuple identified
-       by a stream_handle, and provided by a bridge, in accordance with IEEE
-       802.1CB. The tuple comprises at least src MAC, dst MAC, VLAN ID, and L2
-       priority. Continuous streams are characterized by bandwidth and max
-       packet size; scheduled streams are characterized by a repeating pattern
-       of timed transmissions.</dd>
-       <dt>Deterministic Flow Identifier (L3):</dt> <dd> See section 3.3 of
-       <xref target="RFC8938"/>. The classical IP 5-tuple that identifies a
-       flow comprises the src IP, dst IP, src port, dest port, and the upper layer protocol (ULP).
-       DetNet uses a 6-tuple where the extra field is the DSCP field in the
-       packet. The IPv6 flow label is not used. for that purpose. </dd>
-
-
-      <dt>Uplink: </dt> <dd>Connection from end-devices to a data communication equipment. In the context of wireless, uplink refers to the connection between a station (STA) and a controller (AP) or a User Equipment (UE) to a Base Station (BS).</dd>
-
-      <dt>Downlink: </dt> <dd>The reverse direction.</dd>
-
-      <dt>Traffic type profile (IEEE): </dt> <dd>Corresponds to the traffic classification identifier provided to a deterministic flow. Traffic classes receive an identifier numbered from 0 to 8 (N-1), where N is the number of outbound queues associated with a given Bridge port. Each traffic class as a one-to-one correspondence with a specific egress/outbound queue for a port.</dd>
-
-
-       <dt>FEC:</dt><dd> Forward error correction, sending redundant coded
-       data to help the receiver recover transmission errors without the delays
-       incurred with ARQ. </dd>
-       <dt>HARQ:</dt><dd> Hybrid ARQ, a combination of FEC and ARQ. </dd>
-       <dt>PCE:</dt><dd> Path Computation Element. </dd>
-       <dt>PREOF :</dt><dd>
-       DetNet Packet Replication, Elimination and Ordering Functions. </dd>
-       <dt>PAREO:</dt><dd>Packet (hybrid) ARQ, Replication, Elimination and
-       Ordering. PAREO is a superset Of DetNet's PREOF that includes
-       radio-specific techniques such as short range broadcast, MUMIMO,
-       constructive interference and overhearing, which can be
-      leveraged separately or combined to increase the reliability.
-    </dd>
-    <dt>Reliability:</dt><dd>Reliability is a measure of the probability
-    that an item will perform its intended function for a specified
-    interval under stated conditions. For RAW, the service that is expected
-    is delivery within a bounded latency and a failure is when the packet
-    is either lost or delivered too late.
-    </dd>
-    <dt>Track:</dt><dd>
-    A networking graph that can be used as a "path" to transport RAW packets
-    with equivalent treatment; a Track may fork and rejoin to enable the PAREO
-    operations.
-    </dd>
-    </dl>
-
    </section><!-- Terminology -->
 
 
@@ -820,7 +756,7 @@ offset
    </t>
    <t>
    It results that the tagging that is used for a DetNet flow outside the
-   6TiSCH LLN MUST be swapped into 6TiSCH formats and back as the packet
+   6TiSCH LLN must be swapped into 6TiSCH formats and back as the packet
    enters and then leaves the 6TiSCH network.
    </t>
    <t>
@@ -832,9 +768,9 @@ offset
    <section anchor='pmhrre'><name>Replication, Retries and Elimination</name>
     <t>
        The 6TiSCH Architecture <xref target='RFC9030'/> leverages the Packet
-       Replication, Retries and Elimination (PRE) functions (PREF), the
-       precursor to what the RAW Architecture
-       <xref target='I-D.ietf-raw-architecture'/> calls PAREO functions.
+       Replication, Retries, Elimination (PRE) and Ordering functions (PREOF), the
+       precursor the PAREO functions in the RAW Architecture.
+
        PREF establishes several paths in a network to provide
        redundancy and parallel transmissions to bound the end-to-end delay.
        Considering the scenario shown in <xref target='fig_ladder'/>,
@@ -904,9 +840,9 @@ offset
    need to process the sequence numbers.
    </t>
    <t>
-   The semantics of the configuration MUST enable correlated timeSlots to be
+   The semantics of the configuration must enable correlated timeSlots to be
    grouped for transmit (and respectively receive) with a'OR'relations,
-   and then a'AND'relation MUST be configurable between groups.
+   and then a'AND'relation must be configurable between groups.
    The semantics is that if the transmit (and respectively receive) operation
    succeeded in one timeSlot in a'OR'group, then all the other timeSLots in
    the group are ignored.
@@ -916,12 +852,12 @@ offset
    <t>
    On the transmit side, timeSlots provisioned for retries along a same branch
    of a Track are placed a same'OR'group. The'OR'relation indicates that if
-   a transmission is acknowledged, then further transmissions SHOULD NOT be
+   a transmission is acknowledged, then further transmissions should not be
    attempted for timeSlots in that group. There are as many'OR'groups as
    there are branches of the Track departing from this node. Different'OR'groups
    are programmed for the purpose of replication, each group corresponding to
    one branch of the Track. The'AND'relation between the groups indicates that
-   transmission over any of branches MUST be attempted regardless of whether a
+   transmission over any of branches must be attempted regardless of whether a
    transmission succeeded in another branch. It is also possible to place cells
    to different next-hop routers in a same'OR'group. This allows to route along
    multi-path Tracks, trying one next-hop and then another only if sending to the
@@ -959,7 +895,7 @@ offset
    The energy that the device consumes in sleep, transmit and receive modes can
    be evaluated and reported. So can the amount of energy that is stored in the
    device and the power that it can be scavenged from the environment. The PCE
-   SHOULD be able to compute Tracks that will implement policies on how the
+   should be able to compute Tracks that will implement policies on how the
    energy is consumed, for instance balance between nodes, ensure that the spent
    energy does not exceeded the scavenged energy over a period of time, etc...
    </t>
@@ -1032,7 +968,7 @@ offset
          It is recommended that all CDU matrices in a 6TiSCH domain operate with
          the same cell duration and are aligned, so as to reduce the
          chances of interferences from slotted-aloha operations.
-         The PCE MUST compute the CDU matrices and shared that knowledge with
+         The PCE must compute the CDU matrices and shared that knowledge with
          all the nodes. The matrices are used in particular to define slotFrames.
           </t>
           <t>
@@ -1058,7 +994,7 @@ offset
          such spectrum distribution for a whole group of cells at a time.
          The CDU matrix is formatted into a set of chunks, each of them
          identified uniquely by a chunk-ID, see <xref target='fig3'/>.
-         The PCE MUST compute the partitioning of CDU matrices into chunks and
+         The PCE must compute the partitioning of CDU matrices into chunks and
          shared that knowledge with all the nodes in a 6TiSCH network.
          </t>
             <figure anchor='fig3'><name>CDU matrix Partitioning in Chunks</name>
@@ -1460,7 +1396,7 @@ chan.Off. 15 |chnkO|chnk6|chnkN|chnk1|chnkJ|chnkZ|chnkI| ... |chnkG|
             <t>
             An example of such tooling can be found in the context of
             <xref target='RFC8279'>BIER</xref> and more specifically
-            <xref target='I-D.ietf-bier-te-arch'>BIER Traffic Engineering</xref>
+            <xref target='RFC9262'>BIER Traffic Engineering</xref>
             (BIER-TE):
             <xref target='I-D.thubert-bier-replication-elimination'/>
             leverages BIER-TE to control the process of PREF, and to provide
@@ -2392,7 +2328,7 @@ LDACS shall enable IPv6 based air-ground communication related to the safety and
            within its radio cell.
        </t>
        <t>
-           The user data rate of LDACS is 315 kbit/s to 1428 kbit/s on the forward link, and 294 kbit/s to 1390 kbit/s on the reverse link, depending on coding and modulation. Due to strong interference from legacy systems in the L-band, the most robust coding and modulation SHOULD be expected for initial deployment i.e. 315/294 kbit/s on the forward/reverse link, respectively.
+           The user data rate of LDACS is 315 kbit/s to 1428 kbit/s on the forward link, and 294 kbit/s to 1390 kbit/s on the reverse link, depending on coding and modulation. Due to strong interference from legacy systems in the L-band, the most robust coding and modulation should be expected for initial deployment i.e. 315/294 kbit/s on the forward/reverse link, respectively.
        </t>
        <t>
            In addition to the communications capability, LDACS also offers a
@@ -2794,7 +2730,7 @@ y
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8480.xml'/> <!-- 6P Protocol Specification -->
 
 
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8938.xml'/> <!-- detnet-dataplane -->
+     <!--  <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8938.xml'/> detnet-dataplane -->
 
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9033.xml'/> <!-- 6Tisch MSF -->
 
@@ -2805,12 +2741,12 @@ y
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.7276.xml'/> <!-- OAM -->
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8279.xml'/> <!-- Mcast BIER -->
 	  <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9023.xml'/> <!-- DetNet IP over TSN -->
+      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9262.xml'/> <!-- bier-te-architecture -->
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-raw-architecture.xml'/>
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-roll-nsa-extension.xml'/>
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.papadopoulos-paw-pre-reqs.xml'/>
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.thubert-bier-replication-elimination.xml'/>
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.thubert-6lo-bier-dispatch.xml'/>
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-bier-te-arch.xml'/>
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-6tisch-coap.xml'/>
 
       <reference anchor='IEEE802154'>
