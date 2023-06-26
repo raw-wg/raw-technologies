@@ -43,23 +43,40 @@ all done, removed P2MP
 
 2. Terminology
 
+
 “This specification” —> “This document”
+<Pascal>
+done
+</Pascal>
 
 “Deterministic Flow Identifier (L2) :” —> “Deterministic Flow Identifier (L2):”
 
 Add reference regarding PCE.
 
 “PREOF :” —> “PREOF:”
+<Pascal>
+Now refer to RAW Architecture
+</Pascal>
 
 Expand MUMIMO.
+<Pascal>
+done
+</Pascal>
 
 Check for consistency the definition of Track that has been discussed in the framework/architecture documents.
 
 
+<Pascal>
+done
+</Pascal>
 
 3.1 Scheduling for Reliability
 
 “the Precision Time Protocol” —> “the Precision Time Protocol (PTP)”
+
+<Pascal>
+removed
+</Pascal>
 
 “A typical process control loop will tolerate an occasional
 
@@ -69,15 +86,28 @@ emergency stop (e.g., after 4 packets lost, within a period of 1
 
 second” —> Add reference supporting this.
 
+<Pascal>
+removed
+</Pascal>
 
 
 3.3  Benefits of Scheduling
 
 Expand IOW
 
+<Pascal>
+removed
+</Pascal>
+
 “a nd” —> “and”
 
 
+<Pascal>
+done
+</Pascal>
+
+
+Section 4
 
 I miss some text introducing the technologies that are going to be explained in Sections 4-7.
 

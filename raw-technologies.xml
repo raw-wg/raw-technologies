@@ -141,7 +141,7 @@
   </t>
    <t>
    RAW, like DetNet, needs and leverages lower-layer capabilities such as time synchronization and traffic shapers. To balance the adverse effects of the radio transmission losses, RAW leverages additional capabilities, some of which maybe more specific to wireless. RAW's Packet (hybrid) ARQ, Replication, Elimination and Ordering (PAREO) can be seen as a superset Of DetNet's PREOF,
-   adding techniques such as per-hop retransmissions (aka Automatic Repeat request or ARQ), variating the modulation and coding scheme (MCS), short range broadcast, MUMIMO, constructive interference, and overhearing whereby multiple receivers are scheduled to receive the same transmission, which saves both energy on the sender and spectrum. PAREO techniques are offered by the lower layer and may be controlled by RAW separately or in combination.
+   adding techniques such as per-hop retransmissions (aka Automatic Repeat request or ARQ), variating the modulation and coding scheme (MCS), short range broadcast, Multiple User - Multiple Input Multiple Output (MU-MIMO), constructive interference, and overhearing whereby multiple receivers are scheduled to receive the same transmission, which saves both energy on the sender and spectrum. PAREO techniques are offered by the lower layer and may be controlled by RAW separately or in combination.
    </t>
   <t>
    RAW defines a network-layer control loop that optimizes the use of links with constrained spectrum and energy while maintaining the expected connectivity properties, typically reliability and latency. The control loop involves Operations, Administration and Maintenance (OAM), a Path computation Element (PCE), A runtime distributed Path Selection Engine (PSE) and the PAREO functions.
@@ -232,7 +232,7 @@
    </t>
    <ul>
    <li>
-   Scheduling allows a time-sharing operation, where every transmission is assigned its own time/frequency resource. IOW, sender and receiver are synchronized and scheduled to talk on a given frequency resource at a given time and for a given duration. This way, scheduling can avoid collisions between scheduled transmissions and enable a high ratio of critical traffic
+   Scheduling allows a time-sharing operation, where every transmission is assigned its own time/frequency resource. Sender and receiver are synchronized and scheduled to talk on a given frequency resource at a given time and for a given duration. This way, scheduling can avoid collisions between scheduled transmissions and enable a high ratio of critical traffic
    compared to QoS-based priority.
    </li>
    <li>
@@ -256,7 +256,7 @@
    </li>
    <li>
    Finally, scheduling plays a critical role to save energy. In IoT, energy is
-   the foremost concern, and synchronizing sender a nd listener enables to
+   the foremost concern, and synchronizing sender and listener enables to
    always maintain them in deep sleep when there is no scheduled
    transmission. This avoids idle listening and long preambles and enables long
    sleep periods between traffic and resynchronization, allowing

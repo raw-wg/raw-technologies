@@ -185,9 +185,12 @@ Internet-Draft              RAW Technologies                   June 2023
    can be seen as a superset Of DetNet's PREOF, adding techniques such
    as per-hop retransmissions (aka Automatic Repeat request or ARQ),
    variating the modulation and coding scheme (MCS), short range
-   broadcast, MUMIMO, constructive interference and overhearing.  PAREO
-   techniques are offered by the lower layer and may be controlled by
-   RAW separately or in combination.
+   broadcast, Multiple User - Multiple Input Multiple Output (MU-MIMO),
+   constructive interference, and overhearing whereby multiple receivers
+   are scheduled to receive the same transmission, which saves both
+   energy on the sender and spectrum.  PAREO techniques are offered by
+   the lower layer and may be controlled by RAW separately or in
+   combination.
 
    RAW defines a network-layer control loop that optimizes the use of
    links with constrained spectrum and energy while maintaining the
@@ -215,9 +218,6 @@ Internet-Draft              RAW Technologies                   June 2023
    A packet network is reliable for critical (e.g., time-sensitive)
    packets when the undesirable statistical effects that affect the
    transmission of those packets, e.g., delay or loss, are eliminated.
-
-
-
 
 
 
