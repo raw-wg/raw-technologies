@@ -1,0 +1,170 @@
+Shepherding review of draft-ietf-raw-technologies
+CARLOS JESUS BERNARDOS CANO
+draft-ietf-raw-technologies@ietf.org
+raw@ietf.org
+Dear authors,
+
+Please find below my review as part of my shepherding of the document. Huge apologies for the belated review.
+
+Thanks,
+
+Carlos
+
+Shepherd review of draft-ietf-raw-technologies-07
+
+
+
+I find the document well written and quite detailed, probably too detailed sometimes. I think we should probably reduce the level of detail in some parts to what is really needed to understand the applicability of these technologies to DETNET/RAW. Some additional comments below.
+
+
+
+Abstract:
+
+“This document presents a series of recent technologies” —> I’d rewrite it to say that it identifies/describes a series of recent technologies and analyzes its applicability to deterministic flows, or something like that.
+
+
+
+1. Introduction:
+
+“every packet reach” —> “every packet reaches”
+
+“network must highly” —> “network must be highly”
+
+“On the one hand the network” —> “On the one hand, the network”
+
+“time interval. .” —> “time interval.”
+
+Expand P2MP
+
+<Pascal>
+all done, removed P2MP
+</Pascal>
+
+
+2. Terminology
+
+“This specification” —> “This document”
+
+“Deterministic Flow Identifier (L2) :” —> “Deterministic Flow Identifier (L2):”
+
+Add reference regarding PCE.
+
+“PREOF :” —> “PREOF:”
+
+Expand MUMIMO.
+
+Check for consistency the definition of Track that has been discussed in the framework/architecture documents.
+
+
+
+3.1 Scheduling for Reliability
+
+“the Precision Time Protocol” —> “the Precision Time Protocol (PTP)”
+
+“A typical process control loop will tolerate an occasional
+
+packet loss, but a loss of several packets in a row will cause an
+
+emergency stop (e.g., after 4 packets lost, within a period of 1
+
+second” —> Add reference supporting this.
+
+
+
+3.3  Benefits of Scheduling
+
+Expand IOW
+
+“a nd” —> “and”
+
+
+
+I miss some text introducing the technologies that are going to be explained in Sections 4-7.
+
+
+
+4.1  Provenance and Documents
+
+“The main 802.11ax and 802.11be capabilities and their relevance to RAW are discussed in the remainder of this document.” —> it is not only those, also 802.11ad and 802.11ay. Besides, I think it should be explained why those from the previous list of amendments are described.
+
+
+
+4.2.1 General Characteristics
+
+Expand AP.
+
+
+
+4.2.2 Applicability to deterministic flows
+
+“in [Fang_2021].Nevertheless,” —> “in [Fang_2021].Nevertheless ,”
+
+
+
+4.2.2.2. Scheduling for bounded latency and diversity
+
+Expand MCS
+
+
+
+4.4.1 General Characteristics
+
+Remove space in “ .” at the end of each paragraph.
+
+
+
+5.2.2.1.  Centralized Path Computation
+
+Add caption to Figure 2.
+
+
+
+5.2.2.2 6TiSCH Tracks
+
+“oveall” —> “overall”
+
+
+
+Overall, I find section 5 too long, especially comparing with section 4. I think it’d be useful to try to do an exercise of consistency across sections 4 to 7.
+
+
+
+6.1.  Provenance and Documents
+
+I’d remove the first sentence, as it does not really add much.
+
+
+
+6.2. General Characteristics
+
+I think we don’t need to go into that much details and at least I’d remove the last paragraph on authentication.
+
+
+
+6.4.1.  System Architecture
+
+I know it is hard, but the text just mentions some of the core elements, while the figure 10 shows more. Maybe the text has to be a bit updated to mention this point.
+
+
+
+6.4.5. Time-Sensitive Communications (TSC)
+
+The 2nd and 3rd paragraphs explain concepts that are useful/needed to understand points made earlier in the document. Therefore, I think it might be worth moving that piece of text before each of the different technologies are deep dived into.
+
+Shouldn’t the document mention something about ATSSS in the context of reliability and availability?
+
+
+
+9. Security Considerations
+
+I find the current text a bit insufficient. Either we: (ii) clearly state that this document is purely informational on some technologies that could be applicable to RAW, each of which have their own security mechanisms in place; or (ii) we provide much more details.
+
+
+
+Sections 4 and 5 do not have a Summary subsection.
+
+
+--
+CARLOS J. BERNARDOS https://www.it.uc3m.es/cjbc/
+Universidad Carlos III de Madrid
+YouTube channel: https://www.youtube.com/CacharREDando/

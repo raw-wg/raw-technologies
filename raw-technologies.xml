@@ -141,7 +141,7 @@
   </t>
    <t>
    RAW, like DetNet, needs and leverages lower-layer capabilities such as time synchronization and traffic shapers. To balance the adverse effects of the radio transmission losses, RAW leverages additional capabilities, some of which maybe more specific to wireless. RAW's Packet (hybrid) ARQ, Replication, Elimination and Ordering (PAREO) can be seen as a superset Of DetNet's PREOF,
-   adding techniques such as per-hop retransmissions (aka Automatic Repeat request or ARQ), variating the modulation and coding scheme (MCS), short range broadcast, MUMIMO, constructive interference and overhearing. PAREO techniques are offered by the lower layer and may be controlled by RAW separately or in combination.
+   adding techniques such as per-hop retransmissions (aka Automatic Repeat request or ARQ), variating the modulation and coding scheme (MCS), short range broadcast, MUMIMO, constructive interference, and overhearing whereby multiple receivers are scheduled to receive the same transmission, which saves both energy on the sender and spectrum. PAREO techniques are offered by the lower layer and may be controlled by RAW separately or in combination.
    </t>
   <t>
    RAW defines a network-layer control loop that optimizes the use of links with constrained spectrum and energy while maintaining the expected connectivity properties, typically reliability and latency. The control loop involves Operations, Administration and Maintenance (OAM), a Path computation Element (PCE), A runtime distributed Path Selection Engine (PSE) and the PAREO functions.
