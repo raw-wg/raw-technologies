@@ -1664,10 +1664,11 @@ Communication       Communication
    <t>
    The 5G system <xref target='TS23501'/> consists of the User Equipment (UE)
    at the terminal side, and the Radio Access Network (RAN) with the gNB as
-   radio base station node, as well as the Core Network (CN). The core network
-   is based on a service-based architecture with the central functions: Access
-   and Mobility Management Function (AMF), Session Management Function (SMF)
-   and User Plane Function (UPF) as illustrated in <xref target='fig-5g-arch'/>.
+   radio base station node, as well as the Core Network (CN), which is connected
+   to the external Data Network (DN). The core network is based on a service-based
+   architecture with the central functions: Access and Mobility Management 
+   Function (AMF), Session Management Function (SMF) and User Plane Function (UPF)
+   as illustrated in <xref target='fig-5g-arch'/>.
    </t>
 
    <t>The gNB’s main responsibility is the radio resource management, including
@@ -1996,8 +1997,8 @@ Nnssf|  Nnef|   Nnrf|    Npcf|    Nudm|    Naf|
 
    <t>
    Recent 3GPP releases have introduced various features to support multiple
-   aspects of Time-Sensitive Communication ((TSC), which includes Time-
-   Sensitive Networking (TSN) and beyond as described in this section.
+   aspects of Time-Sensitive Communication (TSC), which includes Time-Sensitive
+   Networking (TSN) and beyond as described in this section.
    </t>
 
    <t>
@@ -2061,17 +2062,19 @@ Nnssf|  Nnef|   Nnrf|    Npcf|    Nudm|    Naf|
    </t>
 
    <t>
-   <xref target='fig-5g-arch'/> shows an illustration of 5G-TSN integration
+   <xref target='fig-5g-tsn'/> shows an illustration of 5G-TSN integration
    where an industrial controller (Ind Ctrlr) is connected to industrial
    Input/Output devices (I/O dev) via 5G. The 5GS can directly transport
    Ethernet frames since Release 15, thus, end-to-end Ethernet connectivity is
    provided. The 5GS implements the required interfaces towards the TSN
    controller functions such as the CNC, thus adapts to the settings of the TSN
-   network. A 5G user plane virtual bridge interconnects TSN bridges or connect
-   end stations, e.g., I/O devices to the network. Note that the introduction
-   of 5G brings flexibility in various aspects, e.g., more flexible network
-   topology because a wireless hop can replace several wireline hops thus
-   significantly reduce the number of hops end-to-end.
+   network. A 5G user plane virtual bridge interconnects TSN bridges or connects
+   end stations, e.g., I/O devices to the TSN network. TSN Translators (TTs), 
+   i.e., the Device-Side TSN Translator (DS-TT) at the UE and the Network-Side 
+   TSN Translator (NW-TT) at the UPF have a key role in the interconnection. 
+   Note that the introduction of 5G brings flexibility in various aspects, e.g., 
+   more flexible network topology because a wireless hop can replace several 
+   wireline hops thus significantly reduce the number of hops end-to-end.
    <xref target='TSN5G'/> dives more into the integration of 5G with TSN.
    </t>
 
@@ -2124,7 +2127,7 @@ Nnssf|  Nnef|   Nnrf|    Npcf|    Nudm|    Naf|
    forwarding of gPTP time synchronization information between end stations and
    bridges through the 5G user plane TTs. These account for the residence time
    of the 5GS in the time synchronization procedure. One special option is when
-   the 5GS internal reference time in not only used within the 5GS, but also to
+   the 5GS internal reference time is not only used within the 5GS, but also to
    the rest of the devices in the deployment, including connected TSN bridges
    and end stations. Release 17 includes further improvements, i.e., methods
    for propagation delay compensation in RAN, further improving the accuracy
@@ -2174,17 +2177,14 @@ Nnssf|  Nnef|   Nnrf|    Npcf|    Nudm|    Naf|
    includes how the TSCTSF maps DetNet flow parameters to 5G QoS
    parameters. Note that TSN is the primary subnetwork technology for DetNet.
    Thus, the DetNet over TSN work, e.g., <xref target='RFC9023'/>, can be
-   leveraged via the TSN support built in 5G. As the standards are ready
-   for such an approach, it is out of scope for the 3GPP Release 18
-   study item <xref target='TR2370046'/>.
-
+   leveraged via the TSN support built in 5G.
 
    </t>
 
    <t>
    Redundancy architectures were specified in order to provide reliability
    against any kind of failure on the radio link or nodes in the RAN and the
-   core network, Redundant user plane paths can be provided based on the dual
+   core network. Redundant user plane paths can be provided based on the dual
    connectivity architecture, where the UE sets up two PDU sessions towards the
    same data network, and the 5G system makes the paths of the two PDU sessions
    independent as illustrated in <xref target='fig-5g-dual-ue'/>. There are two
@@ -2276,9 +2276,9 @@ Nnssf|  Nnef|   Nnrf|    Npcf|    Nudm|    Naf|
    as subnet technology for DetNet, in combination with or instead of TSN, which
    is the primary subnet for DetNet. In addition, the support for integration
    with TSN reliability was added to 5G by making DetNet reliability also
-   applicable, thus making 5G DetNet ready. Moreover, providing IP service is
-   native to 5G and adding direct support for DetNet is in scope of the upcoming
-   3GPP Release 18.
+   applicable, due to the commonalities between TSN and DetNet reliability. 
+   Moreover, providing IP service is native to 5G and 3GPP Release 18 adds direct 
+   support for DetNet to 5G.
    </t>
 
    <t>
