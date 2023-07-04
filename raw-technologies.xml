@@ -1668,7 +1668,9 @@ Communication       Communication
    to the external Data Network (DN). The core network is based on a service-based
    architecture with the central functions: Access and Mobility Management 
    Function (AMF), Session Management Function (SMF) and User Plane Function (UPF)
-   as illustrated in <xref target='fig-5g-arch'/>.
+   as illustrated in <xref target='fig-5g-arch'/>. "(Note that this document only 
+   explains key functions, however, <xref target='fig-5g-arch'/> provides a more 
+   detailed view.)"
    </t>
 
    <t>The gNB’s main responsibility is the radio resource management, including
