@@ -367,19 +367,73 @@ There's a lot of detail here about the timeline of different studies and
 releases. Would it be clearer to state the aims, its current release, and
 mention the existing features/enhancements, and maybe future plans where
 relevant?
+
+<Janos>
+I'm not sure how such update would be possible. A 3GPP Realease builds upon 
+previous releases, i.e., the various relaeases provide different "add-ons".
+The "add-ons" relevant to RAW are explained in these sections. 
+The current release on its own does not give the picture.
+6.1 includes aims, e.g., industrial Internet of Things (I-IoT).
+Release 18 used to be future in earlier versions of the draft, but the cited
+work has been done in the meantime. It is better not to go into the future as
+it is uncertain, e.g., the detailed scope of Release 19 has not been agreed yet.
+</Janos>
+
+
 6.1 says that Release 18 will support DetNet, but 6.5 and 6.4.5 mention
 DetNet with earlier releases.
+
+<Janos>
+
+6.4.5
+The first paragraph about DetNet explains that Release 18 introduces direct support
+for DetNet.
+
+Due to the commonalities of TSN FRER and DetNet PREOF, the support introducded for 
+TSN FRER actully introduces support for DetNet PREOF as well, e.g., the RHF. (The
+text in the reliability paragraphs is not release specific.)
+
+
+6.5:
+Replace:
+"In addition, the support for integration with TSN reliability was added to 5G 
+by making DetNet reliability also applicable, thus making 5G DetNet ready."
+with
+"In addition, the support for integration with TSN reliability was added to 5G 
+by making DetNet reliability also applicable, due to the commonalities between
+TSN and DetNet reliability."
+
+"Moreover, providing IP service is native to 5G and adding direct support for 
+DetNet is in scope of the upcoming 3GPP Release 18."
+is updated to:
+"Moreover, providing IP service is native to 5G and 3GPP Release 18 adds support
+for DetNet to 5G.
+</Janos>
+
 
 6.4.1
 Figure 10 - expanding some acronyms below the picture may be helpful.
 
+<Janos>
+The acronyms are introduced in the text above the figure.
+</Janos>
+
 There's a lot of detail on handovers - I guess this is trying to highlight
 the elements that make handovers reliable, but could be more concise.
+
+<Janos>
+Yes, it is to explain what makes handover reliable.
+I'm not sure what could be ommitted.
+</Janos>
 
 6.4.3 The first paragraph is clear but there's a lot of detail in the rest
 of this section, I think the point is to highlight use of retransmissions,
 scheduling, coding and modulation for reliability, reporting of link
 quality, efficiency, but I found it hard to follow.
+
+<Janos>
+Yes the intention is to explain how it works, as it is a RAW technology.
+</Janos>
 
 6.4.5
 Nits:
@@ -395,6 +449,12 @@ network side)
 Page 49 final paragraph mentions Figure 13 but describes Figure 12 at the
 top of page 50.
 "and the core network," -> "and the core network."
+
+<Janos>
+Fixed the nits, thank you.
+The paragraph above Figure 13 intends to refer to Figure 13; it introduces 
+Figure 13. The text says "multiple UEs per device". There are multiple USs 
+in Figure 13, whereas a single UE in Figure 12.
 
 Page 49 middle paragraph.
 "3GPP release 18 includes a study" ... then at the end of the paragraph
@@ -418,6 +478,16 @@ Time Synchronization Function
    provided by the TSCTSF to the DetNet controller.  The study also
    includes how the TSCTSF maps DetNet flow parameters to 5G QoS
    parameters.
+   
+<Janos>
+I think it is just better to omit:
+"As the standards are ready for such an approach, it is out of scope for
+the 3GPP Release 18 study item [TR2370046]."
+I agree that the phrasing is not lucky.
+The point is that the work has been already done ("stnadards are ready");
+therefore, nothing to be done. "out of scope" is not the best phrasing.
+The previous sentnece makes the point on that the standards are available.
+
 
 6.5 Summary
 I didn't find this very clear regarding DetNet. Perhaps because I'm not
@@ -430,6 +500,10 @@ could be used as subnet technology for DetNet...? Then it also says adding
 direct support for DetNet is in scope for release 18... what does "direct
 support" mean?
 
+<Janos>
+Right. Unlucky wording here and there.
+Hopefully, the update explained above makes it clear.
+</Janos>
 
 
 7.2 - CNS not expanded.
