@@ -163,26 +163,50 @@ Overall, I find section 5 too long, especially comparing with section 4. I think
 
 I’d remove the first sentence, as it does not really add much.
 
+<Janos>
+The goal with the sentence is to introduce 3GPP, which may be useful for some
+readers. Otherwise it could be deleted, nonetheless, it may not hurt keeping it.
+</Janos>
 
 
 6.2. General Characteristics
 
 I think we don’t need to go into that much details and at least I’d remove the last paragraph on authentication.
 
+<Janos>
+Well, I think each paragraph explains a different characteristics. 
+In particular, the last paragraph is about security. I guess it is better to 
+keep it as security is importatn. Each IETF documetn has a section dedicated to security.
+</Janos>
 
 
 6.4.1.  System Architecture
 
 I know it is hard, but the text just mentions some of the core elements, while the figure 10 shows more. Maybe the text has to be a bit updated to mention this point.
 
-
+<Janos>
+Add:
+"(Note that this document only explains key functions, however, Figure 10 provides a more detailed view.)"
+</Janos>
 
 6.4.5. Time-Sensitive Communications (TSC)
 
 The 2nd and 3rd paragraphs explain concepts that are useful/needed to understand points made earlier in the document. Therefore, I think it might be worth moving that piece of text before each of the different technologies are deep dived into.
 
+<Janos>
+I'm not sure where to move.
+The text is crafted in a way tp provide consice introduction to what comes later in 6.4.5, e.g., what TSN features are supported by 5G.
+</Janos>
+
 Shouldn’t the document mention something about ATSSS in the context of reliability and availability?
 
+<Janos>
+Well, we've got comments that too much details have been provided already. It seems better not to add more.
+Furhtermore, ATSSS is not for time-critical traffic. It has no relations to URLLC, M-MTC, or I-IoT.  
+In addidion, ATSSS is not a sole 5G technology, it is for a combination of 3GPP and non-3GPP access.
+Moreover, ATSSS is not capabale for any kind of high-reliability provided by DetNet PREOF.
+So, it seems better for me not to add ATSSS.
+</Janos>
 
 
 9. Security Considerations
