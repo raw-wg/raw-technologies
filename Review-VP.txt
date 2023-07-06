@@ -111,6 +111,11 @@ out of scope for RAW. Could be simplified like this:
 Std 802.11-2016 also included the Stream Reservation Protocol (IEEE
 802.1Qat)."
 
+<dave>
+better to keep TM and FTM references otherwise it will be too generic. 
+
+</dave>
+
 I found the 4th paragraph to be an overwhelming list of different standards
 and protocols, I felt I needed to look these up individually to see how
 this was all relevant, but actually the way the different capabilities were
@@ -122,6 +127,10 @@ paragraph.
 
 The bit that starts "As with any wireless media" should be in its own
 paragraph - I like how it highlights important considerations.
+
+<dave>
+done
+</dave>
 
 Nits:
 retroffitted -> retrofitted
@@ -143,11 +152,18 @@ this, it's worth clarifying.
 4.3.2.2 - the 3rd and 4th sentences in the first paragraph say the same
 thing.
 
+<dave>
+the multi-AP section should probably be deleted as it didn't make into 802.11be
+</dave>
+
 4.3.2.3 "802.be Draft" - is this 802.11be?
 
 4.4.1 - extra space at end of first paragraph, missing "." at end of second
 paragraph.
 
+<dave>
+addressed all nits
+</dave>
 
 Section 5 I found the hardest to read. I think some definitions could be
 presented earlier, and some detail could be removed.
