@@ -436,7 +436,9 @@
         		<section><name>Multi-AP coordination</name>
         			<t>
         				Multi-AP coordination is one of the main new candidate features in 802.11be. It can provide benefits in throughput and capacity and has the potential to address some of the issues that impact worst case latency and reliability.
-        				Multi-AP coordination is expected to address the contention due to overlapping Basic Service Sets (OBSS), which is one of the main sources of random latency variations. 802.11be can define methods to enable better coordination between APs, for instance, in a managed network scenario, in order to reduce latency due to unmanaged contention.
+        				Multi-AP coordination is expected to address the contention due to overlapping Basic Service Sets (OBSS), which is one of the main sources of random latency variations.
+                        <!-- redundant with above
+                        802.11be can define methods to enable better coordination between APs, for instance, in a managed network scenario, in order to reduce latency due to unmanaged contention. -->
 	       			</t>
 
 <t> Overall, multi-AP coordination algorithms consider three different phases:

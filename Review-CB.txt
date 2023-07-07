@@ -109,6 +109,7 @@ done
 
 Section 4
 
+<Dave> those comments are similar to the ones processed for Victoria's review and answered there </Dave>
 I miss some text introducing the technologies that are going to be explained in Sections 4-7.
 
 
@@ -148,12 +149,13 @@ Remove space in “ .” at the end of each paragraph.
 Add caption to Figure 2.
 
 
+<Pascal> done </Pascal>>
 
 5.2.2.2 6TiSCH Tracks
 
 “oveall” —> “overall”
 
-
+<Pascal> done </Pascal>>
 
 Overall, I find section 5 too long, especially comparing with section 4. I think it’d be useful to try to do an exercise of consistency across sections 4 to 7.
 

@@ -86,8 +86,8 @@ Table of Contents
    5.  IEEE 802.15.4 . . . . . . . . . . . . . . . . . . . . . . . .  16
      5.1.  Provenance and Documents  . . . . . . . . . . . . . . . .  16
      5.2.  TimeSlotted Channel Hopping . . . . . . . . . . . . . . .  17
-       5.2.1.  General Characteristics . . . . . . . . . . . . . . .  17
-       5.2.2.  Applicability to Deterministic Flows  . . . . . . . .  19
+       5.2.1.  General Characteristics . . . . . . . . . . . . . . .  18
+       5.2.2.  Applicability to Deterministic Flows  . . . . . . . .  20
    6.  5G  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  33
      6.1.  Provenance and Documents  . . . . . . . . . . . . . . . .  33
      6.2.  General Characteristics . . . . . . . . . . . . . . . . .  35
@@ -750,9 +750,6 @@ Internet-Draft              RAW Technologies                   July 2023
    latency and reliability.  Multi-AP coordination is expected to
    address the contention due to overlapping Basic Service Sets (OBSS),
    which is one of the main sources of random latency variations.
-   802.11be can define methods to enable better coordination between
-   APs, for instance, in a managed network scenario, in order to reduce
-   latency due to unmanaged contention.
 
    Overall, multi-AP coordination algorithms consider three different
    phases: setup (where APs handling overlapping BSSs are assigned roles
@@ -770,14 +767,17 @@ Internet-Draft              RAW Technologies                   July 2023
    include: Coordinated Spatial Reuse (Co-SR) and Coordinated
    Beamforming (Co-BF).
 
-4.3.2.3.  Multi-link operation
 
-   802.11be will introduce new features to improve operation over
-   multiple links and channels.  By leveraging multiple links/channels,
-   802.11be can isolate time-sensitive traffic from network congestion,
-   one of the main causes of large latency variations.  In a managed
-   802.11be network, it should be possible to steer traffic to certain
-   links/channels to isolate time-sensitive traffic from other traffic
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -786,6 +786,14 @@ Thubert, et al.          Expires 8 January 2024                [Page 14]
 Internet-Draft              RAW Technologies                   July 2023
 
 
+4.3.2.3.  Multi-link operation
+
+   802.11be will introduce new features to improve operation over
+   multiple links and channels.  By leveraging multiple links/channels,
+   802.11be can isolate time-sensitive traffic from network congestion,
+   one of the main causes of large latency variations.  In a managed
+   802.11be network, it should be possible to steer traffic to certain
+   links/channels to isolate time-sensitive traffic from other traffic
    and help achieve bounded latency.  The multi-link operation (MLO) has
    been already introduced in the 802.11be Draft and it can also enhance
    latency and reliability by enabling data frames to be duplicated
@@ -826,14 +834,6 @@ Internet-Draft              RAW Technologies                   July 2023
    central controller, after contending and reserving the channel for a
    dedicated period, can allocate to stations contention-free service
    periods.  This scheduling capability is also available in 802.11ay,
-   and it is one of the mechanisms that can be used to provide bounded
-   latency to time-sensitive data flows in interference-free scenarios.
-   An analysis of the theoretical latency bounds that can be achieved
-   with 802.11ad service periods is provided in [Cavalcanti_2019].
-
-
-
-
 
 
 
@@ -841,6 +841,11 @@ Thubert, et al.          Expires 8 January 2024                [Page 15]
 
 Internet-Draft              RAW Technologies                   July 2023
 
+
+   and it is one of the mechanisms that can be used to provide bounded
+   latency to time-sensitive data flows in interference-free scenarios.
+   An analysis of the theoretical latency bounds that can be achieved
+   with 802.11ad service periods is provided in [Cavalcanti_2019].
 
 5.  IEEE 802.15.4
 
@@ -885,11 +890,6 @@ Internet-Draft              RAW Technologies                   July 2023
    Time sensitive networking on low power constrained wireless networks
    have been partially addressed by ISA100.11a [ISA100.11a] and
    WirelessHART [WirelessHART].  Both technologies involve a central
-   controller that computes redundant paths for industrial process
-   control traffic over a TSCH mesh.  Moreover, ISA100.11a introduces
-   IPv6 capabilities with a Link-Local Address for the join process and
-   a global unicast addres for later exchanges, but the IPv6 traffic
-   typically ends at a local application gateway and the full power of
 
 
 
@@ -898,6 +898,11 @@ Thubert, et al.          Expires 8 January 2024                [Page 16]
 Internet-Draft              RAW Technologies                   July 2023
 
 
+   controller that computes redundant paths for industrial process
+   control traffic over a TSCH mesh.  Moreover, ISA100.11a introduces
+   IPv6 capabilities with a Link-Local Address for the join process and
+   a global unicast addres for later exchanges, but the IPv6 traffic
+   typically ends at a local application gateway and the full power of
    IPv6 for end-to-end communication is not enabled.  Compared to that
    state of the art, work at the IETF and in particular at RAW could
    provide additional techniques such as optimized P2P routing, PAREO
@@ -935,13 +940,8 @@ Internet-Draft              RAW Technologies                   July 2023
 
 5.2.  TimeSlotted Channel Hopping
 
-5.2.1.  General Characteristics
 
-   As a core technique in IEEE802.15.4, TSCH splits time in multiple
-   time slots that repeat over time.  A set of timeslots constructs a
-   Slotframe (see Section 5.2.2.1.4).  For each timeslot, a set of
-   available frequencies can be used, resulting in a matrix-like
-   schedule (see Figure 1).
+
 
 
 
@@ -953,6 +953,14 @@ Thubert, et al.          Expires 8 January 2024                [Page 17]
 
 Internet-Draft              RAW Technologies                   July 2023
 
+
+5.2.1.  General Characteristics
+
+   As a core technique in IEEE802.15.4, TSCH splits time in multiple
+   time slots that repeat over time.  A set of timeslots constructs a
+   Slotframe (see Section 5.2.2.1.4).  For each timeslot, a set of
+   available frequencies can be used, resulting in a matrix-like
+   schedule (see Figure 1).
 
                           timeslot offset
         | 0    1    2    3    4  | 0    1    2    3    4  |    Nodes
@@ -977,6 +985,30 @@ Internet-Draft              RAW Technologies                   July 2023
 
      Figure 1: Slotframe example with scheduled cells between nodes A,
                                   B and C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 8 January 2024                [Page 18]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
    This schedule represents the possible communications of a node with
    its neighbors, and is managed by a Scheduling Function such as the
@@ -1003,13 +1035,6 @@ Internet-Draft              RAW Technologies                   July 2023
    combined to OFDM modulations also supported by the IEEE802.15.4
    standard [IEEE Std 802.15.4] since the 2015 version.
 
-
-
-Thubert, et al.          Expires 8 January 2024                [Page 18]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    TSCH networks operate in ISM bands in which the spectrum is shared by
    different coexisting technologies.  Regulations such as FCC, ETSI and
    ARIB impose duty cycle regulations to limit the use of the bands but
@@ -1031,6 +1056,15 @@ Internet-Draft              RAW Technologies                   July 2023
    aspects such as interference.  ARQ methods and redundancy techniques
    such as replication and elimination should be studied to provide the
    needed performance to address deterministic scenarios.
+
+
+
+
+
+Thubert, et al.          Expires 8 January 2024                [Page 19]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
 5.2.2.  Applicability to Deterministic Flows
 
@@ -1058,14 +1092,6 @@ Internet-Draft              RAW Technologies                   July 2023
    in particular in terms of latency and reliability, and the end nodes,
    to a Path Computation element (PCE).  With this, the PCE computes a
    Track between the end nodes and provisions every hop in the Track
-
-
-
-Thubert, et al.          Expires 8 January 2024                [Page 19]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    with per-flow state that describes the per-hop operation for a given
    packet, the corresponding timeSlots, and the flow identification to
    recognize which packet is placed in which Track, sort out duplicates,
@@ -1079,6 +1105,22 @@ Internet-Draft              RAW Technologies                   July 2023
    the programing of the schedule is done over CoAP as discussed in
    "6TiSCH Resource Management and Interaction using CoAP"
    [I-D.ietf-6tisch-coap].
+
+
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 8 January 2024                [Page 20]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
    But an Hybrid mode may be required as well whereby a single Track is
    added, modified, or removed, for instance if it appears that a Track
@@ -1115,13 +1157,6 @@ Internet-Draft              RAW Technologies                   July 2023
    Section "Packet Marking and Handling" of [RFC9030] describes the
    packet tagging and marking that is expected in 6TiSCH networks.
 
-
-
-Thubert, et al.          Expires 8 January 2024                [Page 20]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
 5.2.2.1.1.1.  Tagging Packets for Flow Identification
 
    For packets that are routed by a PCE along a Track, the tuple formed
@@ -1132,6 +1167,16 @@ Internet-Draft              RAW Technologies                   July 2023
    It results that the tagging that is used for a DetNet flow outside
    the 6TiSCH LLN must be swapped into 6TiSCH formats and back as the
    packet enters and then leaves the 6TiSCH network.
+
+
+
+
+
+
+Thubert, et al.          Expires 8 January 2024                [Page 21]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
    Note: The method and format used for encoding the RPLInstanceID at
    6lo is generalized to all 6TiSCH topological Instances, which
@@ -1171,13 +1216,6 @@ Internet-Draft              RAW Technologies                   July 2023
                       ===> (B) => (D) => (F) ===
 
 
-
-
-Thubert, et al.          Expires 8 January 2024                [Page 21]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
        Figure 4: Packet Replication: S transmits twice the same data
                   packet, to its DP (A) and to its AP (B).
 
@@ -1185,6 +1223,16 @@ Internet-Draft              RAW Technologies                   July 2023
    first copy of a data packet, it discards the subsequent copies.
    Because the first copy that reaches a node is the one that matters,
    it is the only copy that will be forwarded upward.
+
+
+
+
+
+
+Thubert, et al.          Expires 8 January 2024                [Page 22]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
    Considering that the wireless medium is broadcast by nature, any
    neighbor of a transmitter may overhear a transmission.  By employing
@@ -1224,20 +1272,23 @@ Internet-Draft              RAW Technologies                   July 2023
    same'OR'group.  This allows to route along multi-path Tracks, trying
    one next-hop and then another only if sending to the first fails.
 
-
-
-
-
-
-Thubert, et al.          Expires 8 January 2024                [Page 22]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    On the receive side, all timeSlots are programmed in a same'OR'group.
    Retries of a same copy as well as converging branches for elimination
    are converged, meaning that the first successful reception is enough
    and that all the other timeSlots can be ignored.
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 8 January 2024                [Page 23]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
 5.2.2.1.2.  Topology and capabilities
 
@@ -1277,19 +1328,6 @@ Internet-Draft              RAW Technologies                   July 2023
    topology is indexed by a Instance ID, in a format that reuses the
    RPLInstanceID as defined in RPL.
 
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 8 January 2024                [Page 23]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    Both RPL and PCE rely on shared sources such as policies to define
    Global and Local RPLInstanceIDs that can be used by either method.
    It is possible for centralized and distributed routing to share a
@@ -1297,6 +1335,16 @@ Internet-Draft              RAW Technologies                   July 2023
    and centralized routes will be used for scheduled traffic and will
    have precedence over distributed routes in case of conflict between
    the slotFrames.
+
+
+
+
+
+
+Thubert, et al.          Expires 8 January 2024                [Page 24]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
 5.2.2.1.4.  SlotFrames and Priorities
 
@@ -1336,16 +1384,6 @@ Internet-Draft              RAW Technologies                   July 2023
    shared that knowledge with all the nodes.  The matrices are used in
    particular to define slotFrames.
 
-
-
-
-
-
-Thubert, et al.          Expires 8 January 2024                [Page 24]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    A slotFrame is a MAC-level abstraction that is common to all nodes
    and contains a series of timeSlots of equal length and precedence.
    It is characterized by a slotFrame_ID, and a slotFrame_size.  A
@@ -1356,6 +1394,14 @@ Internet-Draft              RAW Technologies                   July 2023
    have multiple activities scheduled in different slotFrames, based on
    the precedence of the 6TiSCH topologies.  The slotFrames may be
    aligned to different CDU matrices and thus have different width.
+
+
+
+Thubert, et al.          Expires 8 January 2024                [Page 25]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
    There is typically one slotFrame for scheduled traffic that has the
    highest precedence and one or more slotFrame(s) for RPL traffic.  The
    timeSlots in the slotFrame are indexed by the SlotOffset; the first
@@ -1387,21 +1433,6 @@ Internet-Draft              RAW Technologies                   July 2023
    Then again, 6TiSCH did not propose a method for chunk definition and
    a protocol for appropriation.  This is to be done at RAW.
 
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 8 January 2024                [Page 25]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
 5.2.2.2.  6TiSCH Tracks
 
    A Track at 6TiSCH is the application to wireless of the concept of a
@@ -1414,6 +1445,18 @@ Internet-Draft              RAW Technologies                   July 2023
    bounded latency.  The Track structure enables Layer-2 forwarding
    schemes, reducing the overhead of taking routing decisions at the
    Layer-3.
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 8 January 2024                [Page 26]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
    Serial Tracks can be understood as the concatenation of cells or
    bundles along a routing path from a source towards a destination.
@@ -1442,22 +1485,6 @@ Internet-Draft              RAW Technologies                   July 2023
    extends the graph beyond a DODAG as long as a given packet cannot
    loop within the Track.
 
-
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 8 January 2024                [Page 26]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
                      +-----+
                      | IoT |
                      | G/W |
@@ -1478,6 +1505,14 @@ Internet-Draft              RAW Technologies                   July 2023
              o
 
                   Figure 6: End-to-End deterministic Track
+
+
+
+
+Thubert, et al.          Expires 8 January 2024                [Page 27]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
    In the example above (see Figure 6), a Track is laid out from a field
    device in a 6TiSCH network to an IoT gateway that is located on a
@@ -1503,17 +1538,6 @@ Internet-Draft              RAW Technologies                   July 2023
    and use the other in case of Layer-2 transmission failure as detected
    by ARQ.
 
-
-
-
-
-
-
-Thubert, et al.          Expires 8 January 2024                [Page 27]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    Methods to implement complex Tracks are described in
    [I-D.papadopoulos-paw-pre-reqs] and complemented by extensions to the
    RPL routing protocol in [I-D.ietf-roll-nsa-extension] for best effort
@@ -1532,6 +1556,19 @@ Internet-Draft              RAW Technologies                   July 2023
    Early work at 6TiSCH on a data model and a protocol to program the
    schedule in the 6TiSCH device was never concluded as the group
    focussed on best effort traffic.  This work would be revived by RAW:
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 8 January 2024                [Page 28]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
       The 6top interface document [RFC8480] (to be reopened at RAW) was
       intended to specify the generic data model that can be used to
@@ -1555,20 +1592,6 @@ Internet-Draft              RAW Technologies                   July 2023
       it is possible that a mapping entity on the backbone transforms a
       non-CoAP protocol such as PCEP into the RESTful interfaces that
       the 6TiSCH devices support.
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 8 January 2024                [Page 28]
-
-Internet-Draft              RAW Technologies                   July 2023
-
 
 5.2.2.2.2.  Track Forwarding
 
@@ -1595,6 +1618,14 @@ Internet-Draft              RAW Technologies                   July 2023
    This model can effectively be seen as a Generalized Multi-protocol
    Label Switching (G-MPLS) operation in that the information used to
    switch a frame is not an explicit label, but rather related to other
+
+
+
+Thubert, et al.          Expires 8 January 2024                [Page 29]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
    properties of the way the packet was received, a particular cell in
    the case of 6TiSCH.  As a result, as long as the TSCH MAC (and
    Layer-2 security) accepts a frame, that frame can be switched
@@ -1618,14 +1649,6 @@ Internet-Draft              RAW Technologies                   July 2023
    effective channel of the cell is obtained by adding a pseudo-random
    number to the channelOffset of the cell, which results in a rotation
    of the frequency that used for transmission.  The bundles may be
-
-
-
-Thubert, et al.          Expires 8 January 2024                [Page 29]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    computed so as to accommodate both variable rates and
    retransmissions, so they might not be fully used at a given iteration
    of the schedule.  The 6TiSCH architecture provides additional means
@@ -1651,6 +1674,14 @@ Internet-Draft              RAW Technologies                   July 2023
    if more retransmissions are needed than provisioned.  In that case,
    the frame can be placed for transmission in the bundle that is used
    for layer-3 traffic towards the next hop along the Track as long as
+
+
+
+Thubert, et al.          Expires 8 January 2024                [Page 30]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
    it can be routed by the upper layer, that is, typically, if the frame
    transports an IPv6 packet.  The MAC address should be set to the
    next-hop MAC address to avoid confusion.  It results that a frame
@@ -1669,18 +1700,6 @@ Internet-Draft              RAW Technologies                   July 2023
    to broadcast.
 
    There are 2 modes for a Track, transport mode and tunnel mode.
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 8 January 2024                [Page 30]
-
-Internet-Draft              RAW Technologies                   July 2023
-
 
 5.2.2.2.2.1.  Transport Mode
 
@@ -1709,6 +1728,16 @@ Internet-Draft              RAW Technologies                   July 2023
 
                  Figure 7: Track Forwarding, Transport Mode
 
+
+
+
+
+
+Thubert, et al.          Expires 8 January 2024                [Page 31]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
 5.2.2.2.2.2.  Tunnel Mode
 
    In tunnel mode, the frames originate from an arbitrary protocol over
@@ -1722,21 +1751,6 @@ Internet-Draft              RAW Technologies                   July 2023
    WirelessHART Network Manager or an ISA100.11a System Manager to
    specify the flows that are to be transported transparently over the
    Track.
-
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 8 January 2024                [Page 31]
-
-Internet-Draft              RAW Technologies                   July 2023
-
 
       +--------------+
       |     IPv6     |
@@ -1771,6 +1785,15 @@ Internet-Draft              RAW Technologies                   July 2023
    metadata associated to the Track, the frame is passed to the
    appropriate link layer with the destination MAC restored.
 
+
+
+
+
+Thubert, et al.          Expires 8 January 2024                [Page 32]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
 5.2.2.2.2.3.  Tunnel Metadata
 
    Metadata coming with the Track configuration is expected to provide
@@ -1786,14 +1809,6 @@ Internet-Draft              RAW Technologies                   July 2023
    address.  It is thus mandatory at the ingress point to validate that
    the MAC address that was used at the 6LoWPAN sublayer for compression
    matches that of the tunnel egress point.  For that reason, the node
-
-
-
-Thubert, et al.          Expires 8 January 2024                [Page 32]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    that injects a packet on a Track checks that the destination is
    effectively that of the tunnel egress point before it overwrites it
    to broadcast.  The 6top sublayer at the tunnel egress point reverts
@@ -1826,21 +1841,6 @@ Internet-Draft              RAW Technologies                   July 2023
    of 3GPP technologies provide scheduled wireless segments, primarily
    in licensed spectrum which is beneficial for reliability and
    availability.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
