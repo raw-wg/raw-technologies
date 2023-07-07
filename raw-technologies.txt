@@ -1108,7 +1108,7 @@ Internet-Draft              RAW Technologies                   July 2023
               ----Device------Device------Device------Device--
 
 
-                                  Figure 2
+                       Figure 2: Architectural Layers
 
 5.2.2.1.1.  Packet Marking and Handling
 
@@ -1427,7 +1427,7 @@ Internet-Draft              RAW Technologies                   July 2023
    functions along a more complex DODAG Track structure.  A DODAG has
    forking and joining nodes where the concepts such as Replication and
    Elimination can be exploited.  Spatial redundancy increases the
-   oveall energy consumption in the network but improves significantly
+   overall energy consumption in the network but improves significantly
    the availability of the network as well as the packet delivery ratio.
    A Track may also branch off and rejoin, for the purpose of the so-
    called Packet Replication and Elimination (PRE), over non congruent

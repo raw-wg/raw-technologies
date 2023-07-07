@@ -174,8 +174,8 @@ readers. Otherwise it could be deleted, nonetheless, it may not hurt keeping it.
 I think we don’t need to go into that much details and at least I’d remove the last paragraph on authentication.
 
 <Janos>
-Well, I think each paragraph explains a different characteristics. 
-In particular, the last paragraph is about security. I guess it is better to 
+Well, I think each paragraph explains a different characteristics.
+In particular, the last paragraph is about security. I guess it is better to
 keep it as security is importatn. Each IETF documetn has a section dedicated to security.
 </Janos>
 
@@ -195,14 +195,14 @@ The 2nd and 3rd paragraphs explain concepts that are useful/needed to understand
 
 <Janos>
 I'm not sure where to move.
-The text is crafted in a way tp provide consice introduction to what comes later in 6.4.5, e.g., what TSN features are supported by 5G.
+The text is crafted in a way tp provide concise introduction to what comes later in 6.4.5, e.g., what TSN features are supported by 5G.
 </Janos>
 
 Shouldn’t the document mention something about ATSSS in the context of reliability and availability?
 
 <Janos>
 Well, we've got comments that too much details have been provided already. It seems better not to add more.
-Furhtermore, ATSSS is not for time-critical traffic. It has no relations to URLLC, M-MTC, or I-IoT.  
+Furhtermore, ATSSS is not for time-critical traffic. It has no relations to URLLC, M-MTC, or I-IoT.
 In addidion, ATSSS is not a sole 5G technology, it is for a combination of 3GPP and non-3GPP access.
 Moreover, ATSSS is not capabale for any kind of high-reliability provided by DetNet PREOF.
 So, it seems better for me not to add ATSSS.

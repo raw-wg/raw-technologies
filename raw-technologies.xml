@@ -720,7 +720,7 @@ offset
 
 
 <t keepWithNext='true'>Stream Management Entity</t><figure align='center' anchor='NorthSouth'>
-
+<name>Architectural Layers</name>
     <artwork align='left'><![CDATA[
 
                       Operational Control System and HMI
@@ -1048,7 +1048,7 @@ chan.Off. 15 |chnkO|chnk6|chnkN|chnk1|chnkJ|chnkZ|chnkI| ... |chnkG|
    high availability requires the application of PAREO functions along a more
    complex DODAG Track structure. A DODAG has forking and joining nodes where
    the concepts such as Replication and Elimination can be exploited.
-   Spatial redundancy increases the oveall energy consumption in the network but
+   Spatial redundancy increases the overall energy consumption in the network but
    improves significantly the availability of the network as well as the packet
    delivery ratio.
 
