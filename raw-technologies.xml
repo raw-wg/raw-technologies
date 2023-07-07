@@ -20,12 +20,12 @@
    <author initials='P' surname='Thubert' fullname='Pascal Thubert' role='editor'>
       <organization abbrev='Cisco Systems'>Cisco Systems, Inc</organization>
       <address>
-         <postal>
-            <street>Building D</street>
-            <street>45 Allee des Ormes - BP1200 </street>
-            <city>MOUGINS - Sophia Antipolis</city>
-            <code>06254</code>
-            <country>FRANCE</country>
+          <postal>
+            <street>Emerald Square, Batiment C</street>
+            <street>rue Evariste Galois </street>
+            <city>BIOT - Sophia Antipolis</city>
+            <code>06410</code>
+          <country>France</country>
          </postal>
          <phone>+33 497 23 26 34</phone>
          <email>pthubert@cisco.com</email>
@@ -285,6 +285,7 @@
         	IEEE Std 802.11-2012 introduced support for TSN time synchronization based on IEEE 802.1AS over 802.11 Timing Measurement protocol. IEEE Std 802.11-2016 extended the 802.1AS operation over 802.11 Fine Timing Measurement (FTM), as well as the Stream Reservation Protocol (IEEE 802.1Qat). 802.11 WLANs can also be part of a 802.1Q bridged networks with enhancements enabled by the 802.11ak amendment now retrofitted in IEEE Std 802.11-2020. Traffic classification based on 802.1Q VLAN tags is also supported in 802.11. Other 802.1 TSN capabilities such as 802.1Qbv and 802.1CB, which are media agnostic, can already operate over 802.11. The IEEE Std 802.11ax-2021 adds new scheduling capabilities that can enhance the timeliness performance in the 802.11 MAC and achieve lower bounded latency. The IEEE 802.11be is undergoing efforts to enhance the support for 802.1 TSN capabilities especially related to worst-case latency, reliability and availability.
 
 	</t>
+    <t>
 		The IEEE 802.11 working group has been working in collaboration with the IEEE 802.1 working group for several years extending some 802.1 features over 802.11. As with any wireless media, 802.11 imposes new constraints and restrictions to TSN-grade QoS, and tradeoffs between latency and reliability guarantees must be considered as well as managed deployment requirements. An overview of 802.1 TSN capabilities and challenges for their extensions to 802.11 are discussed in <xref target='Cavalcanti_2019'/>.
      		</t>
      		<t>
