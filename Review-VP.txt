@@ -160,6 +160,10 @@ middle of the 3rd paragraph in 5.1 ("Yet the charter...")? But, considering
 Tracks are mentioned so much, would consider moving the definition from the
 start of 5.2.2.2 to somewhere around here.
 
+<xavi>
+done
+</xavi>
+
 I also noticed 6top was mentioned later in the document, though only 6P is
 mentioned here. It may be useful for a brief overview, e.g. like the
 Terminology section of RFC9030 where it says 6TiSCH defines the 6top layer
@@ -169,13 +173,26 @@ not quality of service requirements (currently mentioned in 3rd and 6th
 paragraphs). Maybe even mention how RPL fits in as RPL is mentioned a few
 times later without much introduction.
 
+<xavi>
+done. Text have been reviewed and improved.
+</xavi>
+
 I got lost in the detail of the 3rd paragraph. I'm not sure the info on
 scheduling functions is needed here as it's also mentioned in 5.2.1, could
 the detail be moved there?
 
+
+<xavi>
+romeved extra information
+</xavi>
+
 The 4th paragraph seems misplaced because the 5th paragraph then goes back
 to 6TiSCH. Could the paragraph about ISA100.11a and WirelessHART be placed
 before the 6TiSCH information?
+
+<xavi>
+done. Some text have been moved up. 
+</xavi>
 
 "Useful References" in this section - I think these would be better as
 paragraphs in the text rather than a list - the detail of the references
