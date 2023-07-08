@@ -209,6 +209,10 @@ like: " A study by ... looked at the benefits of packet replication in TSCH
 networks." I think it links with your sentence about what RAW can add,
 after the ISA100.11a and WirelessHART text.
 
+<xavi>
+Section has been reformulated, one reference has been update to a more suitable document.
+</xavi>
+
 CoAP is not expanded.
 
 Overall thoughts on 5.1.

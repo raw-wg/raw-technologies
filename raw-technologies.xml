@@ -571,15 +571,18 @@
    (see <xref target='Tracks'/>) exploiting the
    TSCH schedule structure however the focus at 6TiSCH is on best effort traffic
    and the group was never chartered to produce standard work related to Tracks.
-
    </t>
+   
    <t>Useful References include:
-       	</t><ol type='%d.'>
-        	<li> IEEE Std 802.15.4: "IEEE Std 802.15.4, Part. 15.4: Wireless Medium Access Control (MAC) and Physical Layer (PHY) Specifications for Low-Rate Wireless Personal Area Networks" <xref target='IEEE802154'/>. The latest version at the time of this writing is dated year 2015.</li>
-        	<li> Morell, A. , Vilajosana, X. , Vicario, J. L. and Watteyne, T. (2013), Label switching over IEEE802.15.4e networks. Trans. Emerging Tel. Tech., 24: 458-475. doi:10.1002/ett.2650" <xref target='morell13'/>.</li>
-        	<li> De Armas, J., Tuset, P., Chang, T., Adelantado, F., Watteyne, T., Vilajosana, X. (2016, September). Determinism through path diversity: Why packet replication makes sense. In 2016 International Conference on Intelligent Networking and Collaborative Systems (INCoS) (pp. 150-154). IEEE. <xref target='dearmas16'/>.</li>
-            <li> X. Vilajosana, T. Watteyne, M. Vucinic, T. Chang and K. S. J. Pister, "6TiSCH: Industrial Performance for IPv6 Internet-of-Things Networks," in Proceedings of the IEEE, vol. 107, no. 6, pp. 1153-1165, June 2019. <xref target='vilajosana19'/>.</li>
-        </ol>
+   There are several works that can be used to complement the overview provided in this document.
+   For example <xref target='vilajosana21'/> provides a detailed description of the 6TiSCH protocols, 
+   how they are linked together and how they are integrated to other standards like RPL and 6Lo.
+   <xref target='morell13'/> introduces how label switching can be implemented in a TSCH network. 
+   It proposes a policy to distribute labels in multihop network so as to enable differential services
+   through the network paths. <xref target='dearmas16'/> presents an approach to improve network reliability
+   at layer 3, considering and IEEE802.15.4 TSCH network and exploiting packet replication and path diversity 
+   for that aim.
+   </t>
 
    </section><!-- Provenance and Documents   -->
 
@@ -2966,7 +2969,18 @@ y
           <date month='June' year='2019'/>
         </front>
       </reference>
-
+	  
+	  <reference anchor='vilajosana21'>
+        <front>
+          <title>
+            IETF 6TiSCH: A Tutorial
+          </title>
+          <author initials='' surname='Xavier Vilajosana et al.' fullname='Xavier Vilajosana et al.'>
+            <organization>IEEE Communications Surveys and Tutorials, vol. 22, no. 1, pp. 595-615 </organization><address></address>
+          </author>
+          <date month='March' year='2021'/>
+        </front>
+      </reference>
 
       <reference anchor='ISA100.11a' target='http://www.isa100wci.org/en-US/Documents/PDF/3405-ISA100-WirelessSystems-Future-broch-WEB-ETSI.aspx'>
         <front>
