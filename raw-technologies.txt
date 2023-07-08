@@ -87,7 +87,7 @@ Table of Contents
      5.1.  Provenance and Documents  . . . . . . . . . . . . . . . .  16
      5.2.  TimeSlotted Channel Hopping . . . . . . . . . . . . . . .  17
        5.2.1.  General Characteristics . . . . . . . . . . . . . . .  18
-       5.2.2.  Applicability to Deterministic Flows  . . . . . . . .  20
+       5.2.2.  Applicability to Deterministic Flows  . . . . . . . .  19
    6.  5G  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  33
      6.1.  Provenance and Documents  . . . . . . . . . . . . . . . .  33
      6.2.  General Characteristics . . . . . . . . . . . . . . . . .  35
@@ -929,19 +929,19 @@ Internet-Draft              RAW Technologies                   July 2023
    on best effort traffic and the group was never chartered to produce
    standard work related to Tracks.
 
-   Useful References include: There are several works that can be used
-   to complement the overview provided in this document.  For example
-   [vilajosana21] provides a detailed description of the 6TiSCH
-   protocols, how they are linked together and how they are integrated
-   to other standards like RPL and 6Lo.  [morell13] introduces how label
-   switching can be implemented in a TSCH network.  It proposes a policy
-   to distribute labels in multihop network so as to enable differential
-   services through the network paths. [dearmas16] presents an approach
-   to improve network reliability at layer 3, considering and
-   IEEE802.15.4 TSCH network and exploiting packet replication and path
-   diversity for that aim.
+   There are several works that can be used to complement the overview
+   provided in this document.  For example [vilajosana21] provides a
+   detailed description of the 6TiSCH protocols, how they are linked
+   together and how they are integrated to other standards like RPL and
+   6Lo.  [morell13] introduces how label switching can be implemented in
+   a TSCH network.  It proposes a policy to distribute labels in
+   multihop network so as to enable differential services through the
+   network paths. [dearmas16] presents an approach to improve network
+   reliability at layer 3, considering and IEEE802.15.4 TSCH network and
+   exploiting packet replication and path diversity for that aim.
 
 5.2.  TimeSlotted Channel Hopping
+
 
 
 
@@ -982,38 +982,18 @@ Internet-Draft              RAW Technologies                   July 2023
         +-------------------------------------------------+   +-----+
    ch.
    offset
+   Note: EB (Enhanced Beacon)
 
      Figure 1: Slotframe example with scheduled cells between nodes A,
                                   B and C
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 18]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
-   This schedule represents the possible communications of a node with
-   its neighbors, and is managed by a Scheduling Function such as the
-   Minimal Scheduling Function (MSF) [RFC9033].  Each cell in the
-   schedule is identified by its slotoffset and channeloffset
+   The IEEE 802.15.4 TSCH standard does not define any scheduling
+   mechanism but only provides the architecture that establishes a
+   slotted structure that can be managed by a proper schedule.  This
+   schedule represents the possible communications of a node with its
+   neighbors, and is managed by a Scheduling Function such as the
+   Minimal Scheduling Function (MSF) [RFC9033].  In MSF, each cell in
+   the schedule is identified by its slotoffset and channeloffset
    coordinates.  A cell's timeslot offset indicates its position in
    time, relative to the beginning of the slotframe.  A cell's channel
    offset is an index which maps to a frequency at each iteration of the
@@ -1022,6 +1002,14 @@ Internet-Draft              RAW Technologies                   July 2023
    15 milliseconds.  An Absolute Slot Number (ASN) indicates the number
    of slots elapsed since the network started.  It increments at every
    slot.  This is a 5 byte counter that can support networks running for
+
+
+
+Thubert, et al.          Expires 9 January 2024                [Page 18]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
    more than 300 years without wrapping (assuming a 10 ms timeslot).
    Channel hopping provides increased reliability to multi-path fading
    and external interference.  It is handled by TSCH through a channel
@@ -1045,6 +1033,8 @@ Internet-Draft              RAW Technologies                   July 2023
    1-hop vision, being limited to local actions to mitigate
    underperforming links.
 
+5.2.2.  Applicability to Deterministic Flows
+
    In the RAW context, low power reliable networks should address non-
    critical control scenarios such as Class 2 and monitoring scenarios
    such as Class 4 defined by the RFC5673 [RFC5673].  As a low power
@@ -1057,7 +1047,17 @@ Internet-Draft              RAW Technologies                   July 2023
    such as replication and elimination should be studied to provide the
    needed performance to address deterministic scenarios.
 
-
+   Nodes in a TSCH network are tightly synchronized.  This enables
+   building the slotted structure and ensures efficient utilization of
+   resources thanks to proper scheduling policies.  Scheduling is key to
+   orchestrate the resources that different nodes in a Track or a path
+   are using.  Slotframes can be split in resource blocks reserving the
+   needed capacity to certain flows.  Periodic and bursty traffic can be
+   handled independently in the schedule, using active and reactive
+   policies and taking advantage of overprovisionned cells.  Along a
+   Track Section 5.2.2.2, resource blocks can be chained so nodes in
+   previous hops transmit their data before the next packet comes.  This
+   provides a tight control to latency along a Track.  Collision loss is
 
 
 
@@ -1066,45 +1066,45 @@ Thubert, et al.          Expires 9 January 2024                [Page 19]
 Internet-Draft              RAW Technologies                   July 2023
 
 
-5.2.2.  Applicability to Deterministic Flows
-
-   Nodes in a TSCH network are tightly synchronized.  This enables to
-   build the slotted structure and ensure efficient utilization of
-   resources thanks to proper scheduling policies.  Scheduling is a key
-   to orchestrate the resources that different nodes in a Track or a
-   path are using.  Slotframes can be split in resource blocks reserving
-   the needed capacity to certain flows.  Periodic and bursty traffic
-   can be handled independently in the schedule, using active and
-   reactive policies and taking advantage of overprovisionned cells to
-   measu reth excursion.  Along a Track, resource blocks can be chained
-   so nodes in previous hops transmit their data before the next packet
-   comes.  This provides a tight control to latency along a Track.
-   Collision loss is avoided for best effort traffic by
-   overprovisionning resources, giving time to the management plane of
-   the network to dedicate more resources if needed.
+   avoided for best effort traffic by overprovisionning resources,
+   giving time to the management plane of the network to dedicate more
+   resources if needed.
 
 5.2.2.1.  Centralized Path Computation
 
-   In a controlled environment, a 6TiSCH device usually does not place a
-   request for bandwidth between itself and another device in the
-   network.  Rather, an Operation Control System (OCS) invoked through
-   an Human/Machine Interface (HMI) iprovides the Traffic Specification,
-   in particular in terms of latency and reliability, and the end nodes,
-   to a Path Computation element (PCE).  With this, the PCE computes a
-   Track between the end nodes and provisions every hop in the Track
-   with per-flow state that describes the per-hop operation for a given
-   packet, the corresponding timeSlots, and the flow identification to
-   recognize which packet is placed in which Track, sort out duplicates,
-   etc.  In Figure 2, an example of Operational Control System and HMI
-   is depicted.
+   When considering end-to-end communication over TSCH, a 6TiSCH device
+   usually does not place a request for bandwidth between itself and
+   another device in the network.  Rather, an Operation Control System
+   (OCS) invoked through an Human/Machine Interface (HMI) provides the
+   Traffic Specification, in particular in terms of latency and
+   reliability, and the end nodes, to a Path Computation element (PCE).
+   With this, the PCE computes a Track between the end nodes and
+   provisions every hop in the Track with per-flow state that describes
+   the per-hop operation for a given packet, the corresponding
+   timeSlots, and the flow identification to recognize which packet is
+   placed in which Track, sort out duplicates, etc.  In Figure 2, an
+   example of Operational Control System and HMI is depicted.
 
    For a static configuration that serves a certain purpose for a long
    period of time, it is expected that a node will be provisioned in one
    shot with a full schedule, which incorporates the aggregation of its
    behavior for multiple Tracks.  The 6TiSCH Architecture expects that
-   the programing of the schedule is done over CoAP as discussed in
-   "6TiSCH Resource Management and Interaction using CoAP"
-   [I-D.ietf-6tisch-coap].
+   the programing of the schedule is done over the Constrained
+   Application Protocol (CoAP) as discussed in "6TiSCH Resource
+   Management and Interaction using CoAP" [I-D.ietf-6tisch-coap].
+
+   But an Hybrid mode may be required as well whereby a single Track is
+   added, modified, or removed, for instance if it appears that a Track
+   does not perform as expected.  For that case, the expectation is that
+   a protocol that flows along a Track (to be), in a fashion similar to
+   classical Traffic Engineering (TE) [CCAMP], may be used to update the
+   state in the devices.  In general that flow was not designed and it
+   is expected that DetNet will determine the appropriate end-to-end
+   protocols to be used in that case.
+
+   Stream Management Entity
+
+
 
 
 
@@ -1121,19 +1121,6 @@ Thubert, et al.          Expires 9 January 2024                [Page 20]
 
 Internet-Draft              RAW Technologies                   July 2023
 
-
-   But an Hybrid mode may be required as well whereby a single Track is
-   added, modified, or removed, for instance if it appears that a Track
-   does not perform as expected for, say, Packet Delivery Ratio (PDR).
-   For that case, the expectation is that a protocol that flows along a
-   Track (to be), in a fashion similar to classical Traffic Engineering
-   (TE) [CCAMP], may be used to update the state in the devices.  6TiSCH
-   provides means for a device to negotiate a timeSlot with a neighbor,
-   but in general that flow was not designed and no protocol was
-   selected and it is expected that DetNet will determine the
-   appropriate end-to-end protocols to be used in that case.
-
-   Stream Management Entity
 
                          Operational Control System and HMI
 
@@ -1159,28 +1146,14 @@ Internet-Draft              RAW Technologies                   July 2023
 
 5.2.2.1.1.1.  Tagging Packets for Flow Identification
 
-   For packets that are routed by a PCE along a Track, the tuple formed
-   by the IPv6 source address and a local RPLInstanceID is tagged in the
-   packets to identify uniquely the Track and associated transmit bundle
-   of timeSlots.
+   Packets that are routed by a PCE along a Track, are tagged to
+   uniquely identify the Track and associated transmit bundle of
+   timeSlots.
 
    It results that the tagging that is used for a DetNet flow outside
-   the 6TiSCH LLN must be swapped into 6TiSCH formats and back as the
-   packet enters and then leaves the 6TiSCH network.
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 21]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
-   Note: The method and format used for encoding the RPLInstanceID at
-   6lo is generalized to all 6TiSCH topological Instances, which
-   includes Tracks.
+   the 6TiSCH Low Power Lossy Network (LLN) must be swapped into 6TiSCH
+   formats and back as the packet enters and then leaves the 6TiSCH
+   network.
 
 5.2.2.1.1.2.  Replication, Retries and Elimination
 
@@ -1193,6 +1166,17 @@ Internet-Draft              RAW Technologies                   July 2023
    S to reach R.  A simple way to benefit from this topology could be to
    use the two independent paths via nodes A, C, E and via B, D, F.  But
    more complex paths are possible as well.
+
+
+
+
+
+
+
+Thubert, et al.          Expires 9 January 2024                [Page 21]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
                             (A)   (C)   (E)
 
@@ -1217,22 +1201,13 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
        Figure 4: Packet Replication: S transmits twice the same data
-                  packet, to its DP (A) and to its AP (B).
+      packet, to its Destination Parent (DP) (A) and to its Alternate
+                              Parent (AP) (B).
 
    By employing Packet Elimination function once a node receives the
    first copy of a data packet, it discards the subsequent copies.
    Because the first copy that reaches a node is the one that matters,
    it is the only copy that will be forwarded upward.
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 22]
-
-Internet-Draft              RAW Technologies                   July 2023
-
 
    Considering that the wireless medium is broadcast by nature, any
    neighbor of a transmitter may overhear a transmission.  By employing
@@ -1249,46 +1224,25 @@ Internet-Draft              RAW Technologies                   July 2023
    a same packet along a Track are correlated by configuration, and does
    not need to process the sequence numbers.
 
-   The semantics of the configuration must enable correlated timeSlots
-   to be grouped for transmit (and respectively receive) with
-   a'OR'relations, and then a'AND'relation must be configurable between
-   groups.  The semantics is that if the transmit (and respectively
-   receive) operation succeeded in one timeSlot in a'OR'group, then all
-   the other timeSLots in the group are ignored.  Now, if there are at
-   least two groups, the'AND'relation between the groups indicates that
-   one operation must succeed in each of the groups.
-
-   On the transmit side, timeSlots provisioned for retries along a same
-   branch of a Track are placed a same'OR'group.  The'OR'relation
-   indicates that if a transmission is acknowledged, then further
-   transmissions should not be attempted for timeSlots in that group.
-   There are as many'OR'groups as there are branches of the Track
-   departing from this node.  Different'OR'groups are programmed for the
-   purpose of replication, each group corresponding to one branch of the
-   Track.  The'AND'relation between the groups indicates that
-   transmission over any of branches must be attempted regardless of
-   whether a transmission succeeded in another branch.  It is also
-   possible to place cells to different next-hop routers in a
-   same'OR'group.  This allows to route along multi-path Tracks, trying
-   one next-hop and then another only if sending to the first fails.
-
-   On the receive side, all timeSlots are programmed in a same'OR'group.
-   Retries of a same copy as well as converging branches for elimination
-   are converged, meaning that the first successful reception is enough
-   and that all the other timeSlots can be ignored.
 
 
 
 
 
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 23]
+Thubert, et al.          Expires 9 January 2024                [Page 22]
 
 Internet-Draft              RAW Technologies                   July 2023
 
+
+   The semantics of the configuration must enable correlated timeSlots
+   to be grouped for transmit (and respectively receive) with 'OR'
+   relations, and then an 'AND' relation must be configurable between
+   groups.  The semantics is that if the transmit (and respectively
+   receive) operation succeeded in one timeSlot in an 'OR' group, then
+   all the other timeslots in the group are ignored.  Now, if there are
+   at least two groups, the 'AND' relation between the groups indicates
+   that one operation must succeed in each of the groups.  Further
+   details can be found in the 6TiSCH Architecture document [RFC9030].
 
 5.2.2.1.2.  Topology and capabilities
 
@@ -1328,6 +1282,14 @@ Internet-Draft              RAW Technologies                   July 2023
    topology is indexed by a Instance ID, in a format that reuses the
    RPLInstanceID as defined in RPL.
 
+
+
+
+Thubert, et al.          Expires 9 January 2024                [Page 23]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
    Both RPL and PCE rely on shared sources such as policies to define
    Global and Local RPLInstanceIDs that can be used by either method.
    It is possible for centralized and distributed routing to share a
@@ -1336,21 +1298,11 @@ Internet-Draft              RAW Technologies                   July 2023
    have precedence over distributed routes in case of conflict between
    the slotFrames.
 
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 24]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
 5.2.2.1.4.  SlotFrames and Priorities
 
    A slotFrame is the base object that a PCE needs to manipulate to
    program a schedule into an LLN node.  Elaboration on that concept can
-   be fond in section "SlotFrames and Priorities" of [RFC9030]
+   be found in section "SlotFrames and Priorities" of [RFC9030].
 
    IEEE802.15.4 TSCH avoids contention on the medium by formatting time
    and frequencies in cells of transmission of equal duration.  In order
@@ -1384,6 +1336,16 @@ Internet-Draft              RAW Technologies                   July 2023
    shared that knowledge with all the nodes.  The matrices are used in
    particular to define slotFrames.
 
+
+
+
+
+
+Thubert, et al.          Expires 9 January 2024                [Page 24]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
    A slotFrame is a MAC-level abstraction that is common to all nodes
    and contains a series of timeSlots of equal length and precedence.
    It is characterized by a slotFrame_ID, and a slotFrame_size.  A
@@ -1394,14 +1356,6 @@ Internet-Draft              RAW Technologies                   July 2023
    have multiple activities scheduled in different slotFrames, based on
    the precedence of the 6TiSCH topologies.  The slotFrames may be
    aligned to different CDU matrices and thus have different width.
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 25]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    There is typically one slotFrame for scheduled traffic that has the
    highest precedence and one or more slotFrame(s) for RPL traffic.  The
    timeSlots in the slotFrame are indexed by the SlotOffset; the first
@@ -1433,6 +1387,21 @@ Internet-Draft              RAW Technologies                   July 2023
    Then again, 6TiSCH did not propose a method for chunk definition and
    a protocol for appropriation.  This is to be done at RAW.
 
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 9 January 2024                [Page 25]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
 5.2.2.2.  6TiSCH Tracks
 
    A Track at 6TiSCH is the application to wireless of the concept of a
@@ -1445,18 +1414,6 @@ Internet-Draft              RAW Technologies                   July 2023
    bounded latency.  The Track structure enables Layer-2 forwarding
    schemes, reducing the overhead of taking routing decisions at the
    Layer-3.
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 26]
-
-Internet-Draft              RAW Technologies                   July 2023
-
 
    Serial Tracks can be understood as the concatenation of cells or
    bundles along a routing path from a source towards a destination.
@@ -1485,6 +1442,22 @@ Internet-Draft              RAW Technologies                   July 2023
    extends the graph beyond a DODAG as long as a given packet cannot
    loop within the Track.
 
+
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 9 January 2024                [Page 26]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
                      +-----+
                      | IoT |
                      | G/W |
@@ -1505,14 +1478,6 @@ Internet-Draft              RAW Technologies                   July 2023
              o
 
                   Figure 6: End-to-End deterministic Track
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 27]
-
-Internet-Draft              RAW Technologies                   July 2023
-
 
    In the example above (see Figure 6), a Track is laid out from a field
    device in a 6TiSCH network to an IoT gateway that is located on a
@@ -1538,6 +1503,17 @@ Internet-Draft              RAW Technologies                   July 2023
    and use the other in case of Layer-2 transmission failure as detected
    by ARQ.
 
+
+
+
+
+
+
+Thubert, et al.          Expires 9 January 2024                [Page 27]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
    Methods to implement complex Tracks are described in
    [I-D.papadopoulos-paw-pre-reqs] and complemented by extensions to the
    RPL routing protocol in [I-D.ietf-roll-nsa-extension] for best effort
@@ -1556,19 +1532,6 @@ Internet-Draft              RAW Technologies                   July 2023
    Early work at 6TiSCH on a data model and a protocol to program the
    schedule in the 6TiSCH device was never concluded as the group
    focussed on best effort traffic.  This work would be revived by RAW:
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 28]
-
-Internet-Draft              RAW Technologies                   July 2023
-
 
       The 6top interface document [RFC8480] (to be reopened at RAW) was
       intended to specify the generic data model that can be used to
@@ -1592,6 +1555,20 @@ Internet-Draft              RAW Technologies                   July 2023
       it is possible that a mapping entity on the backbone transforms a
       non-CoAP protocol such as PCEP into the RESTful interfaces that
       the 6TiSCH devices support.
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 9 January 2024                [Page 28]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
 5.2.2.2.2.  Track Forwarding
 
@@ -1618,14 +1595,6 @@ Internet-Draft              RAW Technologies                   July 2023
    This model can effectively be seen as a Generalized Multi-protocol
    Label Switching (G-MPLS) operation in that the information used to
    switch a frame is not an explicit label, but rather related to other
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 29]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    properties of the way the packet was received, a particular cell in
    the case of 6TiSCH.  As a result, as long as the TSCH MAC (and
    Layer-2 security) accepts a frame, that frame can be switched
@@ -1649,6 +1618,14 @@ Internet-Draft              RAW Technologies                   July 2023
    effective channel of the cell is obtained by adding a pseudo-random
    number to the channelOffset of the cell, which results in a rotation
    of the frequency that used for transmission.  The bundles may be
+
+
+
+Thubert, et al.          Expires 9 January 2024                [Page 29]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
    computed so as to accommodate both variable rates and
    retransmissions, so they might not be fully used at a given iteration
    of the schedule.  The 6TiSCH architecture provides additional means
@@ -1674,14 +1651,6 @@ Internet-Draft              RAW Technologies                   July 2023
    if more retransmissions are needed than provisioned.  In that case,
    the frame can be placed for transmission in the bundle that is used
    for layer-3 traffic towards the next hop along the Track as long as
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 30]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    it can be routed by the upper layer, that is, typically, if the frame
    transports an IPv6 packet.  The MAC address should be set to the
    next-hop MAC address to avoid confusion.  It results that a frame
@@ -1700,6 +1669,18 @@ Internet-Draft              RAW Technologies                   July 2023
    to broadcast.
 
    There are 2 modes for a Track, transport mode and tunnel mode.
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 9 January 2024                [Page 30]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
 5.2.2.2.2.1.  Transport Mode
 
@@ -1728,16 +1709,6 @@ Internet-Draft              RAW Technologies                   July 2023
 
                  Figure 7: Track Forwarding, Transport Mode
 
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 31]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
 5.2.2.2.2.2.  Tunnel Mode
 
    In tunnel mode, the frames originate from an arbitrary protocol over
@@ -1751,6 +1722,21 @@ Internet-Draft              RAW Technologies                   July 2023
    WirelessHART Network Manager or an ISA100.11a System Manager to
    specify the flows that are to be transported transparently over the
    Track.
+
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 9 January 2024                [Page 31]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
       +--------------+
       |     IPv6     |
@@ -1785,15 +1771,6 @@ Internet-Draft              RAW Technologies                   July 2023
    metadata associated to the Track, the frame is passed to the
    appropriate link layer with the destination MAC restored.
 
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 32]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
 5.2.2.2.2.3.  Tunnel Metadata
 
    Metadata coming with the Track configuration is expected to provide
@@ -1809,6 +1786,14 @@ Internet-Draft              RAW Technologies                   July 2023
    address.  It is thus mandatory at the ingress point to validate that
    the MAC address that was used at the 6LoWPAN sublayer for compression
    matches that of the tunnel egress point.  For that reason, the node
+
+
+
+Thubert, et al.          Expires 9 January 2024                [Page 32]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
    that injects a packet on a Track checks that the destination is
    effectively that of the tunnel egress point before it overwrites it
    to broadcast.  The 6top sublayer at the tunnel egress point reverts
@@ -1841,6 +1826,21 @@ Internet-Draft              RAW Technologies                   July 2023
    of 3GPP technologies provide scheduled wireless segments, primarily
    in licensed spectrum which is beneficial for reliability and
    availability.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -562,8 +562,6 @@
    routing decisions at the Layer-3.
    </t>
   
-
-
      <!--  DetNet-like arching art (introduce the likes of ISA100.11a or WiHART) -->
    <t>
    The 6TiSCH architecture <xref target='RFC9030'/>
@@ -573,7 +571,7 @@
    and the group was never chartered to produce standard work related to Tracks.
    </t>
    
-   <t>Useful References include:
+   <t>
    There are several works that can be used to complement the overview provided in this document.
    For example <xref target='vilajosana21'/> provides a detailed description of the 6TiSCH protocols, 
    how they are linked together and how they are integrated to other standards like RPL and 6Lo.
@@ -621,13 +619,16 @@ CH-15|    |A->B|    |    |    |    |A->B|    |    |    |   |  A  |
      +-------------------------------------------------+   +-----+
 ch.
 offset
+Note: EB (Enhanced Beacon)
 ]]></artwork>
 </figure>
 
    <t>
-   This schedule represents the possible communications of a node with its
+   The IEEE 802.15.4 TSCH standard does not define any scheduling mechanism but 
+   only provides the architecture that establishes a slotted structure that can be 
+   managed by a proper schedule. This schedule represents the possible communications of a node with its
    neighbors, and is managed by a Scheduling Function such as the Minimal
-   Scheduling Function (MSF)  <xref target='RFC9033'/>. Each cell in
+   Scheduling Function (MSF)  <xref target='RFC9033'/>. In MSF, each cell in
    the schedule is identified by its slotoffset and channeloffset coordinates. A
    cell's timeslot offset indicates its position in time, relative to the
    beginning of the slotframe. A cell's channel offset is an index which maps to
@@ -650,7 +651,7 @@ offset
     Such efficient bandwidth utilization can be combined to OFDM modulations
     also supported by the IEEE802.15.4 standard <xref target='IEEE802154'/>
     since the 2015 version.
- </t>
+   </t>
    <t>
    <!-- spectrum -->
     TSCH networks operate in ISM bands in which the spectrum is shared by different coexisting technologies.
@@ -659,9 +660,12 @@ offset
     Yet, the MAC layer operates with a 1-hop vision, being limited to local actions to mitigate underperforming links.
     <!-- Pascal-> not sure if you want to mention here about the capability provided by RAW to determine the best path regardless of the performance of a particular link -->
    </t>
+  
+   </section> <!-- General Characteristics  -->
 
+   <section><name>Applicability to Deterministic Flows</name>
    <t>
-  <!-- expected capabilities for safety and automation, e.g., loops per second -->
+   <!-- expected capabilities for safety and automation, e.g., loops per second -->
     In the RAW context, low power reliable networks should address non-critical
     control scenarios such as Class 2 and monitoring scenarios such as Class 4
     defined by the RFC5673 <xref target='RFC5673'/>.
@@ -675,19 +679,17 @@ offset
     scenarios.
    </t>
 
-   </section> <!-- General Characteristics  -->
-
-   <section><name>Applicability to Deterministic Flows</name>
    <t>
-    Nodes in a TSCH network are tightly synchronized. This enables to build the
-    slotted structure and ensure efficient utilization of resources thanks to
-    proper scheduling policies. Scheduling is a key to orchestrate the resources
+    Nodes in a TSCH network are tightly synchronized. This enables building the
+    slotted structure and ensures efficient utilization of resources thanks to
+    proper scheduling policies. Scheduling is key to orchestrate the resources
     that different nodes in a Track or a path are using. Slotframes can be
     split in resource blocks reserving the needed capacity to certain flows.
     Periodic and bursty traffic can be handled independently in the schedule,
     using active and reactive policies and taking advantage of overprovisionned
-    cells to measu reth excursion. Along a Track, resource blocks can be chained
-    so nodes in previous hops transmit their data before the next packet comes.
+    cells. Along a Track <xref target='Tracks'/>, resource blocks 
+	can be chained so nodes in previous hops transmit their data before the next 
+	packet comes.
     This provides a tight control to latency along a Track. Collision loss is
     avoided for best effort traffic by overprovisionning resources, giving time
     to the management plane of the network to dedicate more resources if needed.
@@ -701,13 +703,15 @@ offset
      - gap analysis, e.g. discuss multihop, or what's missing how to do PAREO features.
      -->
    </t>
+  
+   
 
    <section anchor='detnet'><name>Centralized Path Computation</name>
    <t>
-   In a controlled environment, a 6TiSCH device usually does not place a request
-   for bandwidth between itself and another device in the network. Rather, an
-   Operation Control System (OCS) invoked through an Human/Machine Interface
-   (HMI) iprovides the Traffic Specification, in particular in terms of latency
+   When considering end-to-end communication over TSCH, a 6TiSCH device usually does 
+   not place a request for bandwidth between itself and another device in the network.
+   Rather, an Operation Control System (OCS) invoked through an Human/Machine Interface
+  (HMI) provides the Traffic Specification, in particular in terms of latency
    and reliability, and the end nodes, to a Path Computation element (PCE).
    With this, the PCE computes a Track between the end nodes and provisions every
    hop in the Track with per-flow state that describes the per-hop operation for a
@@ -721,19 +725,17 @@ offset
    time, it is expected that a node will be provisioned in one shot with a full
    schedule, which incorporates the aggregation of its behavior for multiple
    Tracks. The 6TiSCH Architecture expects that the programing of the schedule
-   is done over CoAP as discussed in <xref target='I-D.ietf-6tisch-coap'>"6TiSCH
+   is done over the Constrained Application Protocol (CoAP) as discussed in <xref target='I-D.ietf-6tisch-coap'>"6TiSCH
    Resource Management and Interaction using CoAP"</xref>.
    </t>
    <t>
    But an Hybrid mode may be required as well whereby a single Track is added,
    modified, or removed, for instance if it appears that a Track does not
-   perform as expected for, say, Packet Delivery Ratio (PDR).
+   perform as expected.
    For that case, the expectation is that a protocol that flows along a Track
    (to be), in a fashion similar to classical Traffic Engineering (TE)
    <xref target='CCAMP'/>, may be used to update the state in the devices.
-   6TiSCH provides means for a device to negotiate a timeSlot with
-   a neighbor, but in general that flow was not designed and no protocol was
-   selected and it is expected that DetNet will determine the appropriate
+   In general that flow was not designed and it is expected that DetNet will determine the appropriate
    end-to-end protocols to be used in that case.
    </t>
 
@@ -767,18 +769,13 @@ offset
    </t>
    <section anchor='pmhft'><name>Tagging Packets for Flow Identification</name>
     <t>
-   For packets that are routed by a PCE along a Track, the tuple formed by the
-   IPv6 source address and a local RPLInstanceID is tagged in the packets
-   to identify uniquely the Track and associated transmit bundle of timeSlots.
+     Packets that are routed by a PCE along a Track, are tagged to uniquely 
+	 identify the Track and associated transmit bundle of timeSlots.
    </t>
    <t>
    It results that the tagging that is used for a DetNet flow outside the
-   6TiSCH LLN must be swapped into 6TiSCH formats and back as the packet
+   6TiSCH Low Power Lossy Network (LLN) must be swapped into 6TiSCH formats and back as the packet
    enters and then leaves the 6TiSCH network.
-   </t>
-   <t>
-   Note: The method and format used for encoding the RPLInstanceID at 6lo
-   is generalized to all 6TiSCH topological Instances, which includes Tracks.
    </t>
    </section>
 
@@ -817,7 +814,7 @@ offset
         timeslots within the same TSCH slotframe.
     </t>
 
-        <figure anchor='fig_replication' align='center'><name>Packet Replication: S transmits twice the same data packet, to its DP             (A) and to its AP (B).</name>
+        <figure anchor='fig_replication' align='center'><name>Packet Replication: S transmits twice the same data packet, to its Destination Parent (DP) (A) and to its Alternate Parent (AP) (B).</name>
             <artwork align='center'><![CDATA[
 
                ===> (A) => (C) => (E) ===
@@ -858,14 +855,16 @@ offset
    </t>
    <t>
    The semantics of the configuration must enable correlated timeSlots to be
-   grouped for transmit (and respectively receive) with a'OR'relations,
-   and then a'AND'relation must be configurable between groups.
+   grouped for transmit (and respectively receive) with 'OR' relations,
+   and then an 'AND' relation must be configurable between groups.
    The semantics is that if the transmit (and respectively receive) operation
-   succeeded in one timeSlot in a'OR'group, then all the other timeSLots in
+   succeeded in one timeSlot in an 'OR' group, then all the other timeslots in
    the group are ignored.
-   Now, if there are at least two groups, the'AND'relation between the groups
-   indicates that one operation must succeed in each of the groups.
+   Now, if there are at least two groups, the 'AND' relation between the groups
+   indicates that one operation must succeed in each of the groups. Further details 
+   can be found in the 6TiSCH Architecture document <xref target='RFC9030'/>.
    </t>
+ <!--  
    <t>
    On the transmit side, timeSlots provisioned for retries along a same branch
    of a Track are placed a same'OR'group. The'OR'relation indicates that if
@@ -886,6 +885,7 @@ offset
    are converged, meaning that the first successful reception is enough and that
    all the other timeSlots can be ignored.
    </t>
+-->
    </section>
    </section>
 
@@ -950,8 +950,8 @@ offset
       <section anchor='slotFrames'><name>SlotFrames and Priorities</name>
          <t>A slotFrame is the base object that a PCE needs to manipulate
          to program a schedule into an LLN node. Elaboration on that concept
-         can be fond in section "SlotFrames and Priorities" of
-         <xref target='RFC9030'/>
+         can be found in section "SlotFrames and Priorities" of
+         <xref target='RFC9030'/>.
          </t>
          <t>
          IEEE802.15.4 TSCH avoids contention on the medium by formatting time
