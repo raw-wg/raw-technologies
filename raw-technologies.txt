@@ -5,14 +5,14 @@
 RAW                                                      P. Thubert, Ed.
 Internet-Draft                                             Cisco Systems
 Intended status: Informational                             D. Cavalcanti
-Expires: 9 January 2024                                            Intel
+Expires: 11 January 2024                                           Intel
                                                            X. Vilajosana
                                          Universitat Oberta de Catalunya
                                                               C. Schmitt
                                         Research Institute CODE, UniBw M
                                                                J. Farkas
                                                                 Ericsson
-                                                             8 July 2023
+                                                            10 July 2023
 
 
               Reliable and Available Wireless Technologies
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 9 January 2024.
+   This Internet-Draft will expire on 11 January 2024.
 
 Copyright Notice
 
@@ -53,16 +53,16 @@ Copyright Notice
 
 
 
-Thubert, et al.          Expires 9 January 2024                 [Page 1]
+Thubert, et al.          Expires 11 January 2024                [Page 1]
 
 Internet-Draft              RAW Technologies                   July 2023
 
 
    Please review these documents carefully, as they describe your rights
    and restrictions with respect to this document.  Code Components
-   extracted from this document must include Revised BSD License text as
-   described in Section 4.e of the Trust Legal Provisions and are
-   provided without warranty as described in the Revised BSD License.
+   extracted from this document must include Simplified BSD License text
+   as described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Simplified BSD License.
 
 Table of Contents
 
@@ -83,47 +83,47 @@ Table of Contents
      4.4.  802.11ad and 802.11ay (mmWave operation)  . . . . . . . .  15
        4.4.1.  General Characteristics . . . . . . . . . . . . . . .  15
        4.4.2.  Applicability to deterministic flows  . . . . . . . .  15
-   5.  IEEE 802.15.4 . . . . . . . . . . . . . . . . . . . . . . . .  15
+   5.  IEEE 802.15.4 . . . . . . . . . . . . . . . . . . . . . . . .  16
      5.1.  Provenance and Documents  . . . . . . . . . . . . . . . .  16
      5.2.  TimeSlotted Channel Hopping . . . . . . . . . . . . . . .  17
-       5.2.1.  General Characteristics . . . . . . . . . . . . . . .  18
-       5.2.2.  Applicability to Deterministic Flows  . . . . . . . .  19
-   6.  5G  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  33
-     6.1.  Provenance and Documents  . . . . . . . . . . . . . . . .  33
-     6.2.  General Characteristics . . . . . . . . . . . . . . . . .  35
-     6.3.  Deployment and Spectrum . . . . . . . . . . . . . . . . .  37
-     6.4.  Applicability to Deterministic Flows  . . . . . . . . . .  38
-       6.4.1.  System Architecture . . . . . . . . . . . . . . . . .  38
-       6.4.2.  Overview of The Radio Protocol Stack  . . . . . . . .  40
-       6.4.3.  Radio (PHY) . . . . . . . . . . . . . . . . . . . . .  41
-       6.4.4.  Scheduling and QoS (MAC)  . . . . . . . . . . . . . .  43
-       6.4.5.  Time-Sensitive Communications (TSC) . . . . . . . . .  45
-     6.5.  Summary . . . . . . . . . . . . . . . . . . . . . . . . .  50
-   7.  L-band Digital Aeronautical Communications System . . . . . .  50
-     7.1.  Provenance and Documents  . . . . . . . . . . . . . . . .  51
-     7.2.  General Characteristics . . . . . . . . . . . . . . . . .  52
-     7.3.  Deployment and Spectrum . . . . . . . . . . . . . . . . .  53
-     7.4.  Applicability to Deterministic Flows  . . . . . . . . . .  53
-       7.4.1.  System Architecture . . . . . . . . . . . . . . . . .  54
-       7.4.2.  Overview of The Radio Protocol Stack  . . . . . . . .  54
+       5.2.1.  General Characteristics . . . . . . . . . . . . . . .  17
+       5.2.2.  Applicability to Deterministic Flows  . . . . . . . .  23
+   6.  5G  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  29
+     6.1.  Provenance and Documents  . . . . . . . . . . . . . . . .  29
+     6.2.  General Characteristics . . . . . . . . . . . . . . . . .  31
+     6.3.  Deployment and Spectrum . . . . . . . . . . . . . . . . .  32
+     6.4.  Applicability to Deterministic Flows  . . . . . . . . . .  33
+       6.4.1.  System Architecture . . . . . . . . . . . . . . . . .  33
+       6.4.2.  Overview of The Radio Protocol Stack  . . . . . . . .  35
+       6.4.3.  Radio (PHY) . . . . . . . . . . . . . . . . . . . . .  36
+       6.4.4.  Scheduling and QoS (MAC)  . . . . . . . . . . . . . .  37
+       6.4.5.  Time-Sensitive Communications (TSC) . . . . . . . . .  39
+     6.5.  Summary . . . . . . . . . . . . . . . . . . . . . . . . .  45
+   7.  L-band Digital Aeronautical Communications System . . . . . .  45
+     7.1.  Provenance and Documents  . . . . . . . . . . . . . . . .  46
+     7.2.  General Characteristics . . . . . . . . . . . . . . . . .  47
+     7.3.  Deployment and Spectrum . . . . . . . . . . . . . . . . .  48
+     7.4.  Applicability to Deterministic Flows  . . . . . . . . . .  48
+       7.4.1.  System Architecture . . . . . . . . . . . . . . . . .  49
+       7.4.2.  Overview of The Radio Protocol Stack  . . . . . . . .  49
 
 
 
-Thubert, et al.          Expires 9 January 2024                 [Page 2]
+Thubert, et al.          Expires 11 January 2024                [Page 2]
 
 Internet-Draft              RAW Technologies                   July 2023
 
 
-       7.4.3.  Radio (PHY) . . . . . . . . . . . . . . . . . . . . .  55
-       7.4.4.  Scheduling, Frame Structure and QoS (MAC) . . . . . .  56
-     7.5.  Summary . . . . . . . . . . . . . . . . . . . . . . . . .  58
-   8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  59
-   9.  Security Considerations . . . . . . . . . . . . . . . . . . .  59
-   10. Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  59
-   11. Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  59
-   12. Normative References  . . . . . . . . . . . . . . . . . . . .  59
-   13. Informative References  . . . . . . . . . . . . . . . . . . .  60
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  69
+       7.4.3.  Radio (PHY) . . . . . . . . . . . . . . . . . . . . .  50
+       7.4.4.  Scheduling, Frame Structure and QoS (MAC) . . . . . .  51
+     7.5.  Summary . . . . . . . . . . . . . . . . . . . . . . . . .  53
+   8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  54
+   9.  Security Considerations . . . . . . . . . . . . . . . . . . .  54
+   10. Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  54
+   11. Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  54
+   12. Normative References  . . . . . . . . . . . . . . . . . . . .  54
+   13. Informative References  . . . . . . . . . . . . . . . . . . .  55
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  64
 
 1.  Introduction
 
@@ -165,7 +165,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                 [Page 3]
+Thubert, et al.          Expires 11 January 2024                [Page 3]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -221,7 +221,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                 [Page 4]
+Thubert, et al.          Expires 11 January 2024                [Page 4]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -277,7 +277,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                 [Page 5]
+Thubert, et al.          Expires 11 January 2024                [Page 5]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -333,7 +333,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                 [Page 6]
+Thubert, et al.          Expires 11 January 2024                [Page 6]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -389,7 +389,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                 [Page 7]
+Thubert, et al.          Expires 11 January 2024                [Page 7]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -445,7 +445,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                 [Page 8]
+Thubert, et al.          Expires 11 January 2024                [Page 8]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -501,7 +501,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                 [Page 9]
+Thubert, et al.          Expires 11 January 2024                [Page 9]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -557,7 +557,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 10]
+Thubert, et al.          Expires 11 January 2024               [Page 10]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -613,7 +613,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 11]
+Thubert, et al.          Expires 11 January 2024               [Page 11]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -669,7 +669,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 12]
+Thubert, et al.          Expires 11 January 2024               [Page 12]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -725,7 +725,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 13]
+Thubert, et al.          Expires 11 January 2024               [Page 13]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -767,6 +767,25 @@ Internet-Draft              RAW Technologies                   July 2023
    include: Coordinated Spatial Reuse (Co-SR) and Coordinated
    Beamforming (Co-BF).
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 14]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
 4.3.2.3.  Multi-link operation
 
    802.11be will introduce new features to improve operation over
@@ -778,14 +797,6 @@ Internet-Draft              RAW Technologies                   July 2023
    and help achieve bounded latency.  The multi-link operation (MLO) has
    been already introduced in the 802.11be Draft and it can also enhance
    latency and reliability by enabling data frames to be duplicated
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 14]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    across links.
 
 4.4.  802.11ad and 802.11ay (mmWave operation)
@@ -823,24 +834,20 @@ Internet-Draft              RAW Technologies                   July 2023
    central controller, after contending and reserving the channel for a
    dedicated period, can allocate to stations contention-free service
    periods.  This scheduling capability is also available in 802.11ay,
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 15]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
    and it is one of the mechanisms that can be used to provide bounded
    latency to time-sensitive data flows in interference-free scenarios.
    An analysis of the theoretical latency bounds that can be achieved
    with 802.11ad service periods is provided in [Cavalcanti_2019].
 
 5.  IEEE 802.15.4
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 15]
-
-Internet-Draft              RAW Technologies                   July 2023
-
 
 5.1.  Provenance and Documents
 
@@ -879,29 +886,18 @@ Internet-Draft              RAW Technologies                   July 2023
    mechanisms to enable the management plane operation while ensuring
    IPv6 is supported.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 16]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    6TiSCH defines the 6top layer, composed of one or more Scheduling
    Functions (SFs) and the 6top Protocol (6P Protocol) defined in
    RFC8480 [RFC8480].  The 6P Protocol provides a pairwise negotiation
    mechanism to the control plane operation.  The protocol supports
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 16]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
    agreement on a schedule between neighbors, enabling distributed
    scheduling.  6P goes hand-in-hand with a Scheduling Function (SF),
    the policy that decides how to maintain cells and trigger 6P
@@ -924,7 +920,7 @@ Internet-Draft              RAW Technologies                   July 2023
    Layer-3.
 
    The 6TiSCH architecture [RFC9030] identifies different models to
-   schedule resources along so-called Tracks (see Section 5.2.2.2)
+   schedule resources along so-called Tracks (see Section 5.2.1.1)
    exploiting the TSCH schedule structure however the focus at 6TiSCH is
    on best effort traffic and the group was never chartered to produce
    standard work related to Tracks.
@@ -942,50 +938,24 @@ Internet-Draft              RAW Technologies                   July 2023
 
 5.2.  TimeSlotted Channel Hopping
 
+5.2.1.  General Characteristics
+
+   As a core technique in IEEE802.15.4, TSCH splits time in multiple
+   time slots that repeat over time.  Each device has its own
+   perspective of when the send or receive and on which channel the
+   transmission happens.  This constitutes the device's Slotframe where
+   the channel and destination of a transmission by this device are a
+   function of time.  The overall aggregation of all the Slotframes of
 
 
 
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 17]
+Thubert, et al.          Expires 11 January 2024               [Page 17]
 
 Internet-Draft              RAW Technologies                   July 2023
 
 
-5.2.1.  General Characteristics
-
-   As a core technique in IEEE802.15.4, TSCH splits time in multiple
-   time slots that repeat over time.  A set of timeslots constructs a
-   Slotframe (see Section 5.2.2.1.4).  For each timeslot, a set of
-   available frequencies can be used, resulting in a matrix-like
-   schedule (see Figure 1).
-
-                          timeslot offset
-        | 0    1    2    3    4  | 0    1    2    3    4  |    Nodes
-        +------------------------+------------------------+   +-----+
-        |    |    |    |    |    |    |    |    |    |    |   |  C  |
-   CH-1 | EB |    |    |C->B|    | EB |    |    |C->B|    |   |     |
-        |    |    |    |    |    |    |    |    |    |    |   +-----+
-        +-------------------------------------------------+      |
-        |    |    |    |    |    |    |    |    |    |    |      |
-   CH-2 |    |    |B->C|    |B->A|    |    |B->C|    |B->A|   +-----+
-        |    |    |    |    |    |    |    |    |    |    |   |  B  |
-        +-------------------------------------------------+   |     |
-    ...                                                       +-----+
-                                                                 |
-        +-------------------------------------------------+      |
-        |    |    |    |    |    |    |    |    |    |    |   +-----+
-   CH-15|    |A->B|    |    |    |    |A->B|    |    |    |   |  A  |
-        |    |    |    |    |    |    |    |    |    |    |   |     |
-        +-------------------------------------------------+   +-----+
-   ch.
-   offset
-   Note: EB (Enhanced Beacon)
-
-     Figure 1: Slotframe example with scheduled cells between nodes A,
-                                  B and C
+   all the devices constitutes a time/frequency matrix with at most one
+   transmission in each cell of the matrix (more in Section 5.2.2.1.4).
 
    The IEEE 802.15.4 TSCH standard does not define any scheduling
    mechanism but only provides the architecture that establishes a
@@ -1002,14 +972,6 @@ Internet-Draft              RAW Technologies                   July 2023
    15 milliseconds.  An Absolute Slot Number (ASN) indicates the number
    of slots elapsed since the network started.  It increments at every
    slot.  This is a 5 byte counter that can support networks running for
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 18]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    more than 300 years without wrapping (assuming a 10 ms timeslot).
    Channel hopping provides increased reliability to multi-path fading
    and external interference.  It is handled by TSCH through a channel
@@ -1033,6 +995,277 @@ Internet-Draft              RAW Technologies                   July 2023
    1-hop vision, being limited to local actions to mitigate
    underperforming links.
 
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 18]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
+5.2.1.1.  6TiSCH Tracks
+
+   A Track in the 6TiSCH Architecture [RFC9030] is the application to
+   wireless of the concept of a protection path in the "Detnet
+   architecture" [RFC8655].  A Track can be structured as a Destination
+   Oriented Directed Acyclic Graph (DODAG) to a destination for unicast
+   traffic.  Along a Track, 6TiSCH nodes reserve the resources to enable
+   the efficient transmission of packets while aiming to optimize
+   certain properties such as reliability and ensure small jitter or
+   bounded latency.  The Track structure enables Layer-2 forwarding
+   schemes, reducing the overhead of taking routing decisions at the
+   Layer-3.
+
+   Serial Tracks can be understood as the concatenation of cells or
+   bundles along a routing path from a source towards a destination.
+   The serial Track concept is analogous to the circuit concept where
+   resources are chained into a multi-hop topology, more in
+   Section 5.2.1.1.2 on how that is used in the data plane to forward
+   packets.
+
+   Whereas scheduling ensures reliable delivery in bounded time along
+   any Track, high availability requires the application of PAREO
+   functions along a more complex DODAG Track structure.  A DODAG has
+   forking and joining nodes where the concepts such as Replication and
+   Elimination can be exploited.  Spatial redundancy increases the
+   overall energy consumption in the network but improves significantly
+   the availability of the network as well as the packet delivery ratio.
+   A Track may also branch off and rejoin, for the purpose of the so-
+   called Packet Replication and Elimination (PRE), over non congruent
+   branches.  PRE may be used to complement layer-2 Automatic Repeat
+   reQuest (ARQ) and receiver-end Ordering to form the PAREO functions.
+   PAREO functions enable to meet industrial expectations of packet
+   delivery within bounded delay over a Track that includes wireless
+   links, even when the Track extends beyond the 6TiSCH network.
+
+   The RAW Track described in the RAW Architecture
+   [I-D.ietf-raw-architecture] inherits directly from that model.  RAW
+   extends the graph beyond a DODAG as long as a given packet cannot
+   loop within the Track.
+
+
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 19]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
+                     +-----+
+                     | IoT |
+                     | G/W |
+                     +-----+
+                        ^  <---- Elimination
+                       | |
+        Track branch   | |
+               +-------+ +--------+ Subnet Backbone
+               |                  |
+            +--|--+            +--|--+
+            |  |  | Backbone   |  |  | Backbone
+       o    |  |  | router     |  |  | router
+            +--/--+            +--|--+
+       o     /    o     o---o----/       o
+           o    o---o--/   o      o   o  o   o
+      o     \  /     o               o   LLN    o
+         o   v  <---- Replication
+             o
+
+                  Figure 1: End-to-End deterministic Track
+
+   In the example above (see Figure 1), a Track is laid out from a field
+   device in a 6TiSCH network to an IoT gateway that is located on a
+   IEEE802.1 TSN backbone.
+
+   The Replication function in the field device sends a copy of each
+   packet over two different branches, and a PCE schedules each hop of
+   both branches so that the two copies arrive in due time at the
+   gateway.  In case of a loss on one branch, hopefully the other copy
+   of the packet still makes it in due time.  If two copies make it to
+   the IoT gateway, the Elimination function in the gateway ignores the
+   extra packet and presents only one copy to upper layers.
+
+   At each 6TiSCH hop along the Track, the PCE may schedule more than
+   one timeSlot for a packet, so as to support Layer-2 retries (ARQ).
+   It is also possible that the field device only uses the second branch
+   if sending over the first branch fails.
+
+   In current deployments, a TSCH Track does not necessarily support PRE
+   but is systematically multi-path.  This means that a Track is
+   scheduled so as to ensure that each hop has at least two forwarding
+   solutions, and the forwarding decision is to try the preferred one
+   and use the other in case of Layer-2 transmission failure as detected
+   by ARQ.
+
+
+
+
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 20]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
+   Methods to implement complex Tracks are described in
+   [I-D.papadopoulos-paw-pre-reqs] and complemented by extensions to the
+   RPL routing protocol in [I-D.ietf-roll-nsa-extension] for best effort
+   traffic, but a centralized routing technique such as promoted in
+   DetNet is still missing.
+
+5.2.1.1.1.  Track Scheduling Protocol
+
+   Section "Schedule Management Mechanisms" of the 6TiSCH architecture
+   describes 4 paradigms to manage the TSCH schedule of the LLN nodes:
+   Static Scheduling, neighbor-to-neighbor Scheduling, remote monitoring
+   and scheduling management, and Hop-by-hop scheduling.  The Track
+   operation for DetNet corresponds to a remote monitoring and
+   scheduling management by a PCE.
+
+   Early work at 6TiSCH on a data model and a protocol to program the
+   schedule in the 6TiSCH device was never concluded as the group
+   focussed on best effort traffic.  This work would be revived by RAW:
+
+5.2.1.1.2.  Track Forwarding
+
+   By forwarding, The 6TiSCH Architecture [RFC9030] means the per-packet
+   operation that allows to deliver a packet to a next hop or an upper
+   layer in this node.  Forwarding is based on pre-existing state that
+   was installed as a result of the routing computation of a Track by a
+   PCE.  The 6TiSCH architecture supports three different forwarding
+   model, G-MPLS Track Forwarding (TF), 6LoWPAN Fragment Forwarding (FF)
+   and IPv6 Forwarding (6F) which is the classical IP operation
+   [RFC9030].  The DetNet case relates to the Track Forwarding operation
+   under the control of a PCE.
+
+   A Track is a unidirectional path between a source and a destination.
+   Time/Frequency resources called cells (see Section 5.2.2.1.4) are
+   allocated to enable the forwarding operation along the Track.  In a
+   Track cell, the normal operation of IEEE802.15.4 Automatic Repeat-
+   reQuest (ARQ) usually happens, though the acknowledgment may be
+   omitted in some cases, for instance if there is no scheduled cell for
+   a retry.
+
+   Track Forwarding is the simplest and fastest.  A bundle of cells set
+   to receive (RX-cells) is uniquely paired to a bundle of cells that
+   are set to transmit (TX-cells), representing a layer-2 forwarding
+   state that can be used regardless of the network layer protocol.
+   This model can effectively be seen as a Generalized Multi-protocol
+   Label Switching (G-MPLS) operation in that the information used to
+   switch a frame is not an explicit label, but rather related to other
+   properties of the way the packet was received, a particular cell in
+   the case of 6TiSCH.  As a result, as long as the TSCH MAC (and
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 21]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
+   Layer-2 security) accepts a frame, that frame can be switched
+   regardless of the protocol, whether this is an IPv6 packet, a 6LoWPAN
+   fragment, or a frame from an alternate protocol such as WirelessHART
+   or ISA100.11a.
+
+   A data frame that is forwarded along a Track normally has a
+   destination MAC address that is set to broadcast - or a multicast
+   address depending on MAC support.  This way, the MAC layer in the
+   intermediate nodes accepts the incoming frame and 6top switches it
+   without incurring a change in the MAC header.  In the case of
+   IEEE802.15.4, this means effectively broadcast, so that along the
+   Track the short address for the destination of the frame is set to
+   0xFFFF.
+
+   A Track is thus formed end-to-end as a succession of paired bundles,
+   a receive bundle from the previous hop and a transmit bundle to the
+   next hop along the Track, and a cell in such a bundle belongs to at
+   most one Track.  For a given iteration of the device schedule, the
+   effective channel of the cell is obtained by adding a pseudo-random
+   number to the channelOffset of the cell, which results in a rotation
+   of the frequency that used for transmission.  The bundles may be
+   computed so as to accommodate both variable rates and
+   retransmissions, so they might not be fully used at a given iteration
+   of the schedule.  The 6TiSCH architecture provides additional means
+   to avoid waste of cells as well as overflows in the transmit bundle,
+   as follows:
+
+   In one hand, a TX-cell that is not needed for the current iteration
+   may be reused opportunistically on a per-hop basis for routed
+   packets.  When all of the frame that were received for a given Track
+   are effectively transmitted, any available TX-cell for that Track can
+   be reused for upper layer traffic for which the next-hop router
+   matches the next hop along the Track.  In that case, the cell that is
+   being used is effectively a TX-cell from the Track, but the short
+   address for the destination is that of the next-hop router.  It
+   results that a frame that is received in a RX-cell of a Track with a
+   destination MAC address set to this node as opposed to broadcast must
+   be extracted from the Track and delivered to the upper layer (a frame
+   with an unrecognized MAC address is dropped at the lower MAC layer
+   and thus is not received at the 6top sublayer).
+
+   On the other hand, it might happen that there are not enough TX-cells
+   in the transmit bundle to accommodate the Track traffic, for instance
+   if more retransmissions are needed than provisioned.  In that case,
+   the frame can be placed for transmission in the bundle that is used
+   for layer-3 traffic towards the next hop along the Track as long as
+   it can be routed by the upper layer, that is, typically, if the frame
+   transports an IPv6 packet.  The MAC address should be set to the
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 22]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
+   next-hop MAC address to avoid confusion.  It results that a frame
+   that is received over a layer-3 bundle may be in fact associated to a
+   Track.  In a classical IP link such as an Ethernet, off-Track traffic
+   is typically in excess over reservation to be routed along the non-
+   reserved path based on its QoS setting.  But with 6TiSCH, since the
+   use of the layer-3 bundle may be due to transmission failures, it
+   makes sense for the receiver to recognize a frame that should be re-
+   Tracked, and to place it back on the appropriate bundle if possible.
+   A frame should be re-Tracked if the Per-Hop-Behavior group indicated
+   in the Differentiated Services Field in the IPv6 header is set to
+   Deterministic Forwarding, as discussed in Section 5.2.2.1.1.  A frame
+   is re-Tracked by scheduling it for transmission over the transmit
+   bundle associated to the Track, with the destination MAC address set
+   to broadcast.
+
+5.2.1.1.2.1.  OAM
+
+   An Overview of Operations, Administration, and Maintenance (OAM)
+   Tools [RFC7276] provides an overwiew of the existing tooling for OAM
+   [RFC6291].  Tracks are complex paths and new tooling is necessary to
+   manage them, with respect to load control, timing, and the Packet
+   Replication and Elimination Functions (PREF).
+
+   An example of such tooling can be found in the context of BIER
+   [RFC8279] and more specifically BIER Traffic Engineering [RFC9262]
+   (BIER-TE): [I-D.thubert-bier-replication-elimination] leverages BIER-
+   TE to control the process of PREF, and to provide traceability of
+   these operations, in the deterministic dataplane, along a complex
+   Track.  For the 6TiSCH type of constrained environment,
+   [I-D.thubert-6lo-bier-dispatch] enables an efficient encoding of the
+   BIER bitmap within the 6LoRH framework.
+
 5.2.2.  Applicability to Deterministic Flows
 
    In the RAW context, low power reliable networks should address non-
@@ -1047,6 +1280,16 @@ Internet-Draft              RAW Technologies                   July 2023
    such as replication and elimination should be studied to provide the
    needed performance to address deterministic scenarios.
 
+
+
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 23]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
    Nodes in a TSCH network are tightly synchronized.  This enables
    building the slotted structure and ensures efficient utilization of
    resources thanks to proper scheduling policies.  Scheduling is key to
@@ -1055,17 +1298,9 @@ Internet-Draft              RAW Technologies                   July 2023
    needed capacity to certain flows.  Periodic and bursty traffic can be
    handled independently in the schedule, using active and reactive
    policies and taking advantage of overprovisionned cells.  Along a
-   Track Section 5.2.2.2, resource blocks can be chained so nodes in
+   Track Section 5.2.1.1, resource blocks can be chained so nodes in
    previous hops transmit their data before the next packet comes.  This
    provides a tight control to latency along a Track.  Collision loss is
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 19]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    avoided for best effort traffic by overprovisionning resources,
    giving time to the management plane of the network to dedicate more
    resources if needed.
@@ -1106,18 +1341,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 20]
+Thubert, et al.          Expires 11 January 2024               [Page 24]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -1173,7 +1397,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 21]
+Thubert, et al.          Expires 11 January 2024               [Page 25]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -1229,7 +1453,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 22]
+Thubert, et al.          Expires 11 January 2024               [Page 26]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -1285,7 +1509,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 23]
+Thubert, et al.          Expires 11 January 2024               [Page 27]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -1300,10 +1524,6 @@ Internet-Draft              RAW Technologies                   July 2023
 
 5.2.2.1.4.  SlotFrames and Priorities
 
-   A slotFrame is the base object that a PCE needs to manipulate to
-   program a schedule into an LLN node.  Elaboration on that concept can
-   be found in section "SlotFrames and Priorities" of [RFC9030].
-
    IEEE802.15.4 TSCH avoids contention on the medium by formatting time
    and frequencies in cells of transmission of equal duration.  In order
    to describe that formatting of time and frequencies, the 6TiSCH
@@ -1312,509 +1532,53 @@ Internet-Draft              RAW Technologies                   July 2023
    cells with an height equal to the number of available channels
    (indexed by ChannelOffsets) and a width (in timeSlots) that is the
    period of the network scheduling operation (indexed by slotOffsets)
-   for that CDU matrix.  The size of a cell is a timeSlot duration, and
-   values of 10 to 15 milliseconds are typical in 802.15.4 TSCH to
-   accommodate for the transmission of a frame and an acknowledgement,
-   including the security validation on the receive side which may take
-   up to a few milliseconds on some device architecture.
+   for that CDU matrix.
 
+   The CDU Matrix is used by the PCE as the map of all the channel
+   utilization.  This organization depends on the time in the future.
    The frequency used by a cell in the matrix rotates in a pseudo-random
-   fashion, from an initial position at an epoch time, as the matrix
+   fashion, from an initial position at an epoch time, as the CDU matrix
    iterates over and over.
+
+   The size of a cell is a timeSlot duration, and values of 10 to 15
+   milliseconds are typical in 802.15.4 TSCH to accommodate for the
+   transmission of a frame and an acknowledgement, including the
+   security validation on the receive side which may take up to a few
+   milliseconds on some device architecture.  The matrix represents the
+   overall utilisation of the spectrum over time by a scheduled network
+   operation.
 
    A CDU matrix is computed by the PCE, but unallocated timeSlots may be
    used opportunistically by the nodes for classical best effort IP
    traffic.  The PCE has precedence in the allocation in case of a
-   conflict.
-
-   In a given network, there might be multiple CDU matrices that operate
-   with different width, so they have different durations and represent
-   different periodic operations.  It is recommended that all CDU
-   matrices in a 6TiSCH domain operate with the same cell duration and
-   are aligned, so as to reduce the chances of interferences from
-   slotted-aloha operations.  The PCE must compute the CDU matrices and
-   shared that knowledge with all the nodes.  The matrices are used in
-   particular to define slotFrames.
+   conflict.  Multiple schedules may coexist, in which case the schedule
+   adds a dimension to the matrix and the dimensions are ordered by
+   priority.
 
 
 
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 24]
+
+
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 28]
 
 Internet-Draft              RAW Technologies                   July 2023
 
 
-   A slotFrame is a MAC-level abstraction that is common to all nodes
-   and contains a series of timeSlots of equal length and precedence.
-   It is characterized by a slotFrame_ID, and a slotFrame_size.  A
-   slotFrame aligns to a CDU matrix for its parameters, such as number
-   and duration of timeSlots.
-
-   Multiple slotFrames can coexist in a node schedule, i.e., a node can
-   have multiple activities scheduled in different slotFrames, based on
-   the precedence of the 6TiSCH topologies.  The slotFrames may be
-   aligned to different CDU matrices and thus have different width.
-   There is typically one slotFrame for scheduled traffic that has the
-   highest precedence and one or more slotFrame(s) for RPL traffic.  The
-   timeSlots in the slotFrame are indexed by the SlotOffset; the first
-   cell is at SlotOffset 0.
-
-   The 6TiSCH architecture introduces the concept of chunks ([RFC9030])
-   to operate such spectrum distribution for a whole group of cells at a
-   time.  The CDU matrix is formatted into a set of chunks, each of them
-   identified uniquely by a chunk-ID, see Figure 5.  The PCE must
-   compute the partitioning of CDU matrices into chunks and shared that
-   knowledge with all the nodes in a 6TiSCH network.
-
-                +-----+-----+-----+-----+-----+-----+-----+     +-----+
-   chan.Off. 0  |chnkA|chnkP|chnk7|chnkO|chnk2|chnkK|chnk1| ... |chnkZ|
-                +-----+-----+-----+-----+-----+-----+-----+     +-----+
-   chan.Off. 1  |chnkB|chnkQ|chnkA|chnkP|chnk3|chnkL|chnk2| ... |chnk1|
-                +-----+-----+-----+-----+-----+-----+-----+     +-----+
-                  ...
-                +-----+-----+-----+-----+-----+-----+-----+     +-----+
-   chan.Off. 15 |chnkO|chnk6|chnkN|chnk1|chnkJ|chnkZ|chnkI| ... |chnkG|
-                +-----+-----+-----+-----+-----+-----+-----+     +-----+
-                   0     1     2     3     4     5     6          M
-
-                Figure 5: CDU matrix Partitioning in Chunks
-
-   The appropriation of a chunk can be requested explicitly by the PCE
-   to any node.  After a successful appropriation, the PCE owns the
-   cells in that chunk, and may use them as hard cells to set up Tracks.
-   Then again, 6TiSCH did not propose a method for chunk definition and
-   a protocol for appropriation.  This is to be done at RAW.
-
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 25]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
-5.2.2.2.  6TiSCH Tracks
-
-   A Track at 6TiSCH is the application to wireless of the concept of a
-   path in the "Detnet architecture" [RFC8655].  A Track can follow a
-   simple sequence of relay nodes or can be structured as a more complex
-   Destination Oriented Directed Acyclic Graph (DODAG) to a unicast
-   destination.  Along a Track, 6TiSCH nodes reserve the resources to
-   enable the efficient transmission of packets while aiming to optimize
-   certain properties such as reliability and ensure small jitter or
-   bounded latency.  The Track structure enables Layer-2 forwarding
-   schemes, reducing the overhead of taking routing decisions at the
-   Layer-3.
-
-   Serial Tracks can be understood as the concatenation of cells or
-   bundles along a routing path from a source towards a destination.
-   The serial Track concept is analogous to the circuit concept where
-   resources are chained through the multi-hop topology.  For example, A
-   bundle of Tx Cells in a particular node is paired to a bundle of Rx
-   Cells in the next hop node following a routing path.
-
-   Whereas scheduling ensures reliable delivery in bounded time along
-   any Track, high availability requires the application of PAREO
-   functions along a more complex DODAG Track structure.  A DODAG has
-   forking and joining nodes where the concepts such as Replication and
-   Elimination can be exploited.  Spatial redundancy increases the
-   overall energy consumption in the network but improves significantly
-   the availability of the network as well as the packet delivery ratio.
-   A Track may also branch off and rejoin, for the purpose of the so-
-   called Packet Replication and Elimination (PRE), over non congruent
-   branches.  PRE may be used to complement layer-2 Automatic Repeat
-   reQuest (ARQ) and receiver-end Ordering to form the PAREO functions.
-   PAREO functions enable to meet industrial expectations in PDR within
-   bounded delivery time over a Track that includes wireless links, even
-   when the Track extends beyond the 6TiSCH network.
-
-   The RAW Track described in the RAW Architecture
-   [I-D.ietf-raw-architecture] inherits directly from that model.  RAW
-   extends the graph beyond a DODAG as long as a given packet cannot
-   loop within the Track.
-
-
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 26]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
-                     +-----+
-                     | IoT |
-                     | G/W |
-                     +-----+
-                        ^  <---- Elimination
-                       | |
-        Track branch   | |
-               +-------+ +--------+ Subnet Backbone
-               |                  |
-            +--|--+            +--|--+
-            |  |  | Backbone   |  |  | Backbone
-       o    |  |  | router     |  |  | router
-            +--/--+            +--|--+
-       o     /    o     o---o----/       o
-           o    o---o--/   o      o   o  o   o
-      o     \  /     o               o   LLN    o
-         o   v  <---- Replication
-             o
-
-                  Figure 6: End-to-End deterministic Track
-
-   In the example above (see Figure 6), a Track is laid out from a field
-   device in a 6TiSCH network to an IoT gateway that is located on a
-   IEEE802.1 TSN backbone.
-
-   The Replication function in the field device sends a copy of each
-   packet over two different branches, and a PCE schedules each hop of
-   both branches so that the two copies arrive in due time at the
-   gateway.  In case of a loss on one branch, hopefully the other copy
-   of the packet still makes it in due time.  If two copies make it to
-   the IoT gateway, the Elimination function in the gateway ignores the
-   extra packet and presents only one copy to upper layers.
-
-   At each 6TiSCH hop along the Track, the PCE may schedule more than
-   one timeSlot for a packet, so as to support Layer-2 retries (ARQ).
-   It is also possible that the field device only uses the second branch
-   if sending over the first branch fails.
-
-   In current deployments, a TSCH Track does not necessarily support PRE
-   but is systematically multi-path.  This means that a Track is
-   scheduled so as to ensure that each hop has at least two forwarding
-   solutions, and the forwarding decision is to try the preferred one
-   and use the other in case of Layer-2 transmission failure as detected
-   by ARQ.
-
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 27]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
-   Methods to implement complex Tracks are described in
-   [I-D.papadopoulos-paw-pre-reqs] and complemented by extensions to the
-   RPL routing protocol in [I-D.ietf-roll-nsa-extension] for best effort
-   traffic, but a centralized routing technique such as promoted in
-   DetNet is still missing.
-
-5.2.2.2.1.  Track Scheduling Protocol
-
-   Section "Schedule Management Mechanisms" of the 6TiSCH architecture
-   describes 4 paradigms to manage the TSCH schedule of the LLN nodes:
-   Static Scheduling, neighbor-to-neighbor Scheduling, remote monitoring
-   and scheduling management, and Hop-by-hop scheduling.  The Track
-   operation for DetNet corresponds to a remote monitoring and
-   scheduling management by a PCE.
-
-   Early work at 6TiSCH on a data model and a protocol to program the
-   schedule in the 6TiSCH device was never concluded as the group
-   focussed on best effort traffic.  This work would be revived by RAW:
-
-      The 6top interface document [RFC8480] (to be reopened at RAW) was
-      intended to specify the generic data model that can be used to
-      monitor and manage resources of the 6top sublayer.  Abstract
-      methods were suggested for use by a management entity in the
-      device.  The data model also enables remote control operations on
-      the 6top sublayer.
-
-      [I-D.ietf-6tisch-coap] (to be reopened at RAW) was intended to
-      define a mapping of the 6top set of commands, which is described
-      in RFC 8480, to CoAP resources.  This allows an entity to interact
-      with the 6top layer of a node that is multiple hops away in a
-      RESTful fashion.
-
-      [I-D.ietf-6tisch-coap] also defined a basic set CoAP resources and
-      associated RESTful access methods (GET/PUT/POST/DELETE).  The
-      payload (body) of the CoAP messages is encoded using the CBOR
-      format.  The PCE commands are expected to be issued directly as
-      CoAP requests or to be mapped back and forth into CoAP by a
-      gateway function at the edge of the 6TiSCH network.  For instance,
-      it is possible that a mapping entity on the backbone transforms a
-      non-CoAP protocol such as PCEP into the RESTful interfaces that
-      the 6TiSCH devices support.
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 28]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
-5.2.2.2.2.  Track Forwarding
-
-   By forwarding, this specification means the per-packet operation that
-   allows to deliver a packet to a next hop or an upper layer in this
-   node.  Forwarding is based on pre-existing state that was installed
-   as a result of the routing computation of a Track by a PCE.  The
-   6TiSCH architecture supports three different forwarding model, G-MPLS
-   Track Forwarding (TF), 6LoWPAN Fragment Forwarding (FF) and IPv6
-   Forwarding (6F) which is the classical IP operation [RFC9030].  The
-   DetNet case relates to the Track Forwarding operation under the
-   control of a PCE.
-
-   A Track is a unidirectional path between a source and a destination.
-   In a Track cell, the normal operation of IEEE802.15.4 Automatic
-   Repeat-reQuest (ARQ) usually happens, though the acknowledgment may
-   be omitted in some cases, for instance if there is no scheduled cell
-   for a retry.
-
-   Track Forwarding is the simplest and fastest.  A bundle of cells set
-   to receive (RX-cells) is uniquely paired to a bundle of cells that
-   are set to transmit (TX-cells), representing a layer-2 forwarding
-   state that can be used regardless of the network layer protocol.
-   This model can effectively be seen as a Generalized Multi-protocol
-   Label Switching (G-MPLS) operation in that the information used to
-   switch a frame is not an explicit label, but rather related to other
-   properties of the way the packet was received, a particular cell in
-   the case of 6TiSCH.  As a result, as long as the TSCH MAC (and
-   Layer-2 security) accepts a frame, that frame can be switched
-   regardless of the protocol, whether this is an IPv6 packet, a 6LoWPAN
-   fragment, or a frame from an alternate protocol such as WirelessHART
-   or ISA100.11a.
-
-   A data frame that is forwarded along a Track normally has a
-   destination MAC address that is set to broadcast - or a multicast
-   address depending on MAC support.  This way, the MAC layer in the
-   intermediate nodes accepts the incoming frame and 6top switches it
-   without incurring a change in the MAC header.  In the case of
-   IEEE802.15.4, this means effectively broadcast, so that along the
-   Track the short address for the destination of the frame is set to
-   0xFFFF.
-
-   A Track is thus formed end-to-end as a succession of paired bundles,
-   a receive bundle from the previous hop and a transmit bundle to the
-   next hop along the Track, and a cell in such a bundle belongs to at
-   most one Track.  For a given iteration of the device schedule, the
-   effective channel of the cell is obtained by adding a pseudo-random
-   number to the channelOffset of the cell, which results in a rotation
-   of the frequency that used for transmission.  The bundles may be
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 29]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
-   computed so as to accommodate both variable rates and
-   retransmissions, so they might not be fully used at a given iteration
-   of the schedule.  The 6TiSCH architecture provides additional means
-   to avoid waste of cells as well as overflows in the transmit bundle,
-   as follows:
-
-   In one hand, a TX-cell that is not needed for the current iteration
-   may be reused opportunistically on a per-hop basis for routed
-   packets.  When all of the frame that were received for a given Track
-   are effectively transmitted, any available TX-cell for that Track can
-   be reused for upper layer traffic for which the next-hop router
-   matches the next hop along the Track.  In that case, the cell that is
-   being used is effectively a TX-cell from the Track, but the short
-   address for the destination is that of the next-hop router.  It
-   results that a frame that is received in a RX-cell of a Track with a
-   destination MAC address set to this node as opposed to broadcast must
-   be extracted from the Track and delivered to the upper layer (a frame
-   with an unrecognized MAC address is dropped at the lower MAC layer
-   and thus is not received at the 6top sublayer).
-
-   On the other hand, it might happen that there are not enough TX-cells
-   in the transmit bundle to accommodate the Track traffic, for instance
-   if more retransmissions are needed than provisioned.  In that case,
-   the frame can be placed for transmission in the bundle that is used
-   for layer-3 traffic towards the next hop along the Track as long as
-   it can be routed by the upper layer, that is, typically, if the frame
-   transports an IPv6 packet.  The MAC address should be set to the
-   next-hop MAC address to avoid confusion.  It results that a frame
-   that is received over a layer-3 bundle may be in fact associated to a
-   Track.  In a classical IP link such as an Ethernet, off-Track traffic
-   is typically in excess over reservation to be routed along the non-
-   reserved path based on its QoS setting.  But with 6TiSCH, since the
-   use of the layer-3 bundle may be due to transmission failures, it
-   makes sense for the receiver to recognize a frame that should be re-
-   Tracked, and to place it back on the appropriate bundle if possible.
-   A frame should be re-Tracked if the Per-Hop-Behavior group indicated
-   in the Differentiated Services Field in the IPv6 header is set to
-   Deterministic Forwarding, as discussed in Section 5.2.2.1.1.  A frame
-   is re-Tracked by scheduling it for transmission over the transmit
-   bundle associated to the Track, with the destination MAC address set
-   to broadcast.
-
-   There are 2 modes for a Track, transport mode and tunnel mode.
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 30]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
-5.2.2.2.2.1.  Transport Mode
-
-   In transport mode, the Protocol Data Unit (PDU) is associated with
-   flow-dependant meta-data that refers uniquely to the Track, so the
-   6top sublayer can place the frame in the appropriate cell without
-   ambiguity.  In the case of IPv6 traffic, this flow identification is
-   transported in the Flow Label of the IPv6 header.  Associated with
-   the source IPv6 address, the Flow Label forms a globally unique
-   identifier for that particular Track that is validated at egress
-   before restoring the destination MAC address (DMAC) and punting to
-   the upper layer.
-
-                          |                                    ^
-      +--------------+    |                                    |
-      |     IPv6     |    |                                    |
-      +--------------+    |                                    |
-      |  6LoWPAN HC  |    |                                    |
-      +--------------+  ingress                              egress
-      |     6top     |   sets     +----+          +----+     restores
-      +--------------+  dmac to   |    |          |    |     dmac to
-      |   TSCH MAC   |   brdcst   |    |          |    |      self
-      +--------------+    |       |    |          |    |       |
-      |   LLN PHY    |    +-------+    +--...-----+    +-------+
-      +--------------+
-
-                 Figure 7: Track Forwarding, Transport Mode
-
-5.2.2.2.2.2.  Tunnel Mode
-
-   In tunnel mode, the frames originate from an arbitrary protocol over
-   a compatible MAC that may or may not be synchronized with the 6TiSCH
-   network.  An example of this would be a router with a dual radio that
-   is capable of receiving and sending WirelessHART or ISA100.11a frames
-   with the second radio, by presenting itself as an Access Point or a
-   Backbone Router, respectively.
-
-   In that mode, some entity (e.g.  PCE) can coordinate with a
-   WirelessHART Network Manager or an ISA100.11a System Manager to
-   specify the flows that are to be transported transparently over the
-   Track.
-
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 31]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
-      +--------------+
-      |     IPv6     |
-      +--------------+
-      |  6LoWPAN HC  |
-      +--------------+             set            restore
-      |     6top     |            +dmac+          +dmac+
-      +--------------+          to|brdcst       to|nexthop
-      |   TSCH MAC   |            |    |          |    |
-      +--------------+            |    |          |    |
-      |   LLN PHY    |    +-------+    +--...-----+    +-------+
-      +--------------+    |   ingress                 egress   |
-                          |                                    |
-      +--------------+    |                                    |
-      |   LLN PHY    |    |                                    |
-      +--------------+    |                                    |
-      |   TSCH MAC   |    |                                    |
-      +--------------+    | dmac =                             | dmac =
-      |ISA100/WiHART |    | nexthop                            v nexthop
-      +--------------+
-
-                  Figure 8: Track Forwarding, Tunnel Mode
-
-   In that case, the flow information that identifies the Track at the
-   ingress 6TiSCH router is derived from the RX-cell.  The dmac is set
-   to this node but the flow information indicates that the frame must
-   be tunneled over a particular Track so the frame is not passed to the
-   upper layer.  Instead, the dmac is forced to broadcast and the frame
-   is passed to the 6top sublayer for switching.
-
-   At the egress 6TiSCH router, the reverse operation occurs.  Based on
-   metadata associated to the Track, the frame is passed to the
-   appropriate link layer with the destination MAC restored.
-
-5.2.2.2.2.3.  Tunnel Metadata
-
-   Metadata coming with the Track configuration is expected to provide
-   the destination MAC address of the egress endpoint as well as the
-   tunnel mode and specific data depending on the mode, for instance a
-   service access point for frame delivery at egress.  If the tunnel
-   egress point does not have a MAC address that matches the
-   configuration, the Track installation fails.
-
-   In transport mode, if the final layer-3 destination is the tunnel
-   termination, then it is possible that the IPv6 address of the
-   destination is compressed at the 6LoWPAN sublayer based on the MAC
-   address.  It is thus mandatory at the ingress point to validate that
-   the MAC address that was used at the 6LoWPAN sublayer for compression
-   matches that of the tunnel egress point.  For that reason, the node
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 32]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
-   that injects a packet on a Track checks that the destination is
-   effectively that of the tunnel egress point before it overwrites it
-   to broadcast.  The 6top sublayer at the tunnel egress point reverts
-   that operation to the MAC address obtained from the tunnel metadata.
-
-5.2.2.2.2.4.  OAM
-
-   An Overview of Operations, Administration, and Maintenance (OAM)
-   Tools [RFC7276] provides an overwiew of the existing tooling for OAM
-   [RFC6291].  Tracks are complex paths and new tooling is necessary to
-   manage them, with respect to load control, timing, and the Packet
-   Replication and Elimination Functions (PREF).
-
-   An example of such tooling can be found in the context of BIER
-   [RFC8279] and more specifically BIER Traffic Engineering [RFC9262]
-   (BIER-TE): [I-D.thubert-bier-replication-elimination] leverages BIER-
-   TE to control the process of PREF, and to provide traceability of
-   these operations, in the deterministic dataplane, along a complex
-   Track.  For the 6TiSCH type of constrained environment,
-   [I-D.thubert-6lo-bier-dispatch] enables an efficient encoding of the
-   BIER bitmap within the 6LoRH framework.
+   A slotFrame is the base object that a PCE needs to manipulate to
+   program a schedule into one device.  The slotFrame is a device
+   perspective of a transmission schedule; there can be more than one
+   with different priorities so in case of a contention the highest
+   priority applies.  In other words, a slotFrame is the projection of a
+   schedule from the CDU matrix onto one device.  Elaboration on that
+   concept can be found in section "SlotFrames and Priorities" of
+   [RFC9030], and figures 17 and 18 of [RFC9030] illustrate that
+   projection.
 
 6.  5G
 
@@ -1827,29 +1591,6 @@ Internet-Draft              RAW Technologies                   July 2023
    in licensed spectrum which is beneficial for reliability and
    availability.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 33]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    In 2016, the 3GPP started to design New Radio (NR) technology
    belonging to the fifth generation (5G) of cellular networks.  NR has
    been designed from the beginning to not only address enhanced Mobile
@@ -1860,12 +1601,30 @@ Internet-Draft              RAW Technologies                   July 2023
    Type Communication (M-MTC) for a large number of connected devices/
    sensors, and Ultra-Reliable Low-Latency Communication (URLLC) for
    connected control systems and critical communication as illustrated
-   in Figure 9.  It is the URLLC capabilities that make 5G a great
+   in Figure 5.  It is the URLLC capabilities that make 5G a great
    candidate for reliable low-latency communication.  With these three
    corner stones, NR is a complete solution supporting the connectivity
    needs of consumers, enterprises, and public sector for both wide area
    and local area, e.g. indoor deployments.  A general overview of NR
    can be found in [TS38300].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 29]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
                                 enhanced
                             Mobile Broadband
@@ -1883,7 +1642,7 @@ Internet-Draft              RAW Technologies                   July 2023
                      Machine-Type        Low-Latency
                     Communication       Communication
 
-                       Figure 9: 5G Application Areas
+                       Figure 5: 5G Application Areas
 
    As a result of releasing the first NR specification in 2018 (Release
    15), it has been proven by many companies that NR is a URLLC-capable
@@ -1896,15 +1655,6 @@ Internet-Draft              RAW Technologies                   July 2023
    vertical domains, 3GPP studied different use cases [TR22804] and
    released technical specification with reliability, availability and
    latency demands for a variety of applications [TS22104].
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 34]
-
-Internet-Draft              RAW Technologies                   July 2023
-
 
    As an evolution of NR, multiple studies have been conducted in scope
    of 3GPP Release 16 including the following two, focusing on radio
@@ -1924,6 +1674,14 @@ Internet-Draft              RAW Technologies                   July 2023
    In addition, several enhancements have been done on system
    architecture level which are reflected in System architecture for the
    5G System (5GS) [TS23501].  These enhancements include multiple
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 30]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
    features in support of Time-Sensitive Communications (TSC) by Release
    16 and Release 17.  Further improvements are provided in Release 18,
    e.g., support for DetNet [TR2370046].
@@ -1947,20 +1705,6 @@ Internet-Draft              RAW Technologies                   July 2023
    admission control and scheduling of the wireless frequency resources,
    which are typically licensed frequency bands assigned to a network
    operator.
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 35]
-
-Internet-Draft              RAW Technologies                   July 2023
-
 
    NR enables short transmission slots in a radio subframe, which
    benefits low-latency applications.  NR also introduces mini-slots,
@@ -1986,9 +1730,17 @@ Internet-Draft              RAW Technologies                   July 2023
    (PLMN) from a single network to a network where logical partitions
    are created, with appropriate network isolation, resources, optimized
    topology and specific configuration to serve various service
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 31]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
    requirements.  An operator can configure and manage the mobile
    network to support various types of services enabled by 5G, for
-   example eMBB and URLLC, depending on the different customers’ needs.
+   example eMBB and URLLC, depending on the different customers' needs.
 
    Exposure of capabilities of 5G Systems to the network or applications
    outside the 3GPP domain have been added to Release 16 [TS23501].  Via
@@ -2010,14 +1762,6 @@ Internet-Draft              RAW Technologies                   July 2023
    identity management infrastructure.  Since 3G, there is also mutual
    authentication, allowing the network to authenticate the device and
    the device to authenticate the network.  Another strength is secure
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 36]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    solutions for storage and distribution of keys fulfilling regulatory
    requirements and allowing international roaming.  When connecting to
    5G, the user meets the entire communication system, where security is
@@ -2040,6 +1784,15 @@ Internet-Draft              RAW Technologies                   July 2023
    either licensed, which means that the license holder is the only
    authorized user of that spectrum range, or unlicensed, which means
    that anyone who wants to use the spectrum can do so.
+
+
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 32]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
    A prerequisite for critical communication is performance
    predictability, which can be achieved by the full control of the
@@ -2066,14 +1819,6 @@ Internet-Draft              RAW Technologies                   July 2023
    possible.  The non-public (local) network can thus be interconnected
    with a public network, allowing devices to roam between the networks.
 
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 37]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    In an alternative model, some countries are now in the process of
    allocating parts of the 5G spectrum for local use to industries.
    These non-service providers then have a choice of applying for a
@@ -2091,44 +1836,30 @@ Internet-Draft              RAW Technologies                   July 2023
    based on a service-based architecture with the central functions:
    Access and Mobility Management Function (AMF), Session Management
    Function (SMF) and User Plane Function (UPF) as illustrated in
-   Figure 10.  "(Note that this document only explains key functions,
-   however, Figure 10 provides a more detailed view.)"
+   Figure 6.  "(Note that this document only explains key functions,
+   however, Figure 6 provides a more detailed view.)"
 
-   The gNB’s main responsibility is the radio resource management,
+
+
+
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 33]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
+   The gNB's main responsibility is the radio resource management,
    including admission control and scheduling, mobility control and
-   radio measurement handling.  The AMF handles the UE’s connection
-   status and security, while the SMF controls the UE’s data sessions.
+   radio measurement handling.  The AMF handles the UE's connection
+   status and security, while the SMF controls the UE's data sessions.
    The UPF handles the user plane traffic.
 
    The SMF can instantiate various Packet Data Unit (PDU) sessions for
    the UE, each associated with a set of QoS flows, i.e., with different
    QoS profiles.  Segregation of those sessions is also possible, e.g.,
    resource isolation in the RAN and in the CN can be defined (slicing).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 38]
-
-Internet-Draft              RAW Technologies                   July 2023
-
 
              +----+  +---+   +---+    +---+    +---+   +---+
              |NSSF|  |NEF|   |NRF|    |PCF|    |UDM|   |AF |
@@ -2156,35 +1887,7 @@ Internet-Draft              RAW Technologies                   July 2023
                                             |    |
                                             +-N9-+
 
-                     Figure 10: 5G System Architecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 39]
-
-Internet-Draft              RAW Technologies                   July 2023
-
+                      Figure 6: 5G System Architecture
 
    To allow UE mobility across cells/gNBs, handover mechanisms are
    supported in NR.  For an established connection, i.e., connected mode
@@ -2195,6 +1898,14 @@ Internet-Draft              RAW Technologies                   July 2023
    triggering the handover, it is hand-shaked with the target gNB based
    on network signalling.  A handover command is then sent to the UE and
    the UE switches its connection to the target cell/gNB.  The Packet
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 34]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
    Data Convergence Protocol (PDCP) of the UE can be configured to avoid
    data loss in this procedure, i.e., handle retransmissions if needed.
    Data forwarding is possible between source and target gNB as well.
@@ -2235,13 +1946,6 @@ Internet-Draft              RAW Technologies                   July 2023
    order delivery, duplication and duplicate handling for higher layer
    packets, and acts as the anchor protocol to support handovers.
 
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 40]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    The SDAP sublayer provides services to map QoS flows, as established
    by the 5G core network, to data radio bearers (associated with
    logical channels), as used in the 5G RAN.
@@ -2250,6 +1954,13 @@ Internet-Draft              RAW Technologies                   July 2023
    handles the access control and configuration signalling for the
    aforementioned protocol layers.  RRC messages are considered L3 and
    thus transmitted also via those radio protocol layers.
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 35]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
    To provide low latency and high reliability for one transmission
    link, i.e., to transport data (or control signaling) of one radio
@@ -2288,18 +1999,8 @@ Internet-Draft              RAW Technologies                   July 2023
    (discontinuous transmission - DTX),and the base station upon
    detecting DTX will retransmit the initial data.
 
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 41]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    An uplink transmission normally starts from a Scheduling Request (SR)
-   – a signaling message from the UE to the base station sent via PUCCH.
+   - a signaling message from the UE to the base station sent via PUCCH.
    Once the scheduler is informed about buffer data in UE, e.g., by SR,
    the UE transmits a data packet on the Physical Uplink Shared Channel
    (PUSCH).  Pre-scheduling not relying on SR is also possible (see
@@ -2309,6 +2010,14 @@ Internet-Draft              RAW Technologies                   July 2023
    channels, there are several methods to maintain the needed
    reliability.  NR uses Low Density Parity Check (LDPC) codes for data
    channels, Polar codes for PDCCH, as well as orthogonal sequences and
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 36]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
    Polar codes for PUCCH.  For ultra-reliability of data channels, very
    robust (low spectral efficiency) Modulation and Coding Scheme (MCS)
    tables are introduced containing very low (down to 1/20) LDPC code
@@ -2335,25 +2044,6 @@ Internet-Draft              RAW Technologies                   July 2023
    transmission has failed, HARQ feedback can quickly be provided and an
    HARQ retransmission is scheduled.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 42]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    Dynamic multiplexing of data associated with different services is
    highly desirable for efficient use of system resources and to
    maximize system capacity.  Assignment of resources for eMBB is
@@ -2376,6 +2066,14 @@ Internet-Draft              RAW Technologies                   July 2023
    admission control.  QoS flows can for example be associated with
    different priority level, packet delay budgets and tolerable packet
    error rates.  Since radio resources are centrally scheduled in NR,
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 37]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
    the admission control function can ensure that only those QoS flows
    are admitted for which QoS targets can be reached.
 
@@ -2402,14 +2100,6 @@ Internet-Draft              RAW Technologies                   July 2023
    coding scheme, controlled UL power) is selected for the radio channel
    condition of the UE.  Retransmissions, based on HARQ feedback, are
    also controlled by the scheduler.  The feedback transmission in HARQ
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 43]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    loop introduces delays, but there are methods to minimize it by using
    short transmission formats, sub-slot feedback reporting and PUCCH
    carrier switching.  If needed to avoid HARQ round-trip time delays,
@@ -2427,6 +2117,18 @@ Internet-Draft              RAW Technologies                   July 2023
    be sent.  More UL resources may be scheduled accordingly.  To avoid
    the latency introduced in the scheduling request loop, UL radio
    resources can also be pre-scheduled.
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 38]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
    In particular for periodical traffic patterns, the pre-scheduling can
    rely on the scheduling features DL Semi-Persistent Scheduling (SPS)
@@ -2456,16 +2158,6 @@ Internet-Draft              RAW Technologies                   July 2023
    case.  In both cases, transmission reliability is improved by this
    means of providing frequency diversity.
 
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 44]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    In addition to licensed spectrum, a 5G system can also utilize
    unlicensed spectrum to offload non-critical traffic.  This version of
    NR is called NR-U, part of 3GPP Release 16.  The central scheduling
@@ -2486,6 +2178,14 @@ Internet-Draft              RAW Technologies                   July 2023
    guaranteed data delivery within a guaranteed time window, i.e.,
    bounded low latency.  IEEE 802.1 TSN [IEEE802.1TSN] is a set of open
    standards that provide features to enable deterministic communication
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 39]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
    on standard IEEE 802.3 Ethernet [IEEE802.3].  TSN standards can be
    seen as a toolbox for traffic shaping, resource management, time
    synchronization, and reliability.
@@ -2514,14 +2214,6 @@ Internet-Draft              RAW Technologies                   July 2023
    hiding the 5GS internal procedures.  The 5GS provides the following
    components:
 
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 45]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    1.  interface to TSN controller, as per [IEEE802.1Qcc] for the fully
        centralized configuration model
 
@@ -2534,18 +2226,34 @@ Internet-Draft              RAW Technologies                   July 2023
    4.  reliability, hence, can be integrated with FRER [IEEE802.1CB]
 
 
+
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 40]
+
+Internet-Draft              RAW Technologies                   July 2023
+
+
    3GPP Release 17 [TS23501] introduced enhancements to generalize
    support for Time-Sensitive Communications (TSC) beyond TSN.  This
    includes IP communications to provide time-sensitive service to,
    e.g., Video, Imaging and Audio for Professional Applications (VIAPA).
-   The system model of 5G acting as a “TSN bridge” in Release 16 has
-   been reused to enable the 5GS acting as a “TSC node” in a more
+   The system model of 5G acting as a "TSN bridge" in Release 16 has
+   been reused to enable the 5GS acting as a "TSC node" in a more
    generic sense (which includes TSN bridge and IP node).  In the case
    of TSC that does not involve TSN, requirements are given via exposure
    interface and the control plane provides the service based on QoS and
    time synchronization requests from an Application Function (AF).
 
-   Figure 11 shows an illustration of 5G-TSN integration where an
+   Figure 7 shows an illustration of 5G-TSN integration where an
    industrial controller (Ind Ctrlr) is connected to industrial Input/
    Output devices (I/O dev) via 5G.  The 5GS can directly transport
    Ethernet frames since Release 15, thus, end-to-end Ethernet
@@ -2573,7 +2281,19 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 46]
+
+
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 41]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -2611,7 +2331,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
        <----------------- end-to-end Ethernet ------------------->
 
-                      Figure 11: 5G - TSN Integration
+                       Figure 7: 5G - TSN Integration
 
    NR supports accurate reference time synchronization in 1us accuracy
    level.  Since NR is a scheduled system, an NR UE and a gNB are
@@ -2629,7 +2349,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 47]
+Thubert, et al.          Expires 11 January 2024               [Page 42]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -2676,7 +2396,7 @@ Internet-Draft              RAW Technologies                   July 2023
    provided based on the dual connectivity architecture, where the UE
    sets up two PDU sessions towards the same data network, and the 5G
    system makes the paths of the two PDU sessions independent as
-   illustrated in Figure 13.  There are two PDU sessions involved in the
+   illustrated in Figure 9.  There are two PDU sessions involved in the
    solution: the first spans from the UE via gNB1 to UPF1, acting as the
    first PDU session anchor, while the second spans from the UE via gNB2
    to UPF2, acting as second the PDU session anchor.  The independent
@@ -2685,7 +2405,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 48]
+Thubert, et al.          Expires 11 January 2024               [Page 43]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -2708,10 +2428,10 @@ Internet-Draft              RAW Technologies                   July 2023
               +........+ + gNB2 +--N3--+ UPF2 |--N6--+      |
                          +------+      +------+      +------+
 
-                   Figure 12: Reliability with Single UE
+                    Figure 8: Reliability with Single UE
 
    An alternative solution is that multiple UEs per device are used for
-   user plane redundancy as illustrated in Figure 13.  Each UE sets up a
+   user plane redundancy as illustrated in Figure 9.  Each UE sets up a
    PDU session.  The 5GS ensures that those PDU sessions of the
    different UEs are handled independently internal to the 5GS.  There
    is no single point of failure in this solution, which also includes
@@ -2731,7 +2451,7 @@ Internet-Draft              RAW Technologies                   July 2023
              .         .
              +.........+
 
-                    Figure 13: Reliability with Dual UE
+                     Figure 9: Reliability with Dual UE
 
    Note that the abstraction provided by the RHF and the location of the
    RHF being outside of the 5G system make 5G equally supporting
@@ -2741,7 +2461,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 49]
+Thubert, et al.          Expires 11 January 2024               [Page 44]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -2780,7 +2500,7 @@ Internet-Draft              RAW Technologies                   July 2023
    system is the existence of a communication infrastructure that
    enables efficient aircraft guidance and safe separation in all phases
    of flight.  Although current systems are technically mature, they are
-   suffering from the VHF band’s increasing saturation in high-density
+   suffering from the VHF band's increasing saturation in high-density
    areas and the limitations posed by analogue radio.  Therefore,
    aviation globally and the European Union (EU) in particular, strives
    for a sustainable modernization of the aeronautical communication
@@ -2797,7 +2517,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 50]
+Thubert, et al.          Expires 11 January 2024               [Page 45]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -2853,7 +2573,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 51]
+Thubert, et al.          Expires 11 January 2024               [Page 46]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -2891,7 +2611,7 @@ Internet-Draft              RAW Technologies                   July 2023
    In previous works and during the MICONAV flight campaign in 2019, it
    was also shown, that LDACS can be used for surveillance capability.
    Filip et al.  [FIL19] shown passive radar capabilities of LDACS and
-   Automatic Dependence Surveillance – Contract (ADS-C) was demonstrated
+   Automatic Dependence Surveillance - Contract (ADS-C) was demonstrated
    via LDACS during the flight campaign 2019 [SCH19].
 
    Since LDACS has been mainly designed for air traffic management
@@ -2909,7 +2629,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 52]
+Thubert, et al.          Expires 11 January 2024               [Page 47]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -2965,7 +2685,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 53]
+Thubert, et al.          Expires 11 January 2024               [Page 48]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -3003,7 +2723,7 @@ Internet-Draft              RAW Technologies                   July 2023
    Communications between MAC and DLS layer is handled by the Data
    Channel (DCH) where user payload is handled.
 
-   Figure 14 shows the protocol stack of LDACS as implemented in the AS
+   Figure 10 shows the protocol stack of LDACS as implemented in the AS
    and GS.
 
 
@@ -3021,7 +2741,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 54]
+Thubert, et al.          Expires 11 January 2024               [Page 49]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -3059,7 +2779,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-                Figure 14: LDACS protocol stack in AS and GS
+                Figure 10: LDACS protocol stack in AS and GS
 
 7.4.3.  Radio (PHY)
 
@@ -3077,7 +2797,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 55]
+Thubert, et al.          Expires 11 January 2024               [Page 50]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -3118,7 +2838,7 @@ Internet-Draft              RAW Technologies                   July 2023
    MFs have the same fixed duration of 58.32 ms as in the FL, but a
    different internal structure
 
-   Figure 15 and Figure 16 illustrate the LDACS frame structure.
+   Figure 11 and Figure 12 illustrate the LDACS frame structure.
 
 
 
@@ -3133,7 +2853,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 56]
+Thubert, et al.          Expires 11 January 2024               [Page 51]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -3155,7 +2875,7 @@ Internet-Draft              RAW Technologies                   July 2023
    |
 
 
-                     Figure 15: SF structure for LDACS
+                     Figure 11: SF structure for LDACS
 
 
    ^
@@ -3175,7 +2895,7 @@ Internet-Draft              RAW Technologies                   July 2023
    |
 
 
-                     Figure 16: MF structure for LDACS
+                     Figure 12: MF structure for LDACS
 
    This fixed frame structure allows for a reliable and dependable
    transmission of data.  Next, the LDACS medium access layer is
@@ -3189,7 +2909,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 57]
+Thubert, et al.          Expires 11 January 2024               [Page 52]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -3245,7 +2965,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 58]
+Thubert, et al.          Expires 11 January 2024               [Page 53]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -3301,7 +3021,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 59]
+Thubert, et al.          Expires 11 January 2024               [Page 54]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -3357,7 +3077,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 60]
+Thubert, et al.          Expires 11 January 2024               [Page 55]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -3413,7 +3133,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 61]
+Thubert, et al.          Expires 11 January 2024               [Page 56]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -3469,7 +3189,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 62]
+Thubert, et al.          Expires 11 January 2024               [Page 57]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -3525,7 +3245,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 63]
+Thubert, et al.          Expires 11 January 2024               [Page 58]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -3534,10 +3254,6 @@ Internet-Draft              RAW Technologies                   July 2023
               Jesica de Armas et al., "Determinism through path
               diversity: Why packet replication makes sense", September
               2016.
-
-   [vilajosana19]
-              Xavier Vilajosana et al., "6TiSCH: Industrial Performance
-              for IPv6 Internet-of-Things Networks", June 2019.
 
    [vilajosana21]
               Xavier Vilajosana et al., "IETF 6TiSCH: A Tutorial", March
@@ -3578,18 +3294,17 @@ Internet-Draft              RAW Technologies                   July 2023
               Report for Assessing LDACS1 Transmitter Impact upon DME/
               TACAN Receivers", April 2014.
 
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 64]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    [GRA11]    Gräupl, T. and M. Ehammer, "L-DACS1 Data Link Layer
               Evolution of ATN/IPS", Proceedings of the 30th IEEE/AIAA
               Digital Avionics Systems Conference (DASC) Seattle, WA,
               USA, October 2011.
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 59]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
    [ICAO18]   International Civil Aviation Organization (ICAO), "L-Band
               Digital Aeronautical Communication System (LDACS)",
@@ -3634,18 +3349,18 @@ Internet-Draft              RAW Technologies                   July 2023
               <https://portal.3gpp.org/desktopmodules/Specifications/
               SpecificationDetails.aspx?specificationId=3187>.
 
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 65]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    [TS23501]  3GPP, "System architecture for the 5G System (5GS)",
               3GPP TS 23.501,
               <https://portal.3gpp.org/desktopmodules/Specifications/
               SpecificationDetails.aspx?specificationId=3144>.
+
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 60]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
    [TS38300]  3GPP, "NR Overall description", 3GPP TS 38.300,
               <https://portal.3gpp.org/desktopmodules/Specifications/
@@ -3690,19 +3405,18 @@ Internet-Draft              RAW Technologies                   July 2023
               802.1CB-2017,
               <https://ieeexplore.ieee.org/document/8091139>.
 
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 66]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    [IEEE802.1Qbv]
               IEEE, "IEEE Standard for Local and metropolitan area
               networks -- Bridges and Bridged Networks -- Amendment 25:
               Enhancements for Scheduled Traffic", IEEE 802.1Qbv-2015,
               <https://ieeexplore.ieee.org/document/7440741>.
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 61]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
    [IEEE802.1Qcc]
               IEEE, "IEEE Standard for Local and metropolitan area
@@ -3746,19 +3460,19 @@ Internet-Draft              RAW Technologies                   July 2023
               IEEE 39th Digital Avionics Systems Conference (DACS), pp.
               1-10, San Diego, CA, USA , October 2019.
 
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 67]
-
-Internet-Draft              RAW Technologies                   July 2023
-
-
    [FIL19]    Filip-Dhaubhadel, A. and D. Shutin, "LDACS- Based Non-
               Cooperative Surveillance Multistatic Radar Design and
               Detection Coverage Assessment", IEEE 38th Digital Avionics
               Systems Conference (DACS), pp. 1-10, San Diego, CA, USA ,
               September 2019.
+
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 62]
+
+Internet-Draft              RAW Technologies                   July 2023
+
 
    [BAT19]    Battista, G., Osechas, O., Narayanan, S., Crespillo, O.G.,
               Gerbeth, D., Maeurer, N., Mielke, D., and T. Graeupl,
@@ -3805,7 +3519,13 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-Thubert, et al.          Expires 9 January 2024                [Page 68]
+
+
+
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 63]
 
 Internet-Draft              RAW Technologies                   July 2023
 
@@ -3832,6 +3552,7 @@ Authors' Addresses
    rue Evariste Galois
    06410 BIOT - Sophia Antipolis
    France
+
    Phone: +33 497 23 26 34
    Email: pthubert@cisco.com
 
@@ -3841,6 +3562,7 @@ Authors' Addresses
    2111 NE 25th Ave
    Hillsboro, OR,  97124
    United States of America
+
    Phone: 503 712 5566
    Email: dave.cavalcanti@intel.com
 
@@ -3850,7 +3572,18 @@ Authors' Addresses
    156 Rambla Poblenou
    08018 Barcelona Catalonia
    Spain
+
    Email: xvilajosana@uoc.edu
+
+
+
+
+
+
+
+Thubert, et al.          Expires 11 January 2024               [Page 64]
+
+Internet-Draft              RAW Technologies                   July 2023
 
 
    Corinna Schmitt
@@ -3858,13 +3591,6 @@ Authors' Addresses
    Werner-Heisenberg-Weg 39
    85577 Neubiberg
    Germany
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 69]
-
-Internet-Draft              RAW Technologies                   July 2023
-
 
    Email: corinna.schmitt@unibw.de
 
@@ -3875,6 +3601,7 @@ Internet-Draft              RAW Technologies                   July 2023
    Magyar tudosok korutja 11
    1117
    Hungary
+
    Email: janos.farkas@ericsson.com
 
 
@@ -3910,11 +3637,4 @@ Internet-Draft              RAW Technologies                   July 2023
 
 
 
-
-
-
-
-
-
-
-Thubert, et al.          Expires 9 January 2024                [Page 70]
+Thubert, et al.          Expires 11 January 2024               [Page 65]

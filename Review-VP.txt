@@ -191,7 +191,7 @@ to 6TiSCH. Could the paragraph about ISA100.11a and WirelessHART be placed
 before the 6TiSCH information?
 
 <xavi>
-done. Some text have been moved up. 
+done. Some text have been moved up.
 </xavi>
 
 "Useful References" in this section - I think these would be better as
@@ -246,7 +246,7 @@ scheduling function was defined by 6TiSCH, so it made me wonder how
 general characteristics, not 6TiSCH specifically?
 
 <xavi>
-I clarified this. IEEE 802.15.4 provides the architecture and framework for a syncrhonized and slotted communication. 
+I clarified this. IEEE 802.15.4 provides the architecture and framework for a syncrhonized and slotted communication.
 The schedule is something left for higher layers (hence 6TiSCH or centralized approaches like WirelessHART).
 </xavi>
 
@@ -266,9 +266,9 @@ Is the channel hopping (mentioned at the end of the paragraph below Figure
 
 <xavi>
 I consider the information is relevant as helps to understand how the slotted structure is managed.
-Regarding the channel hopping, the mac layer provides a channel hopping sequence, this sequence is idenpendent 
-of the scheduling policy. Note the scheduling policy determine slot offsets and frequency offsets within the frame (x, y coordinates in the 
-schedule matrix). These frequency offsets need to map to physical layer frequencies which is done through the provided mentioned hopping sequence. 
+Regarding the channel hopping, the mac layer provides a channel hopping sequence, this sequence is idenpendent
+of the scheduling policy. Note the scheduling policy determine slot offsets and frequency offsets within the frame (x, y coordinates in the
+schedule matrix). These frequency offsets need to map to physical layer frequencies which is done through the provided mentioned hopping sequence.
 </xavi>
 
 Parts of the final paragraph of 5.2.1 would fit better in 5.2.2 as its more
@@ -368,7 +368,7 @@ groups)."
 
 <xavi>
 Removed 2 paragraphs to simplify the text. I referred to the RFC9030 for the specific details
-I believe is enough. 
+I believe is enough.
 </xavi>
 
 5.2.2.1.3
@@ -390,20 +390,86 @@ This starts with 'elaboration can be found' but then elaborates here too,
 with sentences duplicated from RFC9030. Can it be condensed a bit to pull
 out the most relevant parts?
 
+<Pascal>
+Removed some extra text. Also removed the misleading figure that showed a matrix
+and called it a frame. The slotFrame is 1-dimensional. The CDU matrix for
+one priority is 2-dimensional, and priorities add a 3rd, ordered, dimension.
+</Pascal>
+
 "SlotFrames and Priorities" isn't the name of the heading in 9030 anymore,
 it's "Slotframes and CDU Matrix".
+
+<Pascal>
+Yes, there's common text. The idea is to avoid having to scroll throught the
+other documents. But yes, some was probably too deep and I did soem trimming.
+<Pascal>
 
 Things that weren't clear from this explanation:
 - Does the matrix show scheduled transmissions, i.e. the cells which are
 allocated? What's the difference between a CDU and a slotframe? Figure 1
 earlier showed a slotframe, which was a matrix of channels and timeslots
 too.
+
+<Pascal>
+
+added:
+   As a core technique in IEEE802.15.4, TSCH splits time in multiple time slots
+   that repeat over time. Each device has its own perspective of when the send
+   or receive and on which channel the transmission happens. This constitutes
+   the device's Slotframe where the channel and destination of a transmission by
+   this device are a function of time.
+   The overall aggregation of all the Slotframes of all the devices constitutes
+   a time/frequency matrix with at most one transmission in each cell of the
+   matrix (more in <xref target='slotFrames'/>).
+
+ Bottom line is that the slot frame has only one entry per time. It is not a matrix.
+
+ </Pascal>
+
 - Why/how are multiple CDU matrices used?
+
+<Pascal>
+
+added:
+         The CDU Matrix is used by the PCE as the map of all the channel
+         utilization. This organization depends on the time in the future.
+         The frequency used by a cell in the matrix rotates in a pseudo-random
+         fashion, from an initial position at an epoch time, as the CDU matrix
+         iterates over and over.
+
+
+and
+         A slotFrame is the base object that a PCE needs to manipulate
+         to program a schedule into one device. The slotFrame is a device
+         perspective of a transmission schedule; there can be more than one
+         with different priorities so in case of a contention the highest
+         priority applies. In other words, a slotFrame is the projection of a
+         schedule from the CDU matrix onto one device.
+         Elaboration on that concept can be found in section "SlotFrames and
+         Priorities" of <xref target='RFC9030'/>, and figures 17 and 18 of
+         <xref target='RFC9030'/> illustrate that projection.
+
+ </Pascal>
+
+
 - When the text moves on to talk about slotframes, it mentions precedence.
 Multiple slotframes of multiple precedence...relating to precedence of
 6TiSCH topologies. I suppose this means the slotframe with highest
 precedence is honoured first, then perhaps if there are free timeslots, the
 slotframe with the next precedence is considered?
+
+<Pascal>
+The term precedence is used to reflect that the PCE gets to allocate the time
+slots (we call that hard cells) vs. dynamic negotiations between peers that can
+allocate unused cells locally (soft cells). I think you're refering to priority
+which is when overlapping schedules use the same spectrum at the same place. In
+that case there's an additional dimansion to the matrix, and multuple ordered
+slotFrames in the devices. In that you're correct; I hope the text above
+clarifies.
+
+</Pascal>
+
+
 
 At the end of this section, it tries to highlight where the gap is from the
 work done in 6TiSCH and what RAW needs to do, but I didnt really understand
@@ -412,6 +478,16 @@ suggests the text before it may not be certain? I didnt understand: The PCE
 assigns cells to chunks, then appropriation is requested "by the PCE to any
 node", but then the PCE owns the chunk? Does it mean the node owns the
 chunk, and is this a reference to the part earlier about a hybrid mode?
+
+
+<Pascal>
+
+I removed that text, too deep. It is not a req draft after all. To your questions,
+the PCE grabs and owns the hard cells whiah are in spêcific chunks, and other chunks
+are given to devices for local management.
+
+ </Pascal>
+
 
 5.2.2.2 6TiSCH tracks
 PDR - does it mean "packet delivery ratio" here?
@@ -442,6 +518,9 @@ Note: transport mode seems to be called native mode in RFC9030.
 5.2.2.2.2.4 This bit on OAM seems relevant, to mention that more work is
 necessary and it highlights useful work in this area.
 
+<Pascal>
+Agreed, I trimmed; and moved the Track piece higher as you suggested
+</Pascal>
 
 6.1 - 6.3
 There's a lot of detail here about the timeline of different studies and
@@ -450,9 +529,9 @@ mention the existing features/enhancements, and maybe future plans where
 relevant?
 
 <Janos>
-I'm not sure how such update would be possible. A 3GPP Realease builds upon 
+I'm not sure how such update would be possible. A 3GPP Realease builds upon
 previous releases, i.e., the various relaeases provide different "add-ons".
-The "add-ons" relevant to RAW are explained in these sections. 
+The "add-ons" relevant to RAW are explained in these sections.
 The current release on its own does not give the picture.
 6.1 includes aims, e.g., industrial Internet of Things (I-IoT).
 Release 18 used to be future in earlier versions of the draft, but the cited
@@ -470,21 +549,21 @@ DetNet with earlier releases.
 The first paragraph about DetNet explains that Release 18 introduces direct support
 for DetNet.
 
-Due to the commonalities of TSN FRER and DetNet PREOF, the support introducded for 
+Due to the commonalities of TSN FRER and DetNet PREOF, the support introducded for
 TSN FRER actully introduces support for DetNet PREOF as well, e.g., the RHF. (The
 text in the reliability paragraphs is not release specific.)
 
 
 6.5:
 Replace:
-"In addition, the support for integration with TSN reliability was added to 5G 
+"In addition, the support for integration with TSN reliability was added to 5G
 by making DetNet reliability also applicable, thus making 5G DetNet ready."
 with
-"In addition, the support for integration with TSN reliability was added to 5G 
+"In addition, the support for integration with TSN reliability was added to 5G
 by making DetNet reliability also applicable, due to the commonalities between
 TSN and DetNet reliability."
 
-"Moreover, providing IP service is native to 5G and adding direct support for 
+"Moreover, providing IP service is native to 5G and adding direct support for
 DetNet is in scope of the upcoming 3GPP Release 18."
 is updated to:
 "Moreover, providing IP service is native to 5G and 3GPP Release 18 adds support
@@ -533,8 +612,8 @@ top of page 50.
 
 <Janos>
 Fixed the nits, thank you.
-The paragraph above Figure 13 intends to refer to Figure 13; it introduces 
-Figure 13. The text says "multiple UEs per device". There are multiple USs 
+The paragraph above Figure 13 intends to refer to Figure 13; it introduces
+Figure 13. The text says "multiple UEs per device". There are multiple USs
 in Figure 13, whereas a single UE in Figure 12.
 
 Page 49 middle paragraph.
@@ -559,7 +638,7 @@ Time Synchronization Function
    provided by the TSCTSF to the DetNet controller.  The study also
    includes how the TSCTSF maps DetNet flow parameters to 5G QoS
    parameters.
-   
+
 <Janos>
 I think it is just better to omit:
 "As the standards are ready for such an approach, it is out of scope for

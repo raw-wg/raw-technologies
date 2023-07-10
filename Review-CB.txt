@@ -155,11 +155,12 @@ Add caption to Figure 2.
 
 “oveall” —> “overall”
 
-<Pascal> done </Pascal>>
+<Pascal> done </Pascal>
 
 Overall, I find section 5 too long, especially comparing with section 4. I think it’d be useful to try to do an exercise of consistency across sections 4 to 7.
 
 
+<Pascal> I trimmed, please see diffs! </Pascal>
 
 6.1.  Provenance and Documents
 
