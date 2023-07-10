@@ -16,7 +16,7 @@ Expires: 11 January 2024                                           Intel
 
 
               Reliable and Available Wireless Technologies
-                     draft-ietf-raw-technologies-08
+                     draft-ietf-raw-technologies-09
 
 Abstract
 
@@ -3013,7 +3013,7 @@ Internet-Draft              RAW Technologies                   July 2023
 
    Many thanks to the participants of the RAW WG where a lot of the work
    discussed here happened, and Malcolm Smith for his review of the
-   802.11 section.  Special thanks for post directirate and IESG
+   802.11 section.  Special thanks for post directorate and IESG
    reviewers, Victoria Pritchard and Carlos Jesus Bernardos Cano.
 
 12.  Normative References

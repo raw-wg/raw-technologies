@@ -149,7 +149,7 @@ Remove space in “ .” at the end of each paragraph.
 Add caption to Figure 2.
 
 
-<Pascal> done </Pascal>>
+<Pascal> done </Pascal>
 
 5.2.2.2 6TiSCH Tracks
 

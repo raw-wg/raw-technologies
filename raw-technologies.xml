@@ -13,7 +13,7 @@
 <?rfc subcompact="no"?>
 <?rfc authorship="yes"?>
 <?rfc tocappendix="yes"?>
-<rfc  xmlns:xi="http://www.w3.org/2001/XInclude" category="info" ipr='trust200902' tocInclude="true"  obsoletes="" updates="" submissionType="IETF" xml:lang="en" version="3" docName="draft-ietf-raw-technologies-08" >
+<rfc  xmlns:xi="http://www.w3.org/2001/XInclude" category="info" ipr='trust200902' tocInclude="true"  obsoletes="" updates="" submissionType="IETF" xml:lang="en" version="3" docName="draft-ietf-raw-technologies-09" >
 
 <front>
    <title abbrev='RAW Technologies'>Reliable and Available Wireless Technologies</title>
@@ -2509,7 +2509,7 @@ y
 
 	<section><name>Acknowledgments</name>
     <t>
-    		Many thanks to the participants of the RAW WG where a lot of the work discussed here happened, and Malcolm Smith for his review of the 802.11 section. Special thanks for post directirate and IESG reviewers, Victoria Pritchard and Carlos Jesus Bernardos Cano.
+    		Many thanks to the participants of the RAW WG where a lot of the work discussed here happened, and Malcolm Smith for his review of the 802.11 section. Special thanks for post directorate and IESG reviewers, Victoria Pritchard and Carlos Jesus Bernardos Cano.
     </t>
 	</section><!-- ack -->
 </middle>
