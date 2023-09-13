@@ -18,17 +18,14 @@
 <front>
    <title abbrev='RAW Technologies'>Reliable and Available Wireless Technologies</title>
    <author initials='P' surname='Thubert' fullname='Pascal Thubert' role='editor'>
-      <organization abbrev='Cisco Systems'>Cisco Systems, Inc</organization>
+      <!-- <organization abbrev='Cisco Systems'>Cisco Systems, Inc</organization> -->
       <address>
-          <postal>
-            <street>Emerald Square, Batiment C</street>
-            <street>rue Evariste Galois </street>
-            <city>BIOT - Sophia Antipolis</city>
-            <code>06410</code>
+         <postal>
+            <city>Roquefort-les-Pins</city>
+            <code>06330</code>
           <country>France</country>
          </postal>
-         <phone>+33 497 23 26 34</phone>
-         <email>pthubert@cisco.com</email>
+         <email>pascal.thubert@gmail.com</email>
       </address>
    </author>
    <author initials='D' surname='Cavalcanti' fullname='Dave Cavalcanti'>
