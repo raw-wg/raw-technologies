@@ -2192,7 +2192,7 @@ LDACS shall enable IPv6 based air-ground communication related to the safety and
            Since LDACS has been mainly designed for air traffic management communication it supports mutual entity authentication, integrity and confidentiality capabilities of user data messages and some control channel protection capabilities  <xref target="MAE18"/>, <xref target="MAE191"/>, <xref target="MAE192"/>, <xref target="MAE20"/>. <!--<xref target='MAE19'/>.-->
        </t>
        <t>
-           Overall this makes LDACS the world's first truly integrated Communications, Navigation,done and Surveillance (CNS) system
+           Overall this makes LDACS the world's first truly integrated Communications, Navigation, and Surveillance (CNS) system
            and is the worldwide most mature, secure, terrestrial long-range CNS
            technology for civil aviation.
        </t>
@@ -2520,8 +2520,11 @@ y
 
    <section anchor='sec'><name>Security Considerations</name>
       <t>
+	  
+This document surveys existing networking technology and defines no protocol behaviors or operational practices.  The IETF specifications referenced here each provide their own Security Considerations. 
     	Most RAW technologies integrate some authentication or encryption
     	mechanisms that were defined outside the IETF.
+		
       </t>
    </section>
 

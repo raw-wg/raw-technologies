@@ -123,7 +123,7 @@ Internet-Draft              RAW Technologies                   July 2024
    9.  Security Considerations . . . . . . . . . . . . . . . . . . .  55
    10. Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  55
    11. Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  55
-   12. Normative References  . . . . . . . . . . . . . . . . . . . .  55
+   12. Normative References  . . . . . . . . . . . . . . . . . . . .  56
    13. Informative References  . . . . . . . . . . . . . . . . . . .  56
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  65
 
@@ -2676,9 +2676,9 @@ Internet-Draft              RAW Technologies                   July 2024
    channel protection capabilities [MAE18], [MAE191], [MAE192], [MAE20].
 
    Overall this makes LDACS the world's first truly integrated
-   Communications, Navigation,done and Surveillance (CNS) system and is
-   the worldwide most mature, secure, terrestrial long-range CNS
-   technology for civil aviation.
+   Communications, Navigation, and Surveillance (CNS) system and is the
+   worldwide most mature, secure, terrestrial long-range CNS technology
+   for civil aviation.
 
 
 
@@ -3041,7 +3041,10 @@ Internet-Draft              RAW Technologies                   July 2024
 
 9.  Security Considerations
 
-   Most RAW technologies integrate some authentication or encryption
+   This document surveys existing networking technology and defines no
+   protocol behaviors or operational practices.  The IETF specifications
+   referenced here each provide their own Security Considerations.  Most
+   RAW technologies integrate some authentication or encryption
    mechanisms that were defined outside the IETF.
 
 10.  Contributors
@@ -3072,15 +3075,14 @@ Internet-Draft              RAW Technologies                   July 2024
    802.11 section.  Special thanks for post directorate and IESG
    reviewers, Victoria Pritchard and Carlos Jesus Bernardos Cano.
 
-12.  Normative References
-
-
 
 
 Thubert, et al.          Expires 30 January 2025               [Page 55]
 
 Internet-Draft              RAW Technologies                   July 2024
 
+
+12.  Normative References
 
    [RFC5673]  Pister, K., Ed., Thubert, P., Ed., Dwars, S., and T.
               Phinney, "Industrial Routing Requirements in Low-Power and
@@ -3125,10 +3127,8 @@ Internet-Draft              RAW Technologies                   July 2024
               (LDACS)", RFC 9372, DOI 10.17487/RFC9372, March 2023,
               <https://www.rfc-editor.org/info/rfc9372>.
 
-   [RFC9033]  Chang, T., Ed., Vučinić, M., Vilajosana, X., Duquennoy,
-              S., and D. Dujovne, "6TiSCH Minimal Scheduling Function
-              (MSF)", RFC 9033, DOI 10.17487/RFC9033, May 2021,
-              <https://www.rfc-editor.org/info/rfc9033>.
+
+
 
 
 
@@ -3137,6 +3137,11 @@ Thubert, et al.          Expires 30 January 2025               [Page 56]
 
 Internet-Draft              RAW Technologies                   July 2024
 
+
+   [RFC9033]  Chang, T., Ed., Vučinić, M., Vilajosana, X., Duquennoy,
+              S., and D. Dujovne, "6TiSCH Minimal Scheduling Function
+              (MSF)", RFC 9033, DOI 10.17487/RFC9033, May 2021,
+              <https://www.rfc-editor.org/info/rfc9033>.
 
    [RFC6550]  Winter, T., Ed., Thubert, P., Ed., Brandt, A., Hui, J.,
               Kelsey, R., Levis, P., Pister, K., Struik, R., Vasseur,
@@ -3179,11 +3184,6 @@ Internet-Draft              RAW Technologies                   July 2024
               Engineering for Bit Index Explicit Replication (BIER-TE)",
               RFC 9262, DOI 10.17487/RFC9262, October 2022,
               <https://www.rfc-editor.org/info/rfc9262>.
-
-
-
-
-
 
 
 
