@@ -1,6 +1,4 @@
 <?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE rfc SYSTEM "rfc2629-xhtml.ent">
-
 <?rfc toc="yes"?>
 <?rfc tocompact="no"?>
 <?rfc tocdepth="4"?>
@@ -84,7 +82,8 @@
    <workgroup>RAW</workgroup>
    <keyword>Draft</keyword>
    <abstract>
-      <t>   This document presents a series of recent technologies that are
+      <t>   This document presents a series of recent technology evolutions 
+	  that appeared in the last 10-15 years and are
       capable of time synchronization and scheduling of transmission, making
       them suitable to carry time-sensitive flows with high reliability and
       availability.
@@ -137,8 +136,25 @@
    The Reliable and Available Wireless (RAW) Architecture <xref target='I-D.ietf-raw-architecture'/> extends the DetNet Architecture <xref target="RFC8655"/>  and other standard IETF concepts and mechanisms to adapt to the specific challenges of the wireless medium, in particular intermittently lossy connectivity, by extending and optimizing the use of diversity and multipathing.
   </t>
    <t>
-   RAW, like DetNet, needs and leverages lower-layer capabilities such as time synchronization and traffic shapers. To balance the adverse effects of the radio transmission losses, RAW leverages additional capabilities, some of which maybe more specific to wireless. RAW's Packet (hybrid) ARQ, Replication, Elimination and Ordering (PAREO) can be seen as a superset Of DetNet's PREOF,
-   adding techniques such as per-hop retransmissions (aka Automatic Repeat request or ARQ), variating the modulation and coding scheme (MCS), short range broadcast, Multiple User - Multiple Input Multiple Output (MU-MIMO), constructive interference, and overhearing whereby multiple receivers are scheduled to receive the same transmission, which saves both energy on the sender and spectrum. PAREO techniques are offered by the lower layer and may be controlled by RAW separately or in combination.
+   RAW, like DetNet, needs and leverages lower-layer capabilities such as time synchronization and traffic shapers. To balance the adverse effects of the radio transmission losses, RAW leverages additional lower-layer capabilities, some of which may be specific or at least more typically applied to wireless. SUch lower-layer techniques include:
+</t>
+   <ul>
+   <li>
+   per-hop retransmissions (aka Automatic Repeat request or ARQ), 
+   </li><li>
+   variation of the modulation and coding scheme (MCS), 
+   </li><li>
+   short range broadcast, 
+   </li><li>
+   Multiple User - Multiple Input Multiple Output (MU-MIMO), 
+   </li><li>
+   constructive interference, and
+   </li><li>
+   overhearing whereby multiple receivers are scheduled to receive the same transmission, which saves both energy on the sender and spectrum. 
+   </li>
+   </ul>
+   <t>
+   These capabilities may be offered by the lower layer and may be controlled by RAW, separately or in combination.
    </t>
   <t>
    RAW defines a network-layer control loop that optimizes the use of links with constrained spectrum and energy while maintaining the expected connectivity properties, typically reliability and latency. The control loop involves Operations, Administration and Maintenance (OAM), a Path computation Element (PCE), A runtime distributed Path Selection Engine (PSE) and the PAREO functions.
@@ -217,7 +233,8 @@
    Scheduling redundant transmissions of the critical packets on diverse paths
    improves the resiliency against breakages and statistical transmission
    loss, such as due to cosmic particles on wires, and interferences on
-   wireless.
+   wireless. While transmission losses are orders of magnitude more frequent on wireless, 
+   redundancy and diversity are needed in all cases for life- and mission-critical applications.
    </t>
    <t>
    When required, the worst case time of delivery can be guaranteed as part of
@@ -233,7 +250,7 @@
    compared to QoS-based priority.
    </li>
    <li>
-   Scheduling can be used as a technoque for both time and frequency diversity (e.g., between retries), allowing the next transmission to happen on a different frequency as programmed in both sender and receiver.
+   Scheduling can be used as a technique for both time and frequency diversity (e.g., between retries), allowing the next transmission to happen on a different frequency as programmed in both sender and receiver.
    This is useful to defeat co-channel interference from un-controlled
    transmitters as well as multipath fading.
    </li>
@@ -276,7 +293,7 @@
    The IEEE 802 LAN/MAN Standards Committee (SC) develops and maintains networking standards and recommended practices for local, metropolitan, and other area networks, using an open and accredited process, and advocates them on a global basis. The most widely used standards are for Ethernet, Bridging and Virtual Bridged LANs Wireless LAN, Wireless PAN, Wireless MAN, Wireless Coexistence, Media Independent Handover Services, and Wireless RAN. An individual Working Group provides the focus for each area. Standards produced by the IEEE 802 SC are freely available from the IEEE GET Program after they have been published in PDF for six months.
    </t>
         <t>
-        	The IEEE 802.11 Wireless LAN (WLAN) standards define the underlying MAC and PHY layers for the Wi-Fi technology. Wi-Fi/802.11 is one of the most successful wireless technologies, supporting many application domains. While previous 802.11 generations, such as 802.11n and 802.11ac, have focused mainly on improving peak throughput, more recent generations are also considering other performance vectors, such as efficiency enhancements for dense environments in 802.11ax, throughput, latency, and reliability enhancements in P802.11be.
+        	The IEEE 802.11 Wireless LAN (WLAN) standards define the underlying MAC and PHY layers for the Wi-Fi technology. Wi-Fi/802.11 is one of the most successful wireless technologies, supporting many application domains. While previous 802.11 generations, such as 802.11n and 802.11ac, have focused mainly on improving peak throughput, more recent generations are also considering other performance vectors, such as efficiency enhancements for dense environments in IEEEE Std 802.11ax <xref target='IEEE80211ax'/>, throughput, latency, and reliability enhancements in P802.11be <xref target='IEEE80211be'/>.
         	</t>
         <t>
         	IEEE Std 802.11-2012 introduced support for TSN time synchronization based on IEEE 802.1AS over 802.11 Timing Measurement protocol. IEEE Std 802.11-2016 extended the 802.1AS operation over 802.11 Fine Timing Measurement (FTM), as well as the Stream Reservation Protocol (IEEE 802.1Qat). 802.11 WLANs can also be part of a 802.1Q bridged networks with enhancements enabled by the 802.11ak amendment now retrofitted in IEEE Std 802.11-2020. Traffic classification based on 802.1Q VLAN tags is also supported in 802.11. Other 802.1 TSN capabilities such as 802.1Qbv and 802.1CB, which are media agnostic, can already operate over 802.11. The IEEE Std 802.11ax-2021 adds new scheduling capabilities that can enhance the timeliness performance in the 802.11 MAC and achieve lower bounded latency. The IEEE 802.11be is undergoing efforts to enhance the support for 802.1 TSN capabilities especially related to worst-case latency, reliability and availability.
@@ -374,7 +391,7 @@
         	</t>
         	<section><name> 802.11 Managed network operation and admission control</name>
         	<t>
-        		Time-sensitive applications and TSN standards are expected to operate under a managed network (e.g. industrial/enterprise network). Thus, the Wi-Fi operation must also be carefully managed and integrated with the overall TSN management framework, as defined in the <xref target='IEEE802.1Qcc'/> specification.
+        		Time-sensitive applications and TSN standards are expected to operate in a managed network (e.g. industrial/enterprise network). This enables to carefully manage and integrate the Wi-Fi operation with the overall TSN management framework, as defined in the <xref target='IEEE802.1Qcc'/> specification.
         	</t>
          	<t>
         		Some of the random-access latency and interference from legacy/unmanaged devices can be reduced under a centralized management mode as defined in <xref target='IEEE802.1Qcc'/>.
@@ -482,6 +499,19 @@
         		</t>
         	</section> <!-- Applicability to deterministic flows-->
         </section><!-- 802.11ad and 802.11ay (mmWave operation)  -->
+		
+      <section>  <name>Summary</name>
+      <t> Since Wi-Fi 6, the evolution of the IEEE Std 802.11 standard is taking a new direction, looking not any more for more speed, but also for reliability, to enable new fields of application such as Industrial IoT and Virtual Reality.
+	  </t>
+	  <t>One step at a time, Wi-Fi 6, 7, and now 8 include more capabilities to schedule and deliver frames in due time at fast rates. Still, as any radio technology, Wi-Fi is sensitive to frame loss, which can only be combatted with the maximum use of diversity, in space, time, channel, and even technology. 
+	  </t>
+	  <t>
+	  To achieve the latter, the reliability must be handled at an upper layer that can select Wi-Fi and other wired or wireless technologies for parallel transmissions. This is where RAW comes into play.
+	  </t>
+
+       </section>  <!-- Summary -->
+  
+
    </section><!-- title="IEEE 802.11" -->
 
 
@@ -517,17 +547,16 @@
    WirelessHART <xref target='WirelessHART'/>. Both technologies
    involve a central controller that computes redundant paths for industrial
    process control traffic over a TSCH mesh. Moreover, ISA100.11a introduces
-   IPv6 capabilities with a Link-Local Address for the join process and a
+   IPv6 <xref target='RFC8200'/> capabilities with a Link-Local Address for the join process and a
    global unicast addres for later exchanges, but the IPv6 traffic typically
    ends at a local application gateway and the full power of IPv6 for end-to-end
    communication is not enabled.
    </t>
 
    <t>
-   At the IETF, the 6TiSCH Working Group (WG) <xref target='TiSCH'/> deals with
-   best effort operation of IPv6 <xref target='RFC8200'/> over TSCH. 6TiSCH has
+   At the IETF, the 6TiSCH working group <xref target='TiSCH'/> has
    enabled distributed scheduling to exploit the deterministic
-   access capabilities provided by TSCH. The group designed the essential
+   access capabilities provided by TSCH for IPv6. The group designed the essential
    mechanisms to enable the management plane operation while ensuring IPv6 is
    supported.
    </t>
@@ -548,8 +577,8 @@
    </t>
 
    <t>
-   A Track at 6TiSCH is the application to wireless of the concept of a path in
-   the <xref target='RFC8655'>"Detnet architecture"</xref>.
+   A Track at 6TiSCH is the application to wireless of the concept of a Recovery Graph in
+   the RAW architecture.
    A Track can follow a simple sequence of relay nodes or can be structured as a
    more complex Destination Oriented Directed Acyclic Graph (DODAG) to a unicast
    destination. Along a Track, 6TiSCH nodes reserve the resources to enable the
@@ -572,15 +601,15 @@
    There are several works that can be used to complement the overview provided in this document.
    For example <xref target='vilajosana21'/> provides a detailed description of the 6TiSCH protocols,
    how they are linked together and how they are integrated to other standards like RPL and 6Lo.
+   <!--
    <xref target='morell13'/> introduces how label switching can be implemented in a TSCH network.
    It proposes a policy to distribute labels in multihop network so as to enable differential services
    through the network paths. <xref target='dearmas16'/> presents an approach to improve network reliability
    at layer 3, considering and IEEE802.15.4 TSCH network and exploiting packet replication and path diversity
-   for that aim.
+   for that aim.-->
    </t>
 
-   </section><!-- Provenance and Documents   -->
-
+   </section><!--Provenance and Documents-->
 
    <section><name>TimeSlotted Channel Hopping</name>
 
@@ -731,7 +760,7 @@
       case of Layer-2 transmission failure as detected by ARQ.
          </t>
            <t>Methods to implement complex Tracks are described
-   in <xref target='I-D.papadopoulos-paw-pre-reqs'/> and complemented by
+   in <xref target='I-D.ietf-roll-dao-projection'/> and complemented by
    extensions to the RPL routing protocol in
    <xref target='I-D.ietf-roll-nsa-extension'/> for best effort traffic, but a
    centralized routing technique such as promoted in DetNet is still missing.
@@ -745,11 +774,6 @@
          and scheduling management, and Hop-by-hop scheduling.
          The Track operation for DetNet corresponds to a remote monitoring and
          scheduling management by a PCE.
-      </t>
-      <t>
-      Early work at 6TiSCH on a data model and a protocol to program the
-      schedule in the 6TiSCH device was never concluded as the group focussed on
-      best effort traffic. This work would be revived by RAW:
       </t>
    </section>
 
@@ -882,10 +906,12 @@
             leverages BIER-TE to control the process of PREF, and to provide
             traceability of these operations, in the deterministic dataplane,
             along a complex Track.
+			<!--
             For the 6TiSCH type of constrained environment,
             <xref target='I-D.thubert-6lo-bier-dispatch'/> enables an efficient
             encoding of the BIER bitmap within the 6LoRH framework.
-            </t>
+            -->
+			</t>
 
    </section>
    </section>
@@ -1211,6 +1237,18 @@
    </section><!-- Applicability to deterministic flows  -->
 
    </section> <!-- IEEE 802.15.4  -->
+
+      <section><name>Summary</name>
+      <t> IEEE Std 802.15.4 TSCH was the first IEEE radio specification aimed
+	  directly at Industrial IoT applications, for use in 
+	  Process Control loops and monitoring. It was adopted and widely deployed
+	  in the last 10 years by the major competing standards, Wireless HART and ISA100.11a. 
+	  </t><t>
+	  While the MAC/PHY standards enable the relatively slow rates used in Process
+	  Control (typically in the order of 4-5 per second), the technology is not suited for the faster periods (1 to 10ms) used in Factory Automation and motion control.
+	  </t>
+
+      </section>
    </section> <!-- TimeSlotted Channel Hopping-->
 
 
@@ -1469,7 +1507,9 @@ Communication       Communication
    Function (AMF), Session Management Function (SMF) and User Plane Function (UPF)
    as illustrated in <xref target='fig-5g-arch'/>. "(Note that this document only
    explains key functions, however, <xref target='fig-5g-arch'/> provides a more
-   detailed view.)"
+   detailed view, and
+   <xref target='SYSTOVER5G'/> summarizes the functions and provides the full
+   definition of acronyms used in the figure.)"
    </t>
 
    <t>The gNB’s main responsibility is the radio resource management, including
@@ -2098,7 +2138,7 @@ Nnssf|  Nnef|   Nnrf|    Npcf|    Nudm|    Naf|
 One of the main pillars of the modern Air Traffic Management (ATM) system is the existence of a communication infrastructure that enables efficient aircraft guidance and safe separation in all phases of flight. Although current systems are technically mature, they are suffering from the VHF band’s increasing saturation in high-density areas and the limitations posed by analogue radio. Therefore, aviation globally and the European Union (EU) in particular, strives for a sustainable modernization of the aeronautical communication infrastructure.
 </t><t>
 In the long-term, ATM communication shall transition from analogue VHF voice and VDL2 communication to more spectrum efficient digital data communication. The European ATM Master Plan foresees this transition to be realized for terrestrial communications by the development and implementation of the L-band Digital Aeronautical Communications System (LDACS).
-LDACS shall enable IPv6 based air-ground communication related to the safety and regularity of the flight. The particular challenge is that no new frequencies can be made available for terrestrial aeronautical communication. It was thus necessary to develop procedures to enable the operation of LDACS in parallel with other services in the same frequency band.
+LDACS shall enable IPv6 based air-ground communication related to the safety and regularity of the flight. The particular challenge is that no new frequencies can be made available for terrestrial aeronautical communication. It was thus necessary to develop procedures to enable the operation of LDACS in parallel with other services in the same frequency band, more in  <xref target='RFC9372'/>.
 
 </t>
    <section><name>Provenance and Documents</name>
@@ -2530,10 +2570,12 @@ y
    <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8655.xml'/>
    <!-- detnet-architecture -->
    <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9030.xml'/> <!-- 6Tisch Archi -->
+   <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-raw-architecture.xml'/>
+      
    </references>
    <references><name>Informative References</name>
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8480.xml'/> <!-- 6P Protocol Specification -->
-
+<xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9372.xml'/>
 
      <!--  <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8938.xml'/> detnet-dataplane -->
 
@@ -2547,11 +2589,11 @@ y
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8279.xml'/> <!-- Mcast BIER -->
 	  <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9023.xml'/> <!-- DetNet IP over TSN -->
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9262.xml'/> <!-- bier-te-architecture -->
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-raw-architecture.xml'/>
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-roll-nsa-extension.xml'/>
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.papadopoulos-paw-pre-reqs.xml'/>
+	  
+	  <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-roll-nsa-extension.xml'/>
+      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-roll-dao-projection.xml'/>
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.thubert-bier-replication-elimination.xml'/>
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.thubert-6lo-bier-dispatch.xml'/>
+      <!--xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.thubert-6lo-bier-dispatch.xml'/ --> 
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-6tisch-coap.xml'/>
 
       <reference anchor='IEEE802154'>
@@ -2710,7 +2752,7 @@ y
           <date month='March' year='2019'/>
         </front>
       </reference>
-
+<!--
       <reference anchor='morell13'>
         <front>
           <title>
@@ -2734,7 +2776,7 @@ y
           <date month='September' year='2016'/>
         </front>
       </reference>
-
+-->
 
       <!--reference anchor='vilajosana19'>
         <front>
@@ -2975,6 +3017,15 @@ y
         <front>
           <title>NR Overall description</title>
           <seriesInfo name="3GPP" value="TS 38.300"/>
+          <author>
+            <organization showOnFrontPage="true">3GPP</organization>
+          </author>
+        </front>
+      </reference>
+	  
+	  <reference anchor='SYSTOVER5G' target='https://www.3gpp.org/technologies/5g-system-overview'>
+        <front>
+          <title>5G system overview</title>
           <author>
             <organization showOnFrontPage="true">3GPP</organization>
           </author>
