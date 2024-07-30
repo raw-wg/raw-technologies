@@ -184,7 +184,7 @@ Internet-Draft              RAW Technologies                   July 2024
    as time synchronization and traffic shapers.  To balance the adverse
    effects of the radio transmission losses, RAW leverages additional
    lower-layer capabilities, some of which may be specific or at least
-   more typically applied to wireless.  SUch lower-layer techniques
+   more typically applied to wireless.  Such lower-layer techniques
    include:
 
    *  per-hop retransmissions (aka Automatic Repeat request or ARQ),
