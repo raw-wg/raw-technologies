@@ -5,18 +5,18 @@
 RAW                                                      P. Thubert, Ed.
 Internet-Draft                                                          
 Intended status: Informational                             D. Cavalcanti
-Expires: 30 January 2025                                           Intel
+Expires: 31 January 2025                                           Intel
                                                            X. Vilajosana
                                          Universitat Oberta de Catalunya
                                                               C. Schmitt
                                         Research Institute CODE, UniBw M
                                                                J. Farkas
                                                                 Ericsson
-                                                            29 July 2024
+                                                            30 July 2024
 
 
               Reliable and Available Wireless Technologies
-                     draft-ietf-raw-technologies-09
+                     draft-ietf-raw-technologies-10
 
 Abstract
 
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 January 2025.
+   This Internet-Draft will expire on 31 January 2025.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Thubert, et al.          Expires 30 January 2025                [Page 1]
+Thubert, et al.          Expires 31 January 2025                [Page 1]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Thubert, et al.          Expires 30 January 2025                [Page 2]
+Thubert, et al.          Expires 31 January 2025                [Page 2]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -122,7 +122,7 @@ Internet-Draft              RAW Technologies                   July 2024
    8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  55
    9.  Security Considerations . . . . . . . . . . . . . . . . . . .  55
    10. Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  55
-   11. Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  55
+   11. Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  56
    12. Normative References  . . . . . . . . . . . . . . . . . . . .  56
    13. Informative References  . . . . . . . . . . . . . . . . . . .  56
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  65
@@ -165,7 +165,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025                [Page 3]
+Thubert, et al.          Expires 31 January 2025                [Page 3]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -221,7 +221,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025                [Page 4]
+Thubert, et al.          Expires 31 January 2025                [Page 4]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -277,7 +277,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025                [Page 5]
+Thubert, et al.          Expires 31 January 2025                [Page 5]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -333,7 +333,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025                [Page 6]
+Thubert, et al.          Expires 31 January 2025                [Page 6]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -389,7 +389,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025                [Page 7]
+Thubert, et al.          Expires 31 January 2025                [Page 7]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -445,7 +445,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025                [Page 8]
+Thubert, et al.          Expires 31 January 2025                [Page 8]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -501,7 +501,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025                [Page 9]
+Thubert, et al.          Expires 31 January 2025                [Page 9]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -557,7 +557,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 10]
+Thubert, et al.          Expires 31 January 2025               [Page 10]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -613,7 +613,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 11]
+Thubert, et al.          Expires 31 January 2025               [Page 11]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -669,7 +669,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 12]
+Thubert, et al.          Expires 31 January 2025               [Page 12]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -725,7 +725,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 13]
+Thubert, et al.          Expires 31 January 2025               [Page 13]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -781,7 +781,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 14]
+Thubert, et al.          Expires 31 January 2025               [Page 14]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -837,7 +837,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 15]
+Thubert, et al.          Expires 31 January 2025               [Page 15]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -893,7 +893,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 16]
+Thubert, et al.          Expires 31 January 2025               [Page 16]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -949,7 +949,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 17]
+Thubert, et al.          Expires 31 January 2025               [Page 17]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -1005,7 +1005,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 18]
+Thubert, et al.          Expires 31 January 2025               [Page 18]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -1061,7 +1061,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 19]
+Thubert, et al.          Expires 31 January 2025               [Page 19]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -1117,7 +1117,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 20]
+Thubert, et al.          Expires 31 January 2025               [Page 20]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -1173,7 +1173,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 21]
+Thubert, et al.          Expires 31 January 2025               [Page 21]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -1229,7 +1229,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 22]
+Thubert, et al.          Expires 31 January 2025               [Page 22]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -1285,7 +1285,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 23]
+Thubert, et al.          Expires 31 January 2025               [Page 23]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -1341,7 +1341,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 24]
+Thubert, et al.          Expires 31 January 2025               [Page 24]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -1397,7 +1397,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 25]
+Thubert, et al.          Expires 31 January 2025               [Page 25]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -1453,7 +1453,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 26]
+Thubert, et al.          Expires 31 January 2025               [Page 26]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -1509,7 +1509,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 27]
+Thubert, et al.          Expires 31 January 2025               [Page 27]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -1565,7 +1565,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 28]
+Thubert, et al.          Expires 31 January 2025               [Page 28]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -1621,7 +1621,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 29]
+Thubert, et al.          Expires 31 January 2025               [Page 29]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -1677,7 +1677,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 30]
+Thubert, et al.          Expires 31 January 2025               [Page 30]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -1733,7 +1733,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 31]
+Thubert, et al.          Expires 31 January 2025               [Page 31]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -1789,7 +1789,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 32]
+Thubert, et al.          Expires 31 January 2025               [Page 32]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -1845,7 +1845,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 33]
+Thubert, et al.          Expires 31 January 2025               [Page 33]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -1901,7 +1901,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 34]
+Thubert, et al.          Expires 31 January 2025               [Page 34]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -1957,7 +1957,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 35]
+Thubert, et al.          Expires 31 January 2025               [Page 35]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -2013,7 +2013,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 36]
+Thubert, et al.          Expires 31 January 2025               [Page 36]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -2069,7 +2069,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 37]
+Thubert, et al.          Expires 31 January 2025               [Page 37]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -2125,7 +2125,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 38]
+Thubert, et al.          Expires 31 January 2025               [Page 38]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -2181,7 +2181,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 39]
+Thubert, et al.          Expires 31 January 2025               [Page 39]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -2237,7 +2237,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 40]
+Thubert, et al.          Expires 31 January 2025               [Page 40]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -2293,7 +2293,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 41]
+Thubert, et al.          Expires 31 January 2025               [Page 41]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -2349,7 +2349,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 42]
+Thubert, et al.          Expires 31 January 2025               [Page 42]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -2405,7 +2405,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 43]
+Thubert, et al.          Expires 31 January 2025               [Page 43]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -2461,7 +2461,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 44]
+Thubert, et al.          Expires 31 January 2025               [Page 44]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -2517,7 +2517,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 45]
+Thubert, et al.          Expires 31 January 2025               [Page 45]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -2573,7 +2573,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 46]
+Thubert, et al.          Expires 31 January 2025               [Page 46]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -2629,7 +2629,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 47]
+Thubert, et al.          Expires 31 January 2025               [Page 47]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -2685,7 +2685,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 48]
+Thubert, et al.          Expires 31 January 2025               [Page 48]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -2741,7 +2741,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 49]
+Thubert, et al.          Expires 31 January 2025               [Page 49]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -2797,7 +2797,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 50]
+Thubert, et al.          Expires 31 January 2025               [Page 50]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -2853,7 +2853,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 51]
+Thubert, et al.          Expires 31 January 2025               [Page 51]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -2909,7 +2909,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 52]
+Thubert, et al.          Expires 31 January 2025               [Page 52]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -2965,7 +2965,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 53]
+Thubert, et al.          Expires 31 January 2025               [Page 53]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -3021,7 +3021,7 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-Thubert, et al.          Expires 30 January 2025               [Page 54]
+Thubert, et al.          Expires 31 January 2025               [Page 54]
 
 Internet-Draft              RAW Technologies                   July 2024
 
@@ -3068,19 +3068,27 @@ Internet-Draft              RAW Technologies                   July 2024
    Rute Sofia:  Contributed to the Introduction and Terminology sections
 
 
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 31 January 2025               [Page 55]
+
+Internet-Draft              RAW Technologies                   July 2024
+
+
 11.  Acknowledgments
 
    Many thanks to the participants of the RAW WG where a lot of the work
    discussed here happened, and Malcolm Smith for his review of the
    802.11 section.  Special thanks for post directorate and IESG
-   reviewers, Victoria Pritchard and Carlos Jesus Bernardos Cano.
-
-
-
-Thubert, et al.          Expires 30 January 2025               [Page 55]
-
-Internet-Draft              RAW Technologies                   July 2024
-
+   reviewers, Roman Danyliw, Victoria Pritchard, and Carlos Jesus
+   Bernardos Cano.
 
 12.  Normative References
 
@@ -3122,21 +3130,18 @@ Internet-Draft              RAW Technologies                   July 2024
               DOI 10.17487/RFC8480, November 2018,
               <https://www.rfc-editor.org/info/rfc8480>.
 
+
+
+
+Thubert, et al.          Expires 31 January 2025               [Page 56]
+
+Internet-Draft              RAW Technologies                   July 2024
+
+
    [RFC9372]  Mäurer, N., Ed., Gräupl, T., Ed., and C. Schmitt, Ed.,
               "L-Band Digital Aeronautical Communications System
               (LDACS)", RFC 9372, DOI 10.17487/RFC9372, March 2023,
               <https://www.rfc-editor.org/info/rfc9372>.
-
-
-
-
-
-
-
-Thubert, et al.          Expires 30 January 2025               [Page 56]
-
-Internet-Draft              RAW Technologies                   July 2024
-
 
    [RFC9033]  Chang, T., Ed., Vučinić, M., Vilajosana, X., Duquennoy,
               S., and D. Dujovne, "6TiSCH Minimal Scheduling Function
@@ -3180,19 +3185,19 @@ Internet-Draft              RAW Technologies                   July 2024
               DOI 10.17487/RFC9023, June 2021,
               <https://www.rfc-editor.org/info/rfc9023>.
 
+
+
+
+
+Thubert, et al.          Expires 31 January 2025               [Page 57]
+
+Internet-Draft              RAW Technologies                   July 2024
+
+
    [RFC9262]  Eckert, T., Ed., Menth, M., and G. Cauchie, "Tree
               Engineering for Bit Index Explicit Replication (BIER-TE)",
               RFC 9262, DOI 10.17487/RFC9262, October 2022,
               <https://www.rfc-editor.org/info/rfc9262>.
-
-
-
-
-
-Thubert, et al.          Expires 30 January 2025               [Page 57]
-
-Internet-Draft              RAW Technologies                   July 2024
-
 
    [I-D.ietf-roll-nsa-extension]
               Koutsiamanis, R., Papadopoulos, G. Z., Montavont, N., and
@@ -3230,6 +3235,21 @@ Internet-Draft              RAW Technologies                   July 2024
               and Physical Layer (PHY) Specifications for Low-Rate
               Wireless Personal Area Networks".
 
+
+
+
+
+
+
+
+
+
+
+Thubert, et al.          Expires 31 January 2025               [Page 58]
+
+Internet-Draft              RAW Technologies                   July 2024
+
+
    [IEEE Std 802.11]
               IEEE standard for Information Technology, "IEEE Standard
               802.11 - IEEE Standard for Information Technology -
@@ -3238,17 +3258,6 @@ Internet-Draft              RAW Technologies                   July 2024
               requirements - Part 11: Wireless LAN Medium Access Control
               (MAC) and Physical Layer (PHY) Specifications.",
               <https://ieeexplore.ieee.org/document/9363693>.
-
-
-
-
-
-
-
-Thubert, et al.          Expires 30 January 2025               [Page 58]
-
-Internet-Draft              RAW Technologies                   July 2024
-
 
    [IEEE Std 802.11ax]
               IEEE standard for Information Technology, "802.11ax:
@@ -3290,6 +3299,13 @@ Internet-Draft              RAW Technologies                   July 2024
               Yasaman Ghasempour et al., "802.11ay: Next-Generation 60
               GHz Communications for 100 Gb/s Wi-Fi", December 2017.
 
+
+
+Thubert, et al.          Expires 31 January 2025               [Page 59]
+
+Internet-Draft              RAW Technologies                   July 2024
+
+
    [IEEE_doc_11-18-2009-06]
               IEEE standard for Information Technology, "802.11 Real-
               Time Applications (RTA) Topic Interest Group (TIG)
@@ -3298,13 +3314,6 @@ Internet-Draft              RAW Technologies                   July 2024
    [IEEE_doc_11-19-0373-00]
               Kevin Stanton et Al., "Time-Sensitive Applications Support
               in EHT", March 2019.
-
-
-
-Thubert, et al.          Expires 30 January 2025               [Page 59]
-
-Internet-Draft              RAW Technologies                   July 2024
-
 
    [vilajosana21]
               Xavier Vilajosana et al., "IETF 6TiSCH: A Tutorial", March
@@ -3345,22 +3354,18 @@ Internet-Draft              RAW Technologies                   July 2024
               Report for Assessing LDACS1 Transmitter Impact upon DME/
               TACAN Receivers", April 2014.
 
+
+
+
+Thubert, et al.          Expires 31 January 2025               [Page 60]
+
+Internet-Draft              RAW Technologies                   July 2024
+
+
    [GRA11]    Gräupl, T. and M. Ehammer, "L-DACS1 Data Link Layer
               Evolution of ATN/IPS", Proceedings of the 30th IEEE/AIAA
               Digital Avionics Systems Conference (DASC) Seattle, WA,
               USA, October 2011.
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 30 January 2025               [Page 60]
-
-Internet-Draft              RAW Technologies                   July 2024
-
 
    [ICAO18]   International Civil Aviation Organization (ICAO), "L-Band
               Digital Aeronautical Communication System (LDACS)",
@@ -3405,18 +3410,18 @@ Internet-Draft              RAW Technologies                   July 2024
               <https://portal.3gpp.org/desktopmodules/Specifications/
               SpecificationDetails.aspx?specificationId=3187>.
 
+
+
+
+Thubert, et al.          Expires 31 January 2025               [Page 61]
+
+Internet-Draft              RAW Technologies                   July 2024
+
+
    [TS23501]  3GPP, "System architecture for the 5G System (5GS)",
               3GPP TS 23.501,
               <https://portal.3gpp.org/desktopmodules/Specifications/
               SpecificationDetails.aspx?specificationId=3144>.
-
-
-
-
-Thubert, et al.          Expires 30 January 2025               [Page 61]
-
-Internet-Draft              RAW Technologies                   July 2024
-
 
    [TS38300]  3GPP, "NR Overall description", 3GPP TS 38.300,
               <https://portal.3gpp.org/desktopmodules/Specifications/
@@ -3461,18 +3466,17 @@ Internet-Draft              RAW Technologies                   July 2024
    [IEEE802.1CB]
               IEEE, "IEEE Standard for Local and metropolitan area
               networks -- Frame Replication and Elimination for
-              Reliability", DOI 10.1109/IEEEStd2017.8091139, IEEE 
-              802.1CB-2017,
-              <https://ieeexplore.ieee.org/document/8091139>.
 
 
 
-
-
-Thubert, et al.          Expires 30 January 2025               [Page 62]
+Thubert, et al.          Expires 31 January 2025               [Page 62]
 
 Internet-Draft              RAW Technologies                   July 2024
 
+
+              Reliability", DOI 10.1109/IEEEStd2017.8091139, IEEE 
+              802.1CB-2017,
+              <https://ieeexplore.ieee.org/document/8091139>.
 
    [IEEE802.1Qbv]
               IEEE, "IEEE Standard for Local and metropolitan area
@@ -3517,18 +3521,19 @@ Internet-Draft              RAW Technologies                   July 2024
               Avionics Systems Conference (DACS), pp. 1-10, San Diego,
               CA, USA , September 2019.
 
+
+
+
+
+Thubert, et al.          Expires 31 January 2025               [Page 63]
+
+Internet-Draft              RAW Technologies                   July 2024
+
+
    [MAE20]    Maeurer, N., Graeupl, T., and C. Schmitt, "Comparing
               Different Diffie-Hellman Key Exchange Flavors for LDACS",
               IEEE 39th Digital Avionics Systems Conference (DACS), pp.
               1-10, San Diego, CA, USA , October 2019.
-
-
-
-
-Thubert, et al.          Expires 30 January 2025               [Page 63]
-
-Internet-Draft              RAW Technologies                   July 2024
-
 
    [FIL19]    Filip-Dhaubhadel, A. and D. Shutin, "LDACS- Based Non-
               Cooperative Surveillance Multistatic Radar Design and
@@ -3573,18 +3578,19 @@ Internet-Draft              RAW Technologies                   July 2024
               Communications for Air- Traffic Management", IEEE
               Communications Magazine, 52(5), 104-110 , 2017.
 
+
+
+
+Thubert, et al.          Expires 31 January 2025               [Page 64]
+
+Internet-Draft              RAW Technologies                   July 2024
+
+
    [Cavalcanti1287]
               Cavalcanti, D., Venkatesan, G., Cariou, L., and C.
               Cordeiro, "TSN support in 802.11 and potential extensions
               for TGbe", 2019,
               <https://mentor.ieee.org/802.11/dcn/19/11-19-1287>.
-
-
-
-Thubert, et al.          Expires 30 January 2025               [Page 64]
-
-Internet-Draft              RAW Technologies                   July 2024
-
 
    [Sudhakaran2021]
               Sudhakaran, S., Montgomery, K., Kashef, M., Cavalcanti,
@@ -3625,21 +3631,23 @@ Authors' Addresses
    Email: xvilajosana@uoc.edu
 
 
+
+
+
+
+
+
+Thubert, et al.          Expires 31 January 2025               [Page 65]
+
+Internet-Draft              RAW Technologies                   July 2024
+
+
    Corinna Schmitt
    Research Institute CODE, UniBw M
    Werner-Heisenberg-Weg 39
    85577 Neubiberg
    Germany
    Email: corinna.schmitt@unibw.de
-
-
-
-
-
-
-Thubert, et al.          Expires 30 January 2025               [Page 65]
-
-Internet-Draft              RAW Technologies                   July 2024
 
 
    Janos Farkas
@@ -3685,12 +3693,4 @@ Internet-Draft              RAW Technologies                   July 2024
 
 
 
-
-
-
-
-
-
-
-
-Thubert, et al.          Expires 30 January 2025               [Page 66]
+Thubert, et al.          Expires 31 January 2025               [Page 66]
