@@ -1310,22 +1310,22 @@ Internet-Draft              RAW Technologies                October 2024
    When considering end-to-end communication over TSCH, a 6TiSCH device
    usually does not place a request for bandwidth between itself and
    another device in the network.  Rather, an Operation Control System
-   (OCS) invoked through an Human/Machine Interface (HMI) provides the
+   (OCS) invoked through a Human/Machine Interface (HMI) provides the
    Traffic Specification, in particular in terms of latency and
-   reliability, and the end nodes, to a Path Computation element (PCE).
-   With this, the PCE computes a Track between the end nodes and
-   provisions every hop in the Track with per-flow state that describes
-   the per-hop operation for a given packet, the corresponding
-   timeSlots, and the flow identification to recognize which packet is
-   placed in which Track, sort out duplicates, etc.  In Figure 2, an
-   example of Operational Control System and HMI is depicted.
+   reliability, and the end nodes, to a PCE.  With this, the PCE
+   computes a Track between the end nodes and provisions every hop in
+   the Track with per-flow state that describes the per-hop operation
+   for a given packet, the corresponding timeSlots, and the flow
+   identification to recognize which packet is placed in which Track,
+   sort out duplicates, etc.  An example of Operational Control System
+   and HMI is depicted in Figure 2.
 
    For a static configuration that serves a certain purpose for a long
    period of time, it is expected that a node will be provisioned in one
    shot with a full schedule, which incorporates the aggregation of its
    behavior for multiple Tracks.  The 6TiSCH Architecture expects that
    the programing of the schedule is done over the Constrained
-   Application Protocol (CoAP) as discussed in "6TiSCH Resource
+   Application Protocol (CoAP) such as discussed in "6TiSCH Resource
    Management and Interaction using CoAP" [I-D.ietf-6tisch-coap].
 
    But an Hybrid mode may be required as well whereby a single Track is
@@ -1333,7 +1333,7 @@ Internet-Draft              RAW Technologies                October 2024
    does not perform as expected.  For that case, the expectation is that
    a protocol that flows along a Track (to be), in a fashion similar to
    classical Traffic Engineering (TE) [CCAMP], may be used to update the
-   state in the devices.  In general that flow was not designed and it
+   state in the devices.  In general, that flow was not designed and it
    is expected that DetNet will determine the appropriate end-to-end
    protocols to be used in that case.
 
@@ -1381,15 +1381,15 @@ Internet-Draft              RAW Technologies                October 2024
 
 5.2.2.1.1.2.  Replication, Retries and Elimination
 
-   The 6TiSCH Architecture [RFC9030] leverages the Packet Replication,
-   Retries, Elimination (PRE) and Ordering functions (PREOF), the
-   precursor the PREOF functions in the RAW Architecture.  PREF
-   establishes several paths in a network to provide redundancy and
-   parallel transmissions to bound the end-to-end delay.  Considering
-   the scenario shown in Figure 3, many different paths are possible for
-   S to reach R.  A simple way to benefit from this topology could be to
+   The 6TiSCH Architecture [RFC9030] leverages PREOF over several
+   alternate paths in a network to provide redundancy and parallel
+   transmissions to bound the end-to-end delay.  Considering the
+   scenario shown in Figure 3, many different paths are possible for S
+   to reach R.  A simple way to benefit from this topology could be to
    use the two independent paths via nodes A, C, E and via B, D, F.  But
    more complex paths are possible as well.
+
+
 
 
 
@@ -1468,7 +1468,7 @@ Internet-Draft              RAW Technologies                October 2024
    that one operation must succeed in each of the groups.  Further
    details can be found in the 6TiSCH Architecture document [RFC9030].
 
-5.2.2.1.2.  Topology and capabilities
+5.2.2.1.2.  Topology and Capabilities
 
    6TiSCH nodes are usually IoT devices, characterized by very limited
    amount of memory, just enough buffers to store one or a few IPv6
@@ -1503,7 +1503,7 @@ Internet-Draft              RAW Technologies                October 2024
    Both methods may inject routes in the Routing Tables of the 6TiSCH
    routers.  In either case, each route is associated with a 6TiSCH
    topology that can be a RPL Instance topology or a Track.  The 6TiSCH
-   topology is indexed by a Instance ID, in a format that reuses the
+   topology is indexed by an Instance ID, in a format that reuses the
    RPLInstanceID as defined in RPL.
 
 
