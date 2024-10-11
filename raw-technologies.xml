@@ -82,65 +82,45 @@
    <workgroup>RAW</workgroup>
    <keyword>Draft</keyword>
    <abstract>
-      <t>   This document presents a series of recent technology evolutions 
-	  that appeared in the last 10-15 years and are
-      capable of time synchronization and scheduling of transmission, making
-      them suitable to carry time-sensitive flows with high reliability and
-      availability.
+      <t> This document presents wireless technologies with capabilities such as time synchronization and scheduling of transmission,
+	  that would make Reliable and Available Wireless operations possible over such media.
+	  Those technologies were selected as part of the WG formation and listed in the WG charter.  
       </t>
    </abstract>
 </front>
 
 <middle>
    <section><name>Introduction</name>
-   <t>
-   When used in math or philosophy, the term "deterministic" generally refers to
-   a perfection where all aspects are understood and predictable. A perfectly
-   deterministic network would ensure that every packet reaches its destination
-   following a predetermined path along a predefined schedule to be delivered at
-   the exact due time. In a real and imperfect world, a deterministic network
-   must be highly predictable, which is a combination of reliability and
-   availability.
+   
 
-   </t>
-   <ul>
-   <li>
-   On the one hand the network must be reliable, meaning that it
-   will perform as expected for all but very few packets and in particular
-   that it will deliver the packets at the destination within a pre-defined
-   time interval.
-    </li><li>
-   On the other hand, the network must be available, meaning that it has to be
-   resilient to any single outage, independently of the cause of the failure,
-   be it software, hardware, or external, e.g., a physical event impacting
-   the transmission channel.
-   </li>
-   </ul>
    <t>
    Deterministic Networking (DetNet) <xref target="RFC8557"/> provides a capability to carry specified
    unicast or multicast data flows for real-time applications with extremely low data loss rates and bounded latency within a network
-   domain.  Techniques used include 1) reserving data-plane resources
+   domain.  Techniques that might be used include (1) reserving data-plane resources
    for individual (or aggregated) DetNet flows in some or all of the
-   intermediate nodes along the path of the flow, 2) providing explicit
+   intermediate nodes along the path of the flow, (2) providing explicit
    routes for DetNet flows that do not immediately change with the
-   network topology, and 3) distributing data from DetNet flow packets
-   over time and/or space to ensure delivery of each packet's data in
-   spite of the loss of a path.  DetNet operates at the IP layer and typically
+   network topology, and (3) distributing data from DetNet flow packets
+   over time and/or space (e.g., different frequencies, or non-Shared Risk Links) to ensure delivery of each packet in
+   spite of the unavailability of a path.  DetNet operates at the IP layer and typically
    delivers service over wired lower-layer technologies such as Time-Sensitive
    Networking (TSN) as defined by IEEE 802.1 and IEEE 802.3.
+   </t>
+   <t>
+   The Reliable and Available Wireless (RAW) Architecture <xref target='I-D.ietf-raw-architecture'/> extends the DetNet Architecture <xref target="RFC8655"/> to adapt to the specific challenges of the wireless medium, in particular intermittently lossy connectivity, by optimizing the use of diversity and multipathing. <xref target='I-D.ietf-raw-architecture'/> defines the concepts of Reliability and Availability that are used in this document. In turn, this document presents  wireless technologies with capabilities such as time synchronization and scheduling of transmission, that would make RAW/DetNet operations possible over such media. Those technologies were selected as part of the WG formation and listed in the WG charter.  
+
    </t>
    <t>
    Making wireless reliable and available is even more challenging than it is
    with wires, due to the numerous causes of radio transmission losses that add up
    to the congestion losses and the delays caused by overbooked shared resources.
-   The Reliable and Available Wireless (RAW) Architecture <xref target='I-D.ietf-raw-architecture'/> extends the DetNet Architecture <xref target="RFC8655"/>  and other standard IETF concepts and mechanisms to adapt to the specific challenges of the wireless medium, in particular intermittently lossy connectivity, by extending and optimizing the use of diversity and multipathing.
   </t>
    <t>
    RAW, like DetNet, needs and leverages lower-layer capabilities such as time synchronization and traffic shapers. To balance the adverse effects of the radio transmission losses, RAW leverages additional lower-layer capabilities, some of which may be specific or at least more typically applied to wireless. Such lower-layer techniques include:
 </t>
    <ul>
    <li>
-   per-hop retransmissions (aka Automatic Repeat request or ARQ), 
+   per-hop retransmissions (aka Automatic Repeat Request or ARQ), 
    </li><li>
    variation of the modulation and coding scheme (MCS), 
    </li><li>
@@ -157,23 +137,29 @@
    These capabilities may be offered by the lower layer and may be controlled by RAW, separately or in combination.
    </t>
   <t>
-   RAW defines a network-layer control loop that optimizes the use of links with constrained spectrum and energy while maintaining the expected connectivity properties, typically reliability and latency. The control loop involves Operations, Administration and Maintenance (OAM), a Path computation Element (PCE), A runtime distributed Path Selection Engine (PSE) and the PAREO functions.
+   RAW defines a network-layer control loop that optimizes the use of links with constrained spectrum and energy while maintaining the expected connectivity properties, typically reliability and latency. The control loop involves communication monitoring through Operations, Administration and Maintenance (OAM), path control through a Path computation Element (PCE) and a runtime distributed Path Selection Engine (PSE) and extended packet replication, elimination, and ordering functions (PREOF).
    </t>
    <t>
    This document browses the short and middle range radio technologies that are suitable to provide a DetNet/RAW service over,
-   presents the characteristics that RAW may leverage, and explores the applicability of the technologies to carry deterministic flows. The studied technologies are Wi-Fi 6/7, TimeSlotted Channel Hopping (TSCH), 3GPP 5G, and L-band Digital Aeronautical Communications System (LDACS).
+   presents the characteristics that RAW may leverage, and explores the applicability of the technologies to carry deterministic flows. 
+   The studied technologies are Wi-Fi 6/7, TimeSlotted Channel Hopping (TSCH), 3GPP 5G, and L-band Digital Aeronautical Communications System (LDACS).
+   The purpose for this is to support work at RAW to justify and enable DetNet work on those and possibly more compatible technologies.
+   </t>
+   <t>
+   This document surveys existing networking technology and defines no protocol behaviors or operational practices.  
+   The IETF specifications referenced herein each provide their own Security Considerations.
    </t>
    </section><!-- title="Introduction"-->
 
    <section><name>Terminology</name>
    <t>
-   This document uses the terminology and acronyms defined in section 2 of <xref target="RFC8655"/> and section 2 of <xref target='I-D.ietf-raw-architecture'/>.
+   This document uses the terminology and acronyms defined in Section 2 of <xref target="RFC8655"/> and Section 2 of <xref target='I-D.ietf-raw-architecture'/>.
    </t>
    </section><!-- Terminology -->
 
 
 
-   <section anchor='detpak'><name>Towards Reliable and Available Networks</name>
+   <section anchor='detpak'><name>Towards Reliable and Available Wireless Networks</name>
 
 
    <section anchor='schre'><name>Scheduling for Reliability</name>
@@ -188,8 +174,8 @@
    The reliability of a Deterministic Network <xref target='RFC8655'/>
    often relies on precisely applying a tight schedule that controls the use
    of time-shared resources such as CPUs and buffers, and maintains at all
-   time the amount of the critical packets within the physical capabilities of
-   the hardware and that of the transmission medium.
+   time the amount of the critical packets within the available resources  of
+   the communication hardware (e.g.; buffers) and that of the transmission medium (e.g.; bandwidth, transmission slots).
    The schedule can also be used to shape the flows by controlling the time of transmission of the packets that compose the flow at every hop.
    </t>
    <t>
@@ -201,7 +187,7 @@
    </section><!-- Towards Reliable and Available Networks -->
    <section anchor='divav'><name>Diversity for Availability</name>
    <t>
-   Equipment failure, such as a switch or an access point rebooting, a broken
+   Equipment (e.g., node) failure, for instance a broken switch or an access point rebooting, a broken
    wire or radio adapter, or a fixed obstacle to the transmission, can
    be the cause of multiple packets lost in a row before the
    flows are rerouted or the system may recover.
@@ -209,9 +195,10 @@
    <t>
    This is not acceptable for critical applications such as related to safety.
    A typical process control loop will tolerate an occasional packet loss, but
-   a loss of several packets in a row will cause an emergency stop. In an amusement park,
+   a loss of several packets in a row will cause an emergency stop. 
+   In an amusement ride (e.g., at Disneyland, Universal, or MGM Studios parks)
    a continuous loss of packet for a few 100ms may trigger an automatic
-   interruption of the ride and cause the evacuation and the reboot of the game.
+   interruption of the ride and cause the evacuation of the attraction floor to restart it.
    </t>
    <t>
    Network Availability is obtained by making the transmission resilient against
@@ -246,11 +233,10 @@
    </t>
    <ul>
    <li>
-   Scheduling allows a time-sharing operation, where every transmission is assigned its own time/frequency resource. Sender and receiver are synchronized and scheduled to talk on a given frequency resource at a given time and for a given duration. This way, scheduling can avoid collisions between scheduled transmissions and enable a high ratio of critical traffic
-   compared to QoS-based priority.
+   Scheduling allows a time-sharing operation, where every transmission is assigned its own time/frequency resource. Sender and receiver are synchronized and scheduled to talk on a given frequency resource at a given time and for a given duration. This way, scheduling can avoid collisions between scheduled transmissions and enable a high ratio of critical traffic (think 60 or 70% of high priority traffic with ultra low loss) compared to statistical priority-based schemes.
    </li>
    <li>
-   Scheduling can be used as a technique for both time and frequency diversity (e.g., between retries), allowing the next transmission to happen on a different frequency as programmed in both sender and receiver.
+   Scheduling can be used as a technique for both time and frequency diversity (e.g., between transmission retries), allowing the next transmission to happen on a different frequency as programmed in both the sender and the receiver.
    This is useful to defeat co-channel interference from un-controlled
    transmitters as well as multipath fading.
    </li>
@@ -285,10 +271,7 @@
    <section><name>IEEE 802.11</name>
         <section><name>Provenance and Documents</name>
 
-   <t>
-   With an active portfolio of nearly 1,300 standards and projects under development, IEEE is a leading developer of industry standards in a broad range of technologies that drive the functionality, capabilities, and interoperability of products and services, transforming how people live, work, and communicate.
-   </t>
-
+  
    <t>
    The IEEE 802 LAN/MAN Standards Committee (SC) develops and maintains networking standards and recommended practices for local, metropolitan, and other area networks, using an open and accredited process, and advocates them on a global basis. The most widely used standards are for Ethernet, Bridging and Virtual Bridged LANs Wireless LAN, Wireless PAN, Wireless MAN, Wireless Coexistence, Media Independent Handover Services, and Wireless RAN. An individual Working Group provides the focus for each area. Standards produced by the IEEE 802 SC are freely available from the IEEE GET Program after they have been published in PDF for six months.
    </t>
@@ -668,7 +651,7 @@
 
    <t>
    A Track in the 6TiSCH Architecture <xref target='RFC9030'/>
-   is the application to wireless of the concept of a protection path in
+   is the application to 6TiSCH networks of the concept of a protection path in
    the <xref target='RFC8655'>"Detnet architecture"</xref>.
    A Track can be structured as a Destination Oriented Directed Acyclic Graph
    (DODAG) to a destination for unicast traffic.
@@ -687,7 +670,7 @@
    </t>
    <t>
    Whereas scheduling ensures reliable delivery in bounded time along any Track,
-   high availability requires the application of PAREO functions along a more
+   high availability requires the application of PREOF functions along a more
    complex DODAG Track structure. A DODAG has forking and joining nodes where
    the concepts such as Replication and Elimination can be exploited.
    Spatial redundancy increases the overall energy consumption in the network but
@@ -697,7 +680,7 @@
    A Track may also branch off and rejoin, for the purpose of the so-called
    Packet Replication and Elimination (PRE), over non congruent branches.
    PRE may be used to complement layer-2 Automatic Repeat reQuest (ARQ) and
-   receiver-end Ordering to form the PAREO functions. PAREO functions enable
+   receiver-end Ordering to cmplete/extend the PREOF functions. PREOF functions enable
    to meet industrial expectations of packet delivery within bounded delay
    over a Track that includes wireless links, even when the Track
    extends beyond the
@@ -956,7 +939,7 @@
      - scheduling capabilities, discuss such things as Resource Units, time slots or resource blocks.
        Can we reserve periodic resources vs. ask each time, what precision can we get in latency control.
      - diversity scenarios, what's available,
-     - gap analysis, e.g. discuss multihop, or what's missing how to do PAREO features.
+     - gap analysis, e.g. discuss multihop, or what's missing how to do PREOF features.
      -->
    </t>
 
@@ -1039,7 +1022,7 @@
     <t>
        The 6TiSCH Architecture <xref target='RFC9030'/> leverages the Packet
        Replication, Retries, Elimination (PRE) and Ordering functions (PREOF), the
-       precursor the PAREO functions in the RAW Architecture.
+       precursor the PREOF functions in the RAW Architecture.
 
        PREF establishes several paths in a network to provide
        redundancy and parallel transmissions to bound the end-to-end delay.
@@ -2521,7 +2504,7 @@ y
    <section anchor='sec'><name>Security Considerations</name>
       <t>
 	  
-This document surveys existing networking technology and defines no protocol behaviors or operational practices.  The IETF specifications referenced here each provide their own Security Considerations. 
+. 
     	Most RAW technologies integrate some authentication or encryption
     	mechanisms that were defined outside the IETF.
 		
