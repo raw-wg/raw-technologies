@@ -906,24 +906,27 @@ Internet-Draft              RAW Technologies                October 2024
    not enabled.
 
    At the IETF, the 6TiSCH working group [TiSCH] has enabled distributed
-   scheduling to exploit the deterministic access capabilities provided
-   by TSCH for IPv6.  The group designed the essential mechanisms to
-   enable the management plane operation while ensuring IPv6 is
-   supported.
+   routing and scheduling to exploit the deterministic access
+   capabilities provided by TSCH for IPv6.  The group designed the
+   essential mechanisms, the 6top layer and the Scheduling Functions
+   (SFs), to enable the management plane operation while ensuring IPv6
+   is supported:
 
-   6TiSCH defines the 6top layer, composed of one or more Scheduling
-   Functions (SFs) and the 6top Protocol (6P Protocol) defined in
-   RFC8480 [RFC8480].  The 6P Protocol provides a pairwise negotiation
-   mechanism to the control plane operation.  The protocol supports
-   agreement on a schedule between neighbors, enabling distributed
-   scheduling.  6P goes hand-in-hand with a Scheduling Function (SF),
-   the policy that decides how to maintain cells and trigger 6P
-   transactions.  The Minimal Scheduling Function (MSF) [RFC9033] is the
-   default SF defined by the 6TiSCH WG.  With these mechanisms 6TiSCH
-   can establish layer 2 links between neighbouring nodes and support
-   best effort traffic.  RPL [RFC8480] provides the routing structure,
-   enabling the 6TiSCH devices to establish the links with well
-   connected neighbours and thus forming the acyclic network graphs.
+   *  The 6top Protocol (6P) defined in [RFC8480].  The 6P Protocol
+      provides a pairwise negotiation mechanism to the control plane
+      operation.  The protocol supports agreement on a schedule between
+      neighbors, enabling distributed scheduling.
+
+   *  6P goes hand-in-hand with an SF, the policy that decides how to
+      maintain cells and trigger 6P transactions.  The Minimal
+      Scheduling Function (MSF) [RFC9033] is the default SF defined by
+      the 6TiSCH WG.
+
+   *  With these mechanisms 6TiSCH can establish layer 2 links between
+      neighbouring nodes and support best effort traffic.  RPL [RFC8480]
+      provides the routing structure, enabling the 6TiSCH devices to
+      establish the links with well connected neighbours and thus
+      forming the acyclic network graphs.
 
    A Track at 6TiSCH is the application to wireless of the concept of a
    Recovery Graph in the RAW architecture.  A Track can follow a simple
@@ -941,9 +944,6 @@ Internet-Draft              RAW Technologies                October 2024
    exploiting the TSCH schedule structure however the focus at 6TiSCH is
    on best effort traffic and the group was never chartered to produce
    standard work related to Tracks.
-
-
-
 
 
 
@@ -987,8 +987,8 @@ Internet-Draft              RAW Technologies                October 2024
    one cell.  The size of a cell is a timeslot duration, between 10 to
    15 milliseconds.  An Absolute Slot Number (ASN) indicates the number
    of slots elapsed since the network started.  It increments at every
-   slot.  This is a 5 byte counter that can support networks running for
-   more than 300 years without wrapping (assuming a 10 ms timeslot).
+   slot.  This is a 5-byte counter that can support networks running for
+   more than 300 years without wrapping (assuming a 10-ms timeslot).
    Channel hopping provides increased reliability to multi-path fading
    and external interference.  It is handled by TSCH through a channel
    hopping sequence referred as macHopSeq in the IEEE802.15.4
@@ -1049,12 +1049,12 @@ Internet-Draft              RAW Technologies                October 2024
    the availability of the network as well as the packet delivery ratio.
    A Track may also branch off and rejoin, for the purpose of the so-
    called Packet Replication and Elimination (PRE), over non congruent
-   branches.  PRE may be used to complement layer-2 Automatic Repeat
-   reQuest (ARQ) and receiver-end Ordering to cmplete/extend the PREOF
-   functions.  PREOF functions enable to meet industrial expectations of
-   packet delivery within bounded delay over a Track that includes
-   wireless links, even when the Track extends beyond the 6TiSCH
-   network.
+   branches.  PRE may be used to complement layer-2 ARQ and receiver-end
+   Ordering to complete/extend the PREOF functions.  This enables to
+   meet industrial expectations of packet delivery within bounded delay
+   over a Track that includes wireless links, even when the Track
+   extends beyond the 6TiSCH network.
+
 
 
 
@@ -1138,7 +1138,7 @@ Internet-Draft              RAW Technologies                October 2024
 5.2.1.1.1.  Track Scheduling Protocol
 
    Section "Schedule Management Mechanisms" of the 6TiSCH architecture
-   describes 4 paradigms to manage the TSCH schedule of the LLN nodes:
+   describes 4 approaches to manage the TSCH schedule of the LLN nodes:
    Static Scheduling, neighbor-to-neighbor Scheduling, remote monitoring
    and scheduling management, and Hop-by-hop scheduling.  The Track
    operation for DetNet corresponds to a remote monitoring and
@@ -1146,7 +1146,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 5.2.1.1.2.  Track Forwarding
 
-   By forwarding, The 6TiSCH Architecture [RFC9030] means the per-packet
+   By forwarding, the 6TiSCH Architecture [RFC9030] means the per-packet
    operation that allows to deliver a packet to a next hop or an upper
    layer in this node.  Forwarding is based on pre-existing state that
    was installed as a result of the routing computation of a Track by a
@@ -1159,10 +1159,9 @@ Internet-Draft              RAW Technologies                October 2024
    A Track is a unidirectional path between a source and a destination.
    Time/Frequency resources called cells (see Section 5.2.2.1.4) are
    allocated to enable the forwarding operation along the Track.  In a
-   Track cell, the normal operation of IEEE802.15.4 Automatic Repeat-
-   reQuest (ARQ) usually happens, though the acknowledgment may be
-   omitted in some cases, for instance if there is no scheduled cell for
-   a retry.
+   Track cell, the normal operation of IEEE802.15.4 ARQ usually happens,
+   though the acknowledgment may be omitted in some cases, for instance
+   if there is no scheduled cell for a retry.
 
    Track Forwarding is the simplest and fastest.  A bundle of cells set
    to receive (RX-cells) is uniquely paired to a bundle of cells that
@@ -1170,6 +1169,7 @@ Internet-Draft              RAW Technologies                October 2024
    state that can be used regardless of the network layer protocol.
    This model can effectively be seen as a Generalized Multi-protocol
    Label Switching (G-MPLS) operation in that the information used to
+   switch a frame is not an explicit label, but rather related to other
 
 
 
@@ -1178,7 +1178,6 @@ Thubert, et al.           Expires 14 April 2025                [Page 21]
 Internet-Draft              RAW Technologies                October 2024
 
 
-   switch a frame is not an explicit label, but rather related to other
    properties of the way the packet was received, a particular cell in
    the case of 6TiSCH.  As a result, as long as the TSCH MAC (and
    Layer-2 security) accepts a frame, that frame can be switched
@@ -1226,6 +1225,7 @@ Internet-Draft              RAW Technologies                October 2024
    in the transmit bundle to accommodate the Track traffic, for instance
    if more retransmissions are needed than provisioned.  In that case,
    the frame can be placed for transmission in the bundle that is used
+   for layer-3 traffic towards the next hop along the Track as long as
 
 
 
@@ -1234,7 +1234,6 @@ Thubert, et al.           Expires 14 April 2025                [Page 22]
 Internet-Draft              RAW Technologies                October 2024
 
 
-   for layer-3 traffic towards the next hop along the Track as long as
    it can be routed by the upper layer, that is, typically, if the frame
    transports an IPv6 packet.  The MAC address should be set to the
    next-hop MAC address to avoid confusion.  It results that a frame
@@ -1254,8 +1253,8 @@ Internet-Draft              RAW Technologies                October 2024
 
 5.2.1.1.2.1.  OAM
 
-   An Overview of Operations, Administration, and Maintenance (OAM)
-   Tools [RFC7276] provides an overwiew of the existing tooling for OAM
+   "An Overview of Operations, Administration, and Maintenance (OAM)
+   Tools" [RFC7276] provides an overview of the existing tooling for OAM
    [RFC6291].  Tracks are complex paths and new tooling is necessary to
    manage them, with respect to load control, timing, and the Packet
    Replication and Elimination Functions (PREF).
@@ -1285,6 +1284,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
+
 Thubert, et al.           Expires 14 April 2025                [Page 23]
 
 Internet-Draft              RAW Technologies                October 2024
@@ -1297,12 +1297,12 @@ Internet-Draft              RAW Technologies                October 2024
    are using.  Slotframes can be split in resource blocks reserving the
    needed capacity to certain flows.  Periodic and bursty traffic can be
    handled independently in the schedule, using active and reactive
-   policies and taking advantage of overprovisionned cells.  Along a
+   policies and taking advantage of overprovisioned cells.  Along a
    Track Section 5.2.1.1, resource blocks can be chained so nodes in
    previous hops transmit their data before the next packet comes.  This
    provides a tight control to latency along a Track.  Collision loss is
-   avoided for best effort traffic by overprovisionning resources,
-   giving time to the management plane of the network to dedicate more
+   avoided for best effort traffic by overprovisioning resources, giving
+   time to the management plane of the network to dedicate more
    resources if needed.
 
 5.2.2.1.  Centralized Path Computation

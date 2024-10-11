@@ -538,27 +538,30 @@
 
    <t>
    At the IETF, the 6TiSCH working group <xref target='TiSCH'/> has
-   enabled distributed scheduling to exploit the deterministic
+   enabled distributed routing and scheduling to exploit the deterministic
    access capabilities provided by TSCH for IPv6. The group designed the essential
-   mechanisms to enable the management plane operation while ensuring IPv6 is
-   supported.
+   mechanisms, the 6top layer and the Scheduling Functions (SFs), to enable
+   the management plane operation while ensuring IPv6 is
+   supported:
+   
    </t>
-   <t>
-   6TiSCH defines the 6top layer, composed of one or more Scheduling Functions (SFs)
-   and the 6top Protocol (6P Protocol) defined in RFC8480 <xref target='RFC8480'/>.
+   <ul>
+   <li>
+   </li><li>
+   The 6top Protocol (6P) defined in <xref target='RFC8480'/>.
    The 6P Protocol provides a pairwise negotiation mechanism to the control plane operation.
    The protocol supports agreement on a schedule between neighbors, enabling
    distributed scheduling.
-   6P goes hand-in-hand with a Scheduling Function (SF), the policy that decides
+   </li><li>6P goes hand-in-hand with an SF, the policy that decides
    how to maintain cells and trigger 6P transactions. The Minimal Scheduling
    Function (MSF) <xref target='RFC9033'/> is the default SF defined
    by the 6TiSCH WG.
-   With these mechanisms 6TiSCH can establish layer 2 links between neighbouring nodes and
+   </li><li>With these mechanisms 6TiSCH can establish layer 2 links between neighbouring nodes and
    support best effort traffic. RPL <xref target='RFC8480'/> provides the routing structure,
    enabling the 6TiSCH devices to establish the links with well connected neighbours and thus
    forming the acyclic network graphs.
-   </t>
-
+   </li>
+   </ul>
    <t>
    A Track at 6TiSCH is the application to wireless of the concept of a Recovery Graph in
    the RAW architecture.
@@ -622,8 +625,8 @@
    neighbors happens within one cell. The size of a cell is a timeslot duration,
    between 10 to 15 milliseconds. An Absolute Slot Number (ASN) indicates
    the number of slots elapsed since the network started. It increments at every
-   slot. This is a 5 byte counter that can support networks running for more
-   than 300 years without wrapping (assuming a 10 ms timeslot). Channel hopping
+   slot. This is a 5-byte counter that can support networks running for more
+   than 300 years without wrapping (assuming a 10-ms timeslot). Channel hopping
    provides increased reliability to multi-path fading and external
    interference. It is handled by TSCH through a channel hopping sequence
    referred as macHopSeq in the IEEE802.15.4 specification.
@@ -679,8 +682,8 @@
 
    A Track may also branch off and rejoin, for the purpose of the so-called
    Packet Replication and Elimination (PRE), over non congruent branches.
-   PRE may be used to complement layer-2 Automatic Repeat reQuest (ARQ) and
-   receiver-end Ordering to cmplete/extend the PREOF functions. PREOF functions enable
+   PRE may be used to complement layer-2 ARQ and
+   receiver-end Ordering to complete/extend the PREOF functions. This enables
    to meet industrial expectations of packet delivery within bounded delay
    over a Track that includes wireless links, even when the Track
    extends beyond the
@@ -752,7 +755,7 @@
      <section anchor='Tschd'><name>Track Scheduling Protocol</name>
       <t>
          Section "Schedule Management Mechanisms" of the 6TiSCH architecture
-         describes 4 paradigms to manage the TSCH schedule of the LLN nodes:
+         describes 4 approaches to manage the TSCH schedule of the LLN nodes:
          Static Scheduling, neighbor-to-neighbor Scheduling, remote monitoring
          and scheduling management, and Hop-by-hop scheduling.
          The Track operation for DetNet corresponds to a remote monitoring and
@@ -767,7 +770,7 @@
 
    <section anchor='fwd'><name>Track Forwarding</name>
       <t>
-         By forwarding, The 6TiSCH Architecture <xref target='RFC9030'/> means
+         By forwarding, the 6TiSCH Architecture <xref target='RFC9030'/> means
          the per-packet operation that allows to deliver a packet to a next hop
          or an upper layer in this node.
          Forwarding is based on pre-existing state that was installed as a
@@ -784,7 +787,7 @@
             Time/Frequency resources called cells (see <xref target='slotFrames'/>)
             are allocated to enable the forwarding operation along the Track.
             In a Track cell, the normal operation of IEEE802.15.4
-            Automatic Repeat-reQuest (ARQ) usually happens, though the
+            ARQ usually happens, though the
             acknowledgment may be omitted in some cases, for instance if there
             is no scheduled cell for a retry.
          </t>
@@ -873,9 +876,9 @@
          <section><name>OAM</name>
             <t>
 
-	        <xref target='RFC7276'> An Overview of Operations,
-            Administration, and Maintenance (OAM) Tools</xref> provides an
-            overwiew of the existing tooling for OAM <xref target='RFC6291'/>. Tracks are complex paths and new tooling
+	        <xref target='RFC7276'> "An Overview of Operations,
+            Administration, and Maintenance (OAM) Tools"</xref> provides an
+            overview of the existing tooling for OAM <xref target='RFC6291'/>. Tracks are complex paths and new tooling
             is necessary to manage them, with respect to load control, timing,
             and the Packet Replication and Elimination Functions (PREF).
 
@@ -925,12 +928,12 @@
     that different nodes in a Track or a path are using. Slotframes can be
     split in resource blocks reserving the needed capacity to certain flows.
     Periodic and bursty traffic can be handled independently in the schedule,
-    using active and reactive policies and taking advantage of overprovisionned
+    using active and reactive policies and taking advantage of overprovisioned
     cells. Along a Track <xref target='Tracks'/>, resource blocks
 	can be chained so nodes in previous hops transmit their data before the next
 	packet comes.
     This provides a tight control to latency along a Track. Collision loss is
-    avoided for best effort traffic by overprovisionning resources, giving time
+    avoided for best effort traffic by overprovisioning resources, giving time
     to the management plane of the network to dedicate more resources if needed.
 
       <!--
@@ -949,22 +952,22 @@
    <t>
    When considering end-to-end communication over TSCH, a 6TiSCH device usually does
    not place a request for bandwidth between itself and another device in the network.
-   Rather, an Operation Control System (OCS) invoked through an Human/Machine Interface
+   Rather, an Operation Control System (OCS) invoked through a Human/Machine Interface
   (HMI) provides the Traffic Specification, in particular in terms of latency
-   and reliability, and the end nodes, to a Path Computation element (PCE).
+   and reliability, and the end nodes, to a PCE.
    With this, the PCE computes a Track between the end nodes and provisions every
    hop in the Track with per-flow state that describes the per-hop operation for a
    given packet, the corresponding timeSlots, and the flow identification to
    recognize which packet is placed in which Track, sort out duplicates, etc.
-   In <xref target='NorthSouth'/>, an example of Operational Control System and HMI
-   is depicted.
+   An example of Operational Control System and HMI
+   is depicted in <xref target='NorthSouth'/>.
    </t>
    <t>
    For a static configuration that serves a certain purpose for a long period of
    time, it is expected that a node will be provisioned in one shot with a full
    schedule, which incorporates the aggregation of its behavior for multiple
    Tracks. The 6TiSCH Architecture expects that the programing of the schedule
-   is done over the Constrained Application Protocol (CoAP) as discussed in <xref target='I-D.ietf-6tisch-coap'>"6TiSCH
+   is done over the Constrained Application Protocol (CoAP) such as discussed in <xref target='I-D.ietf-6tisch-coap'>"6TiSCH
    Resource Management and Interaction using CoAP"</xref>.
    </t>
    <t>
@@ -974,7 +977,7 @@
    For that case, the expectation is that a protocol that flows along a Track
    (to be), in a fashion similar to classical Traffic Engineering (TE)
    <xref target='CCAMP'/>, may be used to update the state in the devices.
-   In general that flow was not designed and it is expected that DetNet will determine the appropriate
+   In general, that flow was not designed and it is expected that DetNet will determine the appropriate
    end-to-end protocols to be used in that case.
    </t>
 
@@ -1020,11 +1023,8 @@
 
    <section anchor='pmhrre'><name>Replication, Retries and Elimination</name>
     <t>
-       The 6TiSCH Architecture <xref target='RFC9030'/> leverages the Packet
-       Replication, Retries, Elimination (PRE) and Ordering functions (PREOF), the
-       precursor the PREOF functions in the RAW Architecture.
-
-       PREF establishes several paths in a network to provide
+       The 6TiSCH Architecture <xref target='RFC9030'/> leverages PREOF over
+	   several alternate paths in a network to provide
        redundancy and parallel transmissions to bound the end-to-end delay.
        Considering the scenario shown in <xref target='fig_ladder'/>,
        many different paths are possible for S to reach R.
@@ -1107,7 +1107,7 @@
    </section>
    </section>
 
-   <section anchor='topo'><name>Topology and capabilities</name>
+   <section anchor='topo'><name>Topology and Capabilities</name>
 
 
    <t>6TiSCH nodes are usually IoT devices, characterized by very limited amount
@@ -1149,7 +1149,7 @@
       Both methods may inject routes in the Routing Tables of the 6TiSCH routers.
       In either case, each route is associated with a 6TiSCH topology that can
       be a RPL Instance topology or a Track. The 6TiSCH topology is
-      indexed by a Instance ID, in a format that reuses the RPLInstanceID as
+      indexed by an Instance ID, in a format that reuses the RPLInstanceID as
       defined in RPL.
       </t>
       <t>
