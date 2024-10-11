@@ -118,7 +118,7 @@ Internet-Draft              RAW Technologies                October 2024
      7.3.  Deployment and Spectrum . . . . . . . . . . . . . . . . .  49
      7.4.  Applicability to Deterministic Flows  . . . . . . . . . .  49
        7.4.1.  System Architecture . . . . . . . . . . . . . . . . .  50
-       7.4.2.  Overview of The Radio Protocol Stack  . . . . . . . .  50
+       7.4.2.  Overview of the Radio Protocol Stack  . . . . . . . .  50
        7.4.3.  Radio (PHY) . . . . . . . . . . . . . . . . . . . . .  51
        7.4.4.  Scheduling, Frame Structure and QoS (MAC) . . . . . .  52
      7.5.  Summary . . . . . . . . . . . . . . . . . . . . . . . . .  54
@@ -2602,11 +2602,7 @@ Internet-Draft              RAW Technologies                October 2024
    Aviation Organization (ICAO) started in December 2016.  The ICAO
    standardization group has produced an initial Standards and
    Recommended Practices (SARPs) document [ICAO18].  The SARPs document
-   defines the general characteristics of LDACS.  The ICAO
-   standardization group plans to produce an ICAO technical manual - the
-   ICAO equivalent to a technical standard - within the next years.
-   Generally, the group is open to input from all sources and develops
-   LDACS in the open.
+   defines the general characteristics of LDACS.
 
    Up to now the LDACS standardization has been focused on the
    development of the physical layer and the data link layer, only
@@ -2622,7 +2618,11 @@ Internet-Draft              RAW Technologies                October 2024
    In addition to standardization activities several industrial LDACS
    prototypes have been built.  One set of LDACS prototypes has been
    evaluated in flight trials confirming the theoretical results
-   predicting the system performance [GRA18][SCH19].
+   predicting the system performance [GRA18][BEL22][GRA23] .
+
+
+
+
 
 
 
@@ -2649,8 +2649,8 @@ Internet-Draft              RAW Technologies                October 2024
    forward link, and 294 kbit/s to 1390 kbit/s on the reverse link,
    depending on coding and modulation.  Due to strong interference from
    legacy systems in the L-band, the most robust coding and modulation
-   should be expected for initial deployment i.e. 315/294 kbit/s on the
-   forward/reverse link, respectively.
+   should be expected for initial deployment, i.e., 315/294 kbit/s on
+   the forward/reverse link, respectively.
 
    In addition to the communications capability, LDACS also offers a
    navigation capability.  Ranging data, similar to DME (Distance
@@ -2721,8 +2721,7 @@ Internet-Draft              RAW Technologies                October 2024
    than VDL Mode 2 and is a natural enhancement to the existing VDL Mode
    2 business model.  The advantage of this approach is that the VDL
    Mode 2 infrastructure can be fully reused.  Beyond that, it opens the
-   way for further enhancements which can increase business efficiency
-   and minimize investment risk.  [ICAO19]
+   way for further enhancements [ICAO19].
 
 7.4.  Applicability to Deterministic Flows
 
@@ -2741,6 +2740,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
+
 Thubert, et al.           Expires 14 April 2025                [Page 49]
 
 Internet-Draft              RAW Technologies                October 2024
@@ -2749,13 +2749,13 @@ Internet-Draft              RAW Technologies                October 2024
 7.4.1.  System Architecture
 
    Up to 512 Aircraft Station (AS) communicate to an LDACS Ground
-   Station (GS) in the Reverse Link (RL).  GS communicate to AS in the
-   Forward Link (FL).  Via an Access-Router (AC-R) GSs connect the LDACS
-   sub-network to the global Aeronautical Telecommunications Network
-   (ATN) to which the corresponding Air Traffic Services (ATS) and
-   Aeronautical Operational Control (AOC) end systems are attached.
+   Station (GS) in the Reverse Link (RL).  GS communicate to an AS in
+   the Forward Link (FL).  Via an Access-Router (AC-R) GSs connect the
+   LDACS sub-network to the global Aeronautical Telecommunications
+   Network (ATN) to which the corresponding Air Traffic Services (ATS)
+   and Aeronautical Operational Control (AOC) end systems are attached.
 
-7.4.2.  Overview of The Radio Protocol Stack
+7.4.2.  Overview of the Radio Protocol Stack
 
    The protocol stack of LDACS is implemented in the AS and GS: It
    consists of the Physical Layer (PHY) with five major functional
@@ -2951,7 +2951,7 @@ Internet-Draft              RAW Technologies                October 2024
    |
 
 
-                     Figure 12: MF structure for LDACS
+                     Figure 12: MF Structure for LDACS
 
    This fixed frame structure allows for a reliable and dependable
    transmission of data.  Next, the LDACS medium access layer is
@@ -3032,8 +3032,7 @@ Internet-Draft              RAW Technologies                October 2024
    LDACS capabilities have been successfully demonstrated.  A viable
    roll-out scenario has been developed which allows gradual
    introduction of LDACS with immediate use and revenues.  Finally, ICAO
-   is developing LDACS standards to pave the way for a successful roll-
-   out in the near future.
+   is developing LDACS standards to pave the way for the future.
 
 8.  IANA Considerations
 
@@ -3049,7 +3048,7 @@ Internet-Draft              RAW Technologies                October 2024
    This document aggregates articles from authors specialized in each
    technologies.  Beyond the main authors listed in the front page, the
    following contributors proposed additional text and refinement that
-   improved the documertn greatly!
+   improved the document.
 
    Georgios Z.  Papadopoulos:  Contributed to the TSCH section.
 
@@ -3074,6 +3073,7 @@ Internet-Draft              RAW Technologies                October 2024
    Bernardos Cano.
 
 12.  Normative References
+
 
 
 
@@ -3308,7 +3308,8 @@ Internet-Draft              RAW Technologies                October 2024
 
    [vilajosana21]
               Xavier Vilajosana et al., "IETF 6TiSCH: A Tutorial", March
-              2021.
+              2021, <https://inria.hal.science/hal-02420974/file/
+              IETF_6TiSCH__A_Tutorial__17099609gkvsxdpffdvc_%20(1).pdf>.
 
    [ISA100.11a]
               ISA/IEC, "ISA100.11a, Wireless Systems for Automation,
@@ -3341,16 +3342,15 @@ Internet-Draft              RAW Technologies                October 2024
               Specification", SESAR2020 PJ14-02-01 D3.3.010, February
               2019.
 
-   [SAJ14]    Sajatovic, M., Günzel, H., and S. Müller, "WA04 D22 Test
-              Report for Assessing LDACS1 Transmitter Impact upon DME/
-              TACAN Receivers", April 2014.
+   [SAJ14]    al, B. H. A., "LDACS1 conformance and compatibility
+              assessment", IEEE/AIAA 33rd Digital Avionics Systems
+              Conference (DASC) DOI 10.1109/DASC.2014.6979447, October
+              2014.
 
    [GRA11]    Gräupl, T. and M. Ehammer, "L-DACS1 Data Link Layer
               Evolution of ATN/IPS", Proceedings of the 30th IEEE/AIAA
               Digital Avionics Systems Conference (DASC) Seattle, WA,
               USA, October 2011.
-
-
 
 
 
@@ -3374,11 +3374,16 @@ Internet-Draft              RAW Technologies                October 2024
               Communications, Navigation, Surveillance Conference
               (ICNS) Herndon, VA, USA, April 2018.
 
-   [SCH19]    Schnell, M., "DLR tests digital communications
-              technologies combined with additional navigation functions
-              for the first time", 3 March 2019,
-              <https://www.dlr.de/dlr/en/desktopdefault.aspx/tabid-
-              10081/151_read-32951/#/gallery/33877>.
+   [BEL22]    al, B. M. A., "LDACS Flight Trials: Demonstration of ATS-
+              B2, IPS, and Seamless Mobility", IEEE Transactions on
+              Aerospace and Electronic Systems, vol. 58 DOI
+              10.1109/TAES.2021.3111722, 2022.
+
+   [GRA23]    al, G. T. A., "LDACS Flight Trials: Demonstration of ATS-
+              B2, IPS, and Seamless Mobility", Proceedings of the 2023
+              Integrated Communication, Navigation and Surveillance
+              Conference (ICNS), Herndon, VA, USA DOI
+              10.1109/ICNS58246.2023.10124329, 2023.
 
    [TR37910]  3GPP, "Study on self evaluation towards IMT-2020
               submission", 3GPP TR 37.910,
@@ -3405,11 +3410,6 @@ Internet-Draft              RAW Technologies                October 2024
               <https://portal.3gpp.org/desktopmodules/Specifications/
               SpecificationDetails.aspx?specificationId=3187>.
 
-   [TS23501]  3GPP, "System architecture for the 5G System (5GS)",
-              3GPP TS 23.501,
-              <https://portal.3gpp.org/desktopmodules/Specifications/
-              SpecificationDetails.aspx?specificationId=3144>.
-
 
 
 
@@ -3417,6 +3417,11 @@ Thubert, et al.           Expires 14 April 2025                [Page 61]
 
 Internet-Draft              RAW Technologies                October 2024
 
+
+   [TS23501]  3GPP, "System architecture for the 5G System (5GS)",
+              3GPP TS 23.501,
+              <https://portal.3gpp.org/desktopmodules/Specifications/
+              SpecificationDetails.aspx?specificationId=3144>.
 
    [TS38300]  3GPP, "NR Overall description", 3GPP TS 38.300,
               <https://portal.3gpp.org/desktopmodules/Specifications/
@@ -3461,11 +3466,6 @@ Internet-Draft              RAW Technologies                October 2024
    [IEEE802.1CB]
               IEEE, "IEEE Standard for Local and metropolitan area
               networks -- Frame Replication and Elimination for
-              Reliability", DOI 10.1109/IEEEStd2017.8091139, IEEE 
-              802.1CB-2017,
-              <https://ieeexplore.ieee.org/document/8091139>.
-
-
 
 
 
@@ -3473,6 +3473,10 @@ Thubert, et al.           Expires 14 April 2025                [Page 62]
 
 Internet-Draft              RAW Technologies                October 2024
 
+
+              Reliability", DOI 10.1109/IEEEStd2017.8091139, IEEE 
+              802.1CB-2017,
+              <https://ieeexplore.ieee.org/document/8091139>.
 
    [IEEE802.1Qbv]
               IEEE, "IEEE Standard for Local and metropolitan area
@@ -3517,10 +3521,6 @@ Internet-Draft              RAW Technologies                October 2024
               Avionics Systems Conference (DACS), pp. 1-10, San Diego,
               CA, USA , September 2019.
 
-   [MAE20]    Maeurer, N., Graeupl, T., and C. Schmitt, "Comparing
-              Different Diffie-Hellman Key Exchange Flavors for LDACS",
-              IEEE 39th Digital Avionics Systems Conference (DACS), pp.
-              1-10, San Diego, CA, USA , October 2019.
 
 
 
@@ -3529,6 +3529,11 @@ Thubert, et al.           Expires 14 April 2025                [Page 63]
 
 Internet-Draft              RAW Technologies                October 2024
 
+
+   [MAE20]    Maeurer, N., Graeupl, T., and C. Schmitt, "Comparing
+              Different Diffie-Hellman Key Exchange Flavors for LDACS",
+              IEEE 39th Digital Avionics Systems Conference (DACS), pp.
+              1-10, San Diego, CA, USA , October 2019.
 
    [FIL19]    Filip-Dhaubhadel, A. and D. Shutin, "LDACS- Based Non-
               Cooperative Surveillance Multistatic Radar Design and
@@ -3556,6 +3561,12 @@ Internet-Draft              RAW Technologies                October 2024
               Navigation and Surveillance Conference (ICNS), pp. 1-13,
               New York, NY, USA , April 2008.
 
+   [SCH19]    Schnell, M., "DLR tests digital communications
+              technologies combined with additional navigation functions
+              for the first time", 3 March 2019,
+              <https://www.dlr.de/dlr/en/desktopdefault.aspx/tabid-
+              10081/151_read-32951/#/gallery/33877>.
+
    [HAI09]    Haindl, B., Rihacek, C., Sajatovic, M., Phillips, B.,
               Budinger, J., Schnell, M., Kamiano, D., and W. Wilson,
               "Improvement of L-DACS1 Design by Combining B-AMC with P34
@@ -3568,6 +3579,13 @@ Internet-Draft              RAW Technologies                October 2024
               Conference (DACS), pp. 1-16, New York, NY, USA , September
               2011.
 
+
+
+Thubert, et al.           Expires 14 April 2025                [Page 64]
+
+Internet-Draft              RAW Technologies                October 2024
+
+
    [SCH14]    Schnell, M., Epple, U., Shutin, D., and N.
               Schneckenburger, "LDACS: Future Aeronautical
               Communications for Air- Traffic Management", IEEE
@@ -3578,13 +3596,6 @@ Internet-Draft              RAW Technologies                October 2024
               Cordeiro, "TSN support in 802.11 and potential extensions
               for TGbe", 2019,
               <https://mentor.ieee.org/802.11/dcn/19/11-19-1287>.
-
-
-
-Thubert, et al.           Expires 14 April 2025                [Page 64]
-
-Internet-Draft              RAW Technologies                October 2024
-
 
    [Sudhakaran2021]
               Sudhakaran, S., Montgomery, K., Kashef, M., Cavalcanti,
@@ -3625,21 +3636,18 @@ Authors' Addresses
    Email: xvilajosana@uoc.edu
 
 
+
+Thubert, et al.           Expires 14 April 2025                [Page 65]
+
+Internet-Draft              RAW Technologies                October 2024
+
+
    Corinna Schmitt
    Research Institute CODE, UniBw M
    Werner-Heisenberg-Weg 39
    85577 Neubiberg
    Germany
    Email: corinna.schmitt@unibw.de
-
-
-
-
-
-
-Thubert, et al.           Expires 14 April 2025                [Page 65]
-
-Internet-Draft              RAW Technologies                October 2024
 
 
    Janos Farkas
@@ -3649,14 +3657,6 @@ Internet-Draft              RAW Technologies                October 2024
    1117
    Hungary
    Email: janos.farkas@ericsson.com
-
-
-
-
-
-
-
-
 
 
 

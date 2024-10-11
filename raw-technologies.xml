@@ -2128,11 +2128,11 @@ LDACS shall enable IPv6 based air-ground communication related to the safety and
        <t>
            The development of LDACS has already made substantial progress in the Single European Sky ATM Research (SESAR) framework, and is currently being continued in the follow-up program, SESAR2020 <xref target='RIH18'/>. A key objective of the SESAR activities is to develop, implement and validate a modern aeronautical data link able to evolve with aviation needs over long-term. To this end, an LDACS specification has been produced <xref target='GRA19'/> and is continuously updated; transmitter demonstrators were developed to test the spectrum compatibility of LDACS with legacy systems operating in the L-band <xref target='SAJ14'/>; and the overall system performance was analyzed by computer simulations, indicating that LDACS can fulfill the identified requirements <xref target='GRA11'/>.
        </t><t>
-           LDACS standardization within the framework of the International Civil Aviation Organization (ICAO) started in December 2016. The ICAO standardization group has produced an initial Standards and Recommended Practices (SARPs) document <xref target='ICAO18'/>. The SARPs document defines the general characteristics of LDACS. The ICAO standardization group plans to produce an ICAO technical manual - the ICAO equivalent to a technical standard - within the next years. Generally, the group is open to input from all sources and develops LDACS in the open.
+           LDACS standardization within the framework of the International Civil Aviation Organization (ICAO) started in December 2016. The ICAO standardization group has produced an initial Standards and Recommended Practices (SARPs) document <xref target='ICAO18'/>. The SARPs document defines the general characteristics of LDACS.
        </t><t>
            Up to now the LDACS standardization has been focused on the development of the physical layer and the data link layer, only recently have higher layers come into the focus of the LDACS development activities. There is currently no "IPv6 over LDACS" specification; however, SESAR2020 has started the testing of IPv6-based LDACS testbeds. The IPv6 architecture for the aeronautical telecommunication network is called the Future Communications Infrastructure (FCI). FCI shall support quality of service, diversity, and mobility under the umbrella of the "multi-link concept". This work is conducted by ICAO working group WG-I.
        </t><t>
-           In addition to standardization activities several industrial LDACS prototypes have been built. One set of LDACS prototypes has been evaluated in flight trials confirming the theoretical results predicting the system performance <xref target='GRA18'/><xref target='SCH19'/>.
+           In addition to standardization activities several industrial LDACS prototypes have been built. One set of LDACS prototypes has been evaluated in flight trials confirming the theoretical results predicting the system performance <xref target='GRA18'/><xref target='BEL22'/><xref target='GRA23'/> .
        </t>
    </section><!-- Provenance and Documents   -->
 
@@ -2148,7 +2148,7 @@ LDACS shall enable IPv6 based air-ground communication related to the safety and
            within its radio cell.
        </t>
        <t>
-           The user data rate of LDACS is 315 kbit/s to 1428 kbit/s on the forward link, and 294 kbit/s to 1390 kbit/s on the reverse link, depending on coding and modulation. Due to strong interference from legacy systems in the L-band, the most robust coding and modulation should be expected for initial deployment i.e. 315/294 kbit/s on the forward/reverse link, respectively.
+           The user data rate of LDACS is 315 kbit/s to 1428 kbit/s on the forward link, and 294 kbit/s to 1390 kbit/s on the reverse link, depending on coding and modulation. Due to strong interference from legacy systems in the L-band, the most robust coding and modulation should be expected for initial deployment, i.e., 315/294 kbit/s on the forward/reverse link, respectively.
        </t>
        <t>
            In addition to the communications capability, LDACS also offers a
@@ -2219,8 +2219,7 @@ LDACS shall enable IPv6 based air-ground communication related to the safety and
            than VDL Mode 2 and is a natural enhancement to the existing VDL Mode
            2 business model. The advantage of this approach is that the VDL Mode
            2 infrastructure can be fully reused. Beyond that, it opens the way
-           for further enhancements which can increase business efficiency and
-           minimize investment risk. <xref target="ICAO19"/>
+           for further enhancements <xref target="ICAO19"/>.
 
        </t>
     </section><!-- Deployment and Spectrum  -->
@@ -2236,7 +2235,7 @@ LDACS shall enable IPv6 based air-ground communication related to the safety and
        <section><name>System Architecture</name>
            <t>
                Up to 512 Aircraft Station (AS) communicate to an LDACS Ground
-               Station (GS) in the Reverse Link (RL). GS communicate to AS in
+               Station (GS) in the Reverse Link (RL). GS communicate to an AS in
                the Forward Link (FL). Via an Access-Router (AC-R) GSs connect
                the LDACS sub-network to the global Aeronautical
                Telecommunications Network (ATN) to which the corresponding Air
@@ -2245,7 +2244,7 @@ LDACS shall enable IPv6 based air-ground communication related to the safety and
            </t>
        </section><!-- System Architecture  -->
 
-       <section><name>Overview of The Radio Protocol Stack</name>
+       <section><name>Overview of the Radio Protocol Stack</name>
            <t>
                The protocol stack of LDACS is implemented in the AS and GS: It
                consists of the Physical Layer (PHY) with five major functional
@@ -2387,7 +2386,7 @@ y
                </artwork>
            </figure>
 
-           <figure title="MF structure for LDACS"  anchor="fig_LDACSframesmulti">
+           <figure title="MF Structure for LDACS"  anchor="fig_LDACSframesmulti">
                <artwork>
                    <![CDATA[
 ^
@@ -2483,8 +2482,7 @@ y
            capabilities have been successfully demonstrated. A viable roll-out
            scenario has been developed which allows gradual introduction of LDACS
            with immediate use and revenues. Finally, ICAO is developing LDACS
-           standards to pave the way for a successful roll-out in the near
-           future.
+           standards to pave the way for the            future.
        </t>
    </section><!-- Summary  -->
 
@@ -2516,7 +2514,7 @@ y
    <t> This document aggregates articles from authors specialized in each
    technologies. Beyond the main authors listed in the front page, the following
    contributors proposed additional text and refinement that improved the
-   documertn greatly!
+   document.
    			</t><dl  spacing='normal'>
    				<dt>Georgios Z. Papadopoulos:</dt><dd> Contributed to the TSCH section. </dd>
    				<dt>Nils Maeurer:</dt><dd> Contributed to the LDACS section. </dd>
@@ -2776,8 +2774,8 @@ y
         </front>
       </reference -->
 
-	  <reference anchor='vilajosana21'>
-        <front>
+	  <reference anchor='vilajosana21' target="https://inria.hal.science/hal-02420974/file/IETF_6TiSCH__A_Tutorial__17099609gkvsxdpffdvc_%20(1).pdf">
+        <front> 
           <title>
             IETF 6TiSCH: A Tutorial
           </title>
@@ -2889,12 +2887,11 @@ y
 
       <reference anchor='SAJ14'>
          <front>
-            <title>WA04 D22 Test Report for Assessing LDACS1 Transmitter Impact upon DME/TACAN Receivers</title>
-            <author fullname='M. Sajatovic'></author>
-            <author fullname='H. Günzel'></author>
-            <author fullname='S. Müller'></author>
-            <date month='April' year='2014'/>
+            <title>LDACS1 conformance and compatibility assessment</title>
+            <author fullname='B. Haindl and al'></author>
+            <date month='October' year='2014'/>
          </front>
+         <seriesInfo name='IEEE/AIAA 33rd Digital Avionics Systems Conference (DASC)' value='DOI 10.1109/DASC.2014.6979447'/>
       </reference>
 
       <reference anchor='GRA11'>
@@ -2929,13 +2926,21 @@ y
         <seriesInfo name='Proceedings of the Integrated Communications, Navigation, Surveillance Conference (ICNS)' value='Herndon, VA, USA'/>
       </reference>
 
-      <reference anchor='SCH19' target='https://www.dlr.de/dlr/en/desktopdefault.aspx/tabid-10081/151_read-32951/#/gallery/33877'>
+      <reference anchor='BEL22' >
          <front>
-            <title>DLR tests digital communications technologies combined with additional navigation functions for the first time</title>
-            <author fullname='M. Schnell'>
-               <organization>German Aerospace Center (DLR)</organization></author>
-            <date day='03' month='March' year='2019'/>
+            <title>LDACS Flight Trials: Demonstration of ATS-B2, IPS, and Seamless Mobility</title>
+            <author fullname='Bellido-Manganell, M.A and al'></author>
+            <date year='2022'/>
          </front>
+        <seriesInfo name='IEEE Transactions on Aerospace and Electronic Systems, vol. 58' value='DOI 10.1109/TAES.2021.3111722' />
+      </reference>
+      <reference anchor='GRA23' >
+         <front>
+            <title>LDACS Flight Trials: Demonstration of ATS-B2, IPS, and Seamless Mobility</title>
+            <author fullname='Gräupl, T. and al'></author>
+            <date year='2023'/>
+         </front>
+        <seriesInfo name='Proceedings of the 2023 Integrated Communication, Navigation and Surveillance Conference (ICNS), Herndon, VA, USA'  value='DOI 10.1109/ICNS58246.2023.10124329' />
       </reference>
 
 
@@ -3273,6 +3278,16 @@ y
       <seriesInfo name='IEEE 8th Integrated Communications, Navigation and Surveillance Conference (ICNS),  pp. 1-13, New York, NY, USA' value=''/>
       </reference>
 
+
+      <reference anchor='SCH19' target='https://www.dlr.de/dlr/en/desktopdefault.aspx/tabid-10081/151_read-32951/#/gallery/33877'>
+         <front>
+            <title>DLR tests digital communications technologies combined with additional navigation functions for the first time</title>
+            <author fullname='M. Schnell'>
+               <organization>German Aerospace Center (DLR)</organization></author>
+            <date day='03' month='March' year='2019'/>
+         </front>
+      </reference>
+	  
       <reference anchor="HAI09"> <!--REF2-->
       <front>
       <title>Improvement of L-DACS1 Design by Combining B-AMC with P34
