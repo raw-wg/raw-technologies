@@ -5,14 +5,14 @@
 RAW                                                      P. Thubert, Ed.
 Internet-Draft                                                          
 Intended status: Informational                             D. Cavalcanti
-Expires: 14 April 2025                                             Intel
+Expires: 16 April 2025                                             Intel
                                                            X. Vilajosana
                                          Universitat Oberta de Catalunya
                                                               C. Schmitt
                                         Research Institute CODE, UniBw M
                                                                J. Farkas
                                                                 Ericsson
-                                                         11 October 2024
+                                                         13 October 2024
 
 
               Reliable and Available Wireless Technologies
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 14 April 2025.
+   This Internet-Draft will expire on 16 April 2025.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Thubert, et al.           Expires 14 April 2025                 [Page 1]
+Thubert, et al.           Expires 16 April 2025                 [Page 1]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -82,7 +82,7 @@ Table of Contents
        4.2.2.  Applicability to deterministic flows  . . . . . . . .  11
      4.3.  802.11be Extreme High Throughput (EHT)  . . . . . . . . .  13
        4.3.1.  General Characteristics . . . . . . . . . . . . . . .  13
-       4.3.2.  Applicability to deterministic flows  . . . . . . . .  13
+       4.3.2.  Applicability to deterministic flows  . . . . . . . .  14
      4.4.  802.11ad and 802.11ay (mmWave operation)  . . . . . . . .  15
        4.4.1.  General Characteristics . . . . . . . . . . . . . . .  15
        4.4.2.  Applicability to deterministic flows  . . . . . . . .  15
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Thubert, et al.           Expires 14 April 2025                 [Page 2]
+Thubert, et al.           Expires 16 April 2025                 [Page 2]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -165,7 +165,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                 [Page 3]
+Thubert, et al.           Expires 16 April 2025                 [Page 3]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -221,14 +221,16 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                 [Page 4]
+Thubert, et al.           Expires 16 April 2025                 [Page 4]
 
 Internet-Draft              RAW Technologies                October 2024
 
 
    This document surveys existing networking technology and defines no
    protocol behaviors or operational practices.  The IETF specifications
-   referenced herein each provide their own Security Considerations.
+   referenced herein each provide their own Security Considerations, and
+   lower layer technologies provide their own security at Layer-2; a
+   security study of the technologies is explicitly not in scope.
 
 2.  Terminology
 
@@ -267,6 +269,19 @@ Internet-Draft              RAW Technologies                October 2024
    lost in a row before the flows are rerouted or the system may
    recover.
 
+
+
+
+
+
+
+
+
+Thubert, et al.           Expires 16 April 2025                 [Page 5]
+
+Internet-Draft              RAW Technologies                October 2024
+
+
    This is not acceptable for critical applications such as related to
    safety.  A typical process control loop will tolerate an occasional
    packet loss, but a loss of several packets in a row will cause an
@@ -274,13 +289,6 @@ Internet-Draft              RAW Technologies                October 2024
    Universal, or MGM Studios parks) a continuous loss of packet for a
    few 100ms may trigger an automatic interruption of the ride and cause
    the evacuation of the attraction floor to restart it.
-
-
-
-Thubert, et al.           Expires 14 April 2025                 [Page 5]
-
-Internet-Draft              RAW Technologies                October 2024
-
 
    Network Availability is obtained by making the transmission resilient
    against hardware failures and radio transmission losses due to
@@ -317,6 +325,19 @@ Internet-Draft              RAW Technologies                October 2024
       60 or 70% of high priority traffic with ultra low loss) compared
       to statistical priority-based schemes.
 
+
+
+
+
+
+
+
+
+Thubert, et al.           Expires 16 April 2025                 [Page 6]
+
+Internet-Draft              RAW Technologies                October 2024
+
+
    *  Scheduling can be used as a technique for both time and frequency
       diversity (e.g., between transmission retries), allowing the next
       transmission to happen on a different frequency as programmed in
@@ -329,14 +350,6 @@ Internet-Draft              RAW Technologies                October 2024
       avoiding the hidden terminal problem, e.g., when the next packet
       in a same flow interferes on a same channel with the previous one
       that progressed a few hops farther.
-
-
-
-
-Thubert, et al.           Expires 14 April 2025                 [Page 6]
-
-Internet-Draft              RAW Technologies                October 2024
-
 
    *  On the other hand, scheduling optimizes the bandwidth usage:
       compared to classical Collision Avoidance techniques, there is no
@@ -373,6 +386,14 @@ Internet-Draft              RAW Technologies                October 2024
    MAC and PHY layers for the Wi-Fi technology.  Wi-Fi/802.11 is one of
    the most successful wireless technologies, supporting many
    application domains.  While previous 802.11 generations, such as
+
+
+
+Thubert, et al.           Expires 16 April 2025                 [Page 7]
+
+Internet-Draft              RAW Technologies                October 2024
+
+
    802.11n and 802.11ac, have focused mainly on improving peak
    throughput, more recent generations are also considering other
    performance vectors, such as efficiency enhancements for dense
@@ -386,14 +407,6 @@ Internet-Draft              RAW Technologies                October 2024
    Timing Measurement (FTM), as well as the Stream Reservation Protocol
    (IEEE 802.1Qat). 802.11 WLANs can also be part of a 802.1Q bridged
    networks with enhancements enabled by the 802.11ak amendment now
-
-
-
-Thubert, et al.           Expires 14 April 2025                 [Page 7]
-
-Internet-Draft              RAW Technologies                October 2024
-
-
    retrofitted in IEEE Std 802.11-2020.  Traffic classification based on
    802.1Q VLAN tags is also supported in 802.11.  Other 802.1 TSN
    capabilities such as 802.1Qbv and 802.1CB, which are media agnostic,
@@ -429,6 +442,14 @@ Internet-Draft              RAW Technologies                October 2024
    and support for time-sensitive networking capabilities:
 
    Time Synchronization:  IEEE802.11-2016 with IEEE802.1AS; WFA TimeSync
+
+
+
+Thubert, et al.           Expires 16 April 2025                 [Page 8]
+
+Internet-Draft              RAW Technologies                October 2024
+
+
       Certification.
 
    Congestion Control:  IEEE Std 802.11-2016 Admission Control; WFA
@@ -441,14 +462,6 @@ Internet-Draft              RAW Technologies                October 2024
 
    Stream Reservation Protocol (part of [IEEE Std 802.1Qat]):  AIEEE802.
       11-2016
-
-
-
-
-Thubert, et al.           Expires 14 April 2025                 [Page 8]
-
-Internet-Draft              RAW Technologies                October 2024
-
 
    Scheduled channel access:  IEEE802.11ad Enhancements for very high
       throughput in the 60 GHz band [IEEE Std 802.11ad].
@@ -485,6 +498,14 @@ Internet-Draft              RAW Technologies                October 2024
    features include higher order 1024-QAM modulation, support for uplink
    multiple user (MU) multiple input multiple output (MIMO), orthogonal
    frequency-division multiple access (OFDMA), trigger-based access and
+
+
+
+Thubert, et al.           Expires 16 April 2025                 [Page 9]
+
+Internet-Draft              RAW Technologies                October 2024
+
+
    Target Wake time (TWT) for enhanced power savings.  The OFDMA mode
    and trigger-based access enable the AP, after reserving the channel
    using the clear channel assessment procedure for a given duration, to
@@ -494,17 +515,6 @@ Internet-Draft              RAW Technologies                October 2024
    support for operation in the new 6 GHz band, which is expected to be
    open to unlicensed use by the FCC and other regulatory agencies
    worldwide.
-
-
-
-
-
-
-
-Thubert, et al.           Expires 14 April 2025                 [Page 9]
-
-Internet-Draft              RAW Technologies                October 2024
-
 
 4.2.1.1.  Multi-User OFDMA and Trigger-based Scheduled Access
 
@@ -542,6 +552,16 @@ Internet-Draft              RAW Technologies                October 2024
    Section 4.3) is currently considering further and more flexible
    approaches concerning RU allocation.
 
+
+
+
+
+
+Thubert, et al.           Expires 16 April 2025                [Page 10]
+
+Internet-Draft              RAW Technologies                October 2024
+
+
 4.2.1.3.  Improved PHY Robustness
 
    The 802.11ax PHY can operate with 0.8, 1.6 or 3.2 microsecond guard
@@ -554,13 +574,6 @@ Internet-Draft              RAW Technologies                October 2024
    802.11ax supports beamforming as in 802.11ac, but introduces UL MU
    MIMO, which helps improve reliability.  The UL MU MIMO capability is
    also enabled by the trigger based access operation in 802.11ax.
-
-
-
-Thubert, et al.           Expires 14 April 2025                [Page 10]
-
-Internet-Draft              RAW Technologies                October 2024
-
 
 4.2.1.4.  Support for 6GHz band
 
@@ -598,6 +611,13 @@ Internet-Draft              RAW Technologies                October 2024
 
    2.  Interoperating with IEEE802.1Q bridges
 
+
+
+Thubert, et al.           Expires 16 April 2025                [Page 11]
+
+Internet-Draft              RAW Technologies                October 2024
+
+
    3.  Time-sensitive Traffic Stream Classification
 
    The existing 802.11 TSN capabilities listed above, and the 802.11ax
@@ -606,17 +626,6 @@ Internet-Draft              RAW Technologies                October 2024
    to understand the tradeoffs and constraints associated with such
    capabilities, as well as redundancy and diversity mechanisms that can
    be used to provide more predictable and reliable performance.
-
-
-
-
-
-
-
-Thubert, et al.           Expires 14 April 2025                [Page 11]
-
-Internet-Draft              RAW Technologies                October 2024
-
 
 4.2.2.1.  802.11 Managed network operation and admission control
 
@@ -655,6 +664,16 @@ Internet-Draft              RAW Technologies                October 2024
    redundancy is used to reduce the impact of unmanaged devices/
    interference.
 
+
+
+
+
+
+Thubert, et al.           Expires 16 April 2025                [Page 12]
+
+Internet-Draft              RAW Technologies                October 2024
+
+
    When the network is lightly loaded, it is possible to achieve
    latencies under 1 msec when Wi-Fi is operated in contention-based
    (i.e., without OFDMA) mode.  It is also has been shown that it is
@@ -666,13 +685,6 @@ Internet-Draft              RAW Technologies                October 2024
    the minimal latency that can be achieved, but the contention latency
    and randomness elimination in an interference-free environment due to
    multi-user transmission is a major benefit of the OFDMA mode.
-
-
-
-Thubert, et al.           Expires 14 April 2025                [Page 12]
-
-Internet-Draft              RAW Technologies                October 2024
-
 
    The flexibility to dynamically assign RUs to each transmission also
    enables the AP to provide frequency diversity, which can help
@@ -711,6 +723,13 @@ Internet-Draft              RAW Technologies                October 2024
        spectrum.
 
 
+
+
+Thubert, et al.           Expires 16 April 2025                [Page 13]
+
+Internet-Draft              RAW Technologies                October 2024
+
+
 4.3.2.  Applicability to deterministic flows
 
    The 802.11 Real-Time Applications (RTA) Topic Interest Group (TIG)
@@ -722,14 +741,6 @@ Internet-Draft              RAW Technologies                October 2024
    Improvements for worst-case latency, jitter and reliability were the
    main topics identified in the RTA report, which were motivated by
    applications in gaming, industrial automation, robotics, etc.  The
-
-
-
-Thubert, et al.           Expires 14 April 2025                [Page 13]
-
-Internet-Draft              RAW Technologies                October 2024
-
-
    RTA report also highlighted the need to support additional TSN
    capabilities, such as time-aware (802.1Qbv) shaping and packet
    replication and elimination as defined in 802.1CB.
@@ -767,24 +778,17 @@ Internet-Draft              RAW Technologies                October 2024
    different levels of complexities and benefits, but specific
    coordination methods have not yet been defined.  Out of the different
    categories, MAC-driven examples include: coordinated OFDMA (Co-
-   OFDMA); Coordinated TDMA (Co-TDMA); HARQ; whereas PHY-driven examples
-   include: Coordinated Spatial Reuse (Co-SR) and Coordinated
-   Beamforming (Co-BF).
 
 
 
-
-
-
-
-
-
-
-
-Thubert, et al.           Expires 14 April 2025                [Page 14]
+Thubert, et al.           Expires 16 April 2025                [Page 14]
 
 Internet-Draft              RAW Technologies                October 2024
 
+
+   OFDMA); Coordinated TDMA (Co-TDMA); HARQ; whereas PHY-driven examples
+   include: Coordinated Spatial Reuse (Co-SR) and Coordinated
+   Beamforming (Co-BF).
 
 4.3.2.3.  Multi-link operation
 
@@ -830,18 +834,18 @@ Internet-Draft              RAW Technologies                October 2024
    and deployment conditions in order to properly apply and configure
    802.11ad/ay networks for time sensitive applications.
 
-   The 802.11ad standard includes a scheduled access mode in which the
-   central controller, after contending and reserving the channel for a
-   dedicated period, can allocate to stations contention-free service
-   periods.  This scheduling capability is also available in 802.11ay,
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 15]
+Thubert, et al.           Expires 16 April 2025                [Page 15]
 
 Internet-Draft              RAW Technologies                October 2024
 
 
+   The 802.11ad standard includes a scheduled access mode in which the
+   central controller, after contending and reserving the channel for a
+   dedicated period, can allocate to stations contention-free service
+   periods.  This scheduling capability is also available in 802.11ay,
    and it is one of the mechanisms that can be used to provide bounded
    latency to time-sensitive data flows in interference-free scenarios.
    An analysis of the theoretical latency bounds that can be achieved
@@ -886,18 +890,18 @@ Internet-Draft              RAW Technologies                October 2024
    targeted at the embedded and industrial world, where reliability,
    energy consumption and cost drive the application space.
 
-   Time sensitive networking on low power constrained wireless networks,
-   building on IEEE802.15.4, have been partially addressed by ISA100.11a
-   [ISA100.11a] and WirelessHART [WirelessHART].  Both technologies
-   involve a central controller that computes redundant paths for
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 16]
+Thubert, et al.           Expires 16 April 2025                [Page 16]
 
 Internet-Draft              RAW Technologies                October 2024
 
 
+   Time sensitive networking on low power constrained wireless networks,
+   building on IEEE802.15.4, have been partially addressed by ISA100.11a
+   [ISA100.11a] and WirelessHART [WirelessHART].  Both technologies
+   involve a central controller that computes redundant paths for
    industrial process control traffic over a TSCH mesh.  Moreover,
    ISA100.11a introduces IPv6 [RFC8200] capabilities with a Link-Local
    Address for the join process and a global unicast addres for later
@@ -939,20 +943,22 @@ Internet-Draft              RAW Technologies                October 2024
    schemes, reducing the overhead of taking routing decisions at the
    Layer-3.
 
+
+
+
+
+
+
+Thubert, et al.           Expires 16 April 2025                [Page 17]
+
+Internet-Draft              RAW Technologies                October 2024
+
+
    The 6TiSCH architecture [RFC9030] identifies different models to
    schedule resources along so-called Tracks (see Section 5.2.1.1)
    exploiting the TSCH schedule structure however the focus at 6TiSCH is
    on best effort traffic and the group was never chartered to produce
    standard work related to Tracks.
-
-
-
-
-
-Thubert, et al.           Expires 14 April 2025                [Page 17]
-
-Internet-Draft              RAW Technologies                October 2024
-
 
    There are several works that can be used to complement the overview
    provided in this document.  For example [vilajosana21] provides a
@@ -994,21 +1000,22 @@ Internet-Draft              RAW Technologies                October 2024
    hopping sequence referred as macHopSeq in the IEEE802.15.4
    specification.
 
+
+
+
+
+
+Thubert, et al.           Expires 16 April 2025                [Page 18]
+
+Internet-Draft              RAW Technologies                October 2024
+
+
    The Time-Frequency Division Multiple Access provided by TSCH enables
    the orchestration of traffic flows, spreading them in time and
    frequency, and hence enabling an efficient management of the
    bandwidth utilization.  Such efficient bandwidth utilization can be
    combined to OFDM modulations also supported by the IEEE802.15.4
    standard [IEEE Std 802.15.4] since the 2015 version.
-
-
-
-
-
-Thubert, et al.           Expires 14 April 2025                [Page 18]
-
-Internet-Draft              RAW Technologies                October 2024
-
 
    TSCH networks operate in ISM bands in which the spectrum is shared by
    different coexisting technologies.  Regulations such as FCC, ETSI and
@@ -1051,20 +1058,17 @@ Internet-Draft              RAW Technologies                October 2024
    called Packet Replication and Elimination (PRE), over non congruent
    branches.  PRE may be used to complement layer-2 ARQ and receiver-end
    Ordering to complete/extend the PREOF functions.  This enables to
-   meet industrial expectations of packet delivery within bounded delay
-   over a Track that includes wireless links, even when the Track
-   extends beyond the 6TiSCH network.
 
 
 
-
-
-
-
-Thubert, et al.           Expires 14 April 2025                [Page 19]
+Thubert, et al.           Expires 16 April 2025                [Page 19]
 
 Internet-Draft              RAW Technologies                October 2024
 
+
+   meet industrial expectations of packet delivery within bounded delay
+   over a Track that includes wireless links, even when the Track
+   extends beyond the 6TiSCH network.
 
    The RAW Track described in the RAW Architecture
    [I-D.ietf-raw-architecture] inherits directly from that model.  RAW
@@ -1113,11 +1117,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-
-
-
-
-Thubert, et al.           Expires 14 April 2025                [Page 20]
+Thubert, et al.           Expires 16 April 2025                [Page 20]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -1173,7 +1173,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 21]
+Thubert, et al.           Expires 16 April 2025                [Page 21]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -1229,7 +1229,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 22]
+Thubert, et al.           Expires 16 April 2025                [Page 22]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -1285,7 +1285,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 23]
+Thubert, et al.           Expires 16 April 2025                [Page 23]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -1341,7 +1341,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 24]
+Thubert, et al.           Expires 16 April 2025                [Page 24]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -1397,7 +1397,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 25]
+Thubert, et al.           Expires 16 April 2025                [Page 25]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -1453,7 +1453,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 26]
+Thubert, et al.           Expires 16 April 2025                [Page 26]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -1490,8 +1490,8 @@ Internet-Draft              RAW Technologies                October 2024
    that is stored in the device and the power that it can be scavenged
    from the environment.  The PCE should be able to compute Tracks that
    will implement policies on how the energy is consumed, for instance
-   balance between nodes, ensure that the spent energy does not exceeded
-   the scavenged energy over a period of time, etc...
+   balance between nodes and ensure that the spent energy does not
+   exceeded the scavenged energy over a period of time.
 
 5.2.2.1.3.  Schedule Management by a PCE
 
@@ -1509,7 +1509,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 27]
+Thubert, et al.           Expires 16 April 2025                [Page 27]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -1565,7 +1565,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 28]
+Thubert, et al.           Expires 16 April 2025                [Page 28]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -1621,7 +1621,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 29]
+Thubert, et al.           Expires 16 April 2025                [Page 29]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -1677,7 +1677,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 30]
+Thubert, et al.           Expires 16 April 2025                [Page 30]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -1733,7 +1733,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 31]
+Thubert, et al.           Expires 16 April 2025                [Page 31]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -1789,7 +1789,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 32]
+Thubert, et al.           Expires 16 April 2025                [Page 32]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -1845,7 +1845,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 33]
+Thubert, et al.           Expires 16 April 2025                [Page 33]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -1901,7 +1901,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 34]
+Thubert, et al.           Expires 16 April 2025                [Page 34]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -1957,7 +1957,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 35]
+Thubert, et al.           Expires 16 April 2025                [Page 35]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -2013,7 +2013,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 36]
+Thubert, et al.           Expires 16 April 2025                [Page 36]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -2069,7 +2069,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 37]
+Thubert, et al.           Expires 16 April 2025                [Page 37]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -2125,7 +2125,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 38]
+Thubert, et al.           Expires 16 April 2025                [Page 38]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -2181,7 +2181,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 39]
+Thubert, et al.           Expires 16 April 2025                [Page 39]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -2237,7 +2237,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 40]
+Thubert, et al.           Expires 16 April 2025                [Page 40]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -2293,7 +2293,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 41]
+Thubert, et al.           Expires 16 April 2025                [Page 41]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -2349,7 +2349,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 42]
+Thubert, et al.           Expires 16 April 2025                [Page 42]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -2405,7 +2405,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 43]
+Thubert, et al.           Expires 16 April 2025                [Page 43]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -2461,7 +2461,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 44]
+Thubert, et al.           Expires 16 April 2025                [Page 44]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -2517,7 +2517,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 45]
+Thubert, et al.           Expires 16 April 2025                [Page 45]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -2573,7 +2573,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 46]
+Thubert, et al.           Expires 16 April 2025                [Page 46]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -2629,7 +2629,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 47]
+Thubert, et al.           Expires 16 April 2025                [Page 47]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -2685,7 +2685,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 48]
+Thubert, et al.           Expires 16 April 2025                [Page 48]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -2741,7 +2741,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 49]
+Thubert, et al.           Expires 16 April 2025                [Page 49]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -2797,7 +2797,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 50]
+Thubert, et al.           Expires 16 April 2025                [Page 50]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -2853,7 +2853,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 51]
+Thubert, et al.           Expires 16 April 2025                [Page 51]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -2909,7 +2909,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 52]
+Thubert, et al.           Expires 16 April 2025                [Page 52]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -2965,7 +2965,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 53]
+Thubert, et al.           Expires 16 April 2025                [Page 53]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -3021,7 +3021,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 54]
+Thubert, et al.           Expires 16 April 2025                [Page 54]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -3077,7 +3077,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 55]
+Thubert, et al.           Expires 16 April 2025                [Page 55]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -3133,7 +3133,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 56]
+Thubert, et al.           Expires 16 April 2025                [Page 56]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -3189,7 +3189,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 57]
+Thubert, et al.           Expires 16 April 2025                [Page 57]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -3245,7 +3245,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 58]
+Thubert, et al.           Expires 16 April 2025                [Page 58]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -3301,7 +3301,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 59]
+Thubert, et al.           Expires 16 April 2025                [Page 59]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -3357,7 +3357,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 60]
+Thubert, et al.           Expires 16 April 2025                [Page 60]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -3413,7 +3413,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 61]
+Thubert, et al.           Expires 16 April 2025                [Page 61]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -3469,7 +3469,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 62]
+Thubert, et al.           Expires 16 April 2025                [Page 62]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -3525,7 +3525,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 63]
+Thubert, et al.           Expires 16 April 2025                [Page 63]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -3581,7 +3581,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 64]
+Thubert, et al.           Expires 16 April 2025                [Page 64]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -3637,7 +3637,7 @@ Authors' Addresses
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 65]
+Thubert, et al.           Expires 16 April 2025                [Page 65]
 
 Internet-Draft              RAW Technologies                October 2024
 
@@ -3693,4 +3693,4 @@ Internet-Draft              RAW Technologies                October 2024
 
 
 
-Thubert, et al.           Expires 14 April 2025                [Page 66]
+Thubert, et al.           Expires 16 April 2025                [Page 66]

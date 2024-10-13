@@ -147,7 +147,7 @@
    </t>
    <t>
    This document surveys existing networking technology and defines no protocol behaviors or operational practices.  
-   The IETF specifications referenced herein each provide their own Security Considerations.
+   The IETF specifications referenced herein each provide their own Security Considerations, and lower layer technologies provide their own security at Layer-2; a security study of the technologies is explicitly not in scope.
    </t>
    </section><!-- title="Introduction"-->
 
@@ -1131,8 +1131,8 @@
    be evaluated and reported. So can the amount of energy that is stored in the
    device and the power that it can be scavenged from the environment. The PCE
    should be able to compute Tracks that will implement policies on how the
-   energy is consumed, for instance balance between nodes, ensure that the spent
-   energy does not exceeded the scavenged energy over a period of time, etc...
+   energy is consumed, for instance balance between nodes and ensure that the spent
+   energy does not exceeded the scavenged energy over a period of time.
    </t>
 
 
