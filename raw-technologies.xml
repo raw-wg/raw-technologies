@@ -82,8 +82,12 @@
    <workgroup>RAW</workgroup>
    <keyword>Draft</keyword>
    <abstract>
-      <t> This document presents wireless technologies with capabilities such as time synchronization and scheduling of transmission,
-	  that would make Reliable and Available Wireless operations possible over such media.
+      <t>    This document browses the short and middle range radio technologies
+      that are suitable to provide a DetNet/RAW service over, presents the
+      characteristics that RAW may leverage, and explores the applicability
+      of the technologies to carry deterministic flows. The studied
+      technologies are Wi-Fi 6/7, TimeSlotted Channel Hopping (TSCH), 3GPP
+      5G, and L-band Digital Aeronautical Communications System (LDACS).
 	  Those technologies were selected as part of the WG formation and listed in the WG charter.  
       </t>
    </abstract>
@@ -269,6 +273,15 @@
    </section><!-- Towards Reliable and Available Networks -->
 
    <section><name>IEEE 802.11</name>
+   
+      <t> Since Wi-Fi 6, the evolution of the IEEE Std 802.11 standard is taking a new direction, looking not any more for more speed, but also for reliability, to enable new fields of application such as Industrial IoT and Virtual Reality.
+	  </t>
+	  <t>One step at a time, Wi-Fi 6, 7, and now 8 include more capabilities to schedule and deliver frames in due time at fast rates. Still, as any radio technology, Wi-Fi is sensitive to frame loss, which can only be combatted with the maximum use of diversity, in space, time, channel, and even technology. 
+	  </t>
+	  <t>
+	  To achieve the latter, the reliability must be handled at an upper layer that can select Wi-Fi and other wired or wireless technologies for parallel transmissions. This is where RAW comes into play.
+	  </t>
+
         <section><name>Provenance and Documents</name>
 
   
@@ -483,22 +496,21 @@
         	</section> <!-- Applicability to deterministic flows-->
         </section><!-- 802.11ad and 802.11ay (mmWave operation)  -->
 		
-      <section>  <name>Summary</name>
-      <t> Since Wi-Fi 6, the evolution of the IEEE Std 802.11 standard is taking a new direction, looking not any more for more speed, but also for reliability, to enable new fields of application such as Industrial IoT and Virtual Reality.
-	  </t>
-	  <t>One step at a time, Wi-Fi 6, 7, and now 8 include more capabilities to schedule and deliver frames in due time at fast rates. Still, as any radio technology, Wi-Fi is sensitive to frame loss, which can only be combatted with the maximum use of diversity, in space, time, channel, and even technology. 
-	  </t>
-	  <t>
-	  To achieve the latter, the reliability must be handled at an upper layer that can select Wi-Fi and other wired or wireless technologies for parallel transmissions. This is where RAW comes into play.
-	  </t>
-
-       </section>  <!-- Summary -->
   
 
    </section><!-- title="IEEE 802.11" -->
 
 
-   <section><name>IEEE 802.15.4</name>
+   <section><name>IEEE 802.15.4 Timeslotted Channel Hopping </name>
+   
+      <t> IEEE Std 802.15.4 TSCH was the first IEEE radio specification aimed
+	  directly at Industrial IoT applications, for use in 
+	  Process Control loops and monitoring. It was adopted and widely deployed
+	  in the last 10 years by the major competing standards, Wireless HART and ISA100.11a. 
+	  </t><t>
+	  While the MAC/PHY standards enable the relatively slow rates used in Process
+	  Control (typically in the order of 4-5 per second), the technology is not suited for the faster periods (1 to 10ms) used in Factory Automation and motion control.
+	  </t>
 
    <section><name>Provenance and Documents</name>
    <t>
@@ -597,7 +609,6 @@
 
    </section><!--Provenance and Documents-->
 
-   <section><name>TimeSlotted Channel Hopping</name>
 
 
    <section><name>General Characteristics</name>
@@ -1219,24 +1230,44 @@
 
    </section><!-- Applicability to deterministic flows  -->
 
-   </section> <!-- IEEE 802.15.4  -->
-
-      <section><name>Summary</name>
-      <t> IEEE Std 802.15.4 TSCH was the first IEEE radio specification aimed
-	  directly at Industrial IoT applications, for use in 
-	  Process Control loops and monitoring. It was adopted and widely deployed
-	  in the last 10 years by the major competing standards, Wireless HART and ISA100.11a. 
-	  </t><t>
-	  While the MAC/PHY standards enable the relatively slow rates used in Process
-	  Control (typically in the order of 4-5 per second), the technology is not suited for the faster periods (1 to 10ms) used in Factory Automation and motion control.
-	  </t>
-
-      </section>
-   </section> <!-- TimeSlotted Channel Hopping-->
+   </section> <!-- IEEE 802.15.4  TimeSlotted Channel Hopping-->
 
 
 
    <section><name>5G</name>
+
+
+
+   <t>
+   5G technology enables deterministic communication. Based on the centralized
+   admission control and the scheduling of the wireless resources, licensed or
+   unlicensed, quality of service such as latency and reliability can be
+   guaranteed. 5G contains several features to achieve ultra-reliable and low
+   latency performance, e.g., support for different OFDM numerologies and
+   slot-durations, as well as fast processing capabilities and redundancy
+   techniques that lead to achievable latency numbers of below 1ms with
+   99.999% or higher confidence.
+   </t>
+
+   <t>
+   5G also includes features to support Industrial IoT use cases, e.g., via the
+   integration of 5G with TSN. This includes 5G capabilities for each TSN
+   component, latency, resource management, time synchronization, and
+   reliability. Furthermore, 5G support for TSN can be leveraged when 5G is used
+   as subnet technology for DetNet, in combination with or instead of TSN, which
+   is the primary subnet for DetNet. In addition, the support for integration
+   with TSN reliability was added to 5G by making DetNet reliability also
+   applicable, due to the commonalities between TSN and DetNet reliability.
+   Moreover, providing IP service is native to 5G and 3GPP Release 18 adds direct
+   support for DetNet to 5G.
+   </t>
+
+   <t>
+   Overall, 5G provides scheduled wireless segments with high reliability and
+   availability. In addition, 5G includes capabilities for integration to IP
+   networks. This makes 5G a suitable technology to apply RAW upon.
+   </t>
+
 
    <section><name>Provenance and Documents</name>
    <t>
@@ -2079,50 +2110,34 @@ Nnssf|  Nnef|   Nnrf|    Npcf|    Nudm|    Naf|
    </section><!-- Applicability to Deterministic Flows   -->
 
 
-   <section><name>Summary</name>
-
-   <t>
-   5G technology enables deterministic communication. Based on the centralized
-   admission control and the scheduling of the wireless resources, licensed or
-   unlicensed, quality of service such as latency and reliability can be
-   guaranteed. 5G contains several features to achieve ultra-reliable and low
-   latency performance, e.g., support for different OFDM numerologies and
-   slot-durations, as well as fast processing capabilities and redundancy
-   techniques that lead to achievable latency numbers of below 1ms with
-   99.999% or higher confidence.
-   </t>
-
-   <t>
-   5G also includes features to support Industrial IoT use cases, e.g., via the
-   integration of 5G with TSN. This includes 5G capabilities for each TSN
-   component, latency, resource management, time synchronization, and
-   reliability. Furthermore, 5G support for TSN can be leveraged when 5G is used
-   as subnet technology for DetNet, in combination with or instead of TSN, which
-   is the primary subnet for DetNet. In addition, the support for integration
-   with TSN reliability was added to 5G by making DetNet reliability also
-   applicable, due to the commonalities between TSN and DetNet reliability.
-   Moreover, providing IP service is native to 5G and 3GPP Release 18 adds direct
-   support for DetNet to 5G.
-   </t>
-
-   <t>
-   Overall, 5G provides scheduled wireless segments with high reliability and
-   availability. In addition, 5G includes capabilities for integration to IP
-   networks.
-   </t>
-
-   </section><!-- Summary   -->
 
    </section> <!-- 5G -->
 
 
  <section><name>L-band Digital Aeronautical Communications System</name>
+ 
    <t>
 One of the main pillars of the modern Air Traffic Management (ATM) system is the existence of a communication infrastructure that enables efficient aircraft guidance and safe separation in all phases of flight. Although current systems are technically mature, they are suffering from the VHF band’s increasing saturation in high-density areas and the limitations posed by analogue radio. Therefore, aviation globally and the European Union (EU) in particular, strives for a sustainable modernization of the aeronautical communication infrastructure.
 </t><t>
 In the long-term, ATM communication shall transition from analogue VHF voice and VDL2 communication to more spectrum efficient digital data communication. The European ATM Master Plan foresees this transition to be realized for terrestrial communications by the development and implementation of the L-band Digital Aeronautical Communications System (LDACS).
-LDACS shall enable IPv6 based air-ground communication related to the safety and regularity of the flight. The particular challenge is that no new frequencies can be made available for terrestrial aeronautical communication. It was thus necessary to develop procedures to enable the operation of LDACS in parallel with other services in the same frequency band, more in  <xref target='RFC9372'/>.
+</t>
+       <t>
+           LDACS has been designed with applications related to the safety and
+           regularity of the flight in mind.  It has therefore been designed as
+           a deterministic wireless data link (as far as possible).
+       </t>
+       <t>
+           It is a secure, scalable and spectrum efficient data link with
+           embedded navigation capability and thus, is the first truly integrated
+           CNS system recognized by ICAO. During flight tests the LDACS
+           capabilities have been successfully demonstrated. A viable roll-out
+           scenario has been developed which allows gradual introduction of LDACS
+           with immediate use and revenues. Finally, ICAO is developing LDACS
+           standards to pave the way for the            future.
+       </t>
+	   <t>
 
+LDACS shall enable IPv6 based air-ground communication related to the safety and regularity of the flight. The particular challenge is that no new frequencies can be made available for terrestrial aeronautical communication. It was thus necessary to develop procedures to enable the operation of LDACS in parallel with other services in the same frequency band, more in  <xref target='RFC9372'/>.
 </t>
    <section><name>Provenance and Documents</name>
        <t>
@@ -2469,22 +2484,6 @@ y
 
    </section><!-- Applicability to deterministic flows  -->
 
-   <section><name>Summary</name>
-       <t>
-           LDACS has been designed with applications related to the safety and
-           regularity of the flight in mind.  It has therefore been designed as
-           a deterministic wireless data link (as far as possible).
-       </t>
-       <t>
-           It is a secure, scalable and spectrum efficient data link with
-           embedded navigation capability and thus, is the first truly integrated
-           CNS system recognized by ICAO. During flight tests the LDACS
-           capabilities have been successfully demonstrated. A viable roll-out
-           scenario has been developed which allows gradual introduction of LDACS
-           with immediate use and revenues. Finally, ICAO is developing LDACS
-           standards to pave the way for the            future.
-       </t>
-   </section><!-- Summary  -->
 
    </section><!-- title="L-band Digital Aeronautical Communications System" -->
 
