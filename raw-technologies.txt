@@ -16,7 +16,7 @@ Expires: 16 April 2025                                             Intel
 
 
               Reliable and Available Wireless Technologies
-                     draft-ietf-raw-technologies-10
+                     draft-ietf-raw-technologies-12
 
 Abstract
 
