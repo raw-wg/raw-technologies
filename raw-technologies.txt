@@ -82,9 +82,9 @@ Table of Contents
        4.2.2.  Applicability to Deterministic Flows  . . . . . . . .  11
      4.3.  802.11be Extreme High Throughput (EHT)  . . . . . . . . .  13
        4.3.1.  General Characteristics . . . . . . . . . . . . . . .  13
-       4.3.2.  Applicability to Deterministic Flows  . . . . . . . .  14
+       4.3.2.  Applicability to Deterministic Flows  . . . . . . . .  13
      4.4.  802.11ad and 802.11ay (mmWave operation)  . . . . . . . .  14
-       4.4.1.  General Characteristics . . . . . . . . . . . . . . .  15
+       4.4.1.  General Characteristics . . . . . . . . . . . . . . .  14
        4.4.2.  Applicability to deterministic flows  . . . . . . . .  15
    5.  IEEE 802.15.4 Timeslotted Channel Hopping . . . . . . . . . .  15
      5.1.  Provenance and Documents  . . . . . . . . . . . . . . . .  16
@@ -705,10 +705,7 @@ Internet-Draft              RAW Technologies                October 2024
    expected to improve the integration with 802.1 TSN to support time-
    sensitive applications over Ethernet and Wireless LANs.
 
-   The 802.11be Task Group started its operation in May 2019, therefore,
-   detailed information about specific features is not yet available.
-   Only high level candidate features have been discussed so far,
-   including:
+   The 802.11be main features relevant to this document include:
 
    1.  320MHz bandwidth and more efficient utilization of non-contiguous
        spectrum.
@@ -718,18 +715,6 @@ Internet-Draft              RAW Technologies                October 2024
    3.  QoS enhancements to reduce latency and increase reliability.
 
 
-
-
-
-
-
-
-
-Thubert, et al.           Expires 22 April 2025                [Page 13]
-
-Internet-Draft              RAW Technologies                October 2024
-
-
 4.3.2.  Applicability to Deterministic Flows
 
    The 802.11 Real-Time Applications (RTA) Topic Interest Group (TIG)
@@ -737,6 +722,13 @@ Internet-Draft              RAW Technologies                October 2024
    solution directions to improve support for time-sensitive
    applications in 802.11.  The RTA TIG report [IEEE_doc_11-18-2009-06]
    was used as input to the 802.11be project scope.
+
+
+
+Thubert, et al.           Expires 22 April 2025                [Page 13]
+
+Internet-Draft              RAW Technologies                October 2024
+
 
    Improvements for worst-case latency, jitter and reliability were the
    main topics identified in the RTA report, which were motivated by
@@ -776,16 +768,6 @@ Internet-Draft              RAW Technologies                October 2024
 
 4.4.  802.11ad and 802.11ay (mmWave operation)
 
-
-
-
-
-
-Thubert, et al.           Expires 22 April 2025                [Page 14]
-
-Internet-Draft              RAW Technologies                October 2024
-
-
 4.4.1.  General Characteristics
 
    The IEEE 802.11ad amendment defines PHY and MAC capabilities to
@@ -795,6 +777,14 @@ Internet-Draft              RAW Technologies                October 2024
    that take advantage of beamforming to cope with increased
    attenuation.  An overview of the 802.11ad standard can be found in
    [Nitsche_2015].
+
+
+
+
+Thubert, et al.           Expires 22 April 2025                [Page 14]
+
+Internet-Draft              RAW Technologies                October 2024
+
 
    The IEEE 802.11ay is currently developing enhancements to the
    802.11ad standard to enable the next generation mmWave operation
@@ -832,6 +822,16 @@ Internet-Draft              RAW Technologies                October 2024
    10 years by the major competing standards, Wireless HART and
    ISA100.11a.
 
+   While the MAC/PHY standards enable the relatively slow rates used in
+   Process Control (typically in the order of 4-5 per second), the
+   technology is not suited for the faster periods (1 to 10ms) used in
+   Factory Automation and motion control.
+
+
+
+
+
+
 
 
 
@@ -841,11 +841,6 @@ Thubert, et al.           Expires 22 April 2025                [Page 15]
 
 Internet-Draft              RAW Technologies                October 2024
 
-
-   While the MAC/PHY standards enable the relatively slow rates used in
-   Process Control (typically in the order of 4-5 per second), the
-   technology is not suited for the faster periods (1 to 10ms) used in
-   Factory Automation and motion control.
 
 5.1.  Provenance and Documents
 
@@ -890,6 +885,11 @@ Internet-Draft              RAW Technologies                October 2024
       operation.  The protocol supports agreement on a schedule between
       neighbors, enabling distributed scheduling.
 
+   *  6P goes hand-in-hand with an SF, the policy that decides how to
+      maintain cells and trigger 6P transactions.  The Minimal
+      Scheduling Function (MSF) [RFC9033] is the default SF defined by
+      the 6TiSCH WG.
+
 
 
 
@@ -897,11 +897,6 @@ Thubert, et al.           Expires 22 April 2025                [Page 16]
 
 Internet-Draft              RAW Technologies                October 2024
 
-
-   *  6P goes hand-in-hand with an SF, the policy that decides how to
-      maintain cells and trigger 6P transactions.  The Minimal
-      Scheduling Function (MSF) [RFC9033] is the default SF defined by
-      the 6TiSCH WG.
 
    *  With these mechanisms 6TiSCH can establish layer 2 links between
       neighbouring nodes and support best effort traffic.  RPL [RFC8480]
@@ -946,6 +941,11 @@ Internet-Draft              RAW Technologies                October 2024
    The IEEE 802.15.4 TSCH standard does not define any scheduling
    mechanism but only provides the architecture that establishes a
    slotted structure that can be managed by a proper schedule.  This
+   schedule represents the possible communications of a node with its
+   neighbors, and is managed by a Scheduling Function such as the
+   Minimal Scheduling Function (MSF) [RFC9033].  In MSF, each cell in
+   the schedule is identified by its slotoffset and channeloffset
+   coordinates.  A cell's timeslot offset indicates its position in
 
 
 
@@ -954,11 +954,6 @@ Thubert, et al.           Expires 22 April 2025                [Page 17]
 Internet-Draft              RAW Technologies                October 2024
 
 
-   schedule represents the possible communications of a node with its
-   neighbors, and is managed by a Scheduling Function such as the
-   Minimal Scheduling Function (MSF) [RFC9033].  In MSF, each cell in
-   the schedule is identified by its slotoffset and channeloffset
-   coordinates.  A cell's timeslot offset indicates its position in
    time, relative to the beginning of the slotframe.  A cell's channel
    offset is an index which maps to a frequency at each iteration of the
    slotframe.  Each packet exchanged between neighbors happens within
@@ -1001,6 +996,11 @@ Internet-Draft              RAW Technologies                October 2024
    bounded latency.  The Track structure enables Layer-2 forwarding
    schemes, reducing the overhead of taking routing decisions at the
    Layer-3.
+
+
+
+
+
 
 
 

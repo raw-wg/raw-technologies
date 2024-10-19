@@ -420,7 +420,8 @@
         			The <xref target='IEEE80211be'/>  ammendment was the next major 802.11 amendment (after IEEE Std 802.11ax-2021) for operation in the 2.4, 5 and 6 GHz bands. 802.11be is expected to include new PHY and MAC features and it is targeting extremely high throughput (at least 30 Gbps), as well as enhancements to worst case latency and jitter. It is also expected to improve the integration with 802.1 TSN to support time-sensitive applications over Ethernet and Wireless LANs.
         			</t>
         		<t>
-        			The 802.11be Task Group started its operation in May 2019, therefore, detailed information about specific features is not yet available. Only high level candidate features have been discussed so far, including:
+        			
+					The 802.11be main features relevant to this document include:
         			</t><ol type='%d.'>
         				<li> 320MHz bandwidth and more efficient utilization of non-contiguous spectrum. </li>
         				<li> Multi-link operation. </li>
