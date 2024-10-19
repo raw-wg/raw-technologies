@@ -376,15 +376,10 @@ Internet-Draft              RAW Technologies                October 2024
    process, and advocates them on a global basis.  The most widely used
    standards are for Ethernet, Bridging and Virtual Bridged LANs
    Wireless LAN, Wireless PAN, Wireless MAN, Wireless Coexistence, Media
-   Independent Handover Services, and Wireless RAN.  An individual
-   Working Group provides the focus for each area.  Standards produced
-   by the IEEE 802 SC are freely available from the IEEE GET Program
-   after they have been published in PDF for six months.
+   Independent Handover Services, and Wireless RAN.
 
    The IEEE 802.11 Wireless LAN (WLAN) standards define the underlying
-   MAC and PHY layers for the Wi-Fi technology.  Wi-Fi/802.11 is one of
-   the most successful wireless technologies, supporting many
-   application domains.  While previous 802.11 generations, such as
+   MAC and PHY layers for the Wi-Fi technology.   While previous 802.11 generations, such as
    802.11n and 802.11ac, have focused mainly on improving peak
 
 
@@ -397,22 +392,21 @@ Internet-Draft              RAW Technologies                October 2024
    throughput, more recent generations are also considering other
    performance vectors, such as efficiency enhancements for dense
    environments in IEEEE Std 802.11ax [IEEE Std 802.11ax], throughput,
-   latency, and reliability enhancements in P802.11be [IEEE 802.11be
-   WIP].
+   latency, and reliability enhancements in 802.11be [IEEE 802.11be].
 
    IEEE Std 802.11-2012 introduced support for TSN time synchronization
    based on IEEE 802.1AS over 802.11 Timing Measurement protocol.  IEEE
    Std 802.11-2016 extended the 802.1AS operation over 802.11 Fine
    Timing Measurement (FTM), as well as the Stream Reservation Protocol
    (IEEE 802.1Qat). 802.11 WLANs can also be part of a 802.1Q bridged
-   networks with enhancements enabled by the 802.11ak amendment now
+   networks with enhancements enabled by the 802.11ak amendment 
    retrofitted in IEEE Std 802.11-2020.  Traffic classification based on
    802.1Q VLAN tags is also supported in 802.11.  Other 802.1 TSN
    capabilities such as 802.1Qbv and 802.1CB, which are media agnostic,
-   can already operate over 802.11.  The IEEE Std 802.11ax-2021 adds new
+   can already operate over 802.11.  The IEEE Std 802.11ax-2021 defines additional
    scheduling capabilities that can enhance the timeliness performance
    in the 802.11 MAC and achieve lower bounded latency.  The IEEE
-   802.11be is undergoing efforts to enhance the support for 802.1 TSN
+   802.11be has introduced features to enhance the support for 802.1 TSN
    capabilities especially related to worst-case latency, reliability
    and availability.
 
@@ -473,27 +467,29 @@ Internet-Draft              RAW Technologies                October 2024
    providing more reliable and predictable wireless connectivity and
    support time-sensitive applications:
 
-   IEEE 802.11ax D4.0: Enhancements for High Efficiency (HE).  [IEEE Std
+   IEEE 802.11ax : Enhancements for High Efficiency (HE).  [IEEE Std
       802.11ax]
 
-   IEEE 802.11be Extreme High Throughput (EHT).  [IEEE 802.11be WIP]
+   IEEE 802.11be Extreme High Throughput (EHT).  [IEEE Std 802.11be]
 
    IEE 802.11ay Enhanced throughput for operation in license-exempt
    bands above 45 GHz.  [IEEE Std 802.11ay]
 
+IEEE 802.11bn Ultra-High Reliability (UHR) [PIEEE 802.11bn WIP]
+
 
    The main 802.11ax, 802.11be, 802.11ad, and 802.11ay capabilities and
    their relevance to RAW are discussed in the remainder of this
-   section.
+   section. As PIEEE 802.11bn is still in early stages of development, its capabilities are not included in this document.
 
 4.2.  802.11ax High Efficiency (HE)
 
 4.2.1.  General Characteristics
 
    The next generation Wi-Fi (Wi-Fi 6) is based on the IEEE802.11ax
-   amendment [IEEE Std 802.11ax], which includes new capabilities to
-   increase efficiency, control and reduce latency.  Some of the new
-   features include higher order 1024-QAM modulation, support for uplink
+   amendment [IEEE Std 802.11ax], which includes specific capabilities to
+   increase efficiency, control and reduce latency.  Some of these 
+features include higher order 1024-QAM modulation, support for uplink
    multiple user (MU) multiple input multiple output (MIMO), orthogonal
    frequency-division multiple access (OFDMA), trigger-based access and
    Target Wake time (TWT) for enhanced power savings.  The OFDMA mode
@@ -510,13 +506,13 @@ Internet-Draft              RAW Technologies                October 2024
    schedule multi-user transmissions, which is a key capability required
    to increase latency predictability and reliability for time-sensitive
    flows. 802.11ax can operate in up to 160 MHz channels and it includes
-   support for operation in the new 6 GHz band, which is expected to be
+   support for operation in the new 6 GHz band, which has been
    open to unlicensed use by the FCC and other regulatory agencies
    worldwide.
 
 4.2.1.1.  Multi-User OFDMA and Trigger-based Scheduled Access
 
-   802.11ax introduced a new OFDMA mode in which multiple users can be
+   802.11ax introduced an OFDMA mode in which multiple users can be
    scheduled across the frequency domain.  In this mode, the Access
    Point (AP) can initiate multi-user (MU) Uplink (UL) transmissions in
    the same PHY Protocol Data Unit (PPDU) by sending a trigger frame.
@@ -546,9 +542,7 @@ Internet-Draft              RAW Technologies                October 2024
    current RU allocation algorithms provide a way to achieve traffic
    isolation per station which while per se does not support time-aware
    scheduling, is a key aspect to assist reliability, as it provides
-   traffic isolation in a shared medium.  IEEE 802.11be (see
-   Section 4.3) is currently considering further and more flexible
-   approaches concerning RU allocation.
+   traffic isolation in a shared medium. 
 
 
 
@@ -575,7 +569,7 @@ Internet-Draft              RAW Technologies                October 2024
    MIMO, which helps improve reliability.  The UL MU MIMO capability is
    also enabled by the trigger based access operation in 802.11ax.
 
-4.2.1.4.  Support for 6GHz band
+4.2.1.4.  Support for 6GHz Band
 
    The 802.11ax specification [IEEE Std 802.11ax] includes support for
    operation in the new 6 GHz band.  Given the amount of new spectrum
@@ -583,7 +577,7 @@ Internet-Draft              RAW Technologies                October 2024
    802.11ax) will be able to operate in this new band, 802.11ax
    operation in this new band can be even more efficient.
 
-4.2.2.  Applicability to deterministic flows
+4.2.2.  Applicability to Deterministic Flows
 
    TSN capabilities, as defined by the IEEE 802.1 TSN standards, provide
    the underlying mechanism for supporting deterministic flows in a
@@ -627,10 +621,10 @@ Internet-Draft              RAW Technologies                October 2024
    capabilities, as well as redundancy and diversity mechanisms that can
    be used to provide more predictable and reliable performance.
 
-4.2.2.1.  802.11 Managed network operation and admission control
+4.2.2.1.  802.11 Managed Network Operation and Admission Control
 
    Time-sensitive applications and TSN standards are expected to operate
-   in a managed network (e.g. industrial/enterprise network).  This
+   in a managed network (e.g., industrial/enterprise network).  This
    enables to carefully manage and integrate the Wi-Fi operation with
    the overall TSN management framework, as defined in the
    [IEEE802.1Qcc] specification.
@@ -646,7 +640,7 @@ Internet-Draft              RAW Technologies                October 2024
    interference and legacy devices within tight time-constraints need to
    be explored.
 
-4.2.2.2.  Scheduling for bounded latency and diversity
+4.2.2.2.  Scheduling for Bounded Latency and Diversity
 
    As discussed earlier, the [IEEE Std 802.11ax] OFDMA mode introduces
    the possibility of assigning different RUs (time/frequency resources)
@@ -694,7 +688,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 4.3.1.  General Characteristics
 
-   The ongoing [IEEE 802.11be WIP] project is the next major 802.11
+   The IEEE 802.11be ammendement was the next major 802.11
    amendment (after IEEE Std 802.11ax-2021) for operation in the 2.4, 5
    and 6 GHz bands. 802.11be is expected to include new PHY and MAC
    features and it is targeting extremely high throughput (at least 30
@@ -702,9 +696,7 @@ Internet-Draft              RAW Technologies                October 2024
    is also expected to improve the integration with 802.1 TSN to support
    time-sensitive applications over Ethernet and Wireless LANs.
 
-   The 802.11be Task Group started its operation in May 2019, therefore,
-   detailed information about specific features is not yet available.
-   Only high level candidate features have been discussed so far,
+   The 802.11be main features relevant to this document include:
    including:
 
    1.  320MHz bandwidth and more efficient utilization of non-contiguous
@@ -712,16 +704,7 @@ Internet-Draft              RAW Technologies                October 2024
 
    2.  Multi-link operation.
 
-   3.  16 spatial streams and related MIMO enhancements.
-
-   4.  Multi-Access Point (AP) Coordination.
-
-   5.  Enhanced link adaptation and retransmission protocol, e.g.
-       Hybrid Automatic Repeat Request (HARQ).
-
-   6.  Any required adaptations to regulatory rules for the 6 GHz
-       spectrum.
-
+   3. QoS enhancements to reduce latency and increaes reliability
 
 
 
@@ -745,40 +728,20 @@ Internet-Draft              RAW Technologies                October 2024
    capabilities, such as time-aware (802.1Qbv) shaping and packet
    replication and elimination as defined in 802.1CB.
 
-   802.11be is expected to build on and enhance 802.11ax capabilities to
+   802.11be builds on and enhance 802.11ax capabilities to
    improve worst case latency and jitter.  Some of the enhancement areas
    are discussed next.
 
-4.3.2.1.  Enhanced scheduled operation for bounded latency
+4.3.2.1.  Enhanced Scheduled Operation for Bounded Latency
 
-   In addition to the throughput enhancements, 802.11be will leverage
+   In addition to the throughput enhancements, 802.11be leverages
    the trigger-based scheduled operation enabled by 802.11ax to provide
-   efficient and more predictable medium access. 802.11be is expected to
-   include enhancements to reduce overhead and enable more efficient
-   operation in managed network deployments [IEEE_doc_11-19-0373-00].
+   efficient and more predictable medium access. 
 
-4.3.2.2.  Multi-AP coordination
-
-   Multi-AP coordination is one of the main new candidate features in
-   802.11be.  It can provide benefits in throughput and capacity and has
-   the potential to address some of the issues that impact worst case
-   latency and reliability.  Multi-AP coordination is expected to
-   address the contention due to overlapping Basic Service Sets (OBSS),
-   which is one of the main sources of random latency variations.
-
-   Overall, multi-AP coordination algorithms consider three different
-   phases: setup (where APs handling overlapping BSSs are assigned roles
-   in a manual or automated way, e.g., coordinator and coordinated APs);
-   coordination (where APs establish links among themselves, e.g., from
-   a coordinating AP to coordinated APs; and then assign resources to
-   served stations); transmission (where the coordinating APs optimize
-   the distribution of the transmission opportunities).
-
-   Several multi-AP coordination approaches have been discussed with
-   different levels of complexities and benefits, but specific
-   coordination methods have not yet been defined.  Out of the different
-   categories, MAC-driven examples include: coordinated OFDMA (Co-
-
+802.11be introduced QoS signaling enhancements, such as additional QoS characteristics
+element, that enables STAs to provide detailed information about deterministic
+traffic stream to the AP. This new capability helps AP implementation
+to better support scheduling for deterministic flows.
 
 
 Thubert, et al.           Expires 16 April 2025                [Page 14]
@@ -786,21 +749,17 @@ Thubert, et al.           Expires 16 April 2025                [Page 14]
 Internet-Draft              RAW Technologies                October 2024
 
 
-   OFDMA); Coordinated TDMA (Co-TDMA); HARQ; whereas PHY-driven examples
-   include: Coordinated Spatial Reuse (Co-SR) and Coordinated
-   Beamforming (Co-BF).
 
 4.3.2.3.  Multi-link operation
 
-   802.11be will introduce new features to improve operation over
+   802.11be introduces new features to improve operation over
    multiple links and channels.  By leveraging multiple links/channels,
    802.11be can isolate time-sensitive traffic from network congestion,
    one of the main causes of large latency variations.  In a managed
    802.11be network, it should be possible to steer traffic to certain
    links/channels to isolate time-sensitive traffic from other traffic
-   and help achieve bounded latency.  The multi-link operation (MLO) has
-   been already introduced in the 802.11be Draft and it can also enhance
-   latency and reliability by enabling data frames to be duplicated
+   and help achieve bounded latency.  The multi-link operation (MLO) is a major feature in the 802.11be 
+that can enhance latency and reliability by enabling data frames to be duplicated
    across links.
 
 4.4.  802.11ad and 802.11ay (mmWave operation)
