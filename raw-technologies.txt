@@ -697,7 +697,7 @@ Internet-Draft              RAW Technologies                October 2024
 
 4.3.1.  General Characteristics
 
-   The [IEEE 802.11be] ammendement was the next major 802.11 amendment
+   The [IEEE 802.11be] ammendment was the next major 802.11 amendment
    (after IEEE Std 802.11ax-2021) for operation in the 2.4, 5 and 6 GHz
    bands. 802.11be is expected to include new PHY and MAC features and
    it is targeting extremely high throughput (at least 30 Gbps), as well
