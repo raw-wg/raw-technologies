@@ -11,7 +11,7 @@
 <?rfc subcompact="no"?>
 <?rfc authorship="yes"?>
 <?rfc tocappendix="yes"?>
-<rfc  xmlns:xi="http://www.w3.org/2001/XInclude" category="info" ipr='trust200902' tocInclude="true"  obsoletes="" updates="" submissionType="IETF" xml:lang="en" version="3" docName="draft-ietf-raw-technologies-13" >
+<rfc  xmlns:xi="http://www.w3.org/2001/XInclude" category="info" ipr='trust200902' tocInclude="true"  obsoletes="" updates="" submissionType="IETF" xml:lang="en" version="3" docName="draft-ietf-raw-technologies-14" >
 
 <front>
    <title abbrev='RAW Technologies'>Reliable and Available Wireless Technologies</title>
@@ -89,7 +89,7 @@
 	  The studied
       technologies are Wi-Fi 6/7, TimeSlotted Channel Hopping (TSCH), 3GPP
       5G, and L-band Digital Aeronautical Communications System (LDACS).
-	  Those technologies were selected as part of the WG formation and listed in the WG charter.  
+	  Those technologies were selected as part of the RAW WG formation and listed in the WG charter.  
       </t>
    </abstract>
 </front>
@@ -328,7 +328,7 @@
         </t>
      		<t>
      		The main 802.11ax, 802.11be, 802.11ad, and 802.11ay capabilities and their relevance to RAW are discussed in the remainder of this section.
-			As PIEEE 802.11bn is still in early stages of development, its capabilities are not included in this document.
+			As P802.11bn is still in early stages of development, its capabilities are not included in this document.
 
 			
             </t>
@@ -551,7 +551,7 @@
    involve a central controller that computes redundant paths for industrial
    process control traffic over a TSCH mesh. Moreover, ISA100.11a introduces
    IPv6 <xref target='RFC8200'/> capabilities with a Link-Local Address for the join process and a
-   global unicast addres for later exchanges, but the IPv6 traffic typically
+   global unicast address for later exchanges, but the IPv6 traffic typically
    ends at a local application gateway and the full power of IPv6 for end-to-end
    communication is not enabled.
    </t>
@@ -906,11 +906,15 @@
             An example of such tooling can be found in the context of
             <xref target='RFC8279'>BIER</xref> and more specifically
             <xref target='RFC9262'>BIER Traffic Engineering</xref>
-            (BIER-TE):
+            (BIER-TE).
+            
+			<!--
+            removed based on MB's review
             <xref target='I-D.thubert-bier-replication-elimination'/>
             leverages BIER-TE to control the process of PREF, and to provide
             traceability of these operations, in the deterministic dataplane,
             along a complex Track.
+            -->
 			<!--
             For the 6TiSCH type of constrained environment,
             <xref target='I-D.thubert-6lo-bier-dispatch'/> enables an efficient
@@ -2508,8 +2512,7 @@ y
 
    <section anchor='sec'><name>Security Considerations</name>
       <t>
-	  
-. 
+	 
     	Most RAW technologies integrate some authentication or encryption
     	mechanisms that were defined outside the IETF.
 		
@@ -2555,7 +2558,6 @@ y
 
    <references><name>Normative References</name>
    <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.5673.xml'/> <!-- Industrial Routing Requirements in Low-Power and Lossy Networks -->
-   <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8200.xml'/> <!-- Internet Protocol, Version 6 (IPv6) Specification -->
    <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8557.xml'/>
    <!-- DetNet PS -->
    <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8655.xml'/>
@@ -2572,6 +2574,7 @@ y
 
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9033.xml'/> <!-- 6Tisch MSF -->
 
+   <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8200.xml'/> <!-- Internet Protocol, Version 6 (IPv6) Specification -->   
 
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.6550.xml'/> <!-- RPL -->
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.6551.xml'/> <!-- RPL metrics -->
@@ -2579,11 +2582,11 @@ y
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.7276.xml'/> <!-- OAM -->
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8279.xml'/> <!-- Mcast BIER -->
 	  <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9023.xml'/> <!-- DetNet IP over TSN -->
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9262.xml'/> <!-- bier-te-architecture -->
+     <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9262.xml'/>  <!--  bier-te-architecture -->
 	  
 	  <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-roll-nsa-extension.xml'/>
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-roll-dao-projection.xml'/>
-      <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.thubert-bier-replication-elimination.xml'/>
+   <!--   <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.thubert-bier-replication-elimination.xml'/> -->
       <!--xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.thubert-6lo-bier-dispatch.xml'/ --> 
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-6tisch-coap.xml'/>
 
