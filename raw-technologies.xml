@@ -14,7 +14,7 @@
 <rfc  xmlns:xi="http://www.w3.org/2001/XInclude" category="info" ipr='trust200902' tocInclude="true"  obsoletes="" updates="" submissionType="IETF" xml:lang="en" version="3" docName="draft-ietf-raw-technologies-15" >
 
 <front>
-   <title abbrev='RAW Technologies'>Reliable and Available Wireless Technologies</title>
+   <title abbrev='RAW Technologies'>Reliable and Available Wireless (RAW) Technologies</title>
    <author initials='P' surname='Thubert' fullname='Pascal Thubert' role='editor'>
       <!-- <organization abbrev='Cisco Systems'>Cisco Systems, Inc</organization> -->
       <address>
@@ -82,7 +82,7 @@
    <workgroup>RAW</workgroup>
    <keyword>Draft</keyword>
    <abstract>
-      <t>    This document browses the short and middle range radio technologies
+      <t>    This document surveys the short and middle range radio technologies
       that are suitable to provide a DetNet/RAW service over, presents the
       characteristics that RAW may leverage, and explores the applicability
       of the technologies to carry deterministic flows, as of its time of publication.
@@ -145,7 +145,7 @@
    RAW defines a network-layer control loop that optimizes the use of links with constrained spectrum and energy while maintaining the expected connectivity properties, typically reliability and latency. The control loop involves communication monitoring through Operations, Administration and Maintenance (OAM), path control through a Path computation Element (PCE) and a runtime distributed Path Selection Engine (PSE) and extended packet replication, elimination, and ordering functions (PREOF).
    </t>
    <t>
-   This document browses the short and middle range radio technologies that are suitable to provide a DetNet/RAW service over,
+   This document surveys the short and middle range radio technologies that are suitable to provide a DetNet/RAW service over,
    presents the characteristics that RAW may leverage, and explores the applicability of the technologies to carry deterministic flows. 
    The studied technologies are Wi-Fi 6/7, TimeSlotted Channel Hopping (TSCH), 3GPP 5G, and L-band Digital Aeronautical Communications System (LDACS).
    The purpose for this is to support work at RAW to justify and enable DetNet work on those and possibly more compatible technologies.
@@ -247,7 +247,7 @@
    </li>
    <li>
    Transmissions can be also scheduled on multiple channels in parallel,
-   which enables to use the full available spectrum while avoiding the
+   which enables using the full available spectrum while avoiding the
    hidden terminal problem, e.g., when the next packet in a same flow interferes
    on a same channel with the previous one that progressed a few hops farther.
    </li>
@@ -261,8 +261,8 @@
    </li>
    <li>
    Finally, scheduling plays a critical role to save energy. In IoT, energy is
-   the foremost concern, and synchronizing sender and listener enables to
-   always maintain them in deep sleep when there is no scheduled
+   the foremost concern, and synchronizing sender and listener enables 
+   always maintaining them in deep sleep when there is no scheduled
    transmission. This avoids idle listening and long preambles and enables long
    sleep periods between traffic and resynchronization, allowing
    battery-operated nodes to operate in a mesh topology for multiple years.
@@ -275,13 +275,20 @@
 
    <section><name>IEEE 802.11</name>
    
-      <t> Since Wi-Fi 6, the evolution of the IEEE Std 802.11 standard is taking a new direction, looking not any more for more speed, but also for reliability, to enable new fields of application such as Industrial IoT and Virtual Reality.
+      <t> In the recent years, the evolution of the IEEE Std 802.11 standard is taking a new direction, looking not any more for more speed, but also for reliability, to enable new fields of application such as Industrial IoT and Virtual Reality.
 	  </t>
-	  <t>One step at a time, Wi-Fi 6, 7, and now 8 include more capabilities to schedule and deliver frames in due time at fast rates. Still, as any radio technology, Wi-Fi is sensitive to frame loss, which can only be combatted with the maximum use of diversity, in space, time, channel, and even technology. 
+	  <t>Leveraging IEEE Std 802.11, the Wi-Fi Alliance  <xref target="WFA"/> (WFA) delivered Wi-Fi 6, 7, and now 8 with more capabilities to schedule and deliver frames in due time at fast rates. Still, as any radio technology, Wi-Fi is sensitive to frame loss, which can only be combated with the maximum use of diversity, in space, time, channel, and even technology. 
 	  </t>
 	  <t>
+     In parallel, the Avnu Alliance <xref target="Avnu"/>, which focuses on applications of TSN for real time data, formed a workgroup for uses case with TSN capabilities over wireless, leveraging both 3GPP and IEEE Std 802.11 standards.
+	  
+	  </t>
+     <t>
 	  To achieve the latter, the reliability must be handled at an upper layer that can select Wi-Fi and other wired or wireless technologies for parallel transmissions. This is where RAW comes into play.
 	  </t>
+     <t>
+     This section surveys 802.11 features that are most relevant to RAW, noting that there are a great many more in the specification, some of which possibly of interest as well for a RAW solution.  For instance, frame fragmentation reduces the impact of a very transient transmission loss, both on latency and energy consumption.
+      </t>
 
         <section><name>Provenance and Documents</name>
 
@@ -290,17 +297,17 @@
    The IEEE 802 LAN/MAN Standards Committee (SC) develops and maintains networking standards and recommended practices for local, metropolitan, and other area networks, using an open and accredited process, and advocates them on a global basis. The most widely used standards are for Ethernet, Bridging and Virtual Bridged LANs Wireless LAN, Wireless PAN, Wireless MAN, Wireless Coexistence, Media Independent Handover Services, and Wireless RAN. An individual Working Group provides the focus for each area.
    </t>
         <t>
-        	The IEEE 802.11 Wireless LAN (WLAN) standards define the underlying MAC and PHY layers for the Wi-Fi technology. While previous 802.11 generations, such as 802.11n and 802.11ac, have focused mainly on improving peak throughput, more recent generations are also considering other performance vectors, such as efficiency enhancements for dense environments in IEEEE Std 802.11ax <xref target='IEEE80211ax'/>, throughput, latency, and reliability enhancements in P802.11be <xref target='IEEE80211be'/>.
-        	</t>
+        	The IEEE 802.11 Wireless LAN (WLAN) standards define the underlying MAC and PHY layers for the Wi-Fi technology. While previous 802.11 generations, such as 802.11n and 802.11ac, have focused mainly on improving peak throughput, more recent generations are also considering other performance vectors, such as efficiency enhancements for dense environments in IEEEE Std 802.11ax <xref target='IEEE80211ax'/> (approved in 2021), throughput, latency, and reliability enhancements in P802.11be <xref target='IEEE80211be'/> (approved in 2024).
+         </t>
         <t>
-        	IEEE Std 802.11-2012 introduced support for TSN time synchronization based on IEEE 802.1AS over 802.11 Timing Measurement protocol. IEEE Std 802.11-2016 extended the 802.1AS operation over 802.11 Fine Timing Measurement (FTM), as well as the Stream Reservation Protocol (IEEE 802.1Qat). 802.11 WLANs can also be part of a 802.1Q bridged networks with enhancements enabled by the 802.11ak amendment retrofitted in IEEE Std 802.11-2020. Traffic classification based on 802.1Q VLAN tags is also supported in 802.11. Other 802.1 TSN capabilities such as 802.1Qbv and 802.1CB, which are media agnostic, can already operate over 802.11. The IEEE Std 802.11ax-2021 defines additional scheduling capabilities that can enhance the timeliness performance in the 802.11 MAC and achieve lower bounded latency. The IEEE 802.11be has introduced features to enhance the support for 802.1 TSN capabilities especially related to worst-case latency, reliability and availability.
+        	IEEE Std 802.11-2012 includes support for TSN time synchronization based on IEEE 802.1AS over 802.11 Timing Measurement protocol. IEEE Std 802.11-2016 additionally includes an extension to the 802.1AS operation over 802.11 for Fine Timing Measurement (FTM), as well as the Stream Reservation Protocol (IEEE 802.1Qat). 802.11 WLANs can also be part of a 802.1Q bridged networks with enhancements enabled by the 802.11ak amendment retrofitted in IEEE Std 802.11-2020. Traffic classification based on 802.1Q VLAN tags is also supported in 802.11. Other 802.1 TSN capabilities such as 802.1Qbv and 802.1CB, which are media agnostic, can already operate over 802.11. The IEEE Std 802.11ax-2021 defines additional scheduling capabilities that can enhance the timeliness performance in the 802.11 MAC and achieve lower bounded latency. The IEEE 802.11be has introduced features to enhance the support for 802.1 TSN capabilities especially related to worst-case latency, reliability and availability.
 
 	</t>
     <t>
 		The IEEE 802.11 working group has been working in collaboration with the IEEE 802.1 working group for several years extending some 802.1 features over 802.11. As with any wireless media, 802.11 imposes new constraints and restrictions to TSN-grade QoS, and tradeoffs between latency and reliability guarantees must be considered as well as managed deployment requirements. An overview of 802.1 TSN capabilities and challenges for their extensions to 802.11 are discussed in <xref target='Cavalcanti_2019'/>.
      		</t>
      		<t>
-            Wi-Fi Alliance (WFA) is the worldwide network of companies that drives global Wi-Fi adoption and evolution through thought leadership, spectrum advocacy, and industry-wide collaboration. The WFA work helps ensure that Wi-Fi devices and networks provide users the interoperability, security, and reliability they have come to expect.
+            Wi-Fi Alliance is the worldwide network of companies that drives global Wi-Fi adoption and evolution through thought leadership, spectrum advocacy, and industry-wide collaboration. The WFA work helps ensure that Wi-Fi devices and networks provide users the interoperability, security, and reliability they have come to expect.
         	</t>
         	<t>
 	    Avnu Alliance is also a global industry forum developing interoperability testing for TSN capable devices across multiple media including Ethernet, Wi-Fi, and 5G.
@@ -369,7 +376,7 @@
         		</section> <!-- Improved PHY Robustness -->
         		<section><name>Support for 6GHz Band</name>
         				<t>
-        					The 802.11ax specification <xref target='IEEE80211ax'/> includes support for operation in the new 6 GHz band. Given the amount of new spectrum available as well as the fact that no legacy 802.11 device (prior 802.11ax) will be able to operate in this new band, 802.11ax operation in this new band can be even more efficient.
+        					The 802.11ax specification <xref target='IEEE80211ax'/> includes support for operation in the 6 GHz band. Given the amount of new spectrum available as well as the fact that no legacy 802.11 device (prior 802.11ax) will be able to operate in this band, 802.11ax operation in this new band can be even more efficient.
         					</t>
         		</section> <!-- Support for 6GHz band -->
         	</section> <!-- General Characteristics-->
@@ -417,7 +424,7 @@
 
         	<section><name>General Characteristics</name>
         		<t>
-        			The <xref target='IEEE80211be'/>  ammendment was the next major 802.11 amendment (after IEEE Std 802.11ax-2021) for operation in the 2.4, 5 and 6 GHz bands. 802.11be is expected to include new PHY and MAC features and it is targeting extremely high throughput (at least 30 Gbps), as well as enhancements to worst case latency and jitter. It is also expected to improve the integration with 802.1 TSN to support time-sensitive applications over Ethernet and Wireless LANs.
+        			The <xref target='IEEE80211be'/>  ammendment was the next major 802.11 amendment (after IEEE Std 802.11ax-2021) for operation in the 2.4, 5 and 6 GHz bands. 802.11be includes new PHY and MAC features and it is targeting extremely high throughput (at least 30 Gbps), as well as enhancements to worst case latency and jitter. It is also expected to improve the integration with 802.1 TSN to support time-sensitive applications over Ethernet and Wireless LANs.
         			</t>
         		<t>
         			
@@ -478,7 +485,7 @@
 				
         		<section><name>Multi-link operation</name>
         			<t>
-        				802.11be will introduce new features to improve operation over multiple links and channels. By leveraging multiple links/channels, 802.11be can isolate time-sensitive traffic from network congestion, one of the main causes of large latency variations. In a managed 802.11be network, it should be possible to steer traffic to certain links/channels to isolate time-sensitive traffic from other traffic and help achieve bounded latency. 
+        				802.11be introduces new features to improve operation over multiple links and channels. By leveraging multiple links/channels, 802.11be can isolate time-sensitive traffic from network congestion, one of the main causes of large latency variations. In a managed 802.11be network, it should be possible to steer traffic to certain links/channels to isolate time-sensitive traffic from other traffic and help achieve bounded latency. 
 						The multi-link operation (MLO) is a major feature in the 802.11be amendment that can enhance latency and reliability by enabling data frames to be duplicated across links.
         			</t>
         		</section> <!--Multi-link operation-->
@@ -606,7 +613,7 @@
    <t>
    There are several works that can be used to complement the overview provided in this document.
    For example <xref target='vilajosana21'/> provides a detailed description of the 6TiSCH protocols,
-   how they are linked together and how they are integrated to other standards like RPL and 6Lo.
+   how they are linked together and how they are integrated with other standards like RPL and 6Lo.
    <!--
    <xref target='morell13'/> introduces how label switching can be implemented in a TSCH network.
    It proposes a policy to distribute labels in multihop network so as to enable differential services
@@ -656,7 +663,7 @@
     The Time-Frequency Division Multiple Access provided by TSCH enables the
     orchestration of traffic flows, spreading them in time and frequency,
     and hence enabling an efficient management of the bandwidth utilization.
-    Such efficient bandwidth utilization can be combined to OFDM modulations
+    Such efficient bandwidth utilization can be combined with OFDM modulations
     also supported by the IEEE802.15.4 standard <xref target='IEEE802154'/>
     since the 2015 version.
    </t>
@@ -703,7 +710,7 @@
    Packet Replication and Elimination (PRE), over non congruent branches.
    PRE may be used to complement layer-2 ARQ and
    receiver-end Ordering to complete/extend the PREOF functions. This enables
-   to meet industrial expectations of packet delivery within bounded delay
+   meeting industrial expectations of packet delivery within bounded delay
    over a Track that includes wireless links, even when the Track
    extends beyond the
    6TiSCH network.
@@ -790,7 +797,7 @@
    <section anchor='fwd'><name>Track Forwarding</name>
       <t>
          By forwarding, the 6TiSCH Architecture <xref target='RFC9030'/> means
-         the per-packet operation that allows to deliver a packet to a next hop
+         the per-packet operation that allows delivering a packet to a next hop
          or an upper layer in this node.
          Forwarding is based on pre-existing state that was installed as a
          result of the routing computation of a Track by a PCE.
@@ -876,7 +883,7 @@
             typically, if the frame transports an IPv6 packet. The MAC address
             should be set to the next-hop MAC address to avoid confusion.
             It results that a frame that is received over a layer-3 bundle may
-            be in fact associated to a Track. In a classical IP link such as an
+            be in fact associated with a Track. In a classical IP link such as an
             Ethernet, off-Track traffic is typically in excess over reservation
             to be routed along the non-reserved path based on its QoS setting.
             But with 6TiSCH, since the use of the layer-3 bundle may be due to
@@ -888,7 +895,7 @@
             IPv6 header is set to Deterministic Forwarding, as discussed in
             <xref target='pmh'/>.
             A frame is re-Tracked by scheduling it for transmission over the
-            transmit bundle associated to the Track,
+            transmit bundle associated with the Track,
             with the destination MAC address set to broadcast.
          </t>
 
@@ -2515,7 +2522,9 @@ y
 	 
     	Most RAW technologies integrate some authentication or encryption
     	mechanisms that were defined outside the IETF.
-		
+		The IETF specifications referenced herein each provide their own 
+      Security Considerations, and the lower layer technologies used 
+      provide their own security at Layer-2.
       </t>
    </section>
 
@@ -2540,7 +2549,7 @@ y
 
 	<section><name>Acknowledgments</name>
     <t>
-    		Many thanks to the participants of the RAW WG where a lot of the work discussed here happened, and Malcolm Smith for his review of the 802.11 section. Special thanks for post directorate and IESG reviewers, Roman Danyliw, Victoria Pritchard, and Carlos Jesus Bernardos Cano.
+    		Many thanks to the participants of the RAW WG where a lot of the work discussed here happened, and Malcolm Smith for his review of the 802.11 section. Special thanks for post directorate and IESG reviewers, Roman Danyliw, Victoria Pritchard, Donald Eastlake, and Carlos Jesus Bernardos Cano.
     </t>
 	</section><!-- ack -->
 </middle>
@@ -2817,6 +2826,23 @@ y
                <organization>www.hartcomm.org</organization>
             </author>
             <date year='2010'/>
+         </front>
+      </reference>
+      
+      <reference anchor='WFA'>
+         <front>
+            <title>Wi-Fi Alliance</title>
+            <author>
+               <organization>www.wi-fi.org</organization>
+            </author>
+         </front>
+      </reference>
+      <reference anchor='Avnu'>
+         <front>
+            <title>Avnu Alliance</title>
+            <author>
+               <organization>avnu.org</organization>
+            </author>
          </front>
       </reference>
 
