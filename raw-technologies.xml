@@ -11,7 +11,7 @@
 <?rfc subcompact="no"?>
 <?rfc authorship="yes"?>
 <?rfc tocappendix="yes"?>
-<rfc  xmlns:xi="http://www.w3.org/2001/XInclude" category="info" ipr='trust200902' tocInclude="true"  obsoletes="" updates="" submissionType="IETF" xml:lang="en" version="3" docName="draft-ietf-raw-technologies-15" >
+<rfc  xmlns:xi="http://www.w3.org/2001/XInclude" category="info" ipr='trust200902' tocInclude="true"  obsoletes="" updates="" submissionType="IETF" xml:lang="en" version="3" docName="draft-ietf-raw-technologies-16" >
 
 <front>
    <title abbrev='RAW Technologies'>Reliable and Available Wireless (RAW) Technologies</title>
@@ -83,7 +83,8 @@
    <keyword>Draft</keyword>
    <abstract>
       <t>    This document surveys the short and middle range radio technologies
-      that are suitable to provide a DetNet/RAW service over, presents the
+      that are suitable to provide a Deterministic Networking / 
+      Reliable and Available Wireless (RAW) service over, presents the
       characteristics that RAW may leverage, and explores the applicability
       of the technologies to carry deterministic flows, as of its time of publication.
 	  The studied
@@ -275,9 +276,13 @@
 
    <section><name>IEEE 802.11</name>
    
-      <t> In the recent years, the evolution of the IEEE Std 802.11 standard is taking a new direction, looking not any more for more speed, but also for reliability, to enable new fields of application such as Industrial IoT and Virtual Reality.
+      <t>    In the recent years, the evolution of the IEEE Std 802.11 standard
+      has taken a new direction, emphasizing improved reliability and
+      reduced latency in addition to minor improvements in speed, to enable
+      new fields of application such as Industrial IoT and Virtual Reality.
+
 	  </t>
-	  <t>Leveraging IEEE Std 802.11, the Wi-Fi Alliance  <xref target="WFA"/> (WFA) delivered Wi-Fi 6, 7, and now 8 with more capabilities to schedule and deliver frames in due time at fast rates. Still, as any radio technology, Wi-Fi is sensitive to frame loss, which can only be combated with the maximum use of diversity, in space, time, channel, and even technology. 
+	  <t>Leveraging IEEE Std 802.11, the Wi-Fi Alliance  <xref target="WFA"/> delivered Wi-Fi 6, 7, and now 8 with more capabilities to schedule and deliver frames in due time at fast rates. Still, as any radio technology, Wi-Fi is sensitive to frame loss, which can only be combated with the maximum use of diversity, in space, time, channel, and even technology. 
 	  </t>
 	  <t>
      In parallel, the Avnu Alliance <xref target="Avnu"/>, which focuses on applications of TSN for real time data, formed a workgroup for uses case with TSN capabilities over wireless, leveraging both 3GPP and IEEE Std 802.11 standards.
