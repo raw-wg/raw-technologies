@@ -113,8 +113,8 @@
    Networking (TSN) as defined by IEEE 802.1 and IEEE 802.3.
    </t>
    <t>
-   The Reliable and Available Wireless (RAW) Architecture <xref target='I-D.ietf-raw-architecture'/> extends the DetNet Architecture <xref target="RFC8655"/> to adapt to the specific challenges of the wireless medium, in particular intermittently lossy connectivity, by optimizing the use of diversity and multipathing. <xref target='I-D.ietf-raw-architecture'/> defines the concepts of Reliability and Availability that are used in this document. In turn, this document presents  wireless technologies with capabilities such as time synchronization and scheduling of transmission, that would make RAW/DetNet operations possible over such media. Those technologies were selected as part of the WG formation and listed in the WG charter.  
-
+   The Reliable and Available Wireless (RAW) Architecture <xref target='I-D.ietf-raw-architecture'/> extends the DetNet Architecture <xref target="RFC8655"/> to adapt to the specific challenges of the wireless medium, in particular intermittently lossy connectivity, by optimizing the use of diversity and multipathing. <xref target='I-D.ietf-raw-architecture'/> defines the concepts of Reliability and Availability that are used in this document. In turn, this document presents  wireless technologies with capabilities such as time synchronization and scheduling of transmission, that would make RAW/DetNet operations possible over such media. The technologies studied in this document were identified in the charter during the RAW WG formation and inherited by DetNet
+    (when the WG picked up the work on RAW).
    </t>
    <t>
    Making wireless reliable and available is even more challenging than it is
@@ -149,7 +149,8 @@
    This document surveys the short and middle range radio technologies that are suitable to provide a DetNet/RAW service over,
    presents the characteristics that RAW may leverage, and explores the applicability of the technologies to carry deterministic flows. 
    The studied technologies are Wi-Fi 6/7, TimeSlotted Channel Hopping (TSCH), 3GPP 5G, and L-band Digital Aeronautical Communications System (LDACS).
-   The purpose for this is to support work at RAW to justify and enable DetNet work on those and possibly more compatible technologies.
+   The purpose of this document is to support and enable work on the these (and possibly other similar compatible technologies) at the IETF specifically in the DetNet working group working on RAW.
+
    </t>
    <t>
    This document surveys existing networking technology and defines no protocol behaviors or operational practices.  
@@ -2554,7 +2555,7 @@ y
 
 	<section><name>Acknowledgments</name>
     <t>
-    		Many thanks to the participants of the RAW WG where a lot of the work discussed here happened, and Malcolm Smith for his review of the 802.11 section. Special thanks for post directorate and IESG reviewers, Roman Danyliw, Victoria Pritchard, Donald Eastlake, and Carlos Jesus Bernardos Cano.
+    		Many thanks to the participants of the RAW WG where a lot of the work discussed here happened, and Malcolm Smith for his review of the 802.11 section. Special thanks for post directorate and IESG reviewers, Roman Danyliw, Victoria Pritchard, Donald Eastlake, Mohamed Boucadair, Jiankang Yao, Shivan Kaul Sahib, Mallory Knodel, Ron Bonica, Ketan Talaulikar, Eric Vyncke, and Carlos Jesus Bernardos Cano.
     </t>
 	</section><!-- ack -->
 </middle>
