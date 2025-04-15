@@ -90,7 +90,6 @@
 	  The studied
       technologies are Wi-Fi 6/7, TimeSlotted Channel Hopping (TSCH), 3GPP
       5G, and L-band Digital Aeronautical Communications System (LDACS).
-	  Those technologies were selected as part of the RAW WG formation and listed in the WG charter.  
       </t>
    </abstract>
 </front>
@@ -526,8 +525,8 @@
    
       <t> IEEE Std 802.15.4 TSCH was the first IEEE radio specification aimed
 	  directly at Industrial IoT applications, for use in 
-	  Process Control loops and monitoring. It was adopted and widely deployed
-	  in the last 10 years by the major competing standards, Wireless HART and ISA100.11a. 
+	  Process Control loops and monitoring. It was used as a base for the major
+	  industrial wireless process control standards, Wireless HART and ISA100.11a. 
 	  </t><t>
 	  While the MAC/PHY standards enable the relatively slow rates used in Process
 	  Control (typically in the order of 4-5 per second), the technology is not suited for the faster periods (1 to 10ms) used in Factory Automation and motion control.
@@ -2154,7 +2153,9 @@ In the long-term, ATM communication shall transition from analogue VHF voice and
        <t>
            It is a secure, scalable and spectrum efficient data link with
            embedded navigation capability and thus, is the first truly integrated
-           CNS system recognized by ICAO. During flight tests the LDACS
+           Communications, Navigation, and Surveillance (CNS) system recognized 
+           by the International Civil Aviation Organization
+           (ICAO) During flight tests the LDACS
            capabilities have been successfully demonstrated. A viable roll-out
            scenario has been developed which allows gradual introduction of LDACS
            with immediate use and revenues. Finally, ICAO is developing LDACS
@@ -2168,7 +2169,7 @@ LDACS shall enable IPv6 based air-ground communication related to the safety and
        <t>
            The development of LDACS has already made substantial progress in the Single European Sky ATM Research (SESAR) framework, and is currently being continued in the follow-up program, SESAR2020 <xref target='RIH18'/>. A key objective of the SESAR activities is to develop, implement and validate a modern aeronautical data link able to evolve with aviation needs over long-term. To this end, an LDACS specification has been produced <xref target='GRA19'/> and is continuously updated; transmitter demonstrators were developed to test the spectrum compatibility of LDACS with legacy systems operating in the L-band <xref target='SAJ14'/>; and the overall system performance was analyzed by computer simulations, indicating that LDACS can fulfill the identified requirements <xref target='GRA11'/>.
        </t><t>
-           LDACS standardization within the framework of the International Civil Aviation Organization (ICAO) started in December 2016. The ICAO standardization group has produced an initial Standards and Recommended Practices (SARPs) document <xref target='ICAO18'/>. The SARPs document defines the general characteristics of LDACS.
+           LDACS standardization within the framework of the ICAO started in December 2016. The ICAO standardization group has produced an initial Standards and Recommended Practices (SARPs) document <xref target='ICAO18'/>. The SARPs document defines the general characteristics of LDACS.
        </t><t>
            Up to now the LDACS standardization has been focused on the development of the physical layer and the data link layer, only recently have higher layers come into the focus of the LDACS development activities. There is currently no "IPv6 over LDACS" specification; however, SESAR2020 has started the testing of IPv6-based LDACS testbeds. The IPv6 architecture for the aeronautical telecommunication network is called the Future Communications Infrastructure (FCI). FCI shall support quality of service, diversity, and mobility under the umbrella of the "multi-link concept". This work is conducted by ICAO working group WG-I.
        </t><t>
@@ -2215,7 +2216,7 @@ LDACS shall enable IPv6 based air-ground communication related to the safety and
            Since LDACS has been mainly designed for air traffic management communication it supports mutual entity authentication, integrity and confidentiality capabilities of user data messages and some control channel protection capabilities  <xref target="MAE18"/>, <xref target="MAE191"/>, <xref target="MAE192"/>, <xref target="MAE20"/>. <!--<xref target='MAE19'/>.-->
        </t>
        <t>
-           Overall this makes LDACS the world's first truly integrated Communications, Navigation, and Surveillance (CNS) system
+           Overall this makes LDACS the world's first truly integrated CNS system
            and is the worldwide most mature, secure, terrestrial long-range CNS
            technology for civil aviation.
        </t>
@@ -2577,11 +2578,14 @@ y
    <!-- DetNet PS -->
    <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8655.xml'/>
    <!-- detnet-architecture -->
-   <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9030.xml'/> <!-- 6Tisch Archi -->
    <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-raw-architecture.xml'/>
       
    </references>
+   
+   
    <references><name>Informative References</name>
+   
+   <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9030.xml'/> <!-- 6Tisch Archi -->
       <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.8480.xml'/> <!-- 6P Protocol Specification -->
 <xi:include href='http://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.9372.xml'/>
 
